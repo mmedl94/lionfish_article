@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.3.16)  2 SEP 2024 17:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.3.16)  5 SEP 2024 16:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -612,23 +612,23 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 (./manuscript.aux)
 \openout1 = `manuscript.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 68
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 67
 .
  (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -656,7 +656,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box59
-Package hyperref Info: Link coloring ON on input line 68.
+Package hyperref Info: Link coloring ON on input line 67.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -669,188 +669,177 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count292
 )
-LaTeX Info: Redefining \ref on input line 68.
-LaTeX Info: Redefining \pageref on input line 68.
-LaTeX Info: Redefining \nameref on input line 68.
+LaTeX Info: Redefining \ref on input line 67.
+LaTeX Info: Redefining \pageref on input line 67.
+LaTeX Info: Redefining \nameref on input line 67.
 
 (./manuscript.out) (./manuscript.out)
 \@outlinefile=\write5
 \openout5 = `manuscript.out'.
 
  ABD: EveryShipout initializing macros
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 68
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 67
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 68--68
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
 
  []
 
-<oesg.png, id=50, 193.72375pt x 55.20625pt>
+<oesg.png, id=62, 193.72375pt x 55.20625pt>
 File: oesg.png Graphic file (type png)
 <use oesg.png>
-Package pdftex.def Info: oesg.png  used on input line 68.
+Package pdftex.def Info: oesg.png  used on input line 67.
 (pdftex.def)             Requested size: 88.52939pt x 25.22838pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--68
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
 
  []
 
 
-Overfull \hbox (231.2646pt too wide) in paragraph at lines 68--68
+Overfull \hbox (231.2646pt too wide) in paragraph at lines 67--67
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--68
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
 
  []
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 6
-8.
+7.
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 6
-8.
+7.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-68.
+67.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-68.
+67.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 68.
+(Font)              <10.95> on input line 67.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 68.
+(Font)              <8> on input line 67.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 68.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 6
-8.
+(Font)              <6> on input line 67.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 6
+7.
+
+(/usr/share/texmf/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 8
+0.
 
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 6
-8.
-
-(/usr/share/texmf/tex/latex/lm/t1lmss.fd
-File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./oesg.png>]
-
-Package natbib Warning: Citation `fleet20' on page 2 undefined on input line 90
-.
-
-
-Package natbib Warning: Citation `knitr' on page 2 undefined on input line 106.
-
-
-
-Overfull \hbox (24.63646pt too wide) in paragraph at lines 123--127
-\T1/lmr/m/n/10.95 Jour-nal of Statis-tics, found on-line at [][]https://www.ove
-rleaf.com/latex/templates/tagged/academic-
+Overfull \hbox (1.03275pt too wide) in paragraph at lines 80--81
+[]\T1/lmr/m/n/10.95 The pri-mary ob-jec-tive of this work is to de-velop an R p
+ack-age that in-te-grates high-performance
  []
 
-<ajs-download20180210.pdf, id=73, 650.43pt x 505.89pt>
-File: ajs-download20180210.pdf Graphic file (type pdf)
-<use ajs-download20180210.pdf>
-Package pdftex.def Info: ajs-download20180210.pdf  used on input line 147.
-(pdftex.def)             Requested size: 354.12434pt x 275.43826pt.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 158.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 158.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 158.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./oesg.png>]
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 \T1/lmr/m/n/10.95 2 []
  []
 
 [2]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-86.
- (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-
-Package natbib Warning: Citation `knitr' on page 3 undefined on input line 192.
+Overfull \hbox (28.95589pt too wide) in paragraph at lines 112--113
+[]\T1/lmr/m/n/10.95 The cen-tral com-po-nent of the Python code is the \T1/lmtt
+/m/n/10.95 customTKinter \T1/lmr/m/n/10.95 class \T1/lmtt/m/n/10.95 Interactive
+TourInterface\T1/lmr/m/n/10.95 .
+ []
 
 
-
-Package natbib Warning: Citation `knitr' on page 3 undefined on input line 194.
-
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 [] \T1/lmr/m/n/10.95 3
  []
 
-[3 <./ajs-download20180210.pdf>]
+[3] (./manuscript.bbl
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 \T1/lmr/m/n/10.95 4 []
  []
 
 [4]
-No file manuscript.bbl.
+Underfull \hbox (badness 7631) in paragraph at lines 62--66
+[]\T1/lmr/m/n/10.95 Lundh F (1999).  ``An in-tro-duc-tion to tk-in-ter.''  \T1/
+lmr/m/it/10.95 URL: www. python-ware.
+ []
 
-Package natbib Warning: There were undefined citations.
 
+Underfull \hbox (badness 4927) in paragraph at lines 68--71
+[]\T1/lmr/m/n/10.95 Schimansky T (2024).  ``Cus-tomTk-in-ter.''  [][]$\T1/lmtt/
+m/n/10.95 https : / / github . com / TomSchimansky /
+ []
 
+)
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 [] \T1/lmr/m/n/10.95 5
  []
 
 [5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 271.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 271.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 148.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 148.
  (./manuscript.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 271.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 271.
-Package rerunfilecheck Info: File `manuscript.out' has not changed.
-(rerunfilecheck)             Checksum: 8BB79B0ABB339D8299F9D2252C449CCC;895.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 271.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 148.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 148.
+
+
+Package rerunfilecheck Warning: File `manuscript.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `manuscript.out':
+(rerunfilecheck)             Before: 5A8F21C36003D27DF0B4AC4C556DD2BE;1122
+(rerunfilecheck)             After:  3265246329FEED0C7D1B971AE77F2EB9;1253.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 148.
  ) 
 Here is how much of TeX's memory you used:
- 17677 strings out of 481239
- 336408 string characters out of 5920377
- 580117 words of memory out of 5000000
- 32519 multiletter control sequences out of 15000+600000
- 604893 words of font info for 65 fonts, out of 8000000 for 9000
+ 17684 strings out of 481239
+ 336447 string characters out of 5920377
+ 578992 words of memory out of 5000000
+ 32521 multiletter control sequences out of 15000+600000
+ 590431 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 76i,13n,72p,891b,839s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/d
-vips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/
-share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/l
-m-ec.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share
-/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm
-/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texm
-f/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10
-.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/t
-ype1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></us
-r/share/texmf/fonts/type1/public/lm/lmro10.pfb></usr/share/texmf/fonts/type1/pu
-blic/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/sha
-re/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/l
-m/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on manuscript.pdf (5 pages, 252846 bytes).
+ 76i,13n,72p,1187b,839s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Subsection.3.3.Blitting.2} has been referenced bu
+t does not exist, replaced by a fixed one
+
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texlive/texmf-dist/f
+onts/enc/dvips/base/8r.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb><
+/usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1
+/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/s
+hare/texmf/fonts/type1/public/lm/lmro10.pfb></usr/share/texmf/fonts/type1/publi
+c/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on manuscript.pdf (5 pages, 209603 bytes).
 PDF statistics:
- 198 PDF objects out of 1000 (max. 8388607)
- 170 compressed objects within 2 object streams
- 33 named destinations out of 1000 (max. 500000)
- 103 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 209 PDF objects out of 1000 (max. 8388607)
+ 190 compressed objects within 2 object streams
+ 47 named destinations out of 1000 (max. 500000)
+ 122 words of extra memory for PDF output out of 10000 (max. 10000000)
 

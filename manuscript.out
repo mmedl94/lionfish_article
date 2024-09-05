@@ -1,10 +1,14 @@
-\BOOKMARK [1][-]{Section.0.Comments on frequently made mistakes and concerns.1}{Comments on frequently made mistakes and concerns}{}% 1
-\BOOKMARK [1][-]{Section.1.Introduction.1}{Introduction}{}% 2
-\BOOKMARK [1][-]{Section.2.Writing your manuscript.1}{Writing your manuscript}{}% 3
-\BOOKMARK [1][-]{Section.3.Submission and refereeing.1}{Submission and refereeing}{}% 4
-\BOOKMARK [2][-]{Subsection.4.0.Submission.2}{Submission}{Section.3.Submission and refereeing.1}% 5
-\BOOKMARK [2][-]{Subsection.4.1.Refereing.2}{Refereing}{Section.3.Submission and refereeing.1}% 6
-\BOOKMARK [2][-]{Subsection.4.2.Copyrights and fees.2}{Copyrights and fees}{Section.3.Submission and refereeing.1}% 7
-\BOOKMARK [1][-]{Section.4.Checklist.1}{Checklist}{}% 8
-\BOOKMARK [1][-]{Section.5.Frequently asked questions.1}{Frequently asked questions}{}% 9
-\BOOKMARK [1][-]{Section.6.Known issues.1}{Known issues}{}% 10
+\BOOKMARK [1][-]{Section.0.Introduction.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{Section.1.Similar work.1}{Similar work}{}% 2
+\BOOKMARK [1][-]{Section.2.The pytourr package.1}{The pytourr package}{}% 3
+\BOOKMARK [2][-]{Subsection.3.0.Overview.2}{Overview}{Section.2.The pytourr package.1}% 4
+\BOOKMARK [2][-]{Subsection.3.1.The graphical user interface.2}{The graphical user interface}{Section.2.The pytourr package.1}% 5
+\BOOKMARK [2][-]{Subsection.3.2.R/Python interface.2}{R/Python interface}{Section.2.The pytourr package.1}% 6
+\BOOKMARK [2][-]{Subsection.3.3.Structure of the Python code.2}{Structure of the Python code}{Section.2.The pytourr package.1}% 7
+\BOOKMARK [2][-]{Subsection.3.4.Bit blit.2}{Bit blit}{Section.2.The pytourr package.1}% 8
+\BOOKMARK [1][-]{Section.3.Datasets.1}{Datasets}{}% 9
+\BOOKMARK [2][-]{Subsection.4.0.Austrian Vacation Activities dataset.2}{Austrian Vacation Activities dataset}{Section.3.Datasets.1}% 10
+\BOOKMARK [2][-]{Subsection.4.1.Australian Vacation Activities dataset.2}{Australian Vacation Activities dataset}{Section.3.Datasets.1}% 11
+\BOOKMARK [1][-]{Section.4.Examples.1}{Examples}{}% 12
+\BOOKMARK [1][-]{Section.5.Discussion.1}{Discussion}{}% 13
+\BOOKMARK [1][-]{Section.6.Conclusion.1}{Conclusion}{}% 14

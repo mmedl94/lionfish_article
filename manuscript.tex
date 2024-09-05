@@ -21,15 +21,16 @@
 
 %% an abstract and keywords
 \Abstract{
-This guidelines are tested for new versions of texlive and current version of overleaf's LaTeX version. 
-%If you run into problems using ealier versions of texlive, please report to \email{matthias.templ@gmail.com}. 
-
-  This template and guide of the Austrian Journal of Statistics (AJS) shows the required style of manuscripts submitted to the Austrian Journal of Statistics. We strongly recommend
-to follow the given instructions exactly already when writing the paper. When submitting papers to AJS, it is essential to follow these guidelines. The present document can be used directly as a template. The file with the name \texttt{guidelinesAJS.tex} can be obtained from the following website \href{https://github.com/matthias-da/ajs-public}{https://github.com/matthias-da/ajs-public}, or directly as overleaf template in their academic journal section. 
-
-Manuscripts submitted without consideration of the AJS style guide will most likely not be forwarded for review, but rejected with the possibility of resubmission.
+Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
 }
-\Keywords{interactive visualization, tourr, exploratory data analysis, \proglang{R}, \proglang{python}}
+\Keywords{interactive graphics, tourr, exploratory data analysis, \proglang{R}, \proglang{python}}
 \Plainkeywords{keywords, comma-separated, non-capitalized,, R} %% without formatting
 %% at least one keyword must be supplied
 
@@ -47,12 +48,10 @@ Manuscripts submitted without consideration of the AJS style guide will most lik
 %% The address of (at least) one author should be given
 %% in the following format:
 \Address{
-  Matthias Templ\\
-  Institue of Data Analysis and Process Design\\
-  University of Applied Sciences and Arts Northwestern Switzerland\\
-  CH-4600 Olten, Switzerland\\
-  E-mail: \email{matthias.templ@gmail.com}\\
-  URL: \url{https://www.fhnw.ch/de/personen/matthias-templ}
+  Matthias Medl\\
+  Institue of Statistics\\
+  BOKU University Vienna\\
+  E-mail: \email{matthias.medl@boku.ac.at}\\
 }
 %% It is also possible to add a telephone and fax number
 %% before the e-mail in the following format:
@@ -67,204 +66,82 @@ Manuscripts submitted without consideration of the AJS style guide will most lik
 
 \begin{document}
 
-%% include your article here, just as usual
-
-Before we look at style in more detail, the most common mistakes and errors are described:
-
-\section{Comments on frequently made mistakes and concerns}
-
-To avoid a reject in first place:
-
-\begin{description}
-\item[C1.word] Do not submit articles written with prohibited software like Microsoft Word or similar WYSWYG software. We like to send your manuscript with the AJS style to reviewers. 
-\item[C1.conclusion] Write a conclusion and/or discussion discussing your results.  Discuss how your method improved science and give value to the community, and discuss differences to other alternative methods. 
-\item[C1.data.documentation] Give sufficient documentation on data you are using.
-\item[C1.application] In case you have numerical examples, use convincing applications and interesting data. Do not use \texttt{toy} data with 50 observations and no explanatory variables / covariables, for example. 
-\end{description}
-
-To do justice to the style from the very beginning:
-
-\begin{description}
-\item[C2.title] Title in Capitalized Style. See the title of the guidelines for illustration.
-\item[C2.subsections]  Subsection in lower case style. See the subsection of the guidelines for illustration
-\item[C2.references]  Captialized Title for references. E.g. \cite{fleet20} should appear in the reference list as ``Fleet Management in Free-Floating Bike Sharing Systems Using
-  Predictive Modelling and Explorative Tools.'' and NOT as ``Fleet management in free-floating bike sharing systems using
-  predictive modelling and explorative tools.''.
-\item[C2.doi]  Include DOI numbers for each citation (if possible)
-\item[C2.graphics]  Use vector-based graphics such as \texttt{pdf}. Do not use pixel-based graphics like \texttt{png}, \texttt{jpeg}, and do not convert from \texttt{png} or \texttt{jpeg} to \texttt{pdf}
-\item{C2.tables} Produce tables in \LaTeX{}. (no screenshots)
-\end{description}
-
 \section{Introduction}
 
 
-The style file of the Austrian Journal of Statsitics is based on the style file of the Journal of Statistical Software (JSS) including minor modifications. We thank Achim Zeileis for his great work on the JSS style file.
+\section{Similar work}
 
-The Austrian Journal of Statistics is freely available over the net. Free and open-source tools used for production of your manuscript are therefore also highly supported. Code to reproduce the figures and tables in manuscripts as well as methods implemented in software can be published as supplementary material. This increases usually the number of 
-downloads of your article.
+Previous attempts have been made to bring interactivtiy to the tourr package. The galahr package \citep{galahr} was an attempt to so by means of the R packages shiny \citep{shiny} and plotly \citep{plotly}, but ultimately suffered from performance issues when the size of the investigated dataset became too large (n>10 000). To overcome these issues, the detourr package \citep{detourr}, which precomputes multiple projections in R and subsequently visualizes them in an interactive display using Javascript, has been developed. While detourr showed better performance, the interactivtiy is still limited as only precomputed projections can be displayed and there is no option to show multiple linked displays simultaneously. The mmtour package \citep{laa2023new} is a \proglang{Mathamatica} implementation allowing for interaction with manual and slice tours.  
 
-After review, final sources can also be sent as \texttt{knitr} \citep{knitr} .Rnw file.
+\section{The pytourr package}
 
-%Graphics should be inserted as PostScript files using the
-%package {\tt psfig} or {\tt graphicx}. Bibliographic references
-%should be given using {\tt bibtex} in the {\em author-date\/}
-%style.
+\subsection{Overview}
 
+The primary objective of this work is to develop an R package that integrates high-performance interactivity through Python packages, such as \texttt{TKinter} \citep{lundh1999introduction}, \texttt{CustomTKinter} \citep{schimansky24}, and \texttt{matplotlib} \citep{Hunter:2007}, with the tourr package \citep{tourr}. This integration is achieved via \texttt{reticulate} \citep{reticulate}, a framework that facilitates seamless interoperability between Python and R.
 
-\section{Writing your manuscript}
+At the core of the \texttt{pytourr} package is a graphical user interface (GUI) designed to display multiple linked visualizations concurrently. Users can interact with one of the plots, for example, by subselecting specific data points, and the other linked plots will dynamically update to reflect these modifications. This interconnected functionality allows for efficient and immediate analysis of high-dimensional datasets without necessitating extensive coding, thereby streamlining the exploratory data analysis process.
 
-In order to obtain a uniform layout and to ease the production as
-much as possible it is highly recommended to use \LaTeXe\ for the
-text processing. 
+In addition to this core functionality, \texttt{pytourr} offers a variety of interactive plot types, providing users with the flexibility to visualize their data from multiple perspectives. The ability to navigate through various projections of the displayed tours directly within the GUI enables users to explore different aspects of the dataset with ease. Furthermore, users can initiate new tours directly from the interface. The GUI also supports interactive feature selection, allowing users to specify which subset of features should be visualized in the plots. Once users have identified interesting views or settings, \texttt{pytourr} allows them to save the displayed projections, subsets, and plots. This functionality ensures that analysis states can be preserved for further examination or reporting, making the package particularly useful for iterative analysis where findings may need to be revisited or shared with collaborators.
+
+With its high level of interactivity, performance, and ease of use, \texttt{pytourr} streamlines the exploration of complex datasets, offering a powerful tool for researchers working with high-dimensional data.
 
 
-Technically, you have three possibilities to choose the software for writing your manuscript:
+\subsection{The graphical user interface}
 
-- Select from the overleaf template for academic journals the template for the Austrian Journal of Statistics.
-- Download the template from \href{https://github.com/matthias-da/ajs-public}{https://github.com/matthias-da/ajs-public}
-- use the R package \texttt{rtcles}, function \texttt{ajs\_article}.
-- use the overleaf template for the Austrian Journal of Statistics, found online at \href{https://www.overleaf.com/latex/templates/tagged/academic-journal}{https://www.overleaf.com/latex/templates/tagged/academic-journal}
+The \texttt{pytourr} GUI can be launched using the function \texttt{interactive\textunderscore tour()}. At a minimum, the user needs to provide both the dataset and the instructions for constructing the desired plots. The dataset must be supplied as a \texttt{data.table}, while the plotting instructions should be passed as a list containing the named elements \texttt{type} and \texttt{obj}. The \texttt{type} element specifies the type of display to generate, such as "scatter" for a scatterplot or "2d\textunderscore tour" for a 2-dimensional tour. The \texttt{obj} element further defines the properties of the chosen display. For example, to create a 2-dimensional tour, the user must provide a \texttt{tour\textunderscore history} object, which can be generated using the \texttt{tourr} package. For a scatterplot, the user needs to provide a vector of strings specifying the names of the features to be displayed. The user can optionally specify the feature names, the arrangement of the plots, predefined subsets of the data (e.g., cluster solutions), custom names for these subsets, the number of available subsets, and the size of each plot.
 
+The GUI is divided into two main sections: a sidebar on the left, which contains a comprehensive set of interactive controls to customize and interact with the displays, and the display area on the right. An overview of the GUI can be seen in figure x.
 
+At the top of the sidebar, users can select and deselect features via checkboxes, determining which features are displayed in the plots. Below this, each subset of the data has a corresponding checkbox, which is used to select the active subset. When a subset is selected, any data points marked in the plots will be moved to this active subset and be colored accordingly. The colored boxes next to the subset names indicate how the datapoints within each subset are colored. Users can adjust the transparency of each subset by clicking these colored boxes. This can be useful when one wants to highlight one or multiple subsets, for instance when wanting to compare to subsets in particular. The subset selection can be reset to its original state at any time by clicking the "Reset original selection" button.
 
-Each article must have a summary in English which
-inform the reader quickly on the contents and the substantial
-results. The length surely depends on the contents. 
-Mathematical formulas and references should be
-avoided in the summary.
+At the top of the sidebar, users can select and deselect features via checkboxes, controlling which features are displayed in the plots. Below the feature selection, each subset has a checkbox that designates the active subset. When datapoints within the plots are manually selected, they will be moved to the active subset and colored accordingly. The colored boxes next to the subset names indicate the colors that the datapoints within each subset are colored. By clicking these colored boxes, users can adjust the transparency of the datapoints within the corrisponding subet, which is particularly useful for highlighting and comparing specific subsets. The initial subset selection (in case one was provided) can be restored at any time by clicking the "Reset original selection" button.
 
-Headings and footings as well as pagination will be added during
-the production. Footnotes should be avoided.
+One can move through the projections of a tour by pressing the arrow keys or by specifying the index of the projection the be displayed and pressing the "Update frames" button. Users can animate the tours by toggling the "Animate" checkbox and specifying a time interval, so that the displays automatically move to the next projections after the specified time interval.
 
-The article should be structured by enumerated sections and
-subsections. The title should be in title case style, sections and subsections in section case style. Graphics and tables must contain captions, above
-tables and below graphics (figures). Examples are (see Figure~\ref{fig:Fig3.4} and Table~\ref{Tab3.4}).
-Graphics \textbf{should be produced in \textbf{pdf} format} and included 
- at suitable places of the manuscript. 
-
-\begin{figure}[hbt]
-\begin{center}
-\includegraphics{ajs-download20180210}
-\caption{\label{fig:Fig3.4}Download statistics of articles per month at the Austrian Journal of Statistics.}  
-\end{center}
-\end{figure}
-
-\begin{table}[hbt]
-\caption{\label{Tab3.4}80 measured values of access time.}
-\vspace*{-5mm}
-\small
-\hspace{1.5cm}
-\begin{center}
-\begin{tabular}{|llllllll|}
-\toprule
-70.0 & 68.6 & 67.9 & 66.3 & 71.0 & 64.2 & 69.6 & 71.0\\
-... & ... & ... & ... & ... & ... & ... & ...\\
-%69.7 & 69.0 & 73.4 & 69.0 & 70.1 & 69.8 & 69.0 & 73.0\\
-%70.0 & 69.1 & 69.5-& 67.9 & 72.8 & 72.1 & 69.5+& 70.1\\
-%70.2 & 69.1 & 68.9 & 68.3 & 74.9 & 68.4 & 69.1 & 66.6\\
-%71.1 & 69.2 & 71.2 & 68.9 & 70.9 & 70.6 & 69.9 & 69.9\\
-%69.4 & 69.5+& 68.5+& 70.9 & 71.6 & 68.9 & 72.0 & 70.3\\
-%68.6 & 68.5-& 67.8 & 72.2 & 68.7 & 70.6 & 66.9 & 69.3\\
-%71.4 & 68.7 & 74.2 & 68.8 & 71.4 & 71.8 & 67.5-& 70.4\\
-%71.4 & 67.4 & 69.5-& 72.4 & 70.4 & 69.3 & 68.2 & 67.0\\
-71.7 & 70.5+& 72.5-& 68.2 & 67.6 & 68.6 & 70.5-& 65.8\\
-\bottomrule
-\end{tabular}
-\end{center}
-\end{table}
-
-Mathematical formulas should be enumerated as far as they are
-referenced \textbf{only}. E.g.~Equation~(\ref{form3.1}) shows the density 
-\begin{equation}\label{form3.1}
-f(x) =
-\frac1{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}\,.
-\end{equation}
-
-Please consider 
-
-\begin{itemize}
-\item  capitalized title case for titles and for all references and 
-\item sentence, non-capitalized case for sections and subsections.
-\end{itemize}
+When clicking the "Save projections and subsets" button, a file browser is first launched, allowing users to specify the destination for the output files. These files include a PNG image of the current plots, CSV files containing the projection matrices for all displayed tours, and a mapping of the data points to their respective subsets. Additionally, users can initiate new tours of various directly from the sidebar.
 
 
-Cited literature should be summarized at the end of the article in
-form of a non-enumerated section. \cite{knitr} is a reference
-to an article. If the citation is in parentheses, it
-should look like \citep{knitr}. The latter verison is used for indirect citations while the first one to directly cite an article.
-References should be in title case.
+\subsection{R/Python interface}
 
-Correspondence addresses of author(s) should be added at the end
-of the manuscript. 
+The majority of \texttt{pytourr} was written in Python, while the R side of the package handles setting up the Python environment within the interactive interface is being run, launching the interactive tour, and generating new tours when initiated through the interface. To incorporate the functionality of the \texttt{tourr} package without translating large portions of its code from R to Python, the \texttt{reticulate} package was used. This approach allows \texttt{pytourr} to automatically benefit from updates to \texttt{tourr}.
 
+However, to reduce inefficiencies caused by cross-language communication and to simplify debugging, \texttt{tourr} functions were only accessed when necessary. Core functionalities, such as performing data transformations using projections, were implemented directly in Python. These transformations are based on well-established mathematical principles and are straightforward to replicate, ensuring they remain stable and efficient.
 
-\section{Submission and refereeing}
+\subsection{Structure of the Python code}
 
+The central component of the Python code is the \texttt{customTKinter} class \texttt{InteractiveTourInterface}. This class centrally stores attributes related to all plots, such as the dataset, subselections, feature selections, and other shared information. Plot-specific data is organized in dictionaries (the Python equivalent of named lists in R), including the display type, construction instructions, tour projections (only in case of tour displays), color schemes for the displayed data, and, where applicable, the selector and manual projection manipulation classes.
 
-\subsection{Submission}
+The selector classes handle the behavior when users manually select data points to move them to the active subset. After a selection is made, the selector class updates the centrally stored subselection attribute and ensures all other displays reflect these changes. The manual projection manipulation classes construct the arrows representing the projection axes in the displays and manage the manual adjustment of projections. Users can right-click and drag the arrowheads to modify the projections, after which the class orthonormalizes the projection axes and updates both the projection and the transformed data accordingly.
 
-Consideration of the previously stated rules are of great help for
-the editing process. Whenever technically possible, manuscripts
-should be submitted through the editorial system at \href{www.ajs.or.at}{www.ajs.or.at}. The authors must be registered at this website.
+\subsection{Bit blit}
 
-\subsection{Refereing}
+The implementation of bit blitting was crucial to ensuring fast plot updates and providing a smooth user experience. With bit blit, the static elements of the display, such as the outer frames of the plots, are stored as a background image. When a plot is manipulated, only the affected plot is updated, and within that, only the interactive elements, such as the data points and projection axes in a 2-dimensional tour, are rendered on top of the background image.
 
-All contributions will be anonymously refereed. Cited literature which is
-hardly available should accompany the submitted manuscript. It
-should also be considered to place used and analyzed data at
-disposal for the referees (if there are no legal or technical
-arguments against).
-
-Editor and referees must trust that the contribution has not been
-submitted for publication at the same time at another place. It is
-fair that the submitting author notifies if an earlier version has
-already been submitted somewhere before.
-
-\subsection{Copyrights and fees}
-
-The Austrian Journal of Statistics is free of
-charge. Generally, we use the Creative Commons Attribution License (CC-BY).
-
-For copyright issues, publication ethics and malpractice statements, please have a look at 
-\href{www.ajs.or.at}{www.ajs.or.at}
+In practice, this means that the background, without the interactive elements, must be captured either during initialization or after major updates. The entire plot is first rendered without the interactive elements, the background is then saved, and finally, the plot is redrawn with the interactive elements blended in. Since this process is relatively slow, full updates are only triggered during initialization or after significant changes, such as modifications to the set of active features.
 
 
-\section{Checklist}
+\section{Datasets}
 
-We list the most common mistakes when submitting manuscripts to the journal and formulate them in form of questions.
+Two datasets were analysed as part of this study. The Austrian Vacation Activities \cite{dolnicar2003winter} dataset and the the Australian Vacation Activities \cite{cliff2009formative} dataset.
 
-\begin{itemize}
-\item Did you upload a pdf of your manuscript for review? (no Word, no .tex, ...)
-\item Did you use the style of AJS?  
-\item Are your graphics produced in pdf format? 
-\item Is your title captialized?
-\item Are the titles of your cited papers in your references capitalized?
-\item Are your section and subsection headers non-capitalized form?
-\item Are your tables produced with \LaTeX ? (no screenshots)
-\item Have you cited the software you used, e.g. R itself and R packages used? To not cite software is plagiarism and violates intellectual properties of the authors of the software.
-\item Did you proposed at least three independent reviewers?
-\end{itemize}
+\subsection{Austrian Vacation Activities dataset}
 
-\section{Frequently asked questions}
+The Austrian Vacation Activities dataset comprises responses from 2,961 adult tourists who spent their holiday in Austria during the 1997/98 season. Participants were asked to evaluate the importance of 27 different activities during their vacation. The survey categorized responses based on four levels of importance: "totally important," "mostly important," "a bit important," and "not important." For analysis, the responses were binarized: a value of 1 was assigned if the activity was rated as "totally important," and a value of 0 if any of the other categories were selected. The survey was conducted by the Europäisches Tourismus Institut GmbH at the University of Trier and focused exclusively on tourists who did not stay in the country's capital cities.
 
-\noindent 
-\begin{enumerate}
-\item \textit{My citation shows all authors and not the typically shown et al.}. \\ Answer: this is ok. We like to show all authors in the text.
-\item \textit{When I submit a paper, how long does it take to be published} \\ Answer: The average time from submission to publication is approx. 132 days. But it heavily depends if you can make satisfying revisions in time. 
-\item \textit{In which databases is AJS indexed.} \\
-Answer: we are indexed in many of them, most notable is Scopus (from Elsevier). More information can be found at the website of AJS. 
-\item \textit{Can I upload my paper on \href{https://arxiv.org/}{https://arxiv.org/} and distribute before the paper is online at AJS? } \\
-Answer: Of course, you can do it. However, please clearly point out in the header of the paper that this paper is under review in the Austrian Journal of Statistics and will likely be published there. Note that the readers should check if the paper is already be published at AJS for correct citation, i.e. finally the journal should be cited. Update and upload  \href{https://arxiv.org/}{https://arxiv.org/} or similar sites with the final version in AJS style after the paper is published  in AJS. 
+\subsection{Australian Vacation Activities dataset}
 
-\end{enumerate}
+The second dataset, the Australian Vacation Activities dataset, includes responses from 1,003 adult Australians who were surveyed through a permission-based internet panel. The survery was conducted in 2007. Participants were asked whether they engaged in 44 specific vacation activities during their most recent vacation within Australia. Similar to the Austrian dataset, responses were binarized: a value of 1 indicates that the participant took part in the activity, while a value of 0 signifies they did not.
 
-\section{Known issues}
+\section{Examples}
 
-While in the documentclass arcticle a section header with special characters works without problems, e.g. \verb|\section{A \& B}|, this results in an error in the documentclass ajs. The solution is \verb|\section[A and B]{A \& B}|.
 
+\section{Discussion}
+
+
+\section{Conclusion}
 
 %\bibliographystyle{plainat}
-\bibliography{template-guidelinesAJS}
+\bibliography{pytourr_references.bib}
 
 
 

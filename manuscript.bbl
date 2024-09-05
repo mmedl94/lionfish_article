@@ -1,0 +1,85 @@
+\begin{thebibliography}{12}
+\newcommand{\enquote}[1]{``#1''}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem[{Chang \emph{et~al.}(2024)Chang, Cheng, Allaire, Sievert, Schloerke,
+  Xie, Allen, McPherson, Dipert, and Borges}]{shiny}
+Chang W, Cheng J, Allaire J, Sievert C, Schloerke B, Xie Y, Allen J, McPherson
+  J, Dipert A, Borges B (2024).
+\newblock \emph{shiny: Web Application Framework for R}.
+\newblock R package version 1.9.1.9000, https://github.com/rstudio/shiny,
+  \urlprefix\url{https://shiny.posit.co/}.
+
+\bibitem[{Cliff(2009)}]{cliff2009formative}
+Cliff K (2009).
+\newblock \enquote{A formative index of segment attractiveness: optimising
+  segment selection for tourism destinations.}
+
+\bibitem[{Dolnicar and Leisch(2003)}]{dolnicar2003winter}
+Dolnicar S, Leisch F (2003).
+\newblock \enquote{Winter tourist segments in Austria: Identifying stable
+  vacation styles using bagged clustering techniques.}
+\newblock \emph{Journal of Travel Research}, \textbf{41}(3), 281--292.
+
+\bibitem[{Hart and Wang(2022)}]{detourr}
+Hart C, Wang E (2022).
+\newblock \emph{detourr: Portable and Performant Tour Animations}.
+\newblock R package version 0.1.0,
+  \urlprefix\url{https://casperhart.github.io/detourr/}.
+
+\bibitem[{Hunter(2007)}]{Hunter:2007}
+Hunter JD (2007).
+\newblock \enquote{Matplotlib: A 2D graphics environment.}
+\newblock \emph{Computing in Science \& Engineering}, \textbf{9}(3), 90--95.
+\newblock \doi{10.1109/MCSE.2007.55}.
+
+\bibitem[{Inc.(2015)}]{plotly}
+Inc PT (2015).
+\newblock \enquote{Collaborative data science.}
+\newblock \urlprefix\url{https://plot.ly}.
+
+\bibitem[{Laa(2024)}]{galahr}
+Laa U CD (2024).
+\newblock \enquote{galahr.}
+\newblock \url{https://github.com/uschiLaa/galahr}.
+
+\bibitem[{Laa \emph{et~al.}(2023)Laa, Aumann, Cook, and Valencia}]{laa2023new}
+Laa U, Aumann A, Cook D, Valencia G (2023).
+\newblock \enquote{New and simplified manual controls for projection and slice
+  tours, with application to exploring classification boundaries in high
+  dimensions.}
+\newblock \emph{Journal of Computational and Graphical Statistics},
+  \textbf{32}(3), 1229--1236.
+
+\bibitem[{Lundh(1999)}]{lundh1999introduction}
+Lundh F (1999).
+\newblock \enquote{An introduction to tkinter.}
+\newblock \emph{URL: www. pythonware. com/library/tkinter/introduction/index.
+  htm}.
+
+\bibitem[{Schimansky(2024)}]{schimansky24}
+Schimansky T (2024).
+\newblock \enquote{CustomTkinter.}
+\newblock \url{https://github.com/TomSchimansky/CustomTkinter}.
+
+\bibitem[{Ushey \emph{et~al.}(2024)Ushey, Allaire, and Tang}]{reticulate}
+Ushey K, Allaire J, Tang Y (2024).
+\newblock \emph{reticulate: Interface to 'Python'}.
+\newblock R package version 1.38.0, https://github.com/rstudio/reticulate,
+  \urlprefix\url{https://rstudio.github.io/reticulate/}.
+
+\bibitem[{Wickham \emph{et~al.}(2011)Wickham, Cook, Hofmann, and Buja}]{tourr}
+Wickham H, Cook D, Hofmann H, Buja A (2011).
+\newblock \enquote{{tourr}: An {R} Package for Exploring Multivariate Data with
+  Projections.}
+\newblock \emph{Journal of Statistical Software}, \textbf{40}(2), 1--18.
+\newblock \urlprefix\url{https://doi.org/10.18637/jss.v040.i02}.
+
+\end{thebibliography}
