@@ -9,14 +9,14 @@
  
 %% almost as usual
 \author{Matthias Medl\,\orcidlink{0000-0002-3354-4579}\\ Institute of Statistics \\ BOKU University \\ Vienna \And 
-        Dianne Cook\,\orcidlink{0000-0002-3813-7155}\\ Monash Data Futures Institute \\ Monash University \\ Melbourne \And
+        Dianne Cook\,\orcidlink{0000-0002-3813-7155}\\ Econometrics and Business Statistics \\ Monash University \\ Melbourne \And
         Ursula Laa\,\orcidlink{0000-0002-0249-6439}\\ Institute of Statistics \\ BOKU University \\ Vienna}
 %% \AND can be used instead of \And and starts a new line
-\title{pytourr: Interactive Visualization Interface for the tourr Package}
+\title{Interactively Visualizing Clustering in Multivariate Data Using pytourr}
 
 %% for pretty printing and a nice hypersummary also set:
 \Plainauthor{Matthias Medl, Dianne Cook, Ursula Laa} %% comma-separated
-\Plaintitle{pytourr: Interactive Visualization Interface for the tourr Package} %% without formatting
+\Plaintitle{Interactively Visualizing Clustering in Multivariate Data Using pytourr} %% without formatting
 \Shorttitle{pytourr} %% a short title (if necessary)
 
 %% an abstract and keywords
@@ -68,8 +68,14 @@ Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
 
 \section{Introduction}
 
+\begin{itemize} \itemsep 0in
+\item Background to clustering analysis
+\item Visualising clusters, including tours
+\item Difference between clustering and partitioning
+\item How do you know whether the results are useful
+\end{itemize}
 
-\section{Similar work}
+\section{Related Work}
 
 Previous attempts have been made to bring interactivtiy to the tourr package. The galahr package \citep{galahr} was an attempt to so by means of the R packages shiny \citep{shiny} and plotly \citep{plotly}, but ultimately suffered from performance issues when the size of the investigated dataset became too large (n>10 000). To overcome these issues, the detourr package \citep{detourr}, which precomputes multiple projections in R and subsequently visualizes them in an interactive display using Javascript, has been developed. While detourr showed better performance, the interactivtiy is still limited as only precomputed projections can be displayed and there is no option to show multiple linked displays simultaneously. The mmtour package \citep{laa2023new} is a \proglang{Mathamatica} implementation allowing for interaction with manual and slice tours.  
 
@@ -120,9 +126,9 @@ The implementation of bit blitting was crucial to ensuring fast plot updates and
 In practice, this means that the background, without the interactive elements, must be captured either during initialization or after major updates. The entire plot is first rendered without the interactive elements, the background is then saved, and finally, the plot is redrawn with the interactive elements blended in. Since this process is relatively slow, full updates are only triggered during initialization or after significant changes, such as modifications to the set of active features.
 
 
-\section{Datasets}
+\section{Applications}
 
-Two datasets were analysed as part of this study. The Austrian Vacation Activities \cite{dolnicar2003winter} dataset and the the Australian Vacation Activities \cite{cliff2009formative} dataset.
+The Austrian Vacation Activities \cite{dolnicar2003winter} and the Australian Vacation Activities \cite{cliff2009formative} datasets are used to illustrate the methods.
 
 \subsection{Austrian Vacation Activities dataset}
 
