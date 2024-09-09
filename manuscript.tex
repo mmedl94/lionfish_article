@@ -5,6 +5,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
 \usepackage{etoolbox}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\graphicspath{{images/}}
  
  
 %% almost as usual
@@ -134,11 +137,127 @@ The Austrian Vacation Activities \cite{dolnicar2003winter} and the Australian Va
 
 The Austrian Vacation Activities dataset comprises responses from 2,961 adult tourists who spent their holiday in Austria during the 1997/98 season. Participants were asked to evaluate the importance of 27 different activities during their vacation. The survey categorized responses based on four levels of importance: "totally important," "mostly important," "a bit important," and "not important." For analysis, the responses were binarized: a value of 1 was assigned if the activity was rated as "totally important," and a value of 0 if any of the other categories were selected. The survey was conducted by the Europäisches Tourismus Institut GmbH at the University of Trier and focused exclusively on tourists who did not stay in the country's capital cities.
 
+To gain further insight into the dataset a k-means clustering as described in the book "Market Segmentation Analysis" has been performed \citep{leisch2018market}. Therefore, the function \texttt{stepcclust} of the R package \texttt{flexclust
+}\citep{flexclust} with k=6 and nrep=20 was used.
+
+\subsubsection{Feature selection}
+
+The original dataset contains \(p\)=27 features. Some of these features are more informative than others. We only want to keep the most informative ones. Additionally, interacting with the pytourr GUI becomes cumbersome when handling more than \textasciitilde
+ 15 features, making it necessary to reduce the dimensionality of the dataset. An effective and intuitive way to perform feature selection is by using the heatmap display within pytourr. The heatmap supports three different display metrics for feature selection:
+
+\[
+\text{Total Fraction:} \quad \frac{\displaystyle\sum_{i = 1}^{k} \sum_{j = 1}^{p} c_{ij}}{n}
+\]
+The \textbf{Total Fraction} shows the counts \(c_{ij}\) of the \(i\)-th cluster and \(j\)-th feature, normalized by the total number of observations \(n\).
+
+\[
+\text{Intra Cluster Fraction:} \quad \sum_{i = 1}^{k} \sum_{j = 1}^{p} \frac{c_{ij}}{c_{i}}
+\]
+The \textbf{Intra Cluster Fraction} displays the contribution of each feature within a specific cluster, providing insight into how much a feature contributes to the cluster compared to the overall cluster size \(c_i\).
+
+\[
+\text{Intra Feature Fraction:} \quad \sum_{j = 1}^{p} \sum_{i = 1}^{k} \frac{c_{ij}}{c_{j}}
+\]
+The \textbf{Intra Feature Fraction} highlights how a feature contributes across different clusters relative to the overall importance of that feature \(c_j\).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{winteractiv_heatmap.png}
+    \caption{A: heatmap displaying the intra cluster fraction. B: heatmap displaying the intra feature fraction.}
+    \label{fig:winteractiv_heatmap}
+\end{figure}
+
+In Figure \ref{fig:winteractiv_heatmap}A, we can observe the general interests of tourists within each cluster. For instance, tourists in clusters 1, 3, 5, and 6 predominantly engaged in alpine skiing, while those in clusters 2 and 4 did not. Additionally, we see that activities such as ski touring and horseback riding were generally unpopular across all clusters.
+
+In Figure \ref{fig:winteractiv_heatmap}B, we can determine whether tourists in a particular cluster had a strong preference for certain activities. For example, nearly all tourists who visited museums are grouped in cluster 2, and those who used health facilities are primarily attributed to cluster 4. We can also identify activities that were similarly popular across all clusters, such as relaxing.
+
+By using the heatmap with these metrics, we can perform feature selection by removing unpopular activities and those that were consistently similar across all clusters. After performing the feature selection by unchecking the corresponding checkboxes in the GUI using this strategy, the following 12 activities remained: alpine skiing, going to a spa, using health facilities, hiking, going for walks, excursions, going out in the evening, going to discos/bars, shopping, sightseeing, museums, and pool/sauna.
+
+We can now repeat the k-means clustering with \texttt{stepcclust} on the reduced dataset. Silhouette plots of both cluster solutions can be seen in Figure \ref{fig:silhouette_comparison}. By comparing both silhouette plots, we can see that the cluster solution with the reduced dataset results in a clustering of higher quality. Thus, we will continue with the analysis on the reduced dataset with the corresponsig cluster solution. We can also see in Figure \ref{fig:silhouette_comparison}B that cluster 3 is of comparatively low quality.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{silhouette_comparison.png}
+    \caption{A: silhouette plot of the k-means solution of the full dataset. B: silhouette plot of the k-means solution with the reduced dataset.}
+    \label{fig:silhouette_comparison}
+\end{figure}
+
+We can further explore the similarities between the clusters by initializing an \texttt{interactive\_tour()} with a 2D tour based on the linear discriminant analysis (LDA) projection pursuit index. By navigating through the tour, we can observe various projections, and when a projection that separates the clusters is found, we highlight each cluster sequentially. The different highlighted clusters can be seen in Figure \ref{fig:silhouette_comparison}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{winter_activ_cluster_highlights.png}
+    \caption{Cluster highlights: \textbf{A} - Cluster 1 (blue), \textbf{B} - Cluster 2 (orange), \textbf{C} - Cluster 3 (green), \textbf{D} - Cluster 4 (red), \textbf{E} - Cluster 5 (violet), \textbf{F} - Cluster 6 (brown).}
+    \label{fig:winter_activ_cluster_highlights}
+\end{figure}
+
+This process allows us to visually assess the separation and similarities between the clusters, providing insight into the structure of the dataset. By highlighting each cluster individually, we can evaluate their distinctiveness in different projections. The most influential features shown in Figure \ref{fig:winter_activ_cluster_highlights} are pool/sauna, alpine skiing, museums, and going to the spa. The projection roughly separates clusters 1, 2, and 3 from each other and the other three clusters, which appear to be quite similar. 
+
+By manually manipulating the projection axes or initiating a local tour, we can gain further insight into the similarities between the different clusters. This interactive exploration allows for a more nuanced understanding of the relationships between clusters and the influence of key features on the separation of the data.
+
+
+\subsubsection{Manual cluster improvement}
+
+We have seen in Figure \ref{fig:silhouette_comparison} that clusters 1 and 3 contain some data points that do not fit well into their respective clusters. Manual selection of data points can be employed to further improve the quality of the cluster solution. To do this, we first initialize an \texttt{interactive\_tour()} with the following components:
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{winter_cl7_init.png}
+    \caption{Top left: 2D tour with the linear discriminant analysis projection pursuit index. Top right: heatmap with the intra-cluster fraction. Bottom left: 1D tour with the linear discriminant analysis projection pursuit index. Bottom right: mosaic plot.}
+    \label{fig:winter_cl7_init}
+\end{figure}
+
+\begin{itemize}
+    \item A 2D tour with the linear discriminant analysis projection pursuit index,
+    \item A heatmap displaying the intra-cluster fraction,
+    \item A 1D tour with the linear discriminant analysis projection pursuit index, and
+    \item A mosaic plot.
+\end{itemize}
+
+This setup produces the display shown in Figure \ref{fig:winter_cl7_init}. We can observe that clusters 1 and 3 overlap significantly in the features "sightseeing," "museums," and "going out in the evenings." By highlighting clusters 1 and 3, and adjusting the projection axes, we can confirm that there is indeed overlap between these clusters, as shown in Figure \ref{fig:winter_cl7_pre}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{winter_cl7_pre.png}
+    \caption{Top left: 2D tour with the linear discriminant analysis projection pursuit index. Top right: heatmap with the intra-cluster fraction. Bottom left: 1D tour with the linear discriminant analysis projection pursuit index. Bottom right: mosaic plot.}
+    \label{fig:winter_cl7_pre}
+\end{figure}
+
+To improve the quality of the k-means solution, we can select the checkmark for subset 7 and manually select the region of overlap. The selected data points will then be shifted to a new cluster: cluster 7. The interface with the newly formed cluster can be seen in Figure \ref{fig:winter_cl7_post}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{winter_cl7_post.png}
+    \caption{Top left: 2D tour with the linear discriminant analysis projection pursuit index. Top right: heatmap with the intra-cluster fraction. Bottom left: 1D tour with the linear discriminant analysis projection pursuit index. Bottom right: mosaic plot.}
+    \label{fig:winter_cl7_post}
+\end{figure}
+
+To assess the quality of the manually enhanced cluster solution, we can compare the silhouette plots of this new solution with those from a k-means solution where \(k = 7\). These silhouette plots are shown in Figure \ref{fig:silhouette_comparison_k7_man}. It is evident that the manually enhanced cluster solution better describes the data compared to the k-means solution with \(k = 7\).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{silhouette_comparison_k7_man.png}
+    \caption{A: Silhouette plot of the k-means solution with \(k=7\). B: Silhouette plot of the manually enhanced k-means solution with \(k=6\).}
+    \label{fig:silhouette_comparison_k7_man}
+\end{figure}
+
+Additionally, manually enhancing a cluster solution has the advantage of maintaining the base structure of the clustering, whereas clusters in a new k-means solution can be entirely different. Moreover, tourists in cluster 7 now appear primarily interested in cultural activities, such as visiting museums, and not in activities like alpine skiing, going to the spa, using health facilities, or going to discos/bars.
+
+
+!Note to this section! comparing the average shilouette scores indictes that the original k=6 solutiuon is best, even though in my opinion the plots look better with the manual solution. The scores are:
+
+k=6: 0.1460762
+
+k=7: 0.1336373
+
+k=6 + manual: 0.140716
+
+Let me know what you think
+
+
 \subsection{Australian Vacation Activities dataset}
 
 The second dataset, the Australian Vacation Activities dataset, includes responses from 1,003 adult Australians who were surveyed through a permission-based internet panel. The survery was conducted in 2007. Participants were asked whether they engaged in 44 specific vacation activities during their most recent vacation within Australia. Similar to the Austrian dataset, responses were binarized: a value of 1 indicates that the participant took part in the activity, while a value of 0 signifies they did not.
-
-\section{Examples}
 
 
 \section{Discussion}
