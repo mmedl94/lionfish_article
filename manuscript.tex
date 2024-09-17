@@ -107,7 +107,7 @@ At the top of the sidebar, users can select and deselect features via checkboxes
 
 One can move through the projections of a tour by pressing the arrow keys or by specifying the index of the projection the be displayed and pressing the "Update frames" button. Users can animate the tours by toggling the "Animate" checkbox and specifying a time interval, so that the displays automatically move to the next projections after the specified time interval.
 
-When clicking the "Save projections and subsets" button, a file browser is first launched, allowing users to specify the destination for the output files. These files include a PNG image of the current plots, CSV files containing the projection matrices for all displayed tours, and a mapping of the data points to their respective subsets. Additionally, users can initiate new tours of various directly from the sidebar.
+The "Save projections and subsets" button can be used to save the current state of the analysis. These states can be recovered by using pressing the "Load projections and subsets" button. Additionally, users can initiate new tours of various directly from the sidebar.
 
 
 \subsection{R/Python interface}
@@ -127,6 +127,27 @@ The selector classes handle the behavior when users manually select data points 
 The implementation of bit blitting was crucial to ensuring fast plot updates and providing a smooth user experience. With bit blit, the static elements of the display, such as the outer frames of the plots, are stored as a background image. When a plot is manipulated, only the affected plot is updated, and within that, only the interactive elements, such as the data points and projection axes in a 2-dimensional tour, are rendered on top of the background image.
 
 In practice, this means that the background, without the interactive elements, must be captured either during initialization or after major updates. The entire plot is first rendered without the interactive elements, the background is then saved, and finally, the plot is redrawn with the interactive elements blended in. Since this process is relatively slow, full updates are only triggered during initialization or after significant changes, such as modifications to the set of active features.
+
+\subsection{Reproducibility}
+
+Ensuring the reproducibility of data analysis is a fundamental principle in scientific research. It allows others to verify the validity of the findings and is key to the integrity of the scientific process. Reproducibility not only builds trust in the research outcomes but also enables the scientific community to build upon existing work. When analyses can be replicated, it can be validated whether the conclusions drawn from the data are robust and not dependent on the specific conditions or idiosyncrasies of the original analyst. Moreover, reproducible research can serve as a foundational building block for subsequent studies, fostering incremental advancements in knowledge.
+
+One challenge in the context of interactive data analysis is that not all steps of the analysis are precisely documented in the form of code, especially when using graphical user interfaces (GUIs) where user-driven interactions might not leave a traceable history. This lack of documentation can hinder the ability of others to reproduce the analysis or to understand how specific results were obtained. To mitigate this challenge, it is essential to implement mechanisms that allow users to easily save and share intermediate snapshots of their analyses.
+
+One measure to combat this is to make saving intermediate snapshots of the analysis easy and accessable. Specifically, the "Save projections and subsets" button enables users to take snapshots of their analysis, including visual representations, selected data, and parameter settings. Upon pressing this button, a file browser is triggered, allowing users to specify the destination for saving these snapshots. Each save operation generates multiple files:
+
+
+\begin{itemize}
+    \item A \texttt{.png} file containing the currently displayed graphics,
+    \item \texttt{.csv} files that capture the feature and subset selection as well as projections of the tours displayed at the time of the snapshot,
+    \item two \texttt{.pkl} files that contain state variables of the GUI, allowing for complete recovery of the snapshot.
+\end{itemize}
+
+These files provide dual utility. First, they allow users to fully recover the state of the analysis within the GUI. This can be achieved either by using the "Load projections and subsets" button, or by launching a new GUI instance with the \texttt{load\_interactive\_tour()} function. The latter approach, using \texttt{load\_interactive\_tour()}, has the added flexibility of only requiring the original dataset and the directory containing the saved files. This function also allows users to modify display settings, such as adjusting the size of the interactive plots or changing the arrangement of the display grid. In contrast, when loading the saved state directly from within the GUI, it is crucial that the active session was initiated with the same dataset and plot objects that were present at the time of saving. This ensures that the analysis environment is accurately replicated.
+
+Second, the saved \texttt{.csv} files provide a way to inspect and further analyze the data outside of the original interface. This opens up opportunities for deeper analysis and extensions of the work.
+
+This level of interactivity and documentation is crucial for reproducibility, as it ensures that even exploratory, interactive data analysis can be retraced and validated by others. Ultimately, these features facilitate a reproducible workflow that balances the flexibility of interactive exploration with the rigor of reproducible research.
 
 
 \section{Applications}
@@ -196,9 +217,12 @@ This process allows us to visually assess the separation and similarities betwee
 By manually manipulating the projection axes or initiating a local tour, we can gain further insight into the similarities between the different clusters. This interactive exploration allows for a more nuanced understanding of the relationships between clusters and the influence of key features on the separation of the data.
 
 
-\subsubsection{Manual cluster improvement}
+\subsubsection{Manual cluster selection}
 
-We have seen in Figure \ref{fig:silhouette_comparison} that clusters 1 and 3 contain some data points that do not fit well into their respective clusters. Manual selection of data points can be employed to further improve the quality of the cluster solution. To do this, we first initialize an \texttt{interactive\_tour()} with the following components:
+There are several reasons why we might want to manually modify a clustering solution. One is to capture observations that do not fit well within their assigned clusters. Another reason is to explore specific features in more detail. The advantage of manual cluster selection is that it preserves most of the current clustering structure, allowing us to adjust specific parts of the solution without starting from scratch. This approach is particularly useful when we already have a cluster solution that reveals interesting patterns in the data.
+
+
+In Figure \ref{fig:silhouette_comparison}, we observed that clusters 1 and 3 contained data points that did not fit well into their respective clusters. To further investigate this, we can initialize an \texttt{interactive\_tour()} with the following components:
 
 \begin{figure}[h!]
     \centering
@@ -208,13 +232,13 @@ We have seen in Figure \ref{fig:silhouette_comparison} that clusters 1 and 3 con
 \end{figure}
 
 \begin{itemize}
-    \item A 2D tour with the linear discriminant analysis projection pursuit index,
-    \item A heatmap displaying the intra-cluster fraction,
+    \item A 2D tour using the linear discriminant analysis projection pursuit index,
+    \item A heatmap showing the intra-cluster fraction,
     \item A 1D tour with the linear discriminant analysis projection pursuit index, and
     \item A mosaic plot.
 \end{itemize}
 
-This setup produces the display shown in Figure \ref{fig:winter_cl7_init}. We can observe that clusters 1 and 3 overlap significantly in the features "sightseeing," "museums," and "going out in the evenings." By highlighting clusters 1 and 3, and adjusting the projection axes, we can confirm that there is indeed overlap between these clusters, as shown in Figure \ref{fig:winter_cl7_pre}.
+This setup produces the display shown in Figure \ref{fig:winter_cl7_init}. It can also be seen that both clusters 1 and 3 contain tourists that didn't go alpine skiing and the main difference between them is that tourists in cluster 3 enjoyed going to the spa and health facilities as well as going to the pool, while the ones in cluster 1 didn't. Other than that, the clusters were mostly similar. Now we might be interested in the subset of tourists that enjoy going to museums. Therefore, we can adjust the projection axes so that these axes are elongated and point into different directions. We can see that there is indeed overlap between clusters 1 and 3, as shown in Figure \ref{fig:winter_cl7_pre}. As a next step we can reassign the overlapping section to a new cluster - cluster 7. By selecting the checkbox for subset 7 and manually selecting the region of overlap, we can form a new cluster, which is visualized in Figure \ref{fig:winter_cl7_post}.
 
 \begin{figure}[h!]
     \centering
@@ -223,8 +247,6 @@ This setup produces the display shown in Figure \ref{fig:winter_cl7_init}. We ca
     \label{fig:winter_cl7_pre}
 \end{figure}
 
-To improve the quality of the k-means solution, we can select the checkmark for subset 7 and manually select the region of overlap. The selected data points will then be shifted to a new cluster: cluster 7. The interface with the newly formed cluster can be seen in Figure \ref{fig:winter_cl7_post}.
-
 \begin{figure}[h!]
     \centering
     \includegraphics[width=1\textwidth]{winter_cl7_post.png}
@@ -232,7 +254,7 @@ To improve the quality of the k-means solution, we can select the checkmark for 
     \label{fig:winter_cl7_post}
 \end{figure}
 
-To assess the quality of the manually enhanced cluster solution, we can compare the silhouette plots of this new solution with those from a k-means solution where \(k = 7\). These silhouette plots are shown in Figure \ref{fig:silhouette_comparison_k7_man}. It is evident that the manually enhanced cluster solution better describes the data compared to the k-means solution with \(k = 7\).
+To evaluate whether the manually enhanced cluster solution reduces the number of poorly fitting observations, we can compare the silhouette plots of this new solution with those from a k-means solution where \(k = 7\). Figure \ref{fig:silhouette_comparison_k7_man} shows that the manually enhanced cluster solution better describes the data compared to the k-means solution with \(k = 7\).
 
 \begin{figure}[h!]
     \centering
@@ -241,7 +263,8 @@ To assess the quality of the manually enhanced cluster solution, we can compare 
     \label{fig:silhouette_comparison_k7_man}
 \end{figure}
 
-Additionally, manually enhancing a cluster solution has the advantage of maintaining the base structure of the clustering, whereas clusters in a new k-means solution can be entirely different. Moreover, tourists in cluster 7 now appear primarily interested in cultural activities, such as visiting museums, and not in activities like alpine skiing, going to the spa, using health facilities, or going to discos/bars.
+We can observe slight behavioral differences between tourists in clusters 1 and 7. Tourists in cluster 7 all enjoyed both museums and sightseeing, whereas most tourists in cluster 1 engaged in sightseeing but showed no interest in museums. Instead, participants in cluster 1 exhibited a greater preference for hiking. Despite this, tourists in both clusters generally shared similar interests. This insight could be valuable for enhancing museum marketing strategies. While clusters 1 and 7 have overlapping interests, it appears that current marketing efforts may not effectively reach tourists in cluster 1. By increasing targeted marketing at hiking trails, popular excursion destinations, and shopping centers, it may be possible to attract more interest in museums from tourists in cluster 1.
+
 
 
 !Note to this section! comparing the average shilouette scores indictes that the original k=6 solutiuon is best, even though in my opinion the plots look better with the manual solution. The scores are:
@@ -250,7 +273,7 @@ k=6: 0.1460762
 
 k=7: 0.1336373
 
-k=6 + manual: 0.140716
+k=6 + manual: 0.1408945
 
 Let me know what you think
 

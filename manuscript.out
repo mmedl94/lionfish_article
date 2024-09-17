@@ -6,10 +6,11 @@
 \BOOKMARK [2][-]{Subsection.3.2.R/Python interface.2}{R/Python interface}{Section.2.The pytourr package.1}% 6
 \BOOKMARK [2][-]{Subsection.3.3.Structure of the Python code.2}{Structure of the Python code}{Section.2.The pytourr package.1}% 7
 \BOOKMARK [2][-]{Subsection.3.4.Bit blit.2}{Bit blit}{Section.2.The pytourr package.1}% 8
-\BOOKMARK [1][-]{Section.3.Applications.1}{Applications}{}% 9
-\BOOKMARK [2][-]{Subsection.4.0.Austrian Vacation Activities dataset.2}{Austrian Vacation Activities dataset}{Section.3.Applications.1}% 10
-\BOOKMARK [3][-]{Subsubsection.4.1.0.Feature selection.3}{Feature selection}{Subsection.4.0.Austrian Vacation Activities dataset.2}% 11
-\BOOKMARK [3][-]{Subsubsection.4.1.1.Manual cluster improvement.3}{Manual cluster improvement}{Subsection.4.0.Austrian Vacation Activities dataset.2}% 12
-\BOOKMARK [2][-]{Subsection.4.1.Australian Vacation Activities dataset.2}{Australian Vacation Activities dataset}{Section.3.Applications.1}% 13
-\BOOKMARK [1][-]{Section.4.Discussion.1}{Discussion}{}% 14
-\BOOKMARK [1][-]{Section.5.Conclusion.1}{Conclusion}{}% 15
+\BOOKMARK [2][-]{Subsection.3.5.Reproducibility.2}{Reproducibility}{Section.2.The pytourr package.1}% 9
+\BOOKMARK [1][-]{Section.3.Applications.1}{Applications}{}% 10
+\BOOKMARK [2][-]{Subsection.4.0.Austrian Vacation Activities dataset.2}{Austrian Vacation Activities dataset}{Section.3.Applications.1}% 11
+\BOOKMARK [3][-]{Subsubsection.4.1.0.Feature selection.3}{Feature selection}{Subsection.4.0.Austrian Vacation Activities dataset.2}% 12
+\BOOKMARK [3][-]{Subsubsection.4.1.1.Manual cluster selection.3}{Manual cluster selection}{Subsection.4.0.Austrian Vacation Activities dataset.2}% 13
+\BOOKMARK [2][-]{Subsection.4.1.Australian Vacation Activities dataset.2}{Australian Vacation Activities dataset}{Section.3.Applications.1}% 14
+\BOOKMARK [1][-]{Section.4.Discussion.1}{Discussion}{}% 15
+\BOOKMARK [1][-]{Section.5.Conclusion.1}{Conclusion}{}% 16
