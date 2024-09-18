@@ -99,11 +99,19 @@ With its high level of interactivity, performance, and ease of use, \texttt{pyto
 
 The \texttt{pytourr} GUI can be launched using the function \texttt{interactive\textunderscore tour()}. At a minimum, the user needs to provide both the dataset and the instructions for constructing the desired plots. The dataset must be supplied as a \texttt{data.table}, while the plotting instructions should be passed as a list containing the named elements \texttt{type} and \texttt{obj}. The \texttt{type} element specifies the type of display to generate, such as "scatter" for a scatterplot or "2d\textunderscore tour" for a 2-dimensional tour. The \texttt{obj} element further defines the properties of the chosen display. For example, to create a 2-dimensional tour, the user must provide a \texttt{tour\textunderscore history} object, which can be generated using the \texttt{tourr} package. For a scatterplot, the user needs to provide a vector of strings specifying the names of the features to be displayed. The user can optionally specify the feature names, the arrangement of the plots, predefined subsets of the data (e.g., cluster solutions), custom names for these subsets, the number of available subsets, and the size of each plot.
 
-The GUI is divided into two main sections: a sidebar on the left, which contains a comprehensive set of interactive controls to customize and interact with the displays, and the display area on the right. An overview of the GUI can be seen in figure x.
+The GUI is divided into two main sections: a sidebar on the left, which contains a comprehensive set of interactive controls, and the display area on the right, where the selected plots are shown (see Figure \ref{fig:GUI_overview}).
 
-At the top of the sidebar, users can select and deselect features via checkboxes, determining which features are displayed in the plots. Below this, each subset of the data has a corresponding checkbox, which is used to select the active subset. When a subset is selected, any data points marked in the plots will be moved to this active subset and be colored accordingly. The colored boxes next to the subset names indicate how the datapoints within each subset are colored. Users can adjust the transparency of each subset by clicking these colored boxes. This can be useful when one wants to highlight one or multiple subsets, for instance when wanting to compare to subsets in particular. The subset selection can be reset to its original state at any time by clicking the "Reset original selection" button.
+At the top of the sidebar, users can select and deselect features via checkboxes (Figure \ref{fig:GUI_overview}C), controlling which features are displayed in the plots. Below that, each subset has a checkbox to designate the active subset (Figure \ref{fig:GUI_overview}D). When data points are manually selected in the plots, they will be assigned to the active subset and colored accordingly. The colored boxes next to the subset names indicate the color of the data points. Clicking these boxes adjusts the transparency of the points, which is useful for highlighting and comparing subsets. Subsets can also be renamed using the textboxes. The "Reset original selection" button allows users to revert the subset selections to the initial state.
 
-At the top of the sidebar, users can select and deselect features via checkboxes, controlling which features are displayed in the plots. Below the feature selection, each subset has a checkbox that designates the active subset. When datapoints within the plots are manually selected, they will be moved to the active subset and colored accordingly. The colored boxes next to the subset names indicate the colors that the datapoints within each subset are colored. By clicking these colored boxes, users can adjust the transparency of the datapoints within the corrisponding subet, which is particularly useful for highlighting and comparing specific subsets. The initial subset selection (in case one was provided) can be restored at any time by clicking the "Reset original selection" button.
+The frame selection interface (Figure \ref{fig:GUI_overview}E) displayes the frames of the currently shown tours and enables users to jump between frames of the tour objects. Below this, users can save and load projections and subsets using the respective buttons (Figure \ref{fig:GUI_overview}F). New tours can be started using the current settings via the interface at the bottom (Figure \ref{fig:GUI_overview}G), and users can select different metrics for some plot types e.g. heatmaps (Figure \ref{fig:GUI_overview}H).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{GUI_overview.png}
+    \caption{Overview of the GUI, consisting of the sidebar (left) and display area (right). A: Sidebar. B: Display area. C: Feature selection checkboxes. D: Subset selection with color indicators. E: Frame selection interface. F: Save and load buttons. G: Interface for starting new tours. H: Metric selection interface.}
+    \label{fig:GUI_overview}
+\end{figure}
+
 
 One can move through the projections of a tour by pressing the arrow keys or by specifying the index of the projection the be displayed and pressing the "Update frames" button. Users can animate the tours by toggling the "Animate" checkbox and specifying a time interval, so that the displays automatically move to the next projections after the specified time interval.
 
@@ -164,22 +172,23 @@ To gain further insight into the dataset a k-means clustering as described in th
 \subsubsection{Feature selection}
 
 The original dataset contains \(p\)=27 features. Some of these features are more informative than others. We only want to keep the most informative ones. Additionally, interacting with the pytourr GUI becomes cumbersome when handling more than \textasciitilde
- 15 features, making it necessary to reduce the dimensionality of the dataset. An effective and intuitive way to perform feature selection is by using the heatmap display within pytourr. The heatmap supports three different display metrics for feature selection:
+ 15 features, making it necessary to reduce the dimensionality of the dataset. An effective and intuitive way to perform feature selection is by using the heatmap display within pytourr. The heatmap supports three different display metrics \(m\) for feature selection:
 
 \[
-\text{Total Fraction:} \quad \frac{\displaystyle\sum_{i = 1}^{k} \sum_{j = 1}^{p} c_{ij}}{n}
+\text{Total Fraction: } m_{ij} = \frac{c_{ij}}{n}
 \]
 The \textbf{Total Fraction} shows the counts \(c_{ij}\) of the \(i\)-th cluster and \(j\)-th feature, normalized by the total number of observations \(n\).
 
 \[
-\text{Intra Cluster Fraction:} \quad \sum_{i = 1}^{k} \sum_{j = 1}^{p} \frac{c_{ij}}{c_{i}}
+\text{Intra Cluster Fraction: }  m_{ij} = \frac{c_{ij}}{n_{i}} 
 \]
-The \textbf{Intra Cluster Fraction} displays the contribution of each feature within a specific cluster, providing insight into how much a feature contributes to the cluster compared to the overall cluster size \(c_i\).
+The \textbf{Intra Cluster Fraction} shows each feature's contribution to a specific cluster, relative to the cluster's size \(n_i\).
+
 
 \[
-\text{Intra Feature Fraction:} \quad \sum_{j = 1}^{p} \sum_{i = 1}^{k} \frac{c_{ij}}{c_{j}}
+\text{Intra Feature Fraction: } m_{ij} = \frac{c_{ij}}{c_{j}} 
 \]
-The \textbf{Intra Feature Fraction} highlights how a feature contributes across different clusters relative to the overall importance of that feature \(c_j\).
+The \textbf{Intra Feature Fraction} highlights how a feature contributes across different clusters relative to the overall count of that feature \(c_j\).
 
 \begin{figure}[h!]
     \centering
