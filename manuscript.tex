@@ -15,11 +15,11 @@
         Dianne Cook\,\orcidlink{0000-0002-3813-7155}\\ Econometrics and Business Statistics \\ Monash University \\ Melbourne \And
         Ursula Laa\,\orcidlink{0000-0002-0249-6439}\\ Institute of Statistics \\ BOKU University \\ Vienna}
 %% \AND can be used instead of \And and starts a new line
-\title{Interactively Visualizing Clustering in Multivariate Data Using pytourr}
+\title{Interactively Visualizing Multivariate Market Segmentation Using pytourr}
 
 %% for pretty printing and a nice hypersummary also set:
 \Plainauthor{Matthias Medl, Dianne Cook, Ursula Laa} %% comma-separated
-\Plaintitle{Interactively Visualizing Clustering in Multivariate Data Using pytourr} %% without formatting
+\Plaintitle{Interactively Visualizing Multivariate Market Segmentation Using pytourr} %% without formatting
 \Shorttitle{pytourr} %% a short title (if necessary)
 
 %% an abstract and keywords
@@ -71,12 +71,34 @@ Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
 
 \section{Introduction}
 
-\begin{itemize} \itemsep 0in
-\item Background to clustering analysis
-\item Visualising clusters, including tours
-\item Difference between clustering and partitioning
-\item How do you know whether the results are useful
-\end{itemize}
+Clustering algorithms are often used to find a smaller number of observations (the cluster means) that adequately summarize a much larger number of observations. For market segmentation, clustering can allow partitioning of observations into a small number of groups, by incorporating associations between the variables. Market segmentation supports targeted approaches to different groups of customers based on common traits.  It provides a data-driven solution to partitioning customer data. \cite{leisch2018market} provides an extensive overview of using clustering for market segmentation. 
+
+A difference between clustering analysis and partitioning is typically the nature of the data. With cluster analysis, we usually envision data that contains separated clusters, and a successful clustering result is one that divides the data based on these gaps. With partitioning, it is usual that there are no gaps in the data, but it is still useful to partition the data. Figure \ref{kmeans-partition} illustrates how the $k$-means algorithm would partition a 2D data set into four groups depending on the correlation between the two variables.  When the correlation is high, the partitioning will be along the combination of variables that produces the highest variance. With lower correlation, it will segment the bottom and top, and divide the middle into two parts in the opposite direction. When there is no association, the partitioning is radial like a windmill.
+
+\begin{figure*}[h]
+\centerline{\includegraphics[width=1\textwidth]{images/intro1.png}}
+\caption{Examples of how $k$-means partitions 2D data with different association structure. If the correlation is high (c), the partitioning happens along the primary direction of the association.}
+\label{kmeans-partition}
+\end{figure*}
+
+One can see that the data is perfectly divided into four parts. However, if one were to plot the two variables individually, this would not be obvious. Figure \ref{kmeans-histogram} shows histograms of the two variables, V1, V2, with the colour matching the four partitions. From the histograms, we can see some differences in the partitions for the four different association structures, but they are all overlapping. The distinct border between the partitions can only be seen from the scatterplots of both variables. 
+
+\begin{figure*}[ht]
+\centerline{\includegraphics[width=1\textwidth]{images/intro2.png}}
+\caption{The four $k$-means partitions plotted as histograms of the individual variables. While differences between groups can be seen, the clear separation cannot. This is important for understanding why high-dimensional visualisation methods are useful for summarising partitioning results.}
+\label{kmeans-histogram}
+\end{figure*}
+
+When there are more than two variables, histograms of the individual variables are commonly used to display the partitioning results. This means that the analyst likely cannot understand how the partitioning divides the data. All that they can observe is roughly how the individual variables relate to the partition, which is useful but inadequate. Here is where using tour methods to view high dimensions can be helpful. A tour (XXX general tour and recent tour) can be used to show scatterplots of combinations of variables and thus provide views like that in Figure \ref{kmeans-partition} where distinct differences between partitions can be observed. High dimensions are still tricky, and a combination of animations of the linear combinations, and interactive control (XXX REF radial/manual tour) over the combinations is important. A scatterplot of a combination of variables can be considered to be a projection of the data, and thus like a shadow of a 3D object, some aspects of the data (object) can be obscured. Using slices of the projected data (XXX REF) can be a useful addition to projections. This paper illustrates how to do this to better understand partitioning results for multivariate data.
+
+%\begin{itemize} \itemsep 0in
+%\item Background to clustering analysis
+%\item Visualising clusters, including tours
+%\item Difference between clustering and partitioning
+%\item How do you know whether the results are useful
+%\end{itemize}
+
+This paper is organised as follows XXX The methods are illustrated using Austrian and Australian tourism data provided in \cite{leisch2018market}.
 
 \section{Related Work}
 
