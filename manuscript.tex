@@ -100,19 +100,26 @@ When there are more than two variables, histograms of the individual variables a
 
 This paper is organised as follows XXX The methods are illustrated using Austrian and Australian tourism data provided in \cite{leisch2018market}.
 
-\section{Related Work}
+\section{Interactive interface for partitioning}
 
-Previous attempts have been made to bring interactivtiy to the tourr package. The galahr package \citep{galahr} was an attempt to so by means of the R packages shiny \citep{shiny} and plotly \citep{plotly}, but ultimately suffered from performance issues when the size of the investigated dataset became too large (n>10 000). To overcome these issues, the detourr package \citep{detourr}, which precomputes multiple projections in R and subsequently visualizes them in an interactive display using Javascript, has been developed. While detourr showed better performance, the interactivtiy is still limited as only precomputed projections can be displayed and there is no option to show multiple linked displays simultaneously. The mmtour package \citep{laa2023new} is a \proglang{Mathamatica} implementation allowing for interaction with manual and slice tours.  
+The aim of this work is to build an interface that allows for an interactive exploration of partitioning solutions of multivariate data. The interface should enable
 
-\section{The pytourr package}
+\begin{itemize}
+\item visualizing a clustering solution with different tour methods, including manual changes to the viewing direction (manual tour)
+\item brushing of (groups of) points for manual refinement of the cluster solution (spin-and-brush capabilities)
+\item additional linked displays for comprehensive exploration of the solution
+\item ability to update the displays based on user selections
+\end{itemize}
 
-\subsection{Overview}
+While tour animations are best obtained within R using the tourr package~\citep{tourr}, it does not enable the interactivity required for example for a manual tour~\citep{laa2023new}. Interactive graphics are available when using Javascript, as implemented in the detourr package \citep{detourr}. This allows to replay a recorded tour path with interactive graphics, and can also be linked with additional displays, but lacks capabilities for manual tours.
 
-The primary objective of this work is to develop an R package that integrates high-performance interactivity through Python packages, such as \texttt{TKinter} \citep{lundh1999introduction}, \texttt{CustomTKinter} \citep{schimansky24}, and \texttt{matplotlib} \citep{Hunter:2007}, with the tourr package \citep{tourr}. This integration is achieved via \texttt{reticulate} \citep{reticulate}, a framework that facilitates seamless interoperability between Python and R.
+To integrate user interactions with the capabilities of the tourr package an active communitcation with the interface is required. For example, we may wish to explore the local neighbourhood of a projection selected by the user with a local tour animation provided by tourr, or we may want to optimize a guided tour path using groups identified via brushing.
+Our solution is using Python for high-performance interactivity, through the packages \texttt{TKinter} \citep{lundh1999introduction}, \texttt{CustomTKinter} \citep{schimansky24}, and \texttt{matplotlib} \citep{Hunter:2007}, with integration to the tourr package \citep{tourr} via \texttt{reticulate} \citep{reticulate}, a framework that facilitates seamless interoperability between Python and R.
+\textcolor{red}{also rpy2?}
 
-At the core of the \texttt{pytourr} package is a graphical user interface (GUI) designed to display multiple linked visualizations concurrently. Users can interact with one of the plots, for example, by subselecting specific data points, and the other linked plots will dynamically update to reflect these modifications. This interconnected functionality allows for efficient and immediate analysis of high-dimensional datasets without necessitating extensive coding, thereby streamlining the exploratory data analysis process.
+%At the core of the \texttt{pytourr} package is a graphical user interface (GUI) designed to display multiple linked visualizations concurrently. Users can interact with one of the plots, for example, by subselecting specific data points, and the other linked plots will dynamically update to reflect these modifications. This interconnected functionality allows for efficient and immediate analysis of high-dimensional datasets without necessitating extensive coding, thereby streamlining the exploratory data analysis process.
 
-In addition to this core functionality, \texttt{pytourr} offers a variety of interactive plot types, providing users with the flexibility to visualize their data from multiple perspectives. The ability to navigate through various projections of the displayed tours directly within the GUI enables users to explore different aspects of the dataset with ease. Furthermore, users can initiate new tours directly from the interface. The GUI also supports interactive feature selection, allowing users to specify which subset of features should be visualized in the plots. Once users have identified interesting views or settings, \texttt{pytourr} allows them to save the displayed projections, subsets, and plots. This functionality ensures that analysis states can be preserved for further examination or reporting, making the package particularly useful for iterative analysis where findings may need to be revisited or shared with collaborators.
+The interface was implemented in \texttt{pytourr} and offers a variety of linked interactive plot types, providing users with the flexibility to visualize their data from multiple perspectives. The ability to navigate through various projections of the displayed tours directly within the GUI enables users to explore different aspects of the dataset. Furthermore, users can initiate new tours directly from the interface. The GUI also supports interactive variable selection, allowing users to specify which subset of variables should be visualized in the plots. Once users have identified interesting views or settings, \texttt{pytourr} allows them to save the displayed projections, subsets, and plots. This functionality ensures that analysis states can be preserved for further examination or reporting, making the package particularly useful for iterative analysis where findings may need to be revisited or shared with collaborators.
 
 With its high level of interactivity, performance, and ease of use, \texttt{pytourr} streamlines the exploration of complex datasets, offering a powerful tool for researchers working with high-dimensional data.
 
@@ -157,6 +164,41 @@ The selector classes handle the behavior when users manually select data points 
 The implementation of bit blitting was crucial to ensuring fast plot updates and providing a smooth user experience. With bit blit, the static elements of the display, such as the outer frames of the plots, are stored as a background image. When a plot is manipulated, only the affected plot is updated, and within that, only the interactive elements, such as the data points and projection axes in a 2-dimensional tour, are rendered on top of the background image.
 
 In practice, this means that the background, without the interactive elements, must be captured either during initialization or after major updates. The entire plot is first rendered without the interactive elements, the background is then saved, and finally, the plot is redrawn with the interactive elements blended in. Since this process is relatively slow, full updates are only triggered during initialization or after significant changes, such as modifications to the set of active features.
+
+\section{Workflow with the pytourr package}
+
+Before launching the pytourr interface the user should have performed a partitioning of their choice, and provide the initial clustering solution used by the interface. We launch the interface to explore and potentially refine this solution.
+
+\subsection{Variable selection}
+
+A first step may look into what variables are important for the cluster solution. The interface provides different capabilites that support variable selection. First, a 2D tour view can be used to understand the sensitivity of the grouping to individual varaibles, in particular when using the manual tour to remove one variable at a time. This is in particular useful when the starting view was obtained through a projection pursuit guided tour REF that optimized for the separation between the labeled groups REF.
+
+In our applications we are considering market segmentation analysis on binary variables. For this setting we have developed a heatmap display that we have found to be particularly useful in variable selection. The idea is to understand differences in the binary ratings between clusters, where we use different normalizations to better explore the data. For \(c_{ij}\) the count (number of true values in the binary variable) in the \(i\)-th cluster and \(j\)-th variable, we define
+
+
+\[
+\text{Overall count fraction}\ f_{ij} = \frac{c_{ij}}{n}
+\]
+with normalization to the total number of observations $n$ for a general overview,
+
+\[
+\text{Cluster count fraction}\  f_{ij} = \frac{c_{ij}}{n_{i}}
+\]
+showing the counts relative to the cluster's size \(n_i\), to see the fraction of observations in cluster $i$ for which variable $j$ was true, and
+
+
+\[
+\text{Variable count fraction}\ f_{ij} = \frac{c_{ij}}{c_{j}}
+\]
+to see how the true values for variable $j$ are distributed accross the different clusters relative, with normalization to the overall count of that feature \(c_j = \sum_i c_{ij}\).
+ 
+\textcolor{red}{different symbol for each? indicat on the index value somehow?}
+
+\subsection{Subset selection}
+
+The spin-and-brush approach suggests to cluster data manually when using a tour: we run a tour animation, stop when we see a group of points that are different from the rest of the distribution, brush them, and then continue. Different projections will enable the separation of different groups, and for well-separated clusters we will be able to recover a full cluster solutions in this manner.
+
+A similar approach can be used to refine a partitioning solution. This is in particular useful to integrate prior knowledge or business interests in a given cluster solution. In the interface we can keep the provided clustering, but separate out new subsets via manual selection, for example after we found a group of particular interest via a manual tour.
 
 \subsection{Reproducibility}
 
