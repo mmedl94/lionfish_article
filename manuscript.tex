@@ -130,7 +130,7 @@ The \texttt{pytourr} GUI can be launched using the function \texttt{interactive\
 
 The GUI is divided into two main sections: a sidebar on the left, which contains a comprehensive set of interactive controls, and the display area on the right, where the selected plots are shown (see Figure \ref{fig:GUI_overview}).
 
-At the top of the sidebar, users can select and deselect features via checkboxes (Figure \ref{fig:GUI_overview}C), controlling which features are displayed in the plots. Below that, each subset has a checkbox to designate the active subset (Figure \ref{fig:GUI_overview}D). When data points are manually selected in the plots, they will be assigned to the active subset and colored accordingly. The colored boxes next to the subset names indicate the color of the data points. Clicking these boxes adjusts the transparency of the points, which is useful for highlighting and comparing subsets. Subsets can also be renamed using the textboxes. The "Reset original selection" button allows users to revert the subset selections to the initial state.
+At the top of the sidebar, users can select and deselect features using checkboxes (Figure \ref{fig:GUI_overview}C), controlling which features are displayed in the plots. Below this, each subset has its own checkbox to designate the active subset (Figure \ref{fig:GUI_overview}D). When data points are manually selected in the plots, they will be assigned to the active subset and colored accordingly. For scatterplots, data points can be selected by encircling them directly on the plot while holding down the left mouse button. For barplots, clicking on a specific bar selects the data represented by that bar. The colored boxes next to the subset names indicate the assigned colors for the data points. Clicking on these boxes adjusts the transparency of the points, which is helpful for highlighting and comparing subsets. Subsets can also be renamed using the provided text boxes. The "Reset original selection" button allows users to revert the subset selections to their initial state.
 
 The frame selection interface (Figure \ref{fig:GUI_overview}E) displayes the frames of the currently shown tours and enables users to jump between frames of the tour objects. Below this, users can save and load projections and subsets using the respective buttons (Figure \ref{fig:GUI_overview}F). New tours can be started using the current settings via the interface at the bottom (Figure \ref{fig:GUI_overview}G), and users can select different metrics for some plot types e.g. heatmaps (Figure \ref{fig:GUI_overview}H).
 
@@ -157,7 +157,7 @@ However, to reduce inefficiencies caused by cross-language communication and to 
 
 The central component of the Python code is the \texttt{customTKinter} class \texttt{InteractiveTourInterface}. This class centrally stores attributes related to all plots, such as the dataset, subselections, feature selections, and other shared information. Plot-specific data is organized in dictionaries (the Python equivalent of named lists in R), including the display type, construction instructions, tour projections (only in case of tour displays), color schemes for the displayed data, and, where applicable, the selector and manual projection manipulation classes.
 
-The selector classes handle the behavior when users manually select data points to move them to the active subset. After a selection is made, the selector class updates the centrally stored subselection attribute and ensures all other displays reflect these changes. The manual projection manipulation classes construct the arrows representing the projection axes in the displays and manage the manual adjustment of projections. Users can right-click and drag the arrowheads to modify the projections, after which the class orthonormalizes the projection axes and updates both the projection and the transformed data accordingly.
+The selector classes handle the behavior when users manually select data points to move them to the active subset. After a selection is made, the selector class updates the centrally stored subselection attribute and ensures all other displays reflect these changes. The manual projection manipulation classes construct the arrows representing the projection axes in the displays and manage the manual adjustment of projections, and thus enable manual tours. Users can right-click and drag the arrowheads to modify the projections, after which the class orthonormalizes the projection axes and updates both the projection and the transformed data accordingly.
 
 \subsection{Bit blit}
 
@@ -236,23 +236,7 @@ To gain further insight into the dataset a k-means clustering as described in th
 \subsubsection{Feature selection}
 
 The original dataset contains \(p\)=27 features. Some of these features are more informative than others. We only want to keep the most informative ones. Additionally, interacting with the pytourr GUI becomes cumbersome when handling more than \textasciitilde
- 15 features, making it necessary to reduce the dimensionality of the dataset. An effective and intuitive way to perform feature selection is by using the heatmap display within pytourr. The heatmap supports three different display metrics \(m\) for feature selection:
-
-\[
-\text{Total Fraction: } m_{ij} = \frac{c_{ij}}{n}
-\]
-The \textbf{Total Fraction} shows the counts \(c_{ij}\) of the \(i\)-th cluster and \(j\)-th feature, normalized by the total number of observations \(n\).
-
-\[
-\text{Intra Cluster Fraction: }  m_{ij} = \frac{c_{ij}}{n_{i}} 
-\]
-The \textbf{Intra Cluster Fraction} shows each feature's contribution to a specific cluster, relative to the cluster's size \(n_i\).
-
-
-\[
-\text{Intra Feature Fraction: } m_{ij} = \frac{c_{ij}}{c_{j}} 
-\]
-The \textbf{Intra Feature Fraction} highlights how a feature contributes across different clusters relative to the overall count of that feature \(c_j\).
+ 15 features, making it necessary to reduce the dimensionality of the dataset. An effective and intuitive way to perform feature selection is by using the heatmap display within pytourr. 
 
 \begin{figure}[h!]
     \centering
@@ -267,7 +251,7 @@ In Figure \ref{fig:winteractiv_heatmap}B, we can determine whether tourists in a
 
 By using the heatmap with these metrics, we can perform feature selection by removing unpopular activities and those that were consistently similar across all clusters. After performing the feature selection by unchecking the corresponding checkboxes in the GUI using this strategy, the following 12 activities remained: alpine skiing, going to a spa, using health facilities, hiking, going for walks, excursions, going out in the evening, going to discos/bars, shopping, sightseeing, museums, and pool/sauna.
 
-We can now repeat the k-means clustering with \texttt{stepcclust} on the reduced dataset. Silhouette plots of both cluster solutions can be seen in Figure \ref{fig:silhouette_comparison}. By comparing both silhouette plots, we can see that the cluster solution with the reduced dataset results in a clustering of higher quality. Thus, we will continue with the analysis on the reduced dataset with the corresponsig cluster solution. We can also see in Figure \ref{fig:silhouette_comparison}B that cluster 3 is of comparatively low quality.
+We can now repeat the k-means clustering with \texttt{stepcclust} on the reduced dataset. Silhouette plots of both cluster solutions can be seen in Figure \ref{fig:silhouette_comparison}. By comparing both silhouette plots, we can see that the cluster solution with the reduced dataset results in a clustering of higher quality. Thus, we will continue with the analysis on the reduced dataset with the corresponsig cluster solution. We can also see in Figure \ref{fig:silhouette_comparison}B that cluster 3 is of comparatively low quality. It is important to note that the silhouette scores were generally quite low, reflecting the lack of clearly separable clusters in the data. Consequently, there is no objectively correct or optimal solution. The primary aim of this analysis, therefore, is to gain insights into the data rather than to identify the optimal clustering configuration.
 
 \begin{figure}[h!]
     \centering
@@ -327,36 +311,68 @@ This setup produces the display shown in Figure \ref{fig:winter_cl7_init}. It ca
     \label{fig:winter_cl7_post}
 \end{figure}
 
-To evaluate whether the manually enhanced cluster solution reduces the number of poorly fitting observations, we can compare the silhouette plots of this new solution with those from a k-means solution where \(k = 7\). Figure \ref{fig:silhouette_comparison_k7_man} shows that the manually enhanced cluster solution better describes the data compared to the k-means solution with \(k = 7\).
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=1\textwidth]{silhouette_comparison_k7_man.png}
-    \caption{A: Silhouette plot of the k-means solution with \(k=7\). B: Silhouette plot of the manually enhanced k-means solution with \(k=6\).}
-    \label{fig:silhouette_comparison_k7_man}
-\end{figure}
 
 We can observe slight behavioral differences between tourists in clusters 1 and 7. Tourists in cluster 7 all enjoyed both museums and sightseeing, whereas most tourists in cluster 1 engaged in sightseeing but showed no interest in museums. Instead, participants in cluster 1 exhibited a greater preference for hiking. Despite this, tourists in both clusters generally shared similar interests. This insight could be valuable for enhancing museum marketing strategies. While clusters 1 and 7 have overlapping interests, it appears that current marketing efforts may not effectively reach tourists in cluster 1. By increasing targeted marketing at hiking trails, popular excursion destinations, and shopping centers, it may be possible to attract more interest in museums from tourists in cluster 1.
 
-
-
-!Note to this section! comparing the average shilouette scores indictes that the original k=6 solutiuon is best, even though in my opinion the plots look better with the manual solution. The scores are:
-
-k=6: 0.1460762
-
-k=7: 0.1336373
-
-k=6 + manual: 0.1408945
-
-Let me know what you think
-
-
 \subsection{Australian Vacation Activities dataset}
 
-The second dataset, the Australian Vacation Activities dataset, includes responses from 1,003 adult Australians who were surveyed through a permission-based internet panel. The survery was conducted in 2007. Participants were asked whether they engaged in 44 specific vacation activities during their most recent vacation within Australia. Similar to the Austrian dataset, responses were binarized: a value of 1 indicates that the participant took part in the activity, while a value of 0 signifies they did not.
+The second dataset, the Australian Vacation Activities dataset, includes responses from 1,003 adult Australians who were surveyed through a permission-based internet panel. The survery was conducted in 2007. Participants were asked whether they engaged in 44 specific vacation activities during their most recent vacation within Australia. Similar to the Austrian dataset, responses were binarized: a value of 1 indicates that the participant took part in the activity, while a value of 0 signifies they did not. Suvreys where participants claimed they partook in more than 40 activities or no activity at all were removed as they are considered faulty.
+
+\subsubsection{Feature selection}
+
+At first, hierarchical clustering using Ward's method \citep{ward2} and the Jaccard index was applied to the features. The resulting dendrogram is shown in Figure \ref{fig:aus_feature _clustering}. Based on this clustering, \( k = 15 \) clusters were identified, and generally, only one representative feature from each cluster was selected for further analysis. Clusters containing unpopular activities, such as "Adventure", which only had 42 participants, were discarded. The cluster containing popular features like "Beach," "Swimming," "ScenicWalks," "Markets," "Sightseeing," "Friends," "Pubs," "BBQ," "Shopping," "Eating," "EatingHigh," "Movies," and "Relaxing" was treated differently. Multiple features from this cluster were retained to preserve as much information as possible. After feature selection, the observations were reclustered using k-means with \( k = 15 \).
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{aus_feature_clustering.png}
+    \caption{Dendogram of the features of the Australian Vacation Activities dataset using Ward's method with the Jaccard index.}
+    \label{fig:aus_feature_clustering}
+\end{figure}
+
+\subsubsection{Manual cluster selection}
+
+In the heatmap displaying the intra-cluster fraction shown in Figure \ref{fig:aus_heatmapg}, we observe that subsets 1, 2, and 6 tend to prefer travelling alone. As a tourist agency, we might be interested in targeting solo travellers more effectively. However, subsets 2 and 6 also include individuals who enjoy spending time with their friends. To further explore the dataset, we can launch an \texttt{interactive\_tour()} with the same configuration as in the previous example. To achieve better separation between the subsets, we can skip to the last frames of a 2 dimensional tour optimized for the LDA index. 
+
+Since we are particularly interested in tourists who did not spend time with friends, we can extend the projection axis "Friends" outward to separate the data based on that feature. Datapoints in the opposite direction of the "Friends" axes are the solo travellers we are interested in, which can be seen in Figure \ref{fig:aus_preselection} on the left side of the top left plot. Subsequently, we can pull all other projection axes in one direction to separate data points based on their overall activity level. Tourists that fall in the direction of the axes generally engaged in more activities compared to those in the opposite direction of the projection axes. This separation is evident, as observations in subset 6 are located opposite the axes, and the heatmap shows that they did not engage in many activities. Similarly we can also see that subset 2, which contains quite active tourists, is shifted towards the direction of the axes.
+
+Using this logic, we can segment the data points on the left into three segments: active tourists (more upward), medium active tourists (center), and largely inactive tourists (bottom). The result of this segmentation can be seen in Figure \ref{fig:aus_selection}. Analyzing the heatmap, we can identify several interesting patterns.
+
+By comparing subset 2, which contains active tourists who spent time with their friends, with subset 7, the active tourists who traveled alone, we notice that subset 7 showed less interest in visiting the casino, theatre, and chartering a boat.
+
+We also observe distinctive differences in the interests of the subsets that traveled alone. Subset 7 was interested in relaxing, shopping, sightseeing, wildlife, going to the beach, visiting pubs, and exploring farms. Given that subset 7 showed a notable interest in going to pubs, we can assume they want to meet new people. This insight can be utilized in a marketing campaign that bundles the activities subset 7 is interested in, creating a package tailored for solo travelers. This way, they can meet other solo travelers while engaging in activities they enjoy.
+
+Although subset 8 was generally less active, almost everyone still engaged in sightseeing. For them, the focus was on sightseeing, relaxing, shopping, and going to the beach, with much less interest in other activities. It can be assumed that they value their time alone. These tourists could potentially be targeted more effectively by offering sightseeing options with minimal interaction, such as using a phone app to provide information about interesting locations, rather than relying on a tour guide.
+
+Finally, since subset 9 is notably inactive, one might infer that they prefer spending much of their time in their accommodation. Consequently, these individuals might be most interested in accommodations that offer well-equipped, comfortable living spaces with amenities that cater to relaxation and leisure.
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{aus_heatmap.png}
+    \caption{Heatmap of the intra cluster fraction of the k-means solution with \( k = 6 \) and the reduced feature subset.}
+    \label{fig:aus_heatmapg}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{aus_preselection.png}
+    \caption{Separation of the data based on the feature "Friends" and the general activity. Top left: 2D tour. Top right: 1D tour. Bottom left: Mosaic plot. Bottom right: Heatmap with the intra cluster fraction.}
+    \label{fig:aus_preselection}
+\end{figure}
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{aus_selection.png}
+    \caption{Separation of the data based on the feature "Friends" and the general activity after reselection of subsets. 
+    Tourists in subsets 7 (pink), 8 (grey) and 9 (gold) all responded thay didn't engage in activities with their friends. Subset 7 was the most active, subset 8 medium active and subset 9 largely inactive. Top left: 2D tour. Top right: 1D tour. Bottom left: Mosaic plot. Bottom right: Heatmap with the intra cluster fraction.}
+    \label{fig:aus_selection}
+\end{figure}
 
 
 \section{Discussion}
+
 
 
 \section{Conclusion}

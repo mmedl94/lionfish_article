@@ -2,10 +2,13 @@
 \providecommand\hyper@newdestlabel[2]{}
 \providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
 \HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
 \global\let\oldnewlabel\newlabel
 \gdef\newlabel#1#2{\newlabelxx{#1}#2}
 \gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
 \AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
 \let\newlabel\oldnewlabel
 \fi}
 \fi}
@@ -34,21 +37,26 @@
 \citation{cliff2009formative}
 \citation{leisch2018market}
 \citation{flexclust}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces A: heatmap displaying the intra cluster fraction. B: heatmap displaying the intra feature fraction.}}{9}{figure.4}\protected@file@percent }
-\newlabel{fig:winteractiv_heatmap}{{4}{9}{A: heatmap displaying the intra cluster fraction. B: heatmap displaying the intra feature fraction}{figure.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces A: heatmap displaying the intra cluster fraction. B: heatmap displaying the intra feature fraction.}}{8}{figure.4}\protected@file@percent }
+\newlabel{fig:winteractiv_heatmap}{{4}{8}{A: heatmap displaying the intra cluster fraction. B: heatmap displaying the intra feature fraction}{figure.4}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces A: silhouette plot of the k-means solution of the full dataset. B: silhouette plot of the k-means solution with the reduced dataset.}}{9}{figure.5}\protected@file@percent }
 \newlabel{fig:silhouette_comparison}{{5}{9}{A: silhouette plot of the k-means solution of the full dataset. B: silhouette plot of the k-means solution with the reduced dataset}{figure.5}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Cluster highlights: \textbf  {A} - Cluster 1 (blue), \textbf  {B} - Cluster 2 (orange), \textbf  {C} - Cluster 3 (green), \textbf  {D} - Cluster 4 (red), \textbf  {E} - Cluster 5 (violet), \textbf  {F} - Cluster 6 (brown).}}{10}{figure.6}\protected@file@percent }
 \newlabel{fig:winter_activ_cluster_highlights}{{6}{10}{Cluster highlights: \textbf {A} - Cluster 1 (blue), \textbf {B} - Cluster 2 (orange), \textbf {C} - Cluster 3 (green), \textbf {D} - Cluster 4 (red), \textbf {E} - Cluster 5 (violet), \textbf {F} - Cluster 6 (brown)}{figure.6}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Top left: 2D tour with the linear discriminant analysis projection pursuit index. Top right: heatmap with the intra-cluster fraction. Bottom left: 1D tour with the linear discriminant analysis projection pursuit index. Bottom right: mosaic plot.}}{11}{figure.7}\protected@file@percent }
 \newlabel{fig:winter_cl7_init}{{7}{11}{Top left: 2D tour with the linear discriminant analysis projection pursuit index. Top right: heatmap with the intra-cluster fraction. Bottom left: 1D tour with the linear discriminant analysis projection pursuit index. Bottom right: mosaic plot}{figure.7}{}}
+\citation{ward2}
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Top left: 2D tour with the linear discriminant analysis projection pursuit index. Top right: heatmap with the intra-cluster fraction. Bottom left: 1D tour with the linear discriminant analysis projection pursuit index. Bottom right: mosaic plot.}}{12}{figure.8}\protected@file@percent }
 \newlabel{fig:winter_cl7_pre}{{8}{12}{Top left: 2D tour with the linear discriminant analysis projection pursuit index. Top right: heatmap with the intra-cluster fraction. Bottom left: 1D tour with the linear discriminant analysis projection pursuit index. Bottom right: mosaic plot}{figure.8}{}}
-\bibdata{pytourr_references.bib}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Top left: 2D tour with the linear discriminant analysis projection pursuit index. Top right: heatmap with the intra-cluster fraction. Bottom left: 1D tour with the linear discriminant analysis projection pursuit index. Bottom right: mosaic plot.}}{13}{figure.9}\protected@file@percent }
 \newlabel{fig:winter_cl7_post}{{9}{13}{Top left: 2D tour with the linear discriminant analysis projection pursuit index. Top right: heatmap with the intra-cluster fraction. Bottom left: 1D tour with the linear discriminant analysis projection pursuit index. Bottom right: mosaic plot}{figure.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Dendogram of the features of the Australian Vacation Activities dataset using Ward's method with the Jaccard index.}}{14}{figure.10}\protected@file@percent }
+\newlabel{fig:aus_feature_clustering}{{10}{14}{Dendogram of the features of the Australian Vacation Activities dataset using Ward's method with the Jaccard index}{figure.10}{}}
+\bibdata{pytourr_references.bib}
 \bibcite{shiny}{{1}{2024}{{Chang \emph  {et~al.}}}{{Chang, Cheng, Allaire, Sievert, Schloerke, Xie, Allen, McPherson, Dipert, and Borges}}}
 \bibcite{cliff2009formative}{{2}{2009}{{Cliff}}{{}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Heatmap of the intra cluster fraction of the k-means solution with \( k = 6 \) and the reduced feature subset.}}{15}{figure.11}\protected@file@percent }
+\newlabel{fig:aus_heatmapg}{{11}{15}{Heatmap of the intra cluster fraction of the k-means solution with \( k = 6 \) and the reduced feature subset}{figure.11}{}}
 \bibcite{dolnicar2003winter}{{3}{2003}{{Dolnicar and Leisch}}{{}}}
 \bibcite{detourr}{{4}{2022}{{Hart and Wang}}{{}}}
 \bibcite{Hunter:2007}{{5}{2007}{{Hunter}}{{}}}
@@ -56,11 +64,12 @@
 \bibcite{galahr}{{7}{2024}{{Laa}}{{}}}
 \bibcite{laa2023new}{{8}{2023}{{Laa \emph  {et~al.}}}{{Laa, Aumann, Cook, and Valencia}}}
 \bibcite{flexclust}{{9}{2006}{{Leisch}}{{}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Separation of the data based on the feature "Friends" and the general activity. Top left: 2D tour. Top right: 1D tour. Bottom left: Mosaic plot. Bottom right: Heatmap with the intra cluster fraction.}}{16}{figure.12}\protected@file@percent }
+\newlabel{fig:aus_preselection}{{12}{16}{Separation of the data based on the feature "Friends" and the general activity. Top left: 2D tour. Top right: 1D tour. Bottom left: Mosaic plot. Bottom right: Heatmap with the intra cluster fraction}{figure.12}{}}
 \bibcite{leisch2018market}{{10}{2018}{{Leisch \emph  {et~al.}}}{{Leisch, Dolnicar, and Gr{\"u}n}}}
 \bibcite{lundh1999introduction}{{11}{1999}{{Lundh}}{{}}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces A: Silhouette plot of the k-means solution with \(k=7\). B: Silhouette plot of the manually enhanced k-means solution with \(k=6\).}}{14}{figure.10}\protected@file@percent }
-\newlabel{fig:silhouette_comparison_k7_man}{{10}{14}{A: Silhouette plot of the k-means solution with \(k=7\). B: Silhouette plot of the manually enhanced k-means solution with \(k=6\)}{figure.10}{}}
 \bibcite{schimansky24}{{12}{2024}{{Schimansky}}{{}}}
 \bibcite{reticulate}{{13}{2024}{{Ushey \emph  {et~al.}}}{{Ushey, Allaire, and Tang}}}
 \bibcite{tourr}{{14}{2011}{{Wickham \emph  {et~al.}}}{{Wickham, Cook, Hofmann, and Buja}}}
-\gdef \@abspage@last{15}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Separation of the data based on the feature "Friends" and the general activity after reselection of subsets. Tourists in subsets 7 (pink), 8 (grey) and 9 (gold) all responded thay didn't engage in activities with their friends. Subset 7 was the most active, subset 8 medium active and subset 9 largely inactive. Top left: 2D tour. Top right: 1D tour. Bottom left: Mosaic plot. Bottom right: Heatmap with the intra cluster fraction.}}{17}{figure.13}\protected@file@percent }
+\newlabel{fig:aus_selection}{{13}{17}{Separation of the data based on the feature "Friends" and the general activity after reselection of subsets. Tourists in subsets 7 (pink), 8 (grey) and 9 (gold) all responded thay didn't engage in activities with their friends. Subset 7 was the most active, subset 8 medium active and subset 9 largely inactive. Top left: 2D tour. Top right: 1D tour. Bottom left: Mosaic plot. Bottom right: Heatmap with the intra cluster fraction}{figure.13}{}}
