@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.3.16)  21 SEP 2024 12:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.3.16)  23 SEP 2024 16:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -941,7 +941,7 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [10 <./images/winter_activ_cluster_highlights.png>]
-<images/winter_cl7_pre.png, id=240, 939.51pt x 939.51pt>
+<images/winter_cl7_pre.png, id=241, 939.51pt x 939.51pt>
 File: images/winter_cl7_pre.png Graphic file (type png)
 <use images/winter_cl7_pre.png>
 Package pdftex.def Info: images/winter_cl7_pre.png  used on input line 302.
@@ -950,7 +950,7 @@ Package pdftex.def Info: images/winter_cl7_pre.png  used on input line 302.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/winter_cl7_post.png, id=241, 939.51pt x 939.51pt>
+<images/winter_cl7_post.png, id=242, 939.51pt x 939.51pt>
 File: images/winter_cl7_post.png Graphic file (type png)
 <use images/winter_cl7_post.png>
 Package pdftex.def Info: images/winter_cl7_post.png  used on input line 309.
@@ -981,12 +981,12 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [12 <./images/winter_cl7_pre.png>]
-<images/aus_feature_clustering.png, id=256, 702.2235pt x 506.49225pt>
+<images/aus_feature_clustering.png, id=257, 1081.03876pt x 451.6875pt>
 File: images/aus_feature_clustering.png Graphic file (type png)
 <use images/aus_feature_clustering.png>
 Package pdftex.def Info: images/aus_feature_clustering.png  used on input line 
 328.
-(pdftex.def)             Requested size: 442.65375pt x 319.26956pt.
+(pdftex.def)             Requested size: 442.65375pt x 184.95184pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -997,26 +997,24 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [13 <./images/winter_cl7_post.png>]
-Overfull \hbox (10.94998pt too wide) has occurred while \output is active
-\T1/lmr/m/n/10.95 14 []
- []
-
-[14 <./images/aus_feature_clustering.png>]
-<images/aus_heatmap.png, id=276, 2104.86375pt x 1865.97125pt>
+<images/aus_heatmap.png, id=270, 2104.86375pt x 1865.97125pt>
 File: images/aus_heatmap.png Graphic file (type png)
 <use images/aus_heatmap.png>
 Package pdftex.def Info: images/aus_heatmap.png  used on input line 352.
 (pdftex.def)             Requested size: 442.65375pt x 392.40651pt.
-<images/aus_preselection.png, id=277, 939.51pt x 939.51pt>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/aus_preselection.png, id=271, 939.51pt x 939.51pt>
 File: images/aus_preselection.png Graphic file (type png)
 <use images/aus_preselection.png>
 Package pdftex.def Info: images/aus_preselection.png  used on input line 359.
 (pdftex.def)             Requested size: 442.65375pt x 442.64494pt.
 
-
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/aus_selection.png, id=278, 939.51pt x 939.51pt>
+<images/aus_selection.png, id=272, 939.51pt x 939.51pt>
 File: images/aus_selection.png Graphic file (type png)
 <use images/aus_selection.png>
 Package pdftex.def Info: images/aus_selection.png  used on input line 367.
@@ -1024,7 +1022,18 @@ Package pdftex.def Info: images/aus_selection.png  used on input line 367.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-(./manuscript.bbl
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10.95 14 []
+ []
+
+[14 <./images/aus_feature_clustering.png (PNG copy)>]
+Underfull \vbox (badness 2293) has occurred while \output is active []
+
+
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/lmr/m/n/10.95 15
  []
@@ -1035,6 +1044,14 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [16 <./images/aus_preselection.png>]
+Underfull \vbox (badness 2189) has occurred while \output is active []
+
+
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[] \T1/lmr/m/n/10.95 17
+ []
+
+[17 <./images/aus_selection.png>] (./manuscript.bbl
 Underfull \hbox (badness 7631) in paragraph at lines 75--79
 []\T1/lmr/m/n/10.95 Lundh F (1999).  ``An in-tro-duc-tion to tk-in-ter.''  \T1/
 lmr/m/it/10.95 URL: www. python-ware.
@@ -1046,12 +1063,7 @@ Underfull \hbox (badness 4927) in paragraph at lines 81--84
 m/n/10.95 https : / / github . com / TomSchimansky /
  []
 
-
-Overfull \hbox (10.94998pt too wide) has occurred while \output is active
-[] \T1/lmr/m/n/10.95 17
- []
-
-[17 <./images/aus_selection.png>])
+)
 
 Package natbib Warning: There were undefined citations.
 
@@ -1061,43 +1073,60 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 385.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 385.
- (./manuscript.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 385.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 385.
-Package rerunfilecheck Info: File `manuscript.out' has not changed.
-(rerunfilecheck)             Checksum: 45EB0A96BF208C643AC28A5FC22244AE;2220.
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[] \T1/lmr/m/n/10.95 19
+ []
 
+[19]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 401.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 401.
+ (./manuscript.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 401.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 401.
+
+
+Package rerunfilecheck Warning: File `manuscript.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `manuscript.out':
+(rerunfilecheck)             Before: 45EB0A96BF208C643AC28A5FC22244AE;2220
+(rerunfilecheck)             After:  F8551E4280E1CDD2809758A904C803E3;2312.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 385.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 401.
  ) 
 Here is how much of TeX's memory you used:
- 18493 strings out of 481239
- 348322 string characters out of 5920377
+ 18496 strings out of 481239
+ 348500 string characters out of 5920377
  595022 words of memory out of 5000000
  33252 multiletter control sequences out of 15000+600000
  601038 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  76i,13n,72p,1246b,840s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
-ips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share
-/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
--ts1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share
-/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm
-/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texm
-f/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi
-8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts
-/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb>
-</usr/share/texmf/fonts/type1/public/lm/lmro10.pfb></usr/share/texmf/fonts/type
-1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on manuscript.pdf (18 pages, 8400801 bytes).
+pdfTeX warning (dest): name{Subsubsection.4.2.1.Manual\040cluster\040selectio
+n.3} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Subsubsection.4.1.1.Manual\040cluster\040selection.
+3} has been referenced but does not exist, replaced by a fixed one
+
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvip
+s/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/t
+exmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-t
+s1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/t
+exmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/l
+mbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/
+fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.
+pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></
+usr/share/texmf/fonts/type1/public/lm/lmro10.pfb></usr/share/texmf/fonts/type1/
+public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on manuscript.pdf (19 pages, 8456285 bytes).
 PDF statistics:
- 386 PDF objects out of 1000 (max. 8388607)
- 326 compressed objects within 4 object streams
- 84 named destinations out of 1000 (max. 500000)
+ 393 PDF objects out of 1000 (max. 8388607)
+ 333 compressed objects within 4 object streams
+ 87 named destinations out of 1000 (max. 500000)
  235 words of extra memory for PDF output out of 10000 (max. 10000000)
 

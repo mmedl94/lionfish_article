@@ -274,7 +274,7 @@ This process allows us to visually assess the separation and similarities betwee
 By manually manipulating the projection axes or initiating a local tour, we can gain further insight into the similarities between the different clusters. This interactive exploration allows for a more nuanced understanding of the relationships between clusters and the influence of key features on the separation of the data.
 
 
-\subsubsection{Manual cluster selection}
+\subsubsection{Redefing cluster assignments - learning more about museum goers}
 
 There are several reasons why we might want to manually modify a clustering solution. One is to capture observations that do not fit well within their assigned clusters. Another reason is to explore specific features in more detail. The advantage of manual cluster selection is that it preserves most of the current clustering structure, allowing us to adjust specific parts of the solution without starting from scratch. This approach is particularly useful when we already have a cluster solution that reveals interesting patterns in the data.
 
@@ -330,7 +330,7 @@ At first, hierarchical clustering using Ward's method \citep{ward2} and the Jacc
     \label{fig:aus_feature_clustering}
 \end{figure}
 
-\subsubsection{Manual cluster selection}
+\subsubsection{Segmentation of solo travellers}
 
 In the heatmap displaying the intra-cluster fraction shown in Figure \ref{fig:aus_heatmapg}, we observe that subsets 1, 2, and 6 tend to prefer travelling alone. As a tourist agency, we might be interested in targeting solo travellers more effectively. However, subsets 2 and 6 also include individuals who enjoy spending time with their friends. To further explore the dataset, we can launch an \texttt{interactive\_tour()} with the same configuration as in the previous example. To achieve better separation between the subsets, we can skip to the last frames of a 2 dimensional tour optimized for the LDA index. 
 
@@ -373,9 +373,25 @@ Finally, since subset 9 is notably inactive, one might infer that they prefer sp
 
 \section{Discussion}
 
+One might question the necessity of manual exploratory data analysis, considering it is inherently subjective and relies heavily on intuition. However, in situations like those presented here, where there is no clearly defined or optimal clustering solution or feature selection, manual exploration becomes indispensable. While it is possible to optimize clustering metrics to improve separation between clusters, this alone may not yield conclusions that are useful for practical applications. The lack of clear boundaries and the overlapping nature of clusters in the datasets underscore the limitations of purely automated methods in capturing the complexity and nuance of real-world data.
+
+In such cases, manual exploration allows analysts to interweave expert knowledge, intuition, and specific objectives with the initial clustering solution, which serves as the backbone of the analysis. This approach is particularly valuable when no single solution can be deemed “correct.” For instance, in the Austrian dataset, leveraging the interactive GUI for feature selection enabled us to isolate the most informative activities and gain deeper insights into the preferences of tourists who might be interested in visiting museums. This understanding facilitated targeted recommendations for increasing museum attendance by focusing on tourists frequenting hiking trails, excursion spots, and shopping centers. Such insights are challenging to extract through automated optimization alone.
+
+Similarly, in the Australian dataset, manual exploration allowed us to refine the understanding of solo travelers by dividing them into three distinct subsegments: highly active, moderately active, and largely inactive tourists. This nuanced segmentation, derived from a blend of automated clustering and manual adjustments, offers a deeper understanding of the varied needs and behaviors within this group, enabling more effective marketing strategies.
+
+While some plots supported by the pytourr package are specifically designed for analyzing binary survey data, it is important to emphasize that its capabilities extend far beyond this data type. The versatility of tours has been demonstrated across various applications in the past, showcasing their effectiveness in exploring complex, high-dimensional datasets. The interactive GUI enables seamless exploration of both one- and two-dimensional tours, regardless of the data being analyzed, providing a powerful tool for uncovering patterns and insights across diverse domains.
 
 
 \section{Conclusion}
+
+Ultimately, manual data exploration serves as a crucial complement to automated methods, providing the flexibility to incorporate context, expert judgment, and specific analytical goals. This approach enables analysts to refine initial results and adapt them to the complexities of real-world scenarios, leading to more nuanced interpretations and actionable insights. The pytourr package offers a user-friendly and powerful tool for conducting such analyses, bridging the gap between automated clustering and interactive exploration.
+
+By integrating interactive visualization capabilities, the pytourr package empowers users to dynamically engage with their data, making it possible to uncover subtle patterns and relationships that might otherwise remain hidden. This flexibility is particularly valuable in complex datasets where traditional methods may fall short. Additionally, the package's broad applicability across various data types and analytical contexts highlights its potential as a versatile tool for a wide range of research and practical applications.
+
+Looking forward, expanding the interactive features and supporting additional visualization and data types could further enhance the package’s utility, making it an even more powerful tool for exploratory data analysis. Future developments could also include integrating advanced machine learning techniques, such as enabling users to generate new cluster solutions directly within the GUI. Another promising direction would be the implementation of sliced tours, which would enhance the package's capability to analyze concave and nonlinear structures.
+
+In summary, pytourr represents a significant advancement in the toolkit of data analysts, offering a novel way to balance automated analysis with human intuition and domain expertise, thereby facilitating a deeper and more comprehensive understanding of complex datasets.
+
 
 %\bibliographystyle{plainat}
 \bibliography{pytourr_references.bib}
