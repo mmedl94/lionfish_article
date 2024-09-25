@@ -1,4 +1,4 @@
-\begin{thebibliography}{14}
+\begin{thebibliography}{15}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -9,18 +9,29 @@
   \urlstyle{rm}\Url}\fi
 \providecommand{\eprint}[2][]{\url{#2}}
 
-\bibitem[{Chang \emph{et~al.}(2024)Chang, Cheng, Allaire, Sievert, Schloerke,
-  Xie, Allen, McPherson, Dipert, and Borges}]{shiny}
-Chang W, Cheng J, Allaire J, Sievert C, Schloerke B, Xie Y, Allen J, McPherson
-  J, Dipert A, Borges B (2024).
-\newblock \emph{shiny: Web Application Framework for R}.
-\newblock R package version 1.9.1.9000, https://github.com/rstudio/shiny,
-  \urlprefix\url{https://shiny.posit.co/}.
+\bibitem[{Asimov(1985)}]{Asimov1985-xr}
+Asimov D (1985).
+\newblock \enquote{{T}he {G}rand {T}our: {A} {T}ool for {V}iewing
+  {M}ultidimensional {D}ata.}
+\newblock \emph{SIAM Journal of Scientific and Statistical Computing},
+  \textbf{6}(1), 128--143.
+\newblock ISSN 0196-5204.
+\newblock \doi{10.1137/0906011}.
+\newblock \urlprefix\url{http://dx.doi.org/10.1137/0906011}.
 
 \bibitem[{Cliff(2009)}]{cliff2009formative}
 Cliff K (2009).
 \newblock \enquote{A formative index of segment attractiveness: optimising
   segment selection for tourism destinations.}
+
+\bibitem[{Cook and Buja(1997)}]{cook_manual_1997}
+Cook D, Buja A (1997).
+\newblock \enquote{Manual Controls for High-Dimensional Data Projections.}
+\newblock \emph{Journal of Computational and Graphical Statistics},
+  \textbf{6}(4), 464--480.
+\newblock ISSN 1061-8600.
+\newblock \doi{10.2307/1390747}.
+\newblock \urlprefix\url{http://www.jstor.org/stable/1390747}.
 
 \bibitem[{Dolnicar and Leisch(2003)}]{dolnicar2003winter}
 Dolnicar S, Leisch F (2003).
@@ -28,27 +39,20 @@ Dolnicar S, Leisch F (2003).
   vacation styles using bagged clustering techniques.}
 \newblock \emph{Journal of Travel Research}, \textbf{41}(3), 281--292.
 
-\bibitem[{Hart and Wang(2022)}]{detourr}
-Hart C, Wang E (2022).
-\newblock \emph{detourr: Portable and Performant Tour Animations}.
-\newblock R package version 0.1.0,
-  \urlprefix\url{https://casperhart.github.io/detourr/}.
+\bibitem[{Hart and Wang(2023)}]{RJ-2023-052}
+Hart C, Wang E (2023).
+\newblock \enquote{Taking the Scenic Route: Interactive and Performant Tour
+  Animations.}
+\newblock \emph{The R Journal}, \textbf{15}, 307--329.
+\newblock ISSN 2073-4859.
+\newblock \doi{10.32614/RJ-2023-052}.
+\newblock Https://doi.org/10.32614/RJ-2023-052.
 
 \bibitem[{Hunter(2007)}]{Hunter:2007}
 Hunter JD (2007).
 \newblock \enquote{Matplotlib: A 2D graphics environment.}
 \newblock \emph{Computing in Science \& Engineering}, \textbf{9}(3), 90--95.
 \newblock \doi{10.1109/MCSE.2007.55}.
-
-\bibitem[{Inc.(2015)}]{plotly}
-Inc PT (2015).
-\newblock \enquote{Collaborative data science.}
-\newblock \urlprefix\url{https://plot.ly}.
-
-\bibitem[{Laa(2024)}]{galahr}
-Laa U CD (2024).
-\newblock \enquote{galahr.}
-\newblock \url{https://github.com/uschiLaa/galahr}.
 
 \bibitem[{Laa \emph{et~al.}(2023)Laa, Aumann, Cook, and Valencia}]{laa2023new}
 Laa U, Aumann A, Cook D, Valencia G (2023).
@@ -57,6 +61,25 @@ Laa U, Aumann A, Cook D, Valencia G (2023).
   dimensions.}
 \newblock \emph{Journal of Computational and Graphical Statistics},
   \textbf{32}(3), 1229--1236.
+
+\bibitem[{Laa \emph{et~al.}(2020)Laa, Cook, and Valencia}]{Laa2020}
+Laa U, Cook D, Valencia G (2020).
+\newblock \enquote{A Slice Tour for Finding Hollowness in High-Dimensional
+  Data.}
+\newblock \emph{Journal of Computational and Graphical Statistics},
+  \textbf{29}(3), 681--687.
+\newblock \doi{10.1080/10618600.2020.1777140}.
+
+\bibitem[{Lee \emph{et~al.}(2022)Lee, Cook, da~Silva, Laa, Spyrison, Wang, and
+  Zhang}]{lee2022}
+Lee S, Cook D, da~Silva N, Laa U, Spyrison N, Wang E, Zhang HS (2022).
+\newblock \enquote{The state-of-the-art on tours for dynamic visualization of
+  high-dimensional data.}
+\newblock \emph{WIREs Computational Statistics}, \textbf{14}(4), e1573.
+\newblock \doi{https://doi.org/10.1002/wics.1573}.
+\newblock
+  \eprint{https://wires.onlinelibrary.wiley.com/doi/pdf/10.1002/wics.1573},
+  \urlprefix\url{https://wires.onlinelibrary.wiley.com/doi/abs/10.1002/wics.1573}.
 
 \bibitem[{Leisch(2006)}]{flexclust}
 Leisch F (2006).

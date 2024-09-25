@@ -89,7 +89,7 @@ One can see that the data is perfectly divided into four parts. However, if one 
 \label{kmeans-histogram}
 \end{figure*}
 
-When there are more than two variables, histograms of the individual variables are commonly used to display the partitioning results. This means that the analyst likely cannot understand how the partitioning divides the data. All that they can observe is roughly how the individual variables relate to the partition, which is useful but inadequate. Here is where using tour methods to view high dimensions can be helpful. A tour (XXX general tour and recent tour) can be used to show scatterplots of combinations of variables and thus provide views like that in Figure \ref{kmeans-partition} where distinct differences between partitions can be observed. High dimensions are still tricky, and a combination of animations of the linear combinations, and interactive control (XXX REF radial/manual tour) over the combinations is important. A scatterplot of a combination of variables can be considered to be a projection of the data, and thus like a shadow of a 3D object, some aspects of the data (object) can be obscured. Using slices of the projected data (XXX REF) can be a useful addition to projections. This paper illustrates how to do this to better understand partitioning results for multivariate data.
+When there are more than two variables, histograms of the individual variables are commonly used to display the partitioning results. This means that the analyst likely cannot understand how the partitioning divides the data. All that they can observe is roughly how the individual variables relate to the partition, which is useful but inadequate. Here is where using tour methods to view high dimensions can be helpful. A tour (\cite{Asimov1985-xr}, and see \cite{lee2022}) can be used to show scatterplots of combinations of variables and thus provide views like that in Figure \ref{kmeans-partition} where distinct differences between partitions can be observed. High dimensions are still tricky, and a combination of animations of the linear combinations, and interactive control \citep{cook_manual_1997, laa2023new} over the combinations is important. A scatterplot of a combination of variables can be considered to be a projection of the data, and thus like a shadow of a 3D object, some aspects of the data (object) can be obscured. Using slices of the projected data \citep{Laa2020} can be a useful addition to projections. This paper illustrates how to do this to better understand partitioning results for multivariate data.
 
 %\begin{itemize} \itemsep 0in
 %\item Background to clustering analysis
@@ -98,9 +98,9 @@ When there are more than two variables, histograms of the individual variables a
 %\item How do you know whether the results are useful
 %\end{itemize}
 
-This paper is organised as follows XXX The methods are illustrated using Austrian and Australian tourism data provided in \cite{leisch2018market}.
+This paper is organised as follows. Section \ref{interface} describes the software interface. The user workflow is explained in \ref{workflow}.  The methods are illustrated in Section \ref{applications} using Austrian and Australian tourism data provided in \cite{leisch2018market}. Sections \ref{discussion} and \ref{conclusion} discuss the limitations and potential future developments.
 
-\section{Interactive interface for partitioning}
+\section{Interactive interface for partitioning}~\label{interface}
 
 The aim of this work is to build an interface that allows for an interactive exploration of partitioning solutions of multivariate data. The interface should enable
 
@@ -111,7 +111,7 @@ The aim of this work is to build an interface that allows for an interactive exp
 \item ability to update the displays based on user selections
 \end{itemize}
 
-While tour animations are best obtained within R using the tourr package~\citep{tourr}, it does not enable the interactivity required for example for a manual tour~\citep{laa2023new}. Interactive graphics are available when using Javascript, as implemented in the detourr package \citep{detourr}. This allows to replay a recorded tour path with interactive graphics, and can also be linked with additional displays, but lacks capabilities for manual tours.
+While tour animations are best obtained within R using the tourr package~\citep{tourr}, it does not enable the interactivity required for example for a manual tour~\citep{laa2023new}. Interactive graphics are available when using Javascript, as implemented in the detourr package \citep{RJ-2023-052}. This allows to replay a recorded tour path with interactive graphics, and can also be linked with additional displays, but lacks capabilities for manual tours.
 
 To integrate user interactions with the capabilities of the tourr package an active communitcation with the interface is required. For example, we may wish to explore the local neighbourhood of a projection selected by the user with a local tour animation provided by tourr, or we may want to optimize a guided tour path using groups identified via brushing.
 Our solution is using Python for high-performance interactivity, through the packages \texttt{TKinter} \citep{lundh1999introduction}, \texttt{CustomTKinter} \citep{schimansky24}, and \texttt{matplotlib} \citep{Hunter:2007}, with integration to the tourr package \citep{tourr} via \texttt{reticulate} \citep{reticulate}, a framework that facilitates seamless interoperability between Python and R.
@@ -119,12 +119,12 @@ Our solution is using Python for high-performance interactivity, through the pac
 
 %At the core of the \texttt{pytourr} package is a graphical user interface (GUI) designed to display multiple linked visualizations concurrently. Users can interact with one of the plots, for example, by subselecting specific data points, and the other linked plots will dynamically update to reflect these modifications. This interconnected functionality allows for efficient and immediate analysis of high-dimensional datasets without necessitating extensive coding, thereby streamlining the exploratory data analysis process.
 
-The interface was implemented in \texttt{pytourr} and offers a variety of linked interactive plot types, providing users with the flexibility to visualize their data from multiple perspectives. The ability to navigate through various projections of the displayed tours directly within the GUI enables users to explore different aspects of the dataset. Furthermore, users can initiate new tours directly from the interface. The GUI also supports interactive variable selection, allowing users to specify which subset of variables should be visualized in the plots. Once users have identified interesting views or settings, \texttt{pytourr} allows them to save the displayed projections, subsets, and plots. This functionality ensures that analysis states can be preserved for further examination or reporting, making the package particularly useful for iterative analysis where findings may need to be revisited or shared with collaborators.
+The interface was implemented in \texttt{pytourr} and offers a variety of linked interactive plot types, providing users with the flexibility to visualize their data from multiple perspectives. The ability to navigate through various projections of the displayed tours directly within a graphical user interface (GUI) enables users to explore different aspects of the dataset. Furthermore, users can initiate new tours directly from the interface. The GUI also supports interactive variable selection, allowing users to specify which subset of variables should be visualized in the plots. Once users have identified interesting views or settings, \texttt{pytourr} allows them to save the displayed projections, subsets, and plots. This functionality ensures that analysis states can be preserved for further examination or reporting, making the package particularly useful for iterative analysis where findings may need to be revisited or shared with collaborators.
 
 With its high level of interactivity, performance, and ease of use, \texttt{pytourr} streamlines the exploration of complex datasets, offering a powerful tool for researchers working with high-dimensional data.
 
 
-\subsection{The graphical user interface}
+\subsection{Overview of the graphical user interface (GUI)}
 
 The \texttt{pytourr} GUI can be launched using the function \texttt{interactive\textunderscore tour()}. At a minimum, the user needs to provide both the dataset and the instructions for constructing the desired plots. The dataset must be supplied as a \texttt{data.table}, while the plotting instructions should be passed as a list containing the named elements \texttt{type} and \texttt{obj}. The \texttt{type} element specifies the type of display to generate, such as "scatter" for a scatterplot or "2d\textunderscore tour" for a 2-dimensional tour. The \texttt{obj} element further defines the properties of the chosen display. For example, to create a 2-dimensional tour, the user must provide a \texttt{tour\textunderscore history} object, which can be generated using the \texttt{tourr} package. For a scatterplot, the user needs to provide a vector of strings specifying the names of the features to be displayed. The user can optionally specify the feature names, the arrangement of the plots, predefined subsets of the data (e.g., cluster solutions), custom names for these subsets, the number of available subsets, and the size of each plot.
 
@@ -137,7 +137,7 @@ The frame selection interface (Figure \ref{fig:GUI_overview}E) displayes the fra
 \begin{figure}[h!]
     \centering
     \includegraphics[width=1\textwidth]{GUI_overview.png}
-    \caption{Overview of the GUI, consisting of the sidebar (left) and display area (right). A: Sidebar. B: Display area. C: Feature selection checkboxes. D: Subset selection with color indicators. E: Frame selection interface. F: Save and load buttons. G: Interface for starting new tours. H: Metric selection interface.}
+    \caption{Overview of the GUI. A: Sidebar controls; B: Display area;  C: Feature selection checkboxes; D: Subset selection with color indicators; E: Frame selection interface; F: Save and load buttons; G: Interface for starting new tours; H: Metric selection interface.}
     \label{fig:GUI_overview}
 \end{figure}
 
@@ -165,7 +165,7 @@ The implementation of bit blitting was crucial to ensuring fast plot updates and
 
 In practice, this means that the background, without the interactive elements, must be captured either during initialization or after major updates. The entire plot is first rendered without the interactive elements, the background is then saved, and finally, the plot is redrawn with the interactive elements blended in. Since this process is relatively slow, full updates are only triggered during initialization or after significant changes, such as modifications to the set of active features.
 
-\section{Workflow with the pytourr package}
+\section{Workflow with the pytourr package}~\label{workflow}
 
 Before launching the pytourr interface the user should have performed a partitioning of their choice, and provide the initial clustering solution used by the interface. We launch the interface to explore and potentially refine this solution.
 
@@ -222,7 +222,7 @@ Second, the saved \texttt{.csv} files provide a way to inspect and further analy
 This level of interactivity and documentation is crucial for reproducibility, as it ensures that even exploratory, interactive data analysis can be retraced and validated by others. Ultimately, these features facilitate a reproducible workflow that balances the flexibility of interactive exploration with the rigor of reproducible research.
 
 
-\section{Applications}
+\section{Applications}~\label{applications}
 
 The Austrian Vacation Activities \cite{dolnicar2003winter} and the Australian Vacation Activities \cite{cliff2009formative} datasets are used to illustrate the methods.
 
@@ -241,11 +241,11 @@ The original dataset contains \(p\)=27 features. Some of these features are more
 \begin{figure}[h!]
     \centering
     \includegraphics[width=1\textwidth]{winteractiv_heatmap.png}
-    \caption{A: heatmap displaying the intra cluster fraction. B: heatmap displaying the intra feature fraction.}
+    \caption{Traditional overview of clusters. Color represents  (A) the intra-cluster fraction, and (B) the intra-feature fraction, with lighter indicating higher values. From A, we can see that some activities dominate most clusters, e.g. relaxing and going for walks. Some activities are unique to clusters, e.g. skiing is a primary activity for clusters 1, 3, 5, 6. From B, we can see which activities dominate each cluster, e.g. cluster 4 tourists like going to a spa and using health activities.}
     \label{fig:winteractiv_heatmap}
 \end{figure}
 
-In Figure \ref{fig:winteractiv_heatmap}A, we can observe the general interests of tourists within each cluster. For instance, tourists in clusters 1, 3, 5, and 6 predominantly engaged in alpine skiing, while those in clusters 2 and 4 did not. Additionally, we see that activities such as ski touring and horseback riding were generally unpopular across all clusters.
+\textcolor{red}{It might be better to standardise these intra fractions. For A, one should divide by cluster count, and then compute activity fraction. For B, one should divide by activity count and then compute cluster fraction.} In Figure \ref{fig:winteractiv_heatmap}A, we can observe the general interests of tourists within each cluster. For instance, tourists in clusters 1, 3, 5, and 6 predominantly engaged in alpine skiing, while those in clusters 2 and 4 did not. Additionally, we see that activities such as ski touring and horseback riding were generally unpopular across all clusters.
 
 In Figure \ref{fig:winteractiv_heatmap}B, we can determine whether tourists in a particular cluster had a strong preference for certain activities. For example, nearly all tourists who visited museums are grouped in cluster 2, and those who used health facilities are primarily attributed to cluster 4. We can also identify activities that were similarly popular across all clusters, such as relaxing.
 
@@ -371,7 +371,7 @@ Finally, since subset 9 is notably inactive, one might infer that they prefer sp
 \end{figure}
 
 
-\section{Discussion}
+\section{Discussion}~\label{discussion}
 
 One might question the necessity of manual exploratory data analysis, considering it is inherently subjective and relies heavily on intuition. However, in situations like those presented here, where there is no clearly defined or optimal clustering solution or feature selection, manual exploration becomes indispensable. While it is possible to optimize clustering metrics to improve separation between clusters, this alone may not yield conclusions that are useful for practical applications. The lack of clear boundaries and the overlapping nature of clusters in the datasets underscore the limitations of purely automated methods in capturing the complexity and nuance of real-world data.
 
@@ -382,13 +382,13 @@ Similarly, in the Australian dataset, manual exploration allowed us to refine th
 While some plots supported by the pytourr package are specifically designed for analyzing binary survey data, it is important to emphasize that its capabilities extend far beyond this data type. The versatility of tours has been demonstrated across various applications in the past, showcasing their effectiveness in exploring complex, high-dimensional datasets. The interactive GUI enables seamless exploration of both one- and two-dimensional tours, regardless of the data being analyzed, providing a powerful tool for uncovering patterns and insights across diverse domains.
 
 
-\section{Conclusion}
+\section{Conclusion}~\label{conclusion}
 
 Ultimately, manual data exploration serves as a useful complement to automated methods, providing the flexibility to incorporate context, expert judgment, and specific analytical goals. This approach enables analysts to refine initial results and adapt them to the complexities of real-world scenarios, leading to more nuanced interpretations and actionable insights. The pytourr package offers an organised and responsive interactive tool for conducting such analyses, bridging the gap between automated clustering and exploration.
 
 By integrating interactive visualization capabilities, the pytourr package empowers users to dynamically engage with their data, making it possible to uncover subtle patterns and relationships that might otherwise remain hidden. This is especially valuable in tackling complex datasets with the mindset that an automated solution needs to be validated. The package has broad applicability across various data types and analytical contexts where clustering is used. The flexibility of setting up the GUI elements from the command line allow it to be tailored for different applications.
 
-Future developments in the software might include expanding the range of interactive features and providing additional visualization methods.  Because it is built on R and python, it would also be possible to integrate more closely with the machine learning algorithms, such as generating new cluster solutions directly from the GUI. For more complex shapes, containing concavities, or non-linear boundaries, implementation of sliced tours, would be recommended.
+Future developments in the software might include expanding the range of interactive features and providing additional visualization methods.  Because it is built on R and python, it would also be possible to integrate more closely with the machine learning algorithms, such as generating new cluster solutions directly from the GUI. For more complex shapes, containing concavities, or non-linear boundaries, implementation of sliced tours~\citep{Laa2020}, would be recommended.
 
 In summary, pytourr represents a significant advancement in the toolkit of data analysts, offering a novel way to balance automated analysis with human intuition and domain expertise, thereby facilitating a deeper and more comprehensive understanding of complex datasets.
 

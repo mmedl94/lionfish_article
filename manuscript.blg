@@ -1,52 +1,51 @@
-This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2024)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: manuscript.aux
 The style file: ajs.bst
 Database file #1: pytourr_references.bib
-Warning--entry type for "plotly" isn't style-file defined
---line 132 of file pytourr_references.bib
+Warning--I didn't find a database entry for "ward2"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty journal in cliff2009formative
 Warning--missing publisher in leisch2018market
-You've used 14 entries,
+You've used 15 entries,
             3140 wiz_defined-function locations,
-            714 strings with 7402 characters,
-and the built_in function-call counts, 10651 in all, are:
-= -- 865
-> -- 315
+            744 strings with 8060 characters,
+and the built_in function-call counts, 11985 in all, are:
+= -- 978
+> -- 327
 < -- 9
-+ -- 125
-- -- 105
-* -- 848
-:= -- 1513
-add.period$ -- 53
-call.type$ -- 14
-change.case$ -- 94
-chr.to.int$ -- 14
-cite$ -- 16
-duplicate$ -- 956
-empty$ -- 951
-format.name$ -- 137
-if$ -- 2128
++ -- 133
+- -- 108
+* -- 975
+:= -- 1664
+add.period$ -- 71
+call.type$ -- 15
+change.case$ -- 98
+chr.to.int$ -- 15
+cite$ -- 17
+duplicate$ -- 1074
+empty$ -- 1088
+format.name$ -- 147
+if$ -- 2410
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 145
-newline$ -- 82
-num.names$ -- 56
-pop$ -- 338
+missing$ -- 173
+newline$ -- 99
+num.names$ -- 60
+pop$ -- 355
 preamble$ -- 1
-purify$ -- 91
+purify$ -- 96
 quote$ -- 0
-skip$ -- 239
+skip$ -- 254
 stack$ -- 0
-substring$ -- 842
-swap$ -- 312
+substring$ -- 948
+swap$ -- 408
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 123
+type$ -- 132
 warning$ -- 2
-while$ -- 87
+while$ -- 98
 width$ -- 0
-write$ -- 188
+write$ -- 228
 (There were 3 warnings)
