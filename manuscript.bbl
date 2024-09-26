@@ -1,0 +1,140 @@
+\begin{thebibliography}{18}
+\newcommand{\enquote}[1]{``#1''}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem[{Asimov(1985)}]{Asimov1985-xr}
+Asimov D (1985).
+\newblock \enquote{{T}he {G}rand {T}our: {A} {T}ool for {V}iewing
+  {M}ultidimensional {D}ata.}
+\newblock \emph{SIAM Journal of Scientific and Statistical Computing},
+  \textbf{6}(1), 128--143.
+\newblock ISSN 0196-5204.
+\newblock \doi{10.1137/0906011}.
+\newblock \urlprefix\url{http://dx.doi.org/10.1137/0906011}.
+
+\bibitem[{Cliff(2009)}]{cliff2009formative}
+Cliff K (2009).
+\newblock \enquote{A formative index of segment attractiveness: optimising
+  segment selection for tourism destinations.}
+
+\bibitem[{Cook and Buja(1997)}]{cook_manual_1997}
+Cook D, Buja A (1997).
+\newblock \enquote{Manual Controls for High-Dimensional Data Projections.}
+\newblock \emph{Journal of Computational and Graphical Statistics},
+  \textbf{6}(4), 464--480.
+\newblock ISSN 1061-8600.
+\newblock \doi{10.2307/1390747}.
+\newblock \urlprefix\url{http://www.jstor.org/stable/1390747}.
+
+\bibitem[{Cook \emph{et~al.}(1995)Cook, Buja, Cabrera, and Hurley}]{CBCH94}
+Cook D, Buja A, Cabrera J, Hurley C (1995).
+\newblock \enquote{Grand {T}our and {P}rojection {P}ursuit.}
+\newblock \emph{Journal of Computational and Graphical Statistics},
+  \textbf{4}(3), 155--172.
+
+\bibitem[{Dolnicar and Leisch(2003)}]{dolnicar2003winter}
+Dolnicar S, Leisch F (2003).
+\newblock \enquote{Winter tourist segments in Austria: Identifying stable
+  vacation styles using bagged clustering techniques.}
+\newblock \emph{Journal of Travel Research}, \textbf{41}(3), 281--292.
+
+\bibitem[{Hart and Wang(2023)}]{RJ-2023-052}
+Hart C, Wang E (2023).
+\newblock \enquote{Taking the Scenic Route: Interactive and Performant Tour
+  Animations.}
+\newblock \emph{The R Journal}, \textbf{15}, 307--329.
+\newblock ISSN 2073-4859.
+\newblock \doi{10.32614/RJ-2023-052}.
+\newblock Https://doi.org/10.32614/RJ-2023-052.
+
+\bibitem[{Hunter(2007)}]{Hunter:2007}
+Hunter JD (2007).
+\newblock \enquote{Matplotlib: A 2D graphics environment.}
+\newblock \emph{Computing in Science \& Engineering}, \textbf{9}(3), 90--95.
+\newblock \doi{10.1109/MCSE.2007.55}.
+
+\bibitem[{Laa \emph{et~al.}(2023)Laa, Aumann, Cook, and Valencia}]{laa2023new}
+Laa U, Aumann A, Cook D, Valencia G (2023).
+\newblock \enquote{New and simplified manual controls for projection and slice
+  tours, with application to exploring classification boundaries in high
+  dimensions.}
+\newblock \emph{Journal of Computational and Graphical Statistics},
+  \textbf{32}(3), 1229--1236.
+
+\bibitem[{Laa \emph{et~al.}(2020)Laa, Cook, and Valencia}]{Laa2020}
+Laa U, Cook D, Valencia G (2020).
+\newblock \enquote{A Slice Tour for Finding Hollowness in High-Dimensional
+  Data.}
+\newblock \emph{Journal of Computational and Graphical Statistics},
+  \textbf{29}(3), 681--687.
+\newblock \doi{10.1080/10618600.2020.1777140}.
+
+\bibitem[{Lee \emph{et~al.}(2005)Lee, Cook, Klinke, and Lumley}]{lckl2005}
+Lee EK, Cook D, Klinke S, Lumley T (2005).
+\newblock \enquote{Projection Pursuit for Exploratory Supervised
+  Classification.}
+\newblock \emph{Journal of Computational and Graphical Statistics},
+  \textbf{14}(4), 831--846.
+
+\bibitem[{Lee \emph{et~al.}(2022)Lee, Cook, da~Silva, Laa, Spyrison, Wang, and
+  Zhang}]{lee2022}
+Lee S, Cook D, da~Silva N, Laa U, Spyrison N, Wang E, Zhang HS (2022).
+\newblock \enquote{The state-of-the-art on tours for dynamic visualization of
+  high-dimensional data.}
+\newblock \emph{WIREs Computational Statistics}, \textbf{14}(4), e1573.
+\newblock \doi{https://doi.org/10.1002/wics.1573}.
+\newblock
+  \eprint{https://wires.onlinelibrary.wiley.com/doi/pdf/10.1002/wics.1573},
+  \urlprefix\url{https://wires.onlinelibrary.wiley.com/doi/abs/10.1002/wics.1573}.
+
+\bibitem[{Leisch(2006)}]{flexclust}
+Leisch F (2006).
+\newblock \enquote{A Toolbox for K-Centroids Cluster Analysis.}
+\newblock \emph{Computational Statistics and Data Analysis}, \textbf{51}(2),
+  526--544.
+\newblock \doi{10.1016/j.csda.2005.10.006}.
+
+\bibitem[{Leisch \emph{et~al.}(2018)Leisch, Dolnicar, and
+  Gr{\"u}n}]{leisch2018market}
+Leisch F, Dolnicar S, Gr{\"u}n B (2018).
+\newblock \emph{Market segmentation analysis: Understanding it, doing it, and
+  making it useful}.
+
+\bibitem[{Lundh(1999)}]{lundh1999introduction}
+Lundh F (1999).
+\newblock \enquote{An introduction to tkinter.}
+\newblock \emph{URL: www. pythonware. com/library/tkinter/introduction/index.
+  htm}.
+
+\bibitem[{Murtagh and Legendre(2014)}]{murtagh2014ward}
+Murtagh F, Legendre P (2014).
+\newblock \enquote{Ward’s hierarchical agglomerative clustering method: which
+  algorithms implement Ward’s criterion?}
+\newblock \emph{Journal of classification}, \textbf{31}, 274--295.
+
+\bibitem[{Schimansky(2024)}]{schimansky24}
+Schimansky T (2024).
+\newblock \enquote{CustomTkinter.}
+\newblock \url{https://github.com/TomSchimansky/CustomTkinter}.
+
+\bibitem[{Ushey \emph{et~al.}(2024)Ushey, Allaire, and Tang}]{reticulate}
+Ushey K, Allaire J, Tang Y (2024).
+\newblock \emph{reticulate: Interface to 'Python'}.
+\newblock R package version 1.38.0, https://github.com/rstudio/reticulate,
+  \urlprefix\url{https://rstudio.github.io/reticulate/}.
+
+\bibitem[{Wickham \emph{et~al.}(2011)Wickham, Cook, Hofmann, and Buja}]{tourr}
+Wickham H, Cook D, Hofmann H, Buja A (2011).
+\newblock \enquote{{tourr}: An {R} Package for Exploring Multivariate Data with
+  Projections.}
+\newblock \emph{Journal of Statistical Software}, \textbf{40}(2), 1--18.
+\newblock \urlprefix\url{https://doi.org/10.18637/jss.v040.i02}.
+
+\end{thebibliography}
