@@ -52,7 +52,7 @@ Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
 %% in the following format:
 \Address{
   Matthias Medl\\
-  Institue of Statistics\\
+  Institute of Statistics\\
   BOKU University Vienna\\
   E-mail: \email{matthias.medl@boku.ac.at}\\
 }
@@ -113,7 +113,7 @@ The aim of this work is to build an interface that allows for an interactive exp
 
 While tour animations are best obtained within R using the tourr package~\citep{tourr}, it does not enable the interactivity required for example for a manual tour~\citep{laa2023new}. Interactive graphics are available when using Javascript, as implemented in the detourr package \citep{RJ-2023-052}. This allows to replay a recorded tour path with interactive graphics, and can also be linked with additional displays, but lacks capabilities for manual tours.
 
-To integrate user interactions with the capabilities of the tourr package an active communitcation with the interface is required. For example, we may wish to explore the local neighbourhood of a projection selected by the user with a local tour animation provided by tourr, or we may want to optimize a guided tour path using groups identified via brushing.
+To integrate user interactions with the capabilities of the tourr package an active communication with the interface is required. For example, we may wish to explore the local neighbourhood of a projection selected by the user with a local tour animation provided by tourr, or we may want to optimize a guided tour path using groups identified via brushing.
 Our solution is using Python for high-performance interactivity, through the packages \texttt{TKinter} \citep{lundh1999introduction}, \texttt{CustomTKinter} \citep{schimansky24}, and \texttt{matplotlib} \citep{Hunter:2007}, with integration to the tourr package \citep{tourr} via \texttt{reticulate} \citep{reticulate}, a framework that facilitates seamless interoperability between Python and R.
 \textcolor{red}{also rpy2?}
 
@@ -126,13 +126,13 @@ With its high level of interactivity, performance, and ease of use, \texttt{pyto
 
 \subsection{Overview of the graphical user interface (GUI)}
 
-The \texttt{pytourr} GUI can be launched using the function \texttt{interactive\textunderscore tour()}. At a minimum, the user needs to provide both the dataset and the instructions for constructing the desired plots. The dataset must be supplied as a \texttt{data.table}, while the plotting instructions should be passed as a list containing the named elements \texttt{type} and \texttt{obj}. The \texttt{type} element specifies the type of display to generate, such as "scatter" for a scatterplot or "2d\textunderscore tour" for a 2-dimensional tour. The \texttt{obj} element further defines the properties of the chosen display. For example, to create a 2-dimensional tour, the user must provide a \texttt{tour\textunderscore history} object, which can be generated using the \texttt{tourr} package. For a scatterplot, the user needs to provide a vector of strings specifying the names of the features to be displayed. The user can optionally specify the feature names, the arrangement of the plots, predefined subsets of the data (e.g., cluster solutions), custom names for these subsets, the number of available subsets, and the size of each plot.
+The \texttt{pytourr} GUI can be launched using the function \texttt{interactive\textunderscore tour()}. At a minimum, the user needs to provide both the dataset and the instructions for constructing the desired plots. The dataset must be supplied as a \texttt{data.table}, while the plotting instructions should be passed as a list containing the named elements \texttt{type} and \texttt{obj}. The \texttt{type} element specifies the type of display to generate, such as \texttt{scatter} for a scatterplot or \texttt{2d\textunderscore tour} for a 2-dimensional tour. The \texttt{obj} element further defines the properties of the chosen display. For example, to create a 2-dimensional tour, the user must provide a \texttt{tour\textunderscore history} object, which can be generated using the \texttt{tourr} package. For a scatterplot, the user needs to provide a vector of strings specifying the names of the features to be displayed. The user can optionally specify the feature names, the arrangement of the plots, predefined subsets of the data (e.g., cluster solutions), custom names for these subsets, the number of available subsets, and the size of each plot.
 
 The GUI is divided into two main sections: a sidebar on the left, which contains a comprehensive set of interactive controls, and the display area on the right, where the selected plots are shown (see Figure \ref{fig:GUI_overview}).
 
-At the top of the sidebar, users can select and deselect features using checkboxes (Figure \ref{fig:GUI_overview}C), controlling which features are displayed in the plots. Below this, each subset has its own checkbox to designate the active subset (Figure \ref{fig:GUI_overview}D). When data points are manually selected in the plots, they will be assigned to the active subset and colored accordingly. For scatterplots, data points can be selected by encircling them directly on the plot while holding down the left mouse button. For barplots, clicking on a specific bar selects the data represented by that bar. The colored boxes next to the subset names indicate the assigned colors for the data points. Clicking on these boxes adjusts the transparency of the points, which is helpful for highlighting and comparing subsets. Subsets can also be renamed using the provided text boxes. The "Reset original selection" button allows users to revert the subset selections to their initial state.
+At the top of the sidebar, users can select and deselect features using checkboxes (Figure \ref{fig:GUI_overview}C), controlling which features are displayed in the plots. Below this, each subset has its own checkbox to designate the active subset (Figure \ref{fig:GUI_overview}D). When data points are manually selected in the plots, they will be assigned to the active subset and colored accordingly. For scatterplots, data points can be selected by encircling them directly on the plot while holding down the left mouse button. For barplots, clicking on a specific bar selects the data represented by that bar. The colored boxes next to the subset names indicate the assigned colors for the data points. Clicking on these boxes adjusts the transparency of the points, which is helpful for highlighting and comparing subsets. Subsets can also be renamed using the provided text boxes. The \texttt{Reset original selection} button allows users to revert the subset selections to their initial state.
 
-The frame selection interface (Figure \ref{fig:GUI_overview}E) displayes the frames of the currently shown tours and enables users to jump between frames of the tour objects. Below this, users can save and load projections and subsets using the respective buttons (Figure \ref{fig:GUI_overview}F). New tours can be started using the current settings via the interface at the bottom (Figure \ref{fig:GUI_overview}G), and users can select different metrics for some plot types e.g. heatmaps (Figure \ref{fig:GUI_overview}H).
+The frame selection interface (Figure \ref{fig:GUI_overview}E) displays the frames of the currently shown tours and enables users to jump between frames of the tour objects. Below this, users can save and load projections and subsets using the respective buttons (Figure \ref{fig:GUI_overview}F). New tours can be started using the current settings via the interface at the bottom (Figure \ref{fig:GUI_overview}G), and users can select different metrics for some plot types e.g. heatmaps (Figure \ref{fig:GUI_overview}H).
 
 \begin{figure}[h!]
     \centering
@@ -142,9 +142,9 @@ The frame selection interface (Figure \ref{fig:GUI_overview}E) displayes the fra
 \end{figure}
 
 
-One can move through the projections of a tour by pressing the arrow keys or by specifying the index of the projection the be displayed and pressing the "Update frames" button. Users can animate the tours by toggling the "Animate" checkbox and specifying a time interval, so that the displays automatically move to the next projections after the specified time interval.
+One can move through the projections of a tour by pressing the arrow keys or by specifying the index of the projection the be displayed and pressing the \texttt{Update frames} button. Users can animate the tours by toggling the \texttt{Animate} checkbox and specifying a time interval, so that the displays automatically move to the next projections after the specified time interval.
 
-The "Save projections and subsets" button can be used to save the current state of the analysis. These states can be recovered by using pressing the "Load projections and subsets" button. Additionally, users can initiate new tours of various directly from the sidebar.
+The \texttt{Save projections and subsets} button can be used to save the current state of the analysis. These states can be recovered by using pressing the \texttt{Load projections and subsets} button. Additionally, users can initiate new tours of various directly from the sidebar.
 
 
 \subsection{R/Python interface}
@@ -155,9 +155,9 @@ However, to reduce inefficiencies caused by cross-language communication and to 
 
 \subsection{Structure of the Python code}
 
-The central component of the Python code is the \texttt{customTKinter} class \texttt{InteractiveTourInterface}. This class centrally stores attributes related to all plots, such as the dataset, subselections, feature selections, and other shared information. Plot-specific data is organized in dictionaries (the Python equivalent of named lists in R), including the display type, construction instructions, tour projections (only in case of tour displays), color schemes for the displayed data, and, where applicable, the selector and manual projection manipulation classes.
+The central component of the Python code is the \texttt{customTKinter} class \texttt{InteractiveTourInterface}. This class centrally stores attributes related to all plots, such as the dataset, sub-selections, feature selections, and other shared information. Plot-specific data is organized in dictionaries (the Python equivalent of named lists in R), including the display type, construction instructions, tour projections (only in case of tour displays), color schemes for the displayed data, and, where applicable, the selector and manual projection manipulation classes.
 
-The selector classes handle the behavior when users manually select data points to move them to the active subset. After a selection is made, the selector class updates the centrally stored subselection attribute and ensures all other displays reflect these changes. The manual projection manipulation classes construct the arrows representing the projection axes in the displays and manage the manual adjustment of projections, and thus enable manual tours. Users can right-click and drag the arrowheads to modify the projections, after which the class orthonormalizes the projection axes and updates both the projection and the transformed data accordingly.
+The selector classes handle the behavior when users manually select data points to move them to the active subset. After a selection is made, the selector class updates the centrally stored sub-selection attribute and ensures all other displays reflect these changes. The manual projection manipulation classes construct the arrows representing the projection axes in the displays and manage the manual adjustment of projections, and thus enable manual tours. Users can right-click and drag the arrowheads to modify the projections, after which the class orthonormalizes the projection axes and updates both the projection and the transformed data accordingly.
 
 \subsection{Bit blit}
 
@@ -171,7 +171,7 @@ Before launching the pytourr interface the user should have performed a partitio
 
 \subsection{Variable selection}
 
-A first step may look into what variables are important for the cluster solution. The interface provides different capabilites that support variable selection. First, a 2D tour view can be used to understand the sensitivity of the grouping to individual varaibles, in particular when using the manual tour to remove one variable at a time. This is in particular useful when the starting view was obtained through a projection pursuit guided tour~\cite{CBCH94} that optimized for the separation between the labeled groups~\cite{lckl2005}.
+A first step may look into what variables are important for the cluster solution. The interface provides different capabilities that support variable selection. First, a 2D tour view can be used to understand the sensitivity of the grouping to individual variables, in particular when using the manual tour to remove one variable at a time. This is in particular useful when the starting view was obtained through a projection pursuit guided tour~\cite{CBCH94} that optimized for the separation between the labeled groups~\cite{lckl2005}.
 
 In our applications we are considering market segmentation analysis on binary variables. For this setting we have developed a heatmap display that we have found to be particularly useful in variable selection. The idea is to understand differences in the binary ratings between clusters, where we use different normalizations to better explore the data. For \(c_{ij}\) the count (number of true values in the binary variable) in the \(i\)-th cluster and \(j\)-th variable, we define
 
@@ -190,7 +190,7 @@ showing the counts relative to the cluster's size \(n_i\), to see the fraction o
 \[
 \text{Variable count fraction}\ f_{ij} = \frac{c_{ij}}{c_{j}}
 \]
-to see how the true values for variable $j$ are distributed accross the different clusters relative, with normalization to the overall count of that feature \(c_j = \sum_i c_{ij}\).
+to see how the true values for variable $j$ are distributed across the different clusters relative, with normalization to the overall count of that feature \(c_j = \sum_i c_{ij}\).
  
 \textcolor{red}{different symbol for each? indicat on the index value somehow?}
 
@@ -206,7 +206,7 @@ Ensuring the reproducibility of data analysis is a fundamental principle in scie
 
 One challenge in the context of interactive data analysis is that not all steps of the analysis are precisely documented in the form of code, especially when using graphical user interfaces (GUIs) where user-driven interactions might not leave a traceable history. This lack of documentation can hinder the ability of others to reproduce the analysis or to understand how specific results were obtained. To mitigate this challenge, it is essential to implement mechanisms that allow users to easily save and share intermediate snapshots of their analyses.
 
-One measure to combat this is to make saving intermediate snapshots of the analysis easy and accessable. Specifically, the "Save projections and subsets" button enables users to take snapshots of their analysis, including visual representations, selected data, and parameter settings. Upon pressing this button, a file browser is triggered, allowing users to specify the destination for saving these snapshots. Each save operation generates multiple files:
+One measure to combat this is to make saving intermediate snapshots of the analysis easy and accessible. Specifically, the \texttt{Save projections and subsets} button enables users to take snapshots of their analysis, including visual representations, selected data, and parameter settings. Upon pressing this button, a file browser is triggered, allowing users to specify the destination for saving these snapshots. Each save operation generates multiple files:
 
 
 \begin{itemize}
@@ -215,7 +215,7 @@ One measure to combat this is to make saving intermediate snapshots of the analy
     \item two \texttt{.pkl} files that contain state variables of the GUI, allowing for complete recovery of the snapshot.
 \end{itemize}
 
-These files provide dual utility. First, they allow users to fully recover the state of the analysis within the GUI. This can be achieved either by using the "Load projections and subsets" button, or by launching a new GUI instance with the \texttt{load\_interactive\_tour()} function. The latter approach, using \texttt{load\_interactive\_tour()}, has the added flexibility of only requiring the original dataset and the directory containing the saved files. This function also allows users to modify display settings, such as adjusting the size of the interactive plots or changing the arrangement of the display grid. In contrast, when loading the saved state directly from within the GUI, it is crucial that the active session was initiated with the same dataset and plot objects that were present at the time of saving. This ensures that the analysis environment is accurately replicated.
+These files provide dual utility. First, they allow users to fully recover the state of the analysis within the GUI. This can be achieved either by using the \texttt{Load projections and subsets} button, or by launching a new GUI instance with the \texttt{load\_interactive\_tour()} function. The latter approach, using \texttt{load\_interactive\_tour()}, has the added flexibility of only requiring the original dataset and the directory containing the saved files. This function also allows users to modify display settings, such as adjusting the size of the interactive plots or changing the arrangement of the display grid. In contrast, when loading the saved state directly from within the GUI, it is crucial that the active session was initiated with the same dataset and plot objects that were present at the time of saving. This ensures that the analysis environment is accurately replicated.
 
 Second, the saved \texttt{.csv} files provide a way to inspect and further analyze the data outside of the original interface. This opens up opportunities for deeper analysis and extensions of the work.
 
@@ -228,10 +228,9 @@ The Austrian Vacation Activities \cite{dolnicar2003winter} and the Australian Va
 
 \subsection{Austrian Vacation Activities dataset}
 
-The Austrian Vacation Activities dataset comprises responses from 2,961 adult tourists who spent their holiday in Austria during the 1997/98 season. Participants were asked to evaluate the importance of 27 different activities during their vacation. The survey categorized responses based on four levels of importance: "totally important," "mostly important," "a bit important," and "not important." For analysis, the responses were binarized: a value of 1 was assigned if the activity was rated as "totally important," and a value of 0 if any of the other categories were selected. The survey was conducted by the Europäisches Tourismus Institut GmbH at the University of Trier and focused exclusively on tourists who did not stay in the country's capital cities.
+The Austrian Vacation Activities dataset comprises responses from 2,961 adult tourists who spent their holiday in Austria during the 1997/98 season. Participants were asked to evaluate the importance of 27 different activities during their vacation. The survey categorized responses based on four levels of importance: ``totally important", ``mostly important", ``a bit important", and ``not important". For analysis, the responses were binarized: a value of 1 was assigned if the activity was rated as ``totally important", and a value of 0 if any of the other categories were selected. The survey was conducted by the Europäisches Tourismus Institut GmbH at the University of Trier and focused exclusively on tourists who did not stay in the country's capital cities.
 
-To gain further insight into the dataset a k-means clustering as described in the book "Market Segmentation Analysis" has been performed \citep{leisch2018market}. Therefore, the function \texttt{stepcclust} of the R package \texttt{flexclust
-}\citep{flexclust} with k=6 and nrep=20 was used.
+To gain further insight into the dataset a k-means clustering as described in \cite{leisch2018market} has been performed. Therefore, the function \texttt{stepcclust} of the R package \texttt{flexclust}\citep{flexclust} with $k=6$ and $nrep=20$ was used.
 
 \subsubsection{Feature selection}
 
@@ -251,7 +250,7 @@ In Figure \ref{fig:winteractiv_heatmap}B, we can determine whether tourists in a
 
 By using the heatmap with these metrics, we can perform feature selection by removing unpopular activities and those that were consistently similar across all clusters. After performing the feature selection by unchecking the corresponding checkboxes in the GUI using this strategy, the following 12 activities remained: alpine skiing, going to a spa, using health facilities, hiking, going for walks, excursions, going out in the evening, going to discos/bars, shopping, sightseeing, museums, and pool/sauna.
 
-We can now repeat the k-means clustering with \texttt{stepcclust} on the reduced dataset. Silhouette plots of both cluster solutions can be seen in Figure \ref{fig:silhouette_comparison}. By comparing both silhouette plots, we can see that the cluster solution with the reduced dataset results in a clustering of higher quality. Thus, we will continue with the analysis on the reduced dataset with the corresponsig cluster solution. We can also see in Figure \ref{fig:silhouette_comparison}B that cluster 3 is of comparatively low quality. It is important to note that the silhouette scores were generally quite low, reflecting the lack of clearly separable clusters in the data. Consequently, there is no objectively correct or optimal solution. The primary aim of this analysis, therefore, is to gain insights into the data rather than to identify the optimal clustering configuration.
+We can now repeat the k-means clustering with \texttt{stepcclust} on the reduced dataset. Silhouette plots of both cluster solutions can be seen in Figure \ref{fig:silhouette_comparison}. By comparing both silhouette plots, we can see that the cluster solution with the reduced dataset results in a clustering of higher quality. Thus, we will continue with the analysis on the reduced dataset with the corresponding cluster solution. We can also see in Figure \ref{fig:silhouette_comparison}B that cluster 3 is of comparatively low quality. It is important to note that the silhouette scores were generally quite low, reflecting the lack of clearly separable clusters in the data. Consequently, there is no objectively correct or optimal solution. The primary aim of this analysis, therefore, is to gain insights into the data rather than to identify the optimal clustering configuration.
 
 \begin{figure}[h!]
     \centering
@@ -265,16 +264,16 @@ We can further explore the similarities between the clusters by initializing an 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=1\textwidth]{winter_activ_cluster_highlights.png}
-    \caption{Display of a projection of the Austrian vacation activities dataset with the six clusters of the k-means cluster solution highlighted in different colors. The colors indicate which clusters the highlighted observations belong to with cluster 1 being blue (A), cluster 2 being orange (B), cluster 3 being green (C), cluster 4 being red (D), cluster 5 being violett (E) and cluster 6 being brown (F). We can see that the projection separates some clusters well, however also that there is considerable overlap of clusters 4, 5 and 6}
+    \caption{Display of a projection of the Austrian vacation activities dataset with the six clusters of the k-means cluster solution highlighted in different colors. The colors indicate which clusters the highlighted observations belong to with cluster 1 being blue (A), cluster 2 being orange (B), cluster 3 being green (C), cluster 4 being red (D), cluster 5 being violet (E) and cluster 6 being brown (F). We can see that the projection separates some clusters well, however also that there is considerable overlap of clusters 4, 5 and 6}
     \label{fig:winter_activ_cluster_highlights}
 \end{figure}
 
-This process allows us to visually assess the separation and similarities between the clusters, providing insight into the structure of the dataset. By highlighting each cluster individually, we can evaluate their distinctiveness in different projections. The most influential features shown in Figure \ref{fig:winter_activ_cluster_highlights} are pool/sauna, alpine skiing, museums, and going to the spa. The projection roughly separates clusters 1 (blue), 2 (orange), and 3 (green) from each other and the other three clusters (red, violett and brown), which appear to be quite similar. 
+This process allows us to visually assess the separation and similarities between the clusters, providing insight into the structure of the dataset. By highlighting each cluster individually, we can evaluate their distinctiveness in different projections. The most influential features shown in Figure \ref{fig:winter_activ_cluster_highlights} are pool/sauna, alpine skiing, museums, and going to the spa. The projection roughly separates clusters 1 (blue), 2 (orange), and 3 (green) from each other and the other three clusters (red, violet and brown), which appear to be quite similar. 
 
 By manually manipulating the projection axes or initiating a local tour, we can gain further insight into the similarities between the different clusters. This interactive exploration allows for a more nuanced understanding of the relationships between clusters and the influence of key features on the separation of the data.
 
 
-\subsubsection{Redefing cluster assignments - learning more about museum goers}
+\subsubsection{Redefining cluster assignments - learning more about museum goers}
 
 There are several reasons why we might want to manually modify a clustering solution. One is to capture observations that do not fit well within their assigned clusters. Another reason is to explore specific features in more detail. The advantage of manual cluster selection is that it preserves most of the current clustering structure, allowing us to adjust specific parts of the solution without starting from scratch. This approach is particularly useful when we already have a cluster solution that reveals interesting patterns in the data.
 
@@ -284,7 +283,7 @@ In Figure \ref{fig:silhouette_comparison}, we observed that clusters 1 and 3 con
 \begin{figure}[h!]
     \centering
     \includegraphics[width=1\textwidth]{winter_cl7_init.png}
-    \caption{Interactive tour GUI loaded with multiple plots showing different aspects of the k-means solution of the Austrian vacation activities dataset. Top left: 2D tour with the linear discriminant analysis projection pursuit index. Top right: heatmap with the intra-cluster fraction. Bottom left: 1D tour with the linear discriminant analysis projection pursuit index. Bottom right: mosaic plot. Touirists in both clusters 1 and 3 didn't participate in skiing a lot, but tourists in cluster 3 were much more interested in going to the pool, spa and health facilities compared to cluster 1.}
+    \caption{Interactive tour GUI loaded with multiple plots showing different aspects of the k-means solution of the Austrian vacation activities dataset. Top left: 2D tour with the linear discriminant analysis projection pursuit index. Top right: heatmap with the intra-cluster fraction. Bottom left: 1D tour with the linear discriminant analysis projection pursuit index. Bottom right: mosaic plot. Tourists in both clusters 1 and 3 didn't participate in skiing a lot, but tourists in cluster 3 were much more interested in going to the pool, spa and health facilities compared to cluster 1.}
     \label{fig:winter_cl7_init}
 \end{figure}
 
@@ -300,7 +299,7 @@ This setup produces the display shown in Figure \ref{fig:winter_cl7_init}. It ca
 \begin{figure}[h!]
     \centering
     \includegraphics[width=1\textwidth]{winter_cl7_pre.png}
-    \caption{Interactive tour GUI loaded with multiple plots showing different aspects of the k-means solution of the Austrian vacation activities dataset, with manually adjusted projections. Top left: 2D tour with the linear discriminant analysis projection pursuit index. Top right: heatmap with the intra-cluster fraction. Bottom left: 1D tour with the linear discriminant analysis projection pursuit index. Bottom right: mosaic plot. Changing the projeciton axes of "going to a spa", "museums", "sight seeing" and "using health facilities" reveals the preferences and overlap of clusters 1 and 3.}
+    \caption{Interactive tour GUI loaded with multiple plots showing different aspects of the k-means solution of the Austrian vacation activities dataset, with manually adjusted projections. Top left: 2D tour with the linear discriminant analysis projection pursuit index. Top right: heatmap with the intra-cluster fraction. Bottom left: 1D tour with the linear discriminant analysis projection pursuit index. Bottom right: mosaic plot. Changing the projection axes of ``going to a spa", ``museums", ``sightseeing" and ``using health facilities" reveals the preferences and overlap of clusters 1 and 3.}
     \label{fig:winter_cl7_pre}
 \end{figure}
 
@@ -316,17 +315,17 @@ We can observe slight behavioral differences between tourists in clusters 1 and 
 
 \subsection{Australian Vacation Activities dataset}
 
-The second dataset, the Australian Vacation Activities dataset, includes responses from 1,003 adult Australians who were surveyed through a permission-based internet panel. The survery was conducted in 2007. Participants were asked whether they engaged in 44 specific vacation activities during their most recent vacation within Australia. Similar to the Austrian dataset, responses were binarized: a value of 1 indicates that the participant took part in the activity, while a value of 0 signifies they did not. Suvreys where participants claimed they partook in more than 40 activities or no activity at all were removed as they are considered faulty.
+The second dataset, the Australian Vacation Activities dataset, includes responses from 1,003 adult Australians who were surveyed through a permission-based internet panel. The survey was conducted in 2007. Participants were asked whether they engaged in 44 specific vacation activities during their most recent vacation within Australia. Similar to the Austrian dataset, responses were binarized: a value of 1 indicates that the participant took part in the activity, while a value of 0 signifies they did not. Surveys where participants claimed they partook in more than 40 activities or no activity at all were removed as they are considered faulty.
 
 \subsubsection{Feature selection}
 
-At first, hierarchical clustering using Ward's method \citep{murtagh2014ward} and the Jaccard index was applied to the features. The resulting dendrogram is shown in Figure \ref{fig:aus_feature_clustering}. Based on this clustering, \( k = 15 \) clusters were identified, and generally, only one representative feature from each cluster was selected for further analysis. Clusters containing unpopular activities, such as "Adventure", which only had 42 participants, were discarded. The cluster containing popular features like "Beach," "Swimming," "ScenicWalks," "Markets," "Sightseeing," "Friends," "Pubs," "BBQ," "Shopping," "Eating," "EatingHigh," "Movies," and "Relaxing" was treated differently. Multiple features from this cluster were retained to preserve as much information as possible. After feature selection, the observations were reclustered using k-means with \( k = 15 \).
+At first, hierarchical clustering using Ward's method \citep{murtagh2014ward} and the Jaccard index was applied to the features. The resulting dendrogram is shown in Figure \ref{fig:aus_feature_clustering}. Based on this clustering, \( k = 15 \) clusters were identified, and generally, only one representative feature from each cluster was selected for further analysis. Clusters containing unpopular activities, such as ``Adventure", which only had 42 participants, were discarded. The cluster containing popular features like ``Beach", ``Swimming", ``ScenicWalks", ``Markets", ``Sightseeing", ``Friends", ``Pubs", ``BBQ", ``Shopping", ``Eating", ``EatingHigh", ``Movies," and ``Relaxing" was treated differently. Multiple features from this cluster were retained to preserve as much information as possible. After feature selection, the observations were reclustered using k-means with \( k = 15 \).
 
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=1\textwidth]{aus_feature_clustering.png}
-    \caption{Dendogram of the features of the Australian Vacation Activities dataset using Ward's method with the Jaccard index. Features which were clustered together are marked by the colored boxes. We can see, which activties had similar patterns in tourst interest.}
+    \caption{Dendogram of the features of the Australian Vacation Activities dataset using Ward's method with the Jaccard index. Features which were clustered together are marked by the colored boxes. We can see, which activities had similar patterns in tourist interest.}
     \label{fig:aus_feature_clustering}
 \end{figure}
 
@@ -334,13 +333,13 @@ At first, hierarchical clustering using Ward's method \citep{murtagh2014ward} an
 
 In the heatmap displaying the intra-cluster fraction shown in Figure \ref{fig:aus_heatmapg}, we observe that subsets 1, 2, and 6 tend to prefer travelling alone. As a tourist agency, we might be interested in targeting solo travellers more effectively. However, subsets 2 and 6 also include individuals who enjoy spending time with their friends. To further explore the dataset, we can launch an \texttt{interactive\_tour()} with the same configuration as in the previous example. To achieve better separation between the subsets, we can skip to the last frames of a 2 dimensional tour optimized for the LDA index. 
 
-Since we are particularly interested in tourists who did not spend time with friends, we can extend the projection axis "Friends" outward to separate the data based on that feature. Datapoints in the opposite direction of the "Friends" axes are the solo travellers we are interested in, which can be seen in Figure \ref{fig:aus_preselection} on the left side of the top left plot. Subsequently, we can pull all other projection axes in one direction to separate data points based on their overall activity level. Tourists that fall in the direction of the axes generally engaged in more activities compared to those in the opposite direction of the projection axes. This separation is evident, as observations in subset 6 (brown) are located opposite the axes, and the heatmap shows that they did not engage in many activities. Similarly we can also see that subset 2 (orange), which contains quite active tourists, is shifted towards the direction of the axes.
+Since we are particularly interested in tourists who did not spend time with friends, we can extend the projection axis ``Friends" outward to separate the data based on that feature. Datapoints in the opposite direction of the ``Friends" axes are the solo travellers we are interested in, which can be seen in Figure \ref{fig:aus_preselection} on the left side of the top left plot. Subsequently, we can pull all other projection axes in one direction to separate data points based on their overall activity level. Tourists that fall in the direction of the axes generally engaged in more activities compared to those in the opposite direction of the projection axes. This separation is evident, as observations in subset 6 (brown) are located opposite the axes, and the heatmap shows that they did not engage in many activities. Similarly we can also see that subset 2 (orange), which contains quite active tourists, is shifted towards the direction of the axes.
 
 Using this logic, we can segment the data points on the left into three segments: active tourists (more upward), moderately active tourists (center), and largely inactive tourists (bottom). The result of this segmentation can be seen in Figure \ref{fig:aus_selection}. Analyzing the heatmap, we can identify several interesting patterns.
 
 By comparing subset 3 (green), which contains active tourists who spent time with their friends, with subset 7 (pink), the active tourists who traveled alone, we notice that subset 7 showed less interest in visiting the casino, theatre, and chartering a boat.
 
-We also observe distinctive differences in the interests of the subsets that traveled alone. Subset 7 was interested in relaxing, shopping, sightseeing, wildlife, going to the beach, visiting pubs, and exploring farms. Given that subset 7 showed a notable interest in going to pubs, we can assume they want to meet new people. This insight can be utilized in a marketing campaign that bundles the activities subset 7 is interested in, creating a package tailored for solo travelers. This way, they can meet other solo travelers while engaging in activities they enjoy.
+We also observe distinctive differences in the interests of the subsets that traveled alone. Subset 7 was interested in relaxing, shopping, sightseeing, wildlife, going to the beach, visiting pubs, and exploring farms. Given that subset 7 showed a notable interest in going to pubs, we can assume they want to meet new people. This insight can be utilized in a marketing campaign that bundles the activities subset 7 is interested in, creating a package tailored for solo travellers. This way, they can meet other solo travellers while engaging in activities they enjoy.
 
 Although subset 8 (grey) was generally less active, almost everyone still engaged in sightseeing. For them, the focus was on sightseeing, relaxing, shopping, and going to the beach, with much less interest in other activities. It can be assumed that they value their time alone. These tourists could potentially be targeted more effectively by offering sightseeing options with minimal interaction, such as using a phone app to provide information about interesting locations, rather than relying on a tour guide.
 
@@ -357,7 +356,7 @@ Finally, since subset 9 (gold) is notably inactive, one might infer that they pr
 \begin{figure}[h!]
     \centering
     \includegraphics[width=1\textwidth]{aus_preselection.png}
-    \caption{Interactive tour GUI loaded with multiple plots showing different aspects of the k-means solution of the Australian vacation activities dataset, with the projection axes of the feature "Friends" pointing into one direction and all the other ones into another one. Top left: 2D tour. Top right: 1D tour. Bottom left: Mosaic plot. Bottom right: Heatmap with the intra cluster fraction. We can see how the feature "Friends" and the general activity level (represented by the other projection axes pointing into one direction) separates the data.}
+    \caption{Interactive tour GUI loaded with multiple plots showing different aspects of the k-means solution of the Australian vacation activities dataset, with the projection axes of the feature ``Friends" pointing into one direction and all the other ones into another one. Top left: 2D tour. Top right: 1D tour. Bottom left: Mosaic plot. Bottom right: Heatmap with the intra cluster fraction. We can see how the feature ``Friends" and the general activity level (represented by the other projection axes pointing into one direction) separates the data.}
     \label{fig:aus_preselection}
 \end{figure}
 
@@ -365,7 +364,7 @@ Finally, since subset 9 (gold) is notably inactive, one might infer that they pr
 \begin{figure}[h!]
     \centering
     \includegraphics[width=1\textwidth]{aus_selection.png}
-    \caption{Interactive tour GUI as seen in \ref{fig:aus_preselection}, but after subselection of subsets 7 (pink), 8 (grey) and 9 (gold). Top left: 2D tour. Top right: 1D tour. Bottom left: Mosaic plot. Bottom right: Heatmap with the intra cluster fraction. We can observe the preferences of three new subsegments, which can be interpreted as very active (pink), moderately active (grey) and inactive (gold) tourists tavelling without their friends.}
+    \caption{Interactive tour GUI as seen in \ref{fig:aus_preselection}, but after sub-selection of subsets 7 (pink), 8 (grey) and 9 (gold). Top left: 2D tour. Top right: 1D tour. Bottom left: Mosaic plot. Bottom right: Heatmap with the intra cluster fraction. We can observe the preferences of three new subsegments, which can be interpreted as very active (pink), moderately active (grey) and inactive (gold) tourists travelling without their friends.}
     \label{fig:aus_selection}
 \end{figure}
 
@@ -376,7 +375,7 @@ One might question the necessity of manual exploratory data analysis, considerin
 
 In such cases, manual exploration allows analysts to interweave expert knowledge, intuition, and specific objectives with the initial clustering solution, which serves as the backbone of the analysis. This approach is particularly valuable when no single solution can be deemed “correct.” For instance, in the Austrian dataset, leveraging the interactive GUI for feature selection enabled us to isolate the most informative activities and gain deeper insights into the preferences of tourists who might be interested in visiting museums. This understanding facilitated targeted recommendations for increasing museum attendance by focusing on tourists frequenting hiking trails, excursion spots, and shopping centers. Such insights are challenging to extract through automated optimization alone.
 
-Similarly, in the Australian dataset, manual exploration allowed us to refine the understanding of solo travelers by dividing them into three distinct subsegments: highly active, moderately active, and largely inactive tourists. This nuanced segmentation, derived from a blend of automated clustering and manual adjustments, offers a deeper understanding of the varied needs and behaviors within this group, enabling more effective marketing strategies.
+Similarly, in the Australian dataset, manual exploration allowed us to refine the understanding of solo travellers by dividing them into three distinct subsegments: highly active, moderately active, and largely inactive tourists. This nuanced segmentation, derived from a blend of automated clustering and manual adjustments, offers a deeper understanding of the varied needs and behaviors within this group, enabling more effective marketing strategies.
 
 While some plots supported by the pytourr package are specifically designed for analyzing binary survey data, it is important to emphasize that its capabilities extend far beyond this data type. The versatility of tours has been demonstrated across various applications in the past, showcasing their effectiveness in exploring complex, high-dimensional datasets. The interactive GUI enables seamless exploration of both one- and two-dimensional tours, regardless of the data being analyzed, providing a powerful tool for uncovering patterns and insights across diverse domains.
 
