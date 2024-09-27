@@ -228,7 +228,14 @@ The Austrian Vacation Activities \cite{dolnicar2003winter} and the Australian Va
 
 \subsection{Austrian Vacation Activities dataset}
 
-The Austrian Vacation Activities dataset comprises responses from 2,961 adult tourists who spent their holiday in Austria during the 1997/98 season. Participants were asked to evaluate the importance of 27 different activities during their vacation. The survey categorized responses based on four levels of importance: ``totally important'', ``mostly important'', ``a bit important'', and ``not important''. For analysis, the responses were binarized: a value of 1 was assigned if the activity was rated as ``totally important'', and a value of 0 if any of the other categories were selected. The survey was conducted by the Europäisches Tourismus Institut GmbH at the University of Trier and focused exclusively on tourists who did not stay in the country's capital cities.
+The Austrian Vacation Activities dataset comprises responses from 2,961 adult tourists who spent their holiday in Austria during the 1997/98 season. Participants were asked to evaluate the importance of 27 different activities during their vacation. The survey categorized responses based on four levels of importance: ``totally important'', ``mostly important'', ``a bit important'', and ``not important''. For analysis, the responses were binarized: a value of 1 was assigned if the activity was rated as ``totally important'', and a value of 0 if any of the other categories were selected. The survey was conducted by the Europäisches Tourismus Institut GmbH at the University of Trier and focused exclusively on tourists who did not stay in the country's capital cities. Figure \ref{winter-gt} shows three projections from a grand tour of this data: when mostly two variables contribute to a projection the data will look apparently clustered, due to the binary values, but when more variables contribute to the projection it looks more continuous.
+
+\begin{figure*}[h]
+\centerline{\includegraphics[width=0.3\textwidth]{images/winter_proj1.pdf}\includegraphics[width=0.3\textwidth]{images/winter_proj2.pdf}\includegraphics[width=0.3\textwidth]{images/winter_proj3.pdf}}
+\caption{Three 2D projections from a grand tour on the Austrian Vacation Activities data. Because the 27 variables are binary, you'll see some apparent clusters (left) but with this many binary variables the data mostly looks continuous.}
+\label{winter-gt}
+\end{figure*}
+
 
 To gain further insight into the dataset a k-means clustering as described in \cite{leisch2018market} has been performed. Therefore, the function \texttt{stepcclust} of the R package \texttt{flexclust}\citep{flexclust} with $k=6$ and $nrep=20$ was used.
 
