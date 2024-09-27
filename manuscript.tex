@@ -167,7 +167,7 @@ In practice, this means that the background, without the interactive elements, m
 
 \section{Workflow with the lionfish package}~\label{workflow}
 
-Before launching the lionfish interface the user should have performed a partitioning of their choice, and provide the initial clustering solution used by the interface. We launch the interface to explore and potentially refine this solution.
+Before launching the \texttt{lionfish} interface the user should have performed a partitioning of their choice, and provide the initial clustering solution used by the interface. We launch the interface to explore and potentially refine this solution.
 
 \subsection{Variable selection}
 
@@ -241,8 +241,8 @@ To gain further insight into the dataset a k-means clustering as described in \c
 
 \subsubsection{Feature selection}
 
-The original dataset contains \(p\)=27 features. Some of these features are more informative than others. We only want to keep the most informative ones. Additionally, interacting with the lionfish GUI becomes cumbersome when handling more than \textasciitilde
- 15 features, making it necessary to reduce the dimensionality of the dataset. An effective and intuitive way to perform feature selection is by using the heatmap display within lionfish. 
+The original dataset contains \(p\)=27 features. Some of these features are more informative than others. We only want to keep the most informative ones. Additionally, interacting with the \texttt{lionfish} GUI becomes cumbersome when handling more than \textasciitilde
+ 15 features, making it necessary to reduce the dimensionality of the dataset. An effective and intuitive way to perform feature selection is by using the heatmap display within \texttt{lionfish}. 
 
 \begin{figure}[h!]
     \centering
@@ -384,18 +384,18 @@ In such cases, manual exploration allows analysts to interweave expert knowledge
 
 Similarly, in the Australian dataset, manual exploration allowed us to refine the understanding of solo travellers by dividing them into three distinct subsegments: highly active, moderately active, and largely inactive tourists. This nuanced segmentation, derived from a blend of automated clustering and manual adjustments, offers a deeper understanding of the varied needs and behaviors within this group, enabling more effective marketing strategies.
 
-While some plots supported by the lionfish package are specifically designed for analyzing binary survey data, it is important to emphasize that its capabilities extend far beyond this data type. The versatility of tours has been demonstrated across various applications in the past, showcasing their effectiveness in exploring complex, high-dimensional datasets. The interactive GUI enables seamless exploration of both one- and two-dimensional tours, regardless of the data being analyzed, providing a powerful tool for uncovering patterns and insights across diverse domains.
+While some plots supported by the \texttt{lionfish} package are specifically designed for analyzing binary survey data, it is important to emphasize that its capabilities extend far beyond this data type. The versatility of tours has been demonstrated across various applications in the past, showcasing their effectiveness in exploring complex, high-dimensional datasets. The interactive GUI enables seamless exploration of both one- and two-dimensional tours, regardless of the data being analyzed, providing a powerful tool for uncovering patterns and insights across diverse domains.
 
 
 \section{Conclusion}~\label{conclusion}
 
-Ultimately, manual data exploration serves as a useful complement to automated methods, providing the flexibility to incorporate context, expert judgment, and specific analytical goals. This approach enables analysts to refine initial results and adapt them to the complexities of real-world scenarios, leading to more nuanced interpretations and actionable insights. The lionfish package offers an organised and responsive interactive tool for conducting such analyses, bridging the gap between automated clustering and exploration.
+Ultimately, manual data exploration serves as a useful complement to automated methods, providing the flexibility to incorporate context, expert judgment, and specific analytical goals. This approach enables analysts to refine initial results and adapt them to the complexities of real-world scenarios, leading to more nuanced interpretations and actionable insights. The \texttt{lionfish} package offers an organised and responsive interactive tool for conducting such analyses, bridging the gap between automated clustering and exploration.
 
-By integrating interactive visualization capabilities, the lionfish package empowers users to dynamically engage with their data, making it possible to uncover subtle patterns and relationships that might otherwise remain hidden. This is especially valuable in tackling complex datasets with the mindset that an automated solution needs to be validated. The package has broad applicability across various data types and analytical contexts where clustering is used. The flexibility of setting up the GUI elements from the command line allow it to be tailored for different applications.
+By integrating interactive visualization capabilities, the \texttt{lionfish} package empowers users to dynamically engage with their data, making it possible to uncover subtle patterns and relationships that might otherwise remain hidden. This is especially valuable in tackling complex datasets with the mindset that an automated solution needs to be validated. The package has broad applicability across various data types and analytical contexts where clustering is used. The flexibility of setting up the GUI elements from the command line allow it to be tailored for different applications.
 
 Future developments in the software might include expanding the range of interactive features and providing additional visualization methods.  Because it is built on R and python, it would also be possible to integrate more closely with the machine learning algorithms, such as generating new cluster solutions directly from the GUI. For more complex shapes, containing concavities, or non-linear boundaries, implementation of sliced tours~\citep{Laa2020}, would be recommended.
 
-In summary, lionfish represents a significant advancement in the toolkit of data analysts, offering a novel way to balance automated analysis with human intuition and domain expertise, thereby facilitating a deeper and more comprehensive understanding of complex datasets.
+In summary, \texttt{lionfish} represents a significant advancement in the toolkit of data analysts, offering a novel way to balance automated analysis with human intuition and domain expertise, thereby facilitating a deeper and more comprehensive understanding of complex datasets.
 
 
 %\bibliographystyle{plainat}

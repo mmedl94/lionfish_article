@@ -11,8 +11,8 @@
 
 \bibitem[{Asimov(1985)}]{Asimov1985-xr}
 Asimov D (1985).
-\newblock \enquote{{T}he {G}rand {T}our: {A} {T}ool for {V}iewing
-  {M}ultidimensional {D}ata.}
+\newblock \enquote{{T}he {g}rand {t}our: {a} {t}ool for {v}iewing
+  {m}ultidimensional {d}ata.}
 \newblock \emph{SIAM Journal of Scientific and Statistical Computing},
   \textbf{6}(1), 128--143.
 \newblock ISSN 0196-5204.
@@ -26,7 +26,7 @@ Cliff K (2009).
 
 \bibitem[{Cook and Buja(1997)}]{cook_manual_1997}
 Cook D, Buja A (1997).
-\newblock \enquote{Manual Controls for High-Dimensional Data Projections.}
+\newblock \enquote{Manual controls for high-dimensional data projections.}
 \newblock \emph{Journal of Computational and Graphical Statistics},
   \textbf{6}(4), 464--480.
 \newblock ISSN 1061-8600.
@@ -35,7 +35,7 @@ Cook D, Buja A (1997).
 
 \bibitem[{Cook \emph{et~al.}(1995)Cook, Buja, Cabrera, and Hurley}]{CBCH94}
 Cook D, Buja A, Cabrera J, Hurley C (1995).
-\newblock \enquote{Grand {T}our and {P}rojection {P}ursuit.}
+\newblock \enquote{Grand {t}our and {p}rojection {pursuit}.}
 \newblock \emph{Journal of Computational and Graphical Statistics},
   \textbf{4}(3), 155--172.
 
@@ -47,8 +47,8 @@ Dolnicar S, Leisch F (2003).
 
 \bibitem[{Hart and Wang(2023)}]{RJ-2023-052}
 Hart C, Wang E (2023).
-\newblock \enquote{Taking the Scenic Route: Interactive and Performant Tour
-  Animations.}
+\newblock \enquote{Taking the scenic route: interactive and performant tour
+  animations.}
 \newblock \emph{The R Journal}, \textbf{15}, 307--329.
 \newblock ISSN 2073-4859.
 \newblock \doi{10.32614/RJ-2023-052}.
@@ -70,16 +70,16 @@ Laa U, Aumann A, Cook D, Valencia G (2023).
 
 \bibitem[{Laa \emph{et~al.}(2020)Laa, Cook, and Valencia}]{Laa2020}
 Laa U, Cook D, Valencia G (2020).
-\newblock \enquote{A Slice Tour for Finding Hollowness in High-Dimensional
-  Data.}
+\newblock \enquote{A slice tour for finding hollowness in high-dimensional
+  data.}
 \newblock \emph{Journal of Computational and Graphical Statistics},
   \textbf{29}(3), 681--687.
 \newblock \doi{10.1080/10618600.2020.1777140}.
 
 \bibitem[{Lee \emph{et~al.}(2005)Lee, Cook, Klinke, and Lumley}]{lckl2005}
 Lee EK, Cook D, Klinke S, Lumley T (2005).
-\newblock \enquote{Projection Pursuit for Exploratory Supervised
-  Classification.}
+\newblock \enquote{Projection pursuit for exploratory supervised
+  classification.}
 \newblock \emph{Journal of Computational and Graphical Statistics},
   \textbf{14}(4), 831--846.
 
@@ -96,7 +96,7 @@ Lee S, Cook D, da~Silva N, Laa U, Spyrison N, Wang E, Zhang HS (2022).
 
 \bibitem[{Leisch(2006)}]{flexclust}
 Leisch F (2006).
-\newblock \enquote{A Toolbox for K-Centroids Cluster Analysis.}
+\newblock \enquote{A toolbox for k-centroids cluster analysis.}
 \newblock \emph{Computational Statistics and Data Analysis}, \textbf{51}(2),
   526--544.
 \newblock \doi{10.1016/j.csda.2005.10.006}.
@@ -126,14 +126,14 @@ Schimansky T (2024).
 
 \bibitem[{Ushey \emph{et~al.}(2024)Ushey, Allaire, and Tang}]{reticulate}
 Ushey K, Allaire J, Tang Y (2024).
-\newblock \emph{reticulate: Interface to 'Python'}.
+\newblock \emph{reticulate: interface to 'Python'}.
 \newblock R package version 1.38.0, https://github.com/rstudio/reticulate,
   \urlprefix\url{https://rstudio.github.io/reticulate/}.
 
 \bibitem[{Wickham \emph{et~al.}(2011)Wickham, Cook, Hofmann, and Buja}]{tourr}
 Wickham H, Cook D, Hofmann H, Buja A (2011).
-\newblock \enquote{{tourr}: An {R} Package for Exploring Multivariate Data with
-  Projections.}
+\newblock \enquote{{tourr}: An {R} package for exploring multivariate data with
+  projections.}
 \newblock \emph{Journal of Statistical Software}, \textbf{40}(2), 1--18.
 \newblock \urlprefix\url{https://doi.org/10.18637/jss.v040.i02}.
 
