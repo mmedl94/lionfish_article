@@ -15,12 +15,12 @@
         Dianne Cook\,\orcidlink{0000-0002-3813-7155}\\ Econometrics and Business Statistics \\ Monash University \\ Melbourne \And
         Ursula Laa\,\orcidlink{0000-0002-0249-6439}\\ Institute of Statistics \\ BOKU University \\ Vienna}
 %% \AND can be used instead of \And and starts a new line
-\title{LIONFISH: an expLoratory Interactive tOol for dyNamic visualization and identiFicatIon multidimenSional mecHanisms}
+\title{Interactively Visualizing Clustering in Multivariate Data Using lionfish}
 
 %% for pretty printing and a nice hypersummary also set:
 \Plainauthor{Matthias Medl, Dianne Cook, Ursula Laa} %% comma-separated
-\Plaintitle{LIONFISH} %% without formatting
-\Shorttitle{LIONFISH} %% a short title (if necessary)
+\Plaintitle{lionfish} %% without formatting
+\Shorttitle{lionfish} %% a short title (if necessary)
 
 %% an abstract and keywords
 \Abstract{
@@ -117,16 +117,16 @@ To integrate user interactions with the capabilities of the tourr package an act
 Our solution is using Python for high-performance interactivity, through the packages \texttt{TKinter} \citep{lundh1999introduction}, \texttt{CustomTKinter} \citep{schimansky24}, and \texttt{matplotlib} \citep{Hunter:2007}, with integration to the tourr package \citep{tourr} via \texttt{reticulate} \citep{reticulate}, a framework that facilitates seamless interoperability between Python and R.
 \textcolor{red}{also rpy2?}
 
-%At the core of the \texttt{pytourr} package is a graphical user interface (GUI) designed to display multiple linked visualizations concurrently. Users can interact with one of the plots, for example, by subselecting specific data points, and the other linked plots will dynamically update to reflect these modifications. This interconnected functionality allows for efficient and immediate analysis of high-dimensional datasets without necessitating extensive coding, thereby streamlining the exploratory data analysis process.
+%At the core of the \texttt{lionfish} package is a graphical user interface (GUI) designed to display multiple linked visualizations concurrently. Users can interact with one of the plots, for example, by subselecting specific data points, and the other linked plots will dynamically update to reflect these modifications. This interconnected functionality allows for efficient and immediate analysis of high-dimensional datasets without necessitating extensive coding, thereby streamlining the exploratory data analysis process.
 
-The interface was implemented in \texttt{pytourr} and offers a variety of linked interactive plot types, providing users with the flexibility to visualize their data from multiple perspectives. The ability to navigate through various projections of the displayed tours directly within a graphical user interface (GUI) enables users to explore different aspects of the dataset. Furthermore, users can initiate new tours directly from the interface. The GUI also supports interactive variable selection, allowing users to specify which subset of variables should be visualized in the plots. Once users have identified interesting views or settings, \texttt{pytourr} allows them to save the displayed projections, subsets, and plots. This functionality ensures that analysis states can be preserved for further examination or reporting, making the package particularly useful for iterative analysis where findings may need to be revisited or shared with collaborators.
+The interface was implemented in \texttt{lionfish} and offers a variety of linked interactive plot types, providing users with the flexibility to visualize their data from multiple perspectives. The ability to navigate through various projections of the displayed tours directly within a graphical user interface (GUI) enables users to explore different aspects of the dataset. Furthermore, users can initiate new tours directly from the interface. The GUI also supports interactive variable selection, allowing users to specify which subset of variables should be visualized in the plots. Once users have identified interesting views or settings, \texttt{lionfish} allows them to save the displayed projections, subsets, and plots. This functionality ensures that analysis states can be preserved for further examination or reporting, making the package particularly useful for iterative analysis where findings may need to be revisited or shared with collaborators.
 
-With its high level of interactivity, performance, and ease of use, \texttt{pytourr} streamlines the exploration of complex datasets, offering a powerful tool for researchers working with high-dimensional data.
+With its high level of interactivity, performance, and ease of use, \texttt{lionfish} streamlines the exploration of complex datasets, offering a powerful tool for researchers working with high-dimensional data.
 
 
 \subsection{Overview of the graphical user interface (GUI)}
 
-The \texttt{pytourr} GUI can be launched using the function \texttt{interactive\textunderscore tour()}. At a minimum, the user needs to provide both the dataset and the instructions for constructing the desired plots. The dataset must be supplied as a \texttt{data.table}, while the plotting instructions should be passed as a list containing the named elements \texttt{type} and \texttt{obj}. The \texttt{type} element specifies the type of display to generate, such as \texttt{scatter} for a scatterplot or \texttt{2d\textunderscore tour} for a 2-dimensional tour. The \texttt{obj} element further defines the properties of the chosen display. For example, to create a 2-dimensional tour, the user must provide a \texttt{tour\textunderscore history} object, which can be generated using the \texttt{tourr} package. For a scatterplot, the user needs to provide a vector of strings specifying the names of the features to be displayed. The user can optionally specify the feature names, the arrangement of the plots, predefined subsets of the data (e.g., cluster solutions), custom names for these subsets, the number of available subsets, and the size of each plot.
+The \texttt{lionfish} GUI can be launched using the function \texttt{interactive\textunderscore tour()}. At a minimum, the user needs to provide both the dataset and the instructions for constructing the desired plots. The dataset must be supplied as a \texttt{data.table}, while the plotting instructions should be passed as a list containing the named elements \texttt{type} and \texttt{obj}. The \texttt{type} element specifies the type of display to generate, such as \texttt{scatter} for a scatterplot or \texttt{2d\textunderscore tour} for a 2-dimensional tour. The \texttt{obj} element further defines the properties of the chosen display. For example, to create a 2-dimensional tour, the user must provide a \texttt{tour\textunderscore history} object, which can be generated using the \texttt{tourr} package. For a scatterplot, the user needs to provide a vector of strings specifying the names of the features to be displayed. The user can optionally specify the feature names, the arrangement of the plots, predefined subsets of the data (e.g., cluster solutions), custom names for these subsets, the number of available subsets, and the size of each plot.
 
 The GUI is divided into two main sections: a sidebar on the left, which contains a comprehensive set of interactive controls, and the display area on the right, where the selected plots are shown (see Figure \ref{fig:GUI_overview}).
 
@@ -149,7 +149,7 @@ The \texttt{Save projections and subsets} button can be used to save the current
 
 \subsection{R/Python interface}
 
-The majority of \texttt{pytourr} was written in Python, while the R side of the package handles setting up the Python environment within the interactive interface is being run, launching the interactive tour, and generating new tours when initiated through the interface. To incorporate the functionality of the \texttt{tourr} package without translating large portions of its code from R to Python, the \texttt{reticulate} package was used. This approach allows \texttt{pytourr} to automatically benefit from updates to \texttt{tourr}.
+The majority of \texttt{lionfish} was written in Python, while the R side of the package handles setting up the Python environment within the interactive interface is being run, launching the interactive tour, and generating new tours when initiated through the interface. To incorporate the functionality of the \texttt{tourr} package without translating large portions of its code from R to Python, the \texttt{reticulate} package was used. This approach allows \texttt{lionfish} to automatically benefit from updates to \texttt{tourr}.
 
 However, to reduce inefficiencies caused by cross-language communication and to simplify debugging, \texttt{tourr} functions were only accessed when necessary. Core functionalities, such as performing data transformations using projections, were implemented directly in Python. These transformations are based on well-established mathematical principles and are straightforward to replicate, ensuring they remain stable and efficient.
 
@@ -165,9 +165,9 @@ The implementation of bit blitting was crucial to ensuring fast plot updates and
 
 In practice, this means that the background, without the interactive elements, must be captured either during initialization or after major updates. The entire plot is first rendered without the interactive elements, the background is then saved, and finally, the plot is redrawn with the interactive elements blended in. Since this process is relatively slow, full updates are only triggered during initialization or after significant changes, such as modifications to the set of active features.
 
-\section{Workflow with the pytourr package}~\label{workflow}
+\section{Workflow with the lionfish package}~\label{workflow}
 
-Before launching the pytourr interface the user should have performed a partitioning of their choice, and provide the initial clustering solution used by the interface. We launch the interface to explore and potentially refine this solution.
+Before launching the lionfish interface the user should have performed a partitioning of their choice, and provide the initial clustering solution used by the interface. We launch the interface to explore and potentially refine this solution.
 
 \subsection{Variable selection}
 
@@ -234,8 +234,8 @@ To gain further insight into the dataset a k-means clustering as described in \c
 
 \subsubsection{Feature selection}
 
-The original dataset contains \(p\)=27 features. Some of these features are more informative than others. We only want to keep the most informative ones. Additionally, interacting with the pytourr GUI becomes cumbersome when handling more than \textasciitilde
- 15 features, making it necessary to reduce the dimensionality of the dataset. An effective and intuitive way to perform feature selection is by using the heatmap display within pytourr. 
+The original dataset contains \(p\)=27 features. Some of these features are more informative than others. We only want to keep the most informative ones. Additionally, interacting with the lionfish GUI becomes cumbersome when handling more than \textasciitilde
+ 15 features, making it necessary to reduce the dimensionality of the dataset. An effective and intuitive way to perform feature selection is by using the heatmap display within lionfish. 
 
 \begin{figure}[h!]
     \centering
@@ -377,22 +377,22 @@ In such cases, manual exploration allows analysts to interweave expert knowledge
 
 Similarly, in the Australian dataset, manual exploration allowed us to refine the understanding of solo travellers by dividing them into three distinct subsegments: highly active, moderately active, and largely inactive tourists. This nuanced segmentation, derived from a blend of automated clustering and manual adjustments, offers a deeper understanding of the varied needs and behaviors within this group, enabling more effective marketing strategies.
 
-While some plots supported by the pytourr package are specifically designed for analyzing binary survey data, it is important to emphasize that its capabilities extend far beyond this data type. The versatility of tours has been demonstrated across various applications in the past, showcasing their effectiveness in exploring complex, high-dimensional datasets. The interactive GUI enables seamless exploration of both one- and two-dimensional tours, regardless of the data being analyzed, providing a powerful tool for uncovering patterns and insights across diverse domains.
+While some plots supported by the lionfish package are specifically designed for analyzing binary survey data, it is important to emphasize that its capabilities extend far beyond this data type. The versatility of tours has been demonstrated across various applications in the past, showcasing their effectiveness in exploring complex, high-dimensional datasets. The interactive GUI enables seamless exploration of both one- and two-dimensional tours, regardless of the data being analyzed, providing a powerful tool for uncovering patterns and insights across diverse domains.
 
 
 \section{Conclusion}~\label{conclusion}
 
-Ultimately, manual data exploration serves as a useful complement to automated methods, providing the flexibility to incorporate context, expert judgment, and specific analytical goals. This approach enables analysts to refine initial results and adapt them to the complexities of real-world scenarios, leading to more nuanced interpretations and actionable insights. The pytourr package offers an organised and responsive interactive tool for conducting such analyses, bridging the gap between automated clustering and exploration.
+Ultimately, manual data exploration serves as a useful complement to automated methods, providing the flexibility to incorporate context, expert judgment, and specific analytical goals. This approach enables analysts to refine initial results and adapt them to the complexities of real-world scenarios, leading to more nuanced interpretations and actionable insights. The lionfish package offers an organised and responsive interactive tool for conducting such analyses, bridging the gap between automated clustering and exploration.
 
-By integrating interactive visualization capabilities, the pytourr package empowers users to dynamically engage with their data, making it possible to uncover subtle patterns and relationships that might otherwise remain hidden. This is especially valuable in tackling complex datasets with the mindset that an automated solution needs to be validated. The package has broad applicability across various data types and analytical contexts where clustering is used. The flexibility of setting up the GUI elements from the command line allow it to be tailored for different applications.
+By integrating interactive visualization capabilities, the lionfish package empowers users to dynamically engage with their data, making it possible to uncover subtle patterns and relationships that might otherwise remain hidden. This is especially valuable in tackling complex datasets with the mindset that an automated solution needs to be validated. The package has broad applicability across various data types and analytical contexts where clustering is used. The flexibility of setting up the GUI elements from the command line allow it to be tailored for different applications.
 
 Future developments in the software might include expanding the range of interactive features and providing additional visualization methods.  Because it is built on R and python, it would also be possible to integrate more closely with the machine learning algorithms, such as generating new cluster solutions directly from the GUI. For more complex shapes, containing concavities, or non-linear boundaries, implementation of sliced tours~\citep{Laa2020}, would be recommended.
 
-In summary, pytourr represents a significant advancement in the toolkit of data analysts, offering a novel way to balance automated analysis with human intuition and domain expertise, thereby facilitating a deeper and more comprehensive understanding of complex datasets.
+In summary, lionfish represents a significant advancement in the toolkit of data analysts, offering a novel way to balance automated analysis with human intuition and domain expertise, thereby facilitating a deeper and more comprehensive understanding of complex datasets.
 
 
 %\bibliographystyle{plainat}
-\bibliography{pytourr_references.bib}
+\bibliography{lionfish_references.bib}
 
 
 
