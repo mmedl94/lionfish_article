@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.31)  27 SEP 2024 15:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.31)  27 SEP 2024 15:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -997,7 +997,7 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [11 <./images/winter_activ_cluster_highlights.png>]
-<images/aus_feature_clustering.png, id=286, 1081.03876pt x 451.6875pt>
+<images/aus_feature_clustering.png, id=285, 1081.03876pt x 451.6875pt>
 File: images/aus_feature_clustering.png Graphic file (type png)
 <use images/aus_feature_clustering.png>
 Package pdftex.def Info: images/aus_feature_clustering.png  used on input line 
@@ -1029,7 +1029,7 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [14 <./images/winter_cl7_post.png>]
-<images/aus_heatmap.png, id=311, 2104.86375pt x 1865.97125pt>
+<images/aus_heatmap.png, id=310, 2104.86375pt x 1865.97125pt>
 File: images/aus_heatmap.png Graphic file (type png)
 <use images/aus_heatmap.png>
 Package pdftex.def Info: images/aus_heatmap.png  used on input line 351.
@@ -1038,7 +1038,7 @@ Package pdftex.def Info: images/aus_heatmap.png  used on input line 351.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/aus_preselection.png, id=312, 939.51pt x 939.51pt>
+<images/aus_preselection.png, id=311, 939.51pt x 939.51pt>
 File: images/aus_preselection.png Graphic file (type png)
 <use images/aus_preselection.png>
 Package pdftex.def Info: images/aus_preselection.png  used on input line 358.
@@ -1046,7 +1046,7 @@ Package pdftex.def Info: images/aus_preselection.png  used on input line 358.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/aus_selection.png, id=313, 939.51pt x 939.51pt>
+<images/aus_selection.png, id=312, 939.51pt x 939.51pt>
 File: images/aus_selection.png Graphic file (type png)
 <use images/aus_selection.png>
 Package pdftex.def Info: images/aus_selection.png  used on input line 366.
@@ -1110,47 +1110,32 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `manuscript.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `manuscript.out':
-(rerunfilecheck)             Before: 878BC88338B2CAC6ADA2513A3A2ACD46;4490
-(rerunfilecheck)             After:  1F770491BB6972F2BABCD71FF1E4913F;4502.
+Package rerunfilecheck Info: File `manuscript.out' has not changed.
+(rerunfilecheck)             Checksum: 1F770491BB6972F2BABCD71FF1E4913F;4502.
  ) 
 Here is how much of TeX's memory you used:
- 21877 strings out of 474116
- 411795 string characters out of 5743682
+ 21876 strings out of 474116
+ 411688 string characters out of 5743682
  1943187 words of memory out of 5000000
  43739 multiletter control sequences out of 15000+600000
  626769 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  114i,13n,115p,1273b,857s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{Subsubsection.4.1.1.Redefing\040cluster\040assignme
-nts\040-\040learning\040more\040about\040museum\040goers.3} has been referenced
- but does not exist, replaced by a fixed one
-
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/loca
-l/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/
-2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf
--dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/font
-s/type1/public/lm/lmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/pub
-lic/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri
-10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri12.pfb></u
-sr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/t
-exlive/2024/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/202
-4/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-di
-st/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on manuscript.pdf (20 pages, 8477771 bytes).
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/lo
+cal/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texliv
+e/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/tex
+mf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fo
+nts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/p
+ublic/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lm
+ri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri12.pfb><
+/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local
+/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2
+024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-
+dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on manuscript.pdf (20 pages, 8477812 bytes).
 PDF statistics:
- 454 PDF objects out of 1000 (max. 8388607)
- 378 compressed objects within 4 object streams
- 91 named destinations out of 1000 (max. 500000)
+ 452 PDF objects out of 1000 (max. 8388607)
+ 376 compressed objects within 4 object streams
+ 90 named destinations out of 1000 (max. 500000)
  235 words of extra memory for PDF output out of 10000 (max. 10000000)
 
