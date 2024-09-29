@@ -168,11 +168,12 @@ In practice, this means that the background, without the interactive elements, m
 
 Before launching the \texttt{lionfish} interface the user should have performed a partitioning of their choice, and provide the initial clustering solution used by the interface. We launch the interface to explore and potentially refine this solution.
 
-\subsection{Feature selection based on fractional analysis}
+\subsection{Feature selection}
 
 A first step may look into what features are important for the cluster solution. The interface provides different capabilities that support feature selection. First, a 2D tour view can be used to understand the sensitivity of the grouping to individual features, in particular when using the manual tour to remove one feature at a time. This is in particular useful when the starting view was obtained through a projection pursuit guided tour~\citep{CBCH94} that optimized for the separation between the labeled groups~\citep{lckl2005}.
 
 In our applications we are considering market segmentation analysis on binary features. For this setting we have developed a heatmap display that we have found to be particularly useful in feature selection. The idea is to understand differences in the binary ratings between clusters, where we use different normalizations to better explore the data. For \(c_{ij}\) the count (number of true values in the binary feature) in the \(i\)-th cluster and \(j\)-th feature, we define
+
 
 
 \[
