@@ -21,4 +21,27 @@ ggplot(d_tab, aes(x=cl, y=feature, fill=mean)) +
   geom_tile() +
   scale_fill_viridis_c(option="magma")
 
+summed_counts <- d %>%
+  group_by(cl) %>%
+  summarise(across(x1:x4, sum))
 
+# Calculate the row sums for each cluster
+col_sums <- colSums(select(summed_counts, x1:x4))
+
+# Divide each value in the columns x1 to x4 by its respective row sum
+summed_counts_normalized <- summed_counts %>%
+  mutate(across(x1:x4, ~ .x / col_sums))
+
+summed_counts_long <- summed_counts_normalized %>%
+  pivot_longer(cols = x1:x4, names_to = "feature", values_to = "mean")
+
+# Plot heatmap
+ggplot(summed_counts_long, aes(x=cl, y=feature, fill=mean)) +
+  geom_tile() +
+  scale_fill_viridis_c(option="magma")
+
+# In figure 1 (intra cluster fraction) we can see that all observations in
+# cluster 4 had a x4 value of 1.
+# Figure 2 (intra feature fraction) reveals that cluster 1 had more positive x4
+# values. In fact, cluster 1 has the largest accumulation of x4. We cannot see
+# this in figure 1, but I consider this important information.
