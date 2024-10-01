@@ -45,3 +45,17 @@ ggplot(summed_counts_long, aes(x=cl, y=feature, fill=mean)) +
 # Figure 2 (intra feature fraction) reveals that cluster 1 had more positive x4
 # values. In fact, cluster 1 has the largest accumulation of x4. We cannot see
 # this in figure 1, but I consider this important information.
+
+# Compare distributions
+# How many observations in each cluster?
+d |> count(cl) 
+# 33,37,31,19
+d_tab_wide <- d_tab |> 
+  pivot_wider(names_from = feature, values_from = mean)
+d_tab_wide_fnorm <- d_tab_wide |> 
+  mutate_if(is.numeric, function(x) x/sum(x)) |>
+  pivot_longer(x1:x4, names_to = "feature", values_to = "mean")
+
+ggplot(d_tab_wide_fnorm, aes(x=cl, y=feature, fill=mean)) +
+  geom_tile() +
+  scale_fill_viridis_c(option="magma")
