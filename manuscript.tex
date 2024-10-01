@@ -15,7 +15,7 @@
         Dianne Cook\,\orcidlink{0000-0002-3813-7155}\\ Econometrics and Business Statistics \\ Monash University \\ Melbourne \And
         Ursula Laa\,\orcidlink{0000-0002-0249-6439}\\ Institute of Statistics \\ BOKU University \\ Vienna}
 %% \AND can be used instead of \And and starts a new line
-\title{Interactively Visualizing Clustering in Multivariate Data Using lionfish}
+\title{Interactively Visualizing Multivariate Market Segmentation Using the R Package Lionfish}
 
 %% for pretty printing and a nice hypersummary also set:
 \Plainauthor{Matthias Medl, Dianne Cook, Ursula Laa} %% comma-separated
@@ -75,19 +75,19 @@ Clustering algorithms are often used to find a smaller number of observations (t
 
 A difference between clustering analysis and partitioning is typically the nature of the data. With cluster analysis, we usually envision data that contains separated clusters, and a successful clustering result is one that divides the data based on these gaps. With partitioning, it is usual that there are no gaps in the data, but it is still useful to partition the data. Figure \ref{kmeans-partition} illustrates how the $k$-means algorithm would partition a 2D data set into four groups depending on the correlation between the two features. When the correlation is high, the partitioning will be along the combination of features that produces the highest variance. With lower correlation, it will segment the bottom and top, and divide the middle into two parts in the opposite direction. When there is no association, the partitioning is radial like a windmill.
 
-\begin{figure*}[h]
+\begin{figure*}[ht]
 \centerline{\includegraphics[width=1\textwidth]{images/intro1.png}}
 \caption{Examples of how $k$-means partitions 2D data with different association structure. If the correlation is high (c), the partitioning happens along the primary direction of the association.}
 \label{kmeans-partition}
 \end{figure*}
-
-One can see that the data is perfectly divided into four parts. However, if one were to plot the two features individually, this would not be obvious. Figure \ref{kmeans-histogram} shows histograms of the two features, V1, V2, with the colour matching the four partitions. From the histograms, we can see some differences in the partitions for the four different association structures, but they are all overlapping. The distinct border between the partitions can only be seen from the scatterplots of both features. 
 
 \begin{figure*}[ht]
 \centerline{\includegraphics[width=1\textwidth]{images/intro2.png}}
 \caption{The four $k$-means partitions plotted as histograms of the individual features. While differences between groups can be seen, the clear separation cannot. This is important for understanding why high-dimensional visualisation methods are useful for summarising partitioning results.}
 \label{kmeans-histogram}
 \end{figure*}
+
+One can see that the data is perfectly divided into four parts. However, if one were to plot the two features individually, this would not be obvious. Figure \ref{kmeans-histogram} shows histograms of the two features, V1, V2, with the colour matching the four partitions. From the histograms, we can see some differences in the partitions for the four different association structures, but they are all overlapping. The distinct border between the partitions can only be seen from the scatterplots of both features. 
 
 When there are more than two features, histograms of the individual features are commonly used to display the partitioning results. This means that the analyst likely cannot understand how the partitioning divides the data. All that they can observe is roughly how the individual features relate to the partition, which is useful but inadequate. Here is where using tour methods to view high dimensions can be helpful. A tour (\cite{Asimov1985-xr}, and see \cite{lee2022}) can be used to show scatterplots of combinations of features and thus provide views like that in Figure \ref{kmeans-partition} where distinct differences between partitions can be observed. High dimensions are still tricky, and a combination of animations of the linear combinations, and interactive control \citep{cook_manual_1997, laa2023new} over the combinations is important. A scatterplot of a combination of features can be considered to be a projection of the data, and thus like a shadow of a 3D object, some aspects of the data (object) can be obscured. Using slices of the projected data \citep{Laa2020} can be a useful addition to projections. This paper illustrates how to do this to better understand partitioning results for multivariate data.
 
@@ -102,14 +102,14 @@ This paper is organised as follows. Section \ref{interface} describes the softwa
 
 \section{Interactive interface for partitioning}~\label{interface}
 
-The aim of this work is to build an interface that allows for an interactive exploration of partitioning solutions of multivariate data. The interface should enable
+The aim of this work is to build an interface that allows for an interactive exploration of partitions generated by clustering of multivariate market data. In some combinations of the features, one should be able to the separations as can be seen in the 2D example in Figure \ref{kmeans-partition}. The objectives for the interface are to enable:
 
-\begin{itemize}
-\item visualizing a clustering solution with different tour methods, including manual changes to the viewing direction (manual tour)
-\item brushing of (groups of) points for manual refinement of the cluster solution (spin-and-brush capabilities)
-\item additional linked displays for comprehensive exploration of the solution
-\item ability to update the displays based on user selections
-\end{itemize}
+\begin{enumerate}
+\item Visualizing the partitions between clusters in combinations of features using tour methods, with both a grand tour and manual tour.
+\item Interactively brushing groups of points to refine the cluster solution, like done with spin-and-brush tools.
+\item Linking multiple displays to focus on particular clusters, and simplify the problem to better understand the clustering solution. 
+\item Update displays based on user selections such as feature selection or cluster selection, or re-scaling.
+\end{enumerate}
 
 While tour animations are best obtained within R using the tourr package~\citep{tourr}, it does not enable the interactivity required for example for a manual tour~\citep{laa2023new}. Interactive graphics are available when using Javascript, as implemented in the detourr package \citep{RJ-2023-052}. This allows to replay a recorded tour path with interactive graphics, and can also be linked with additional displays, but lacks capabilities for manual tours.
 
@@ -168,31 +168,40 @@ In practice, this means that the background, without the interactive elements, m
 
 Before launching the \texttt{lionfish} interface the user should have performed a partitioning of their choice, and provide the initial clustering solution used by the interface. We launch the interface to explore and potentially refine this solution.
 
-\subsection{Feature selection}
+\subsection{Feature and cluster relationships}
 
-A first step may look into what features are important for the cluster solution. The interface provides different capabilities that support feature selection. First, a 2D tour view can be used to understand the sensitivity of the grouping to individual features, in particular when using the manual tour to remove one feature at a time. This is in particular useful when the starting view was obtained through a projection pursuit guided tour~\citep{CBCH94} that optimized for the separation between the labeled groups~\citep{lckl2005}.
+A first step is to assess which features are important for the cluster solution. The interface provides different capabilities that support feature selection: tour view and summary heatmaps. 
 
-In our applications we are considering market segmentation analysis on binary features. For this setting we have developed a heatmap display that we have found to be particularly useful in feature selection. The idea is to understand differences in the binary ratings between clusters, where we use different normalizations to better explore the data. For \(c_{ij}\) the count (number of true values in the binary feature) in the \(i\)-th cluster and \(j\)-th feature, we define
+The 2D tour view can be used to understand the sensitivity of the grouping to individual features. When using the manual tour to remove one feature at a time, the relationship between this variable and the partition between clusters can be examined. The ideal starting view is that obtained through a projection pursuit guided tour~\citep{CBCH94} that optimized for the separation between the labeled groups~\citep{lckl2005}.
 
-
-
-\[
-\text{Total fraction}\ f_{ij}^{tot} = \frac{c_{ij}}{n}
-\]
-with normalization to the total number of observations $n$ for a general overview,
+The summary heatmaps provide an overview of the cluster compositions relative to the features. Consider the matrix,
 
 \[
-\text{Intra cluster fraction}\  f_{ij}^{clust} = \frac{c_{ij}}{n_{i}}
+C = \left[ \begin{array}{cccc} c_{11} & c_{12} & \dots & c_{1p} \\
+                                              c_{21} & c_{22} & \dots & c_{2p} \\
+                                              \vdots &  \vdots & \ddots &  \vdots \\
+                                              c_{k1} & c_{k2} & \dots & c_{kp}
+                                              \end{array} \right]
 \]
-showing the counts relative to the cluster's size \(n_i\), to see the fraction of observations in cluster $i$ for which feature $j$ was true, and
+
+where $c_{ij}, i=1, ..., p$ (number of features); $j=1, ..., k$ (number of clusters) are a summary of each feature in each cluster. Because our examples use binary features,  the $c_{ij}$ is the number of 1's of feature $j$ in cluster $i$. %For this setting we have developed a heatmap display that we have found to be particularly useful in feature selection. The idea is to understand differences in the binary ratings between clusters, where we use different normalizations to better explore the data. For \(c_{ij}\) the count (number of true values in the binary feature) in the \(i\)-th cluster and \(j\)-th feature, we define
+There are several ways that these values can be normalized to examine different aspects: $f_{ij}^{o} = \frac{c_{ij}}{n}$, $f_{ij}^{c} = \frac{c_{ij}}{n_{i}}$ and $f_{ij}^{f} = \frac{c_{ij}}{n_{j}}$. The first is the overall fraction, where counts are normalised by the overall number of observations $n$. It is generally not particularly useful. The second, $f^c$ is normalized relative to the size of each cluster, and is useful for comparing the features which contribute most to each cluster. The last, $f_f$ is normalized relative to each feature, so it is useful to examine how features are distributed across clusters \textcolor{red}{Not sure this last explanation is good - at least I don't understand what I've written}
+
+%\[
+%\text{Overall fraction}\ f_{ij}^{o} = \frac{c_{ij}}{n}
+%\]
+%with normalization to the total number of observations $n$ for a general overview,
+
+%\[
+%\text{Intra cluster fraction}\  f_{ij}^{clust} = \frac{c_{ij}}{n_{i}}
+%\]
+%showing the counts relative to the cluster's size \(n_i\), to see the fraction of observations in cluster $i$ for which feature $j$ was true, and
 
 
-\[
-\text{Intra feature fraction}\ f_{ij}^{feat} = \frac{c_{ij}}{c_{j}}
-\]
-to see how the true values for feature $j$ are distributed across the different clusters relative, with normalization to the overall count of that feature \(c_j = \sum_i c_{ij}\).
- 
-\textcolor{red}{different symbol for each? indicat on the index value somehow?}
+%\[
+%\text{Intra feature fraction}\ f_{ij}^{feat} = \frac{c_{ij}}{c_{j}}
+%\]
+%to see how the true values for feature $j$ are distributed across the different clusters relative, with normalization to the overall count of that feature \(c_j = \sum_i c_{ij}\).
 
 \subsection{Subset selection}
 
