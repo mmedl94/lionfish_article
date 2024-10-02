@@ -19,8 +19,8 @@
 
 %% for pretty printing and a nice hypersummary also set:
 \Plainauthor{Matthias Medl, Dianne Cook, Ursula Laa} %% comma-separated
-\Plaintitle{lionfish} %% without formatting
-\Shorttitle{lionfish} %% a short title (if necessary)
+\Plaintitle{Interactively Visualizing Multivariate Market Segmentation Using the R Package Lionfish} %% without formatting
+\Shorttitle{Market Segmentation using Lionfish} %% a short title (if necessary)
 
 %% an abstract and keywords
 \Abstract{
@@ -148,7 +148,7 @@ The \texttt{Save projections and subsets} button can be used to save the current
 
 \subsection{R/Python interface}
 
-The majority of \texttt{lionfish} was written in Python, while the R side of the package handles setting up the Python environment within the interactive interface is being run, launching the interactive tour, and generating new tours when initiated through the interface. To incorporate the functionality of the \texttt{tourr} package without translating large portions of its code from R to Python, the \texttt{reticulate} package was used. This approach allows \texttt{lionfish} to automatically benefit from updates to \texttt{tourr}.
+The majority of \texttt{lionfish} was written in Python \citep{python}, while the R \citep{R} side of the package handles setting up the Python environment within the interactive interface is being run, launching the interactive tour, and generating new tours when initiated through the interface. To incorporate the functionality of the \texttt{tourr} package without translating large portions of its code from R to Python, the \texttt{reticulate} package was used. This approach allows \texttt{lionfish} to automatically benefit from updates to \texttt{tourr}.
 
 However, to reduce inefficiencies caused by cross-language communication and to simplify debugging, \texttt{tourr} functions were only accessed when necessary. Core functionalities, such as performing data transformations using projections, were implemented directly in Python. These transformations are based on well-established mathematical principles and are straightforward to replicate, ensuring they remain stable and efficient.
 

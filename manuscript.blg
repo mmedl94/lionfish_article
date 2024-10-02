@@ -6,45 +6,45 @@ Database file #1: lionfish_references.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty journal in cliff2009formative
 Warning--missing publisher in leisch2018market
-You've used 18 entries,
+You've used 20 entries,
             3140 wiz_defined-function locations,
-            762 strings with 8514 characters,
-and the built_in function-call counts, 14843 in all, are:
-= -- 1210
-> -- 416
-< -- 10
-+ -- 166
-- -- 138
-* -- 1226
-:= -- 2049
-add.period$ -- 83
-call.type$ -- 18
-change.case$ -- 120
-chr.to.int$ -- 18
-cite$ -- 20
-duplicate$ -- 1326
-empty$ -- 1346
-format.name$ -- 188
-if$ -- 2988
+            775 strings with 8768 characters,
+and the built_in function-call counts, 16132 in all, are:
+= -- 1318
+> -- 445
+< -- 12
++ -- 177
+- -- 147
+* -- 1317
+:= -- 2235
+add.period$ -- 91
+call.type$ -- 20
+change.case$ -- 131
+chr.to.int$ -- 20
+cite$ -- 22
+duplicate$ -- 1447
+empty$ -- 1470
+format.name$ -- 203
+if$ -- 3254
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 213
-newline$ -- 114
-num.names$ -- 72
-pop$ -- 439
+missing$ -- 231
+newline$ -- 126
+num.names$ -- 80
+pop$ -- 482
 preamble$ -- 1
-purify$ -- 118
+purify$ -- 129
 quote$ -- 0
-skip$ -- 306
+skip$ -- 339
 stack$ -- 0
-substring$ -- 1204
-swap$ -- 502
+substring$ -- 1292
+swap$ -- 538
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 159
+type$ -- 174
 warning$ -- 2
-while$ -- 122
+while$ -- 131
 width$ -- 0
-write$ -- 267
+write$ -- 296
 (There were 2 warnings)
