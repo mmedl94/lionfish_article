@@ -73,13 +73,13 @@ Clustering algorithms are often used to find a smaller number of observations (t
 A difference between clustering analysis and partitioning is typically the nature of the data. With cluster analysis, we usually envision data that contains separated clusters, and a successful clustering result is one that divides the data based on these gaps. With partitioning, it is usual that there are no gaps in the data, but it is still useful to partition the data. Figure \ref{kmeans-partition} illustrates how the $k$-means algorithm would partition a 2D data set into four groups depending on the correlation between the two features. When the correlation is high, the partitioning will be along the combination of features that produces the highest variance. With lower correlation, it will segment the bottom and top, and divide the middle into two parts in the opposite direction. When there is no association, the partitioning is radial like a windmill.
 
 \begin{figure*}[ht]
-\centerline{\includegraphics[width=1\textwidth]{images/intro1.png}}
-\caption{Examples of how $k$-means partitions 2D data with different association structure. If the correlation is high (c), the partitioning happens along the primary direction of the association.}
+\centerline{\includegraphics[width=1\textwidth]{images/intro1.pdf}}
+\caption{Examples of how $k$-means partitions 2D data with different association structure. If the correlation is high (C), the partitioning happens along the primary direction of the association.}
 \label{kmeans-partition}
 \end{figure*}
 
 \begin{figure*}[ht]
-\centerline{\includegraphics[width=1\textwidth]{images/intro2.png}}
+\centerline{\includegraphics[width=1\textwidth]{images/intro2.pdf}}
 \caption{The four $k$-means partitions plotted as histograms of the individual features. While differences between groups can be seen, the clear separation cannot. This is important for understanding why high-dimensional visualisation methods are useful for summarising partitioning results.}
 \label{kmeans-histogram}
 \end{figure*}
@@ -108,9 +108,9 @@ The aim of this work is to build an interface that allows for an interactive exp
 \item Update displays based on user selections such as feature selection or cluster selection, or re-scaling.
 \end{enumerate}
 
-While tour animations are best obtained within \proglang{R} using the tourr package~\citep{tourr}, it does not enable the interactivity required for example for a manual tour~\citep{laa2023new}. Interactive graphics are available when using Javascript, as implemented in the detourr package \citep{RJ-2023-052}. This allows to replay a recorded tour path with interactive graphics, and can also be linked with additional displays, but lacks capabilities for manual tours.
+While tour animations are best obtained within \proglang{R} using the tourr package~\citep{tourr}, it does not enable the interactivity required for example for a manual tour~\citep{laa2023new}. Interactive graphics are available when using \proglang{Javascript}, as implemented in the \texttt{detourr} package \citep{RJ-2023-052}. This allows to replay a recorded tour path with interactive graphics, and can also be linked with additional displays, but lacks capabilities for manual tours.
 
-To integrate user interactions with the capabilities of the tourr package an active communication with the interface is required. For example, we may wish to explore the local neighbourhood of a projection selected by the user with a local tour animation provided by tourr, or we may want to optimize a guided tour path using groups identified via brushing.
+To integrate user interactions with the capabilities of the \texttt{tourr package} an active communication with the interface is required. For example, we may wish to explore the local neighbourhood of a projection selected by the user with a local tour animation provided by tourr, or we may want to optimize a guided tour path using groups identified via brushing.
 Our solution is using \proglang{Python} for high-performance interactivity, through the packages \texttt{TKinter} \citep{lundh1999introduction}, \texttt{CustomTKinter} \citep{schimansky24}, and \texttt{matplotlib} \citep{Hunter:2007}, with integration to the tourr package \citep{tourr} via \texttt{reticulate} \citep{reticulate}, a framework that facilitates seamless interoperability between \proglang{Python} and \proglang{R}.
 
 %At the core of the \texttt{lionfish} package is a graphical user interface (GUI) designed to display multiple linked visualizations concurrently. Users can interact with one of the plots, for example, by subselecting specific data points, and the other linked plots will dynamically update to reflect these modifications. This interconnected functionality allows for efficient and immediate analysis of high-dimensional datasets without necessitating extensive coding, thereby streamlining the exploratory data analysis process.
@@ -288,7 +288,7 @@ We can now repeat the $k$-means clustering with \texttt{stepcclust} on the reduc
     \label{fig:silhouette_comparison}
 \end{figure}
 
-We can further explore the similarities between the clusters by initializing an \texttt{interactive\_tour()} with a 2D tour based on the linear discriminant analysis (LDA) projection pursuit index. By navigating through the tour, we can observe various projections, and when a projection that separates the clusters is found, we highlight each cluster sequentially. The different highlighted clusters can be seen in Figure \ref{fig:silhouette_comparison}.
+We can further explore the similarities between the clusters by initializing an \texttt{interactive\_tour()} with a 2D tour based on the LDA projection pursuit index. By navigating through the tour, we can observe various projections, and when a projection that separates the clusters is found, we highlight each cluster sequentially. The different highlighted clusters can be seen in Figure \ref{fig:silhouette_comparison}.
 
 \begin{figure}[h!]
     \centering
