@@ -131,12 +131,12 @@ The GUI is divided into two main sections: a sidebar on the left, which contains
 
 At the top of the sidebar, users can select and deselect features using checkboxes (Figure \ref{fig:GUI_overview}C), controlling which features are displayed in the plots. Below this, each subset has its own checkbox to designate the active subset (Figure \ref{fig:GUI_overview}D). When data points are manually selected in the plots, they will be assigned to the active subset and colored accordingly. For scatterplots, data points can be selected by encircling them directly on the plot while holding down the left mouse button. For barplots, clicking on a specific bar selects the data represented by that bar. The colored boxes next to the subset names indicate the assigned colors for the data points. Clicking on these boxes adjusts the transparency of the points, which is helpful for highlighting and comparing subsets. Subsets can also be renamed using the provided text boxes. The \texttt{Reset original selection} button allows users to revert the subset selections to their initial state.
 
-The frame selection interface (Figure \ref{fig:GUI_overview}E) displays the frames of the currently shown tours and enables users to jump between frames of the tour objects. Below this, users can save and load projections and subsets using the respective buttons (Figure \ref{fig:GUI_overview}F). New tours can be started using the current settings via the interface at the bottom (Figure \ref{fig:GUI_overview}G), and users can select different metrics for some plot types e.g. heatmaps (Figure \ref{fig:GUI_overview}H).
+The frame selection interface (Figure \ref{fig:GUI_overview}E) displays the frames of the currently shown tours and enables users to jump between frames of the tour objects. Below this, there are three additional interfaces (Figure \ref{fig:GUI_overview}F). The first can be used to adjust the number of bins in histograms—more bins result in higher resolution but slower display updates. The second allows users to animate tours, automatically shifting to the next projection after a specified amount of time. The third offers the ability to hide projection axes with a norm smaller than a chosen threshold, helping to reduce clutter. Users can also save and load projections and subsets using the respective buttons (Figure \ref{fig:GUI_overview}G). New tours can be started using the current settings via the interface at the bottom (Figure \ref{fig:GUI_overview}H), and users can select different metrics for some plot types e.g. heatmaps (Figure \ref{fig:GUI_overview}I).
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=1\textwidth]{GUI_overview.png}
-    \caption{Overview of the GUI. A: Sidebar controls; B: Display area; C: Feature selection checkboxes; D: Subset selection with color indicators; E: Frame selection interface; F: Save and load buttons; G: Interface for starting new tours; H: Metric selection interface.}
+    \caption{Overview of the GUI. A: Sidebar controls; B: Display area; C: Feature selection checkboxes; D: Subset selection with color indicators; E: Frame selection interface; F: Interfaces for adjusting the number of bins of histograms, animating tours and blending out projection axes with a low norm; G: Save and load buttons; H: Interface for starting new tours; I: Metric selection interface.}
     \label{fig:GUI_overview}
 \end{figure}
 
@@ -190,7 +190,7 @@ C = \left[ \begin{array}{cccc} c_{11} & c_{12} & \dots & c_{1p} \\
 \]
 
 where $c_{ij}, i=1, ..., k$ (number of clusters); $j=1, ..., p$ (number of features) are a summary of each feature in each cluster. Because our examples use binary features,  the $c_{ij}$ is the number of 1's of feature $j$ in cluster $i$. %For this setting we have developed a heatmap display that we have found to be particularly useful in feature selection. The idea is to understand differences in the binary ratings between clusters, where we use different normalizations to better explore the data. For \(c_{ij}\) the count (number of true values in the binary feature) in the \(i\)-th cluster and \(j\)-th feature, we define
-There are several ways that these values can be normalized to examine different aspects: $f_{ij}^{o} = \frac{c_{ij}}{n}$, $f_{ij}^{c} = \frac{c_{ij}}{n_{i}}$ and $f_{ij}^{f} = \frac{c_{ij}}{n_{j}}$, where $n_i, n_j$ are the row and column totals. The first, $f^{o}$ is the overall fraction, where counts are normalised by the overall number of observations $n$. This can only give an overview and is generally less useful for feature selection. 
+There are several ways that these values can be normalized to examine different aspects: $f_{ij}^{o} = \frac{c_{ij}}{n}$, $f_{ij}^{c} = \frac{c_{ij}}{n_{i}}$ and $f_{ij}^{f} = \frac{c_{ij}}{n_{j}}$, where $n_i, n_j$ are the row and column totals. The first, $f^{o}$ is the overall fraction, where counts are normalised by the overall number of observations $n$. It gives a quick overview on the overall magnitude of the features.
 
 The second, $f^c$ is normalized relative to the size of each cluster and can be considered the distribution of features in each cluster. It is useful for comparing the composition of each cluster relative to the features. For example, for $p=4$, if $f^c_{1j} = (0.4, 0.4, 0.1, 0.1)$ it suggests that high values (1's) of features 1 and 2 distinguish cluster 1. In the context of the later examples, this would mean cluster 1 contains tourists that list engaging in activities 1 and 2 but not 3 and 4. This normalisation produces what is called the {\bf intra-cluster fraction}. \textcolor{red}{It corresponds to the cluster means. XXX why not larger values in the example, the maximum would be 1 so 0.4 still seems very moderate.}
 
@@ -292,7 +292,7 @@ We can further explore the similarities between the clusters by initializing an 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=1\textwidth]{winter_activ_cluster_highlights.png}
-    \caption{Display of a projection of the Austrian vacation activities dataset with the six clusters of the k-means cluster solution highlighted in different colors. The colors indicate which clusters the highlighted observations belong to with cluster 1 being blue (A), cluster 2 being orange (B), cluster 3 being green (C), cluster 4 being red (D), cluster 5 being violet (E) and cluster 6 being brown (F). We can see that the projection separates some clusters well, however also that there is considerable overlap of clusters 4, 5 and 6}
+    \caption{Display of a projection of the Austrian vacation activities dataset with the six clusters of the k-means cluster solution highlighted in different colors. Projection axes with a norm < 0.1 have been blend out to reduce cluttering. The colors indicate which clusters the highlighted observations belong to with cluster 1 being blue (A), cluster 2 being orange (B), cluster 3 being green (C), cluster 4 being red (D), cluster 5 being violet (E) and cluster 6 being brown (F). Some datapoints appear to be highlighted always, which occurs due to overlap of many datapoints in one spot. We can see that the projection separates some clusters well, however also that there is considerable overlap of clusters 4, 5 and 6.}
     \label{fig:winter_activ_cluster_highlights}
 \end{figure}
 
@@ -311,7 +311,7 @@ In Figure \ref{fig:silhouette_comparison}, we observed that clusters 1 and 3 con
 \begin{figure}[h!]
     \centering
     \includegraphics[width=1\textwidth]{winter_cl7_init.png}
-    \caption{Interactive tour GUI loaded with multiple plots showing different aspects of the k-means solution of the Austrian vacation activities dataset. Top left: 2D tour with the linear discriminant analysis projection pursuit index. Top right: heatmap with the intra-cluster fraction. Bottom left: 1D tour with the linear discriminant analysis projection pursuit index. Bottom right: mosaic plot. Tourists in both clusters 1 and 3 didn't participate in skiing a lot, but tourists in cluster 3 were much more interested in going to the pool, spa and health facilities compared to cluster 1.}
+    \caption{Interactive tour GUI loaded with multiple plots showing different aspects of the k-means solution of the Austrian vacation activities dataset. Projection axes with a norm < 0.1 have been blend out to reduce cluttering. Top left: 2D tour with the linear discriminant analysis projection pursuit index. Top right: heatmap with the intra-cluster fraction. Bottom left: 1D tour with the linear discriminant analysis projection pursuit index. Bottom right: mosaic plot. Tourists in both clusters 1 and 3 didn't participate in skiing a lot, but tourists in cluster 3 were much more interested in going to the pool, spa and health facilities compared to cluster 1.}
     \label{fig:winter_cl7_init}
 \end{figure}
 
@@ -327,14 +327,14 @@ This setup produces the display shown in Figure \ref{fig:winter_cl7_init}. It ca
 \begin{figure}[h!]
     \centering
     \includegraphics[width=1\textwidth]{winter_cl7_pre.png}
-    \caption{Interactive tour GUI loaded with multiple plots showing different aspects of the k-means solution of the Austrian vacation activities dataset, with manually adjusted projections. Top left: 2D tour with the linear discriminant analysis projection pursuit index. Top right: heatmap with the intra-cluster fraction. Bottom left: 1D tour with the linear discriminant analysis projection pursuit index. Bottom right: mosaic plot. Changing the projection axes of ``going to a spa'', ``museums'', ``sightseeing'' and ``using health facilities'' reveals the preferences and overlap of clusters 1 and 3.}
+    \caption{Interactive tour GUI loaded with multiple plots showing different aspects of the k-means solution of the Austrian vacation activities dataset, with manually adjusted projections. Projection axes with a norm < 0.1 have been blend out to reduce cluttering. Top left: 2D tour with the linear discriminant analysis projection pursuit index. Top right: heatmap with the intra-cluster fraction. Bottom left: 1D tour with the linear discriminant analysis projection pursuit index. Bottom right: mosaic plot. Changing the projection axes of ``going to a spa'', ``museums'', ``sightseeing'' and ``using health facilities'' reveals the preferences and overlap of clusters 1 and 3.}
     \label{fig:winter_cl7_pre}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=1\textwidth]{winter_cl7_post.png}
-    \caption{Interactive tour GUI loaded with multiple plots showing different aspects of the k-means solution of the Austrian vacation activities dataset, after new subsets have been selected. Top left: 2D tour with the linear discriminant analysis projection pursuit index. Top right: heatmap with the intra-cluster fraction. Bottom left: 1D tour with the linear discriminant analysis projection pursuit index. Bottom right: mosaic plot. We can see that now almost all museum goers are in the new manually selected subset 7 and what their preferences are compared to the other clusters.}
+    \caption{Interactive tour GUI loaded with multiple plots showing different aspects of the k-means solution of the Austrian vacation activities dataset, after new subsets have been selected. Projection axes with a norm < 0.1 have been blend out to reduce cluttering. Top left: 2D tour with the linear discriminant analysis projection pursuit index. Top right: heatmap with the intra-cluster fraction. Bottom left: 1D tour with the linear discriminant analysis projection pursuit index. Bottom right: mosaic plot. We can see that now almost all museum goers are in the new manually selected subset 7 and what their preferences are compared to the other clusters.}
     \label{fig:winter_cl7_post}
 \end{figure}
 
