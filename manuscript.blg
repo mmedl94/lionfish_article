@@ -5,46 +5,47 @@ The style file: ajs.bst
 Database file #1: lionfish_references.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty journal in cliff2009formative
+Warning--missing publisher in ggobi
 Warning--missing publisher in leisch2018market
-You've used 20 entries,
+You've used 22 entries,
             3140 wiz_defined-function locations,
-            775 strings with 8768 characters,
-and the built_in function-call counts, 16132 in all, are:
-= -- 1318
-> -- 445
-< -- 12
-+ -- 177
-- -- 147
-* -- 1317
-:= -- 2235
-add.period$ -- 91
-call.type$ -- 20
-change.case$ -- 131
-chr.to.int$ -- 20
-cite$ -- 22
-duplicate$ -- 1447
-empty$ -- 1470
-format.name$ -- 203
-if$ -- 3254
+            790 strings with 9165 characters,
+and the built_in function-call counts, 17818 in all, are:
+= -- 1454
+> -- 499
+< -- 14
++ -- 197
+- -- 165
+* -- 1458
+:= -- 2472
+add.period$ -- 100
+call.type$ -- 22
+change.case$ -- 145
+chr.to.int$ -- 22
+cite$ -- 25
+duplicate$ -- 1597
+empty$ -- 1623
+format.name$ -- 229
+if$ -- 3599
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 231
-newline$ -- 126
-num.names$ -- 80
-pop$ -- 482
+missing$ -- 255
+newline$ -- 139
+num.names$ -- 88
+pop$ -- 536
 preamble$ -- 1
-purify$ -- 129
+purify$ -- 143
 quote$ -- 0
-skip$ -- 339
+skip$ -- 374
 stack$ -- 0
-substring$ -- 1292
-swap$ -- 538
-text.length$ -- 0
+substring$ -- 1412
+swap$ -- 587
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 174
-warning$ -- 2
-while$ -- 131
+type$ -- 186
+warning$ -- 3
+while$ -- 143
 width$ -- 0
-write$ -- 296
-(There were 2 warnings)
+write$ -- 327
+(There were 3 warnings)

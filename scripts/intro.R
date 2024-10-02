@@ -61,19 +61,19 @@ blob3_cl <- blob3 |>
 b4 <- ggplot(blob1_cl, aes(V1, V2, colour=cl)) + 
   geom_point() +
   scale_color_discrete_divergingx(palette="Zissou 1") +
-  annotate("text", x=0.05, y=0.95, label="a", size=8) +
+  annotate("text", x=0.05, y=0.95, label="A", size=8) +
   theme(legend.position = "none", 
         axis.text = element_blank())
 b5 <- ggplot(blob2_cl, aes(V1, V2, colour=cl)) + 
   geom_point() +
   scale_color_discrete_divergingx(palette="Zissou 1") +
-  annotate("text", x=0.05, y=0.95, label="b", size=8) +
+  annotate("text", x=0.05, y=0.95, label="B", size=8) +
   theme(legend.position = "none", 
         axis.text = element_blank())
 b6 <- ggplot(blob3_cl, aes(V1, V2, colour=cl)) + 
   geom_point() +
   scale_color_discrete_divergingx(palette="Zissou 1") +
-  annotate("text", x=0.05, y=0.95, label="c", size=8) +
+  annotate("text", x=0.05, y=0.95, label="C", size=8) +
   theme(legend.position = "none", 
         axis.text = element_blank())
 b4 + b5 + b6 + plot_layout(ncol=3)
@@ -82,7 +82,7 @@ b7 <- ggplot(blob1_cl, aes(V1, fill=cl)) +
   geom_histogram(breaks = seq(0, 1, 0.1)) +
   scale_fill_discrete_divergingx(palette="Zissou 1") +
   ylim(c(0,37)) +
-  annotate("text", x=0.05, y=35, label="a", size=8) +
+  annotate("text", x=0.05, y=35, label="A", size=8) +
   theme(legend.position = "none", 
         axis.text = element_blank(),
         axis.title.y = element_blank())
@@ -90,7 +90,7 @@ b8 <- ggplot(blob2_cl, aes(V1, fill=cl)) +
   geom_histogram(breaks = seq(0, 1, 0.1)) +
   scale_fill_discrete_divergingx(palette="Zissou 1") +
   ylim(c(0,37)) +
-  annotate("text", x=0.05, y=35, label="b", size=8) +
+  annotate("text", x=0.05, y=35, label="B", size=8) +
   theme(legend.position = "none", 
         axis.text = element_blank(),
         axis.title.y = element_blank())
@@ -98,7 +98,7 @@ b9 <- ggplot(blob3_cl, aes(V1, fill=cl)) +
   geom_histogram(breaks = seq(0, 1, 0.1)) +
   scale_fill_discrete_divergingx(palette="Zissou 1") +
   ylim(c(0,37)) +
-  annotate("text", x=0.05, y=35, label="c", size=8) +
+  annotate("text", x=0.05, y=35, label="C", size=8) +
   theme(legend.position = "none", 
         axis.text = element_blank(),
         axis.title.y = element_blank())
@@ -106,7 +106,7 @@ b10 <- ggplot(blob1_cl, aes(V2, fill=cl)) +
   geom_histogram(breaks = seq(0, 1, 0.1)) +
   scale_fill_discrete_divergingx(palette="Zissou 1") +
   ylim(c(0,37)) +
-  annotate("text", x=0.05, y=35, label="d", size=8) +
+  annotate("text", x=0.05, y=35, label="D", size=8) +
   theme(legend.position = "none", 
         axis.text = element_blank(),
         axis.title.y = element_blank())
@@ -114,7 +114,7 @@ b11 <- ggplot(blob2_cl, aes(V2, fill=cl)) +
   geom_histogram(breaks = seq(0, 1, 0.1)) +
   scale_fill_discrete_divergingx(palette="Zissou 1") +
   ylim(c(0,37)) +
-  annotate("text", x=0.05, y=35, label="e", size=8) +
+  annotate("text", x=0.05, y=35, label="E", size=8) +
   theme(legend.position = "none", 
         axis.text = element_blank(),
         axis.title.y = element_blank())
@@ -122,7 +122,7 @@ b12 <- ggplot(blob3_cl, aes(V2, fill=cl)) +
   geom_histogram(breaks = seq(0, 1, 0.1)) +
   scale_fill_discrete_divergingx(palette="Zissou 1") +
   ylim(c(0,37)) +
-  annotate("text", x=0.05, y=35, label="f", size=8) +
+  annotate("text", x=0.05, y=35, label="F", size=8) +
   theme(legend.position = "none", 
         axis.text = element_blank(),
         axis.title.y = element_blank())
