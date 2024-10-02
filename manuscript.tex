@@ -106,7 +106,7 @@ The aim of this work is to build an interface that allows for an interactive exp
 
 \begin{enumerate}
 \item Visualizing the partitions between clusters in combinations of features using tour methods, with both a grand tour and manual tour.
-\item Interactively brushing groups of points to refine the cluster solution, like done with spin-and-brush tools.
+\item Interactively brushing groups of points to refine the cluster solution, like done with spin-and-brush tools~\citep{ggobi}.
 \item Linking multiple displays to focus on particular clusters, and simplify the problem to better understand the clustering solution. 
 \item Update displays based on user selections such as feature selection or cluster selection, or re-scaling.
 \end{enumerate}
@@ -118,7 +118,7 @@ Our solution is using Python for high-performance interactivity, through the pac
 
 %At the core of the \texttt{lionfish} package is a graphical user interface (GUI) designed to display multiple linked visualizations concurrently. Users can interact with one of the plots, for example, by subselecting specific data points, and the other linked plots will dynamically update to reflect these modifications. This interconnected functionality allows for efficient and immediate analysis of high-dimensional datasets without necessitating extensive coding, thereby streamlining the exploratory data analysis process.
 
-The interface was implemented in \texttt{lionfish} and offers a variety of linked interactive plot types, providing users with the flexibility to visualize their data from multiple perspectives. The ability to navigate through various projections of the displayed tours directly within a graphical user interface (GUI) enables users to explore different aspects of the dataset. Furthermore, users can initiate new tours directly from the interface. The GUI also supports interactive feature selection, allowing users to specify which subset of features should be visualized in the plots. Once users have identified interesting views or settings, \texttt{lionfish} allows them to save the displayed projections, subsets, and plots. This functionality ensures that analysis states can be preserved for further examination or reporting, making the package particularly useful for iterative analysis where findings may need to be revisited or shared with collaborators.
+The interface was implemented in the R package \texttt{lionfish} and offers a variety of linked interactive plot types, providing users with the flexibility to visualize their data from multiple perspectives. The ability to navigate through various projections of the displayed tours directly within a graphical user interface (GUI) enables users to explore different aspects of the dataset. Furthermore, users can initiate new tours directly from the interface. The GUI also supports interactive feature selection, allowing users to specify which subset of features should be visualized in the plots. Once users have identified interesting views or settings, \texttt{lionfish} allows them to save the displayed projections, subsets, and plots. This functionality ensures that analysis states can be preserved for further examination or reporting, making the package particularly useful for iterative analysis where findings may need to be revisited or shared with collaborators.
 
 With its high level of interactivity, performance, and ease of use, \texttt{lionfish} streamlines the exploration of complex datasets, offering a powerful tool for researchers working with high-dimensional data.
 
@@ -143,7 +143,9 @@ The frame selection interface (Figure \ref{fig:GUI_overview}E) displays the fram
 
 One can move through the projections of a tour by pressing the arrow keys or by specifying the index of the projection the be displayed and pressing the \texttt{Update frames} button. Users can animate the tours by toggling the \texttt{Animate} checkbox and specifying a time interval, so that the displays automatically move to the next projections after the specified time interval.
 
-The \texttt{Save projections and subsets} button can be used to save the current state of the analysis. These states can be recovered by using pressing the \texttt{Load projections and subsets} button. Additionally, users can initiate new tours of various directly from the sidebar.
+The \texttt{Save projections and subsets} button can be used to save the current state of the analysis. These states can be recovered by using pressing the \texttt{Load projections and subsets} button. Additionally, users can initiate new tours directly from the sidebar. The options for new tour paths are: a local tour around the currently shown projection, a guided tour that searches for projections with maximum separation between groups \textcolor{red}{XXX is this true? other options?}
+
+\textcolor{red}{Mention additional interactive features in the displays - manual tour, anything else that might be relevant?}
 
 
 \subsection{R/Python interface}
@@ -157,6 +159,9 @@ However, to reduce inefficiencies caused by cross-language communication and to 
 The central component of the Python code is the \texttt{customTKinter} class \texttt{InteractiveTourInterface}. This class centrally stores attributes related to all plots, such as the dataset, sub-selections, feature selections, and other shared information. Plot-specific data is organized in dictionaries (the Python equivalent of named lists in R), including the display type, construction instructions, tour projections (only in case of tour displays), color schemes for the displayed data, and, where applicable, the selector and manual projection manipulation classes.
 
 The selector classes handle the behavior when users manually select data points to move them to the active subset. After a selection is made, the selector class updates the centrally stored sub-selection attribute and ensures all other displays reflect these changes. The manual projection manipulation classes construct the arrows representing the projection axes in the displays and manage the manual adjustment of projections, and thus enable manual tours. Users can right-click and drag the arrowheads to modify the projections, after which the class orthonormalizes the projection axes and updates both the projection and the transformed data accordingly.
+
+\textcolor{red}{Maybe here you can say something about adding new display types, what would be needed for implementing them}
+
 
 \subsection{Bit blit}
 
@@ -187,9 +192,9 @@ C = \left[ \begin{array}{cccc} c_{11} & c_{12} & \dots & c_{1p} \\
 where $c_{ij}, i=1, ..., k$ (number of clusters); $j=1, ..., p$ (number of features) are a summary of each feature in each cluster. Because our examples use binary features,  the $c_{ij}$ is the number of 1's of feature $j$ in cluster $i$. %For this setting we have developed a heatmap display that we have found to be particularly useful in feature selection. The idea is to understand differences in the binary ratings between clusters, where we use different normalizations to better explore the data. For \(c_{ij}\) the count (number of true values in the binary feature) in the \(i\)-th cluster and \(j\)-th feature, we define
 There are several ways that these values can be normalized to examine different aspects: $f_{ij}^{o} = \frac{c_{ij}}{n}$, $f_{ij}^{c} = \frac{c_{ij}}{n_{i}}$ and $f_{ij}^{f} = \frac{c_{ij}}{n_{j}}$, where $n_i, n_j$ are the row and column totals. The first, $f^{o}$ is the overall fraction, where counts are normalised by the overall number of observations $n$. It gives a quick overview on the overall magnitude of the features.
 
-The second, $f^c$ is normalized relative to the size of each cluster and can be considered the distribution of features in each cluster. It is useful for comparing the composition of each cluster relative to the features. For example, for $p=4$, if $f^c_{1j} = (0.4, 0.4, 0.1, 0.1)$ it suggests that high values (1's) of features 1 and 2 distinguish cluster 1. In the context of the later examples, this would mean cluster 1 contains tourists that list engaging in activities 1 and 2 but not 3 and 4. This normalisation produces what is called the {\bf intra-cluster fraction}.
+The second, $f^c$ is normalized relative to the size of each cluster and can be considered the distribution of features in each cluster. It is useful for comparing the composition of each cluster relative to the features. For example, for $p=4$, if $f^c_{1j} = (0.4, 0.4, 0.1, 0.1)$ it suggests that high values (1's) of features 1 and 2 distinguish cluster 1. In the context of the later examples, this would mean cluster 1 contains tourists that list engaging in activities 1 and 2 but not 3 and 4. This normalisation produces what is called the {\bf intra-cluster fraction}. \textcolor{red}{It corresponds to the cluster means. XXX why not larger values in the example, the maximum would be 1 so 0.4 still seems very moderate.}
 
-The last, $f_f$ is normalized relative to each feature, which can be considered to be the distribution of clusters on each feature. It is useful to examine how features are related to a cluster. Considering the last metric, for example, if $f^f_{i1} = (0.5, 0.4, 0, 0.1, 0)$ ($k=5$) would indicate that high values on feature 1 primarily are in clusters 1, 2. In the context of the later examples, this would mean activity 1 is commonly listed only in clusters 1 and 2. This normalisation produces what is called the {\bf intra-feature fraction}.
+The last, $f^f$ is normalized relative to each feature, which can be considered to be the distribution of clusters on each feature. It is useful to examine how features are related to a cluster. Considering the last metric, for example, if $f^f_{i1} = (0.5, 0.4, 0, 0.1, 0)$ ($k=5$) would indicate that high values on feature 1 primarily are in clusters 1, 2. In the context of the later examples, this would mean activity 1 is commonly listed only in clusters 1 and 2. This normalisation produces what is called the {\bf intra-feature fraction}. \textcolor{red}{Note that this must be interpreted with care in case of inbalanced cluster sizes.}
 
 Generally, if the features are ordered categories or numerical scores, decomposing the cluster-feature summary is still possible by using an analysis of variance breakdown into row and column effects.
 
@@ -213,7 +218,8 @@ Generally, if the features are ordered categories or numerical scores, decomposi
 
 The spin-and-brush approach suggests to cluster data manually when using a tour: we run a tour animation, stop when we see a group of points that are different from the rest of the distribution, brush them, and then continue. Different projections will enable the separation of different groups, and for well-separated clusters we will be able to recover a full cluster solutions in this manner.
 
-A similar approach can be used to refine a partitioning solution. This is in particular useful to integrate prior knowledge or business interests in a given cluster solution. In the interface we can keep the provided clustering, but separate out new subsets via manual selection, for example after we found a group of particular interest via a manual tour.
+A similar approach can be used to refine a partitioning solution. In a \textit{visual analytics} approach we use interactive visualizations to integrate human judgement with statistical and machine learning models~\citep{keim2010mastering} to optimize knowledge extraction from data.
+Here this is in particular useful to integrate prior knowledge or business interests in a given cluster solution. In the interface we can keep the provided clustering, but separate out new subsets via manual selection, for example after we found a group of particular interest via a manual tour.
 
 \subsection{Reproducibility}
 
