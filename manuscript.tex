@@ -145,8 +145,6 @@ One can move through the projections of a tour by pressing the arrow keys or by 
 
 The \texttt{Save projections and subsets} button can be used to save the current state of the analysis. These states can be recovered by using pressing the \texttt{Load projections and subsets} button. Additionally, users can initiate new tours directly from the sidebar. The options for new tour paths are: a local tour around the currently shown projection and guided tours that search for projections based on the holes- or the linear discriminant analysis (LDA) index. The holes index is sensitive to projections with few points in the center of the projections and the LDA index aims to maximize the distance between the centers of the selectet subsets \citep{ggobi}. Additionally, all tour displays allow users to perform a manual tour; by right-clicking and dragging the arrowheads of projection axes, the projection is recalculated accordingly. This allows for manual exploration of the data.
 
-More information on all the features of the GUI can be found on \href{https://github.com/mmedl94/lionfish}{https://github.com/mmedl94/lionfish} and on \href{https://mmedl94.github.io/lionfish/}{https://mmedl94.github.io/lionfish/}.
-
 \subsection{R/Python interface}
 
 The majority of \texttt{lionfish} was written in \proglang{Python} \citep{python}. The \proglang{R} \citep{R} side of the package handles setting up the \proglang{Python} environment within the interactive interface is being run, launching the interactive tour, and generating new tours when initiated through the interface. To incorporate the functionality of the \texttt{tourr} package without translating large portions of its code from \proglang{R} to \proglang{Python}, the \texttt{reticulate} package was used. This approach allows \texttt{lionfish} to automatically benefit from updates to \texttt{tourr} and avoided the necessity to reimplement code in \proglang{Python} that was already written in \proglang{R}.
@@ -416,6 +414,23 @@ By integrating interactive visualization capabilities, the \texttt{lionfish} pac
 Future developments in \texttt{lionfish} might include expanding the range of visualization methods and offering additional interactive features, such as enabling the generation of new cluster solutions directly from the GUI. Leveraging the integration of both \proglang{R} and \proglang{Python}, future enhancements could include a seamless combination of algorithms from each language, which broadens the expansion potential of the software. For more complex data shapes, such as those with concavities or non-linear boundaries, the implementation of sliced tours~\citep{Laa2020} is recommended to improve exploratory analysis. Streamlining the addition of new plot types could also further enhance the versatility of the package, making it more adaptable for different data visualization needs. This ongoing integration of \proglang{R} and \proglang{Python} exemplifies how the strengths of both languages can be harnessed for the development of new software packages.
 
 In summary, \texttt{lionfish} represents a significant advancement in the toolkit of data analysts, offering a novel way to balance automated analysis with human intuition and domain expertise, thereby facilitating a deeper and more comprehensive understanding of complex datasets.
+
+\section{Resources and supplementary materials}~\label{resources}
+
+The software can be found at  \href{https://mmedl94.github.io/lionfish/}{https://mmedl94.github.io/lionfish/} which contains more documentation on:
+
+\begin{itemize} \itemsep 0in
+\item installation
+\item currently supported interactivity
+\item the variety of plots available
+\end{itemize}
+
+The supplementary materials for this paper include:
+
+\begin{itemize} \itemsep 0in
+\item scripts to start the GUI and reproduce the graphics in the paper
+\item saved state for different parts of the applications, so that the results can be reproduced
+\end{itemize}
 
 \section{Acknowledgements}~\label{acknowledgements}
 
