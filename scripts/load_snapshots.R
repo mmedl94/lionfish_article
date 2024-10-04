@@ -1,22 +1,8 @@
-# install lionfish
-install.packages("remotes")
-remotes::install_github("mmedl94/lionfish")
 library(lionfish)
 library(dplyr)
 
-library(tourr)
-library(devtools)
-library(reticulate)
-library(flexclust)
-library(stats)
-library(dplyr)
-setwd("/home/matthias/Desktop/Work/gsoc/lionfish")
-load_all()
-
-setwd("/home/matthias/Desktop/Work/gsoc/paper/pytour_paper")
-# set working directory
+# set working directory to path/to/lionfish_article/
 setwd("..")
-setwd("/home/matthias/Desktop/Work/gsoc/paper/pytour_paper")
 init_env()
 # load Austrian Vacation Activities dataset
 data("winterActiv")
@@ -32,6 +18,9 @@ ausActiv_features <- read.csv("saves/aus_saves/init/feature_selection.csv",
                                  header = FALSE)
 ausActiv <- ausActiv[, colnames(ausActiv) %in% ausActiv_features$V1]
 ausActiv <- ausActiv[, ausActiv_features$V1]
+
+# if the display is too large or too small please adjust the display size
+# argument
 
 # Figure 7 + figure 8
 load_interactive_tour(winterActiv, "/saves/aut_saves/init",
