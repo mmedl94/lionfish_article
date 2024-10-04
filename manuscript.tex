@@ -135,7 +135,7 @@ The frame selection interface (Figure \ref{fig:GUI_overview}E) displays the fram
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=1\textwidth]{GUI_overview.png}
+    \includegraphics[width=1\textwidth]{GUI_overview.pdf}
     \caption{Overview of the GUI. A: Sidebar controls; B: Display area; C: Feature selection checkboxes; D: Subset selection with color indicators; E: Frame selection interface; F: Interfaces for adjusting the number of bins of histograms, animating tours and blending out projection axes with a low norm; G: Save and load buttons; H: Interface for starting new tours; I: Metric selection interface.}
     \label{fig:GUI_overview}
 \end{figure}
@@ -247,7 +247,7 @@ The original dataset contains \(p\)=27 features. Some of these features are more
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=1\textwidth]{winteractiv_heatmap.png}
+    \includegraphics[width=1\textwidth]{winteractiv_heatmap.pdf}
     \caption{Traditional overview of clusters. Color represents (A) the intra-cluster fraction, and (B) the intra-feature fraction, with lighter indicating higher values. From A, we can see that cluster 3 tourists like alpine skiing, going out in the evening and going to discos and bars. They also like relaxing, shopping and sightseeing but these are popular among all tourists. From B, we can see the distribution of activities across clusters, e.g. most tourists who use health facilities are found in cluster 4 while tourist going to a pool or sauna are primarily found in clusters 1 and 5.}
     \label{fig:winteractiv_heatmap}
 \end{figure}
@@ -262,7 +262,7 @@ We can now repeat the $k$-means clustering with \texttt{stepcclust} on the reduc
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=1\textwidth]{silhouette_comparison.png}
+    \includegraphics[width=1\textwidth]{silhouette_comparison.pdf}
     \caption{Comparison of silhouette plots of two $k$-means cluster solutions of the Austrian vacation activities dataset with $k$=6. (A) shows the silhouette plot of the $k$-means solution of the full dataset and (B) the silhouette plot of the $k$-means solution of the dataset after manual feature selection. We can see that the cluster solution with the reduced dataset achieved better silhouette scores and that clusters 1 and 3 contain observations with negative silhouette scores.}
     \label{fig:silhouette_comparison}
 \end{figure}
@@ -271,7 +271,7 @@ We can further explore the similarities between the clusters by initializing an 
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=1\textwidth]{winter_activ_cluster_highlights.png}
+    \includegraphics[width=1\textwidth]{winter_activ_cluster_highlights.pdf}
     \caption{Display of a projection of the Austrian vacation activities dataset with the six clusters of the k-means cluster solution highlighted in different colors. Projection axes with a norm < 0.1 are not shown to reduce cluttering. The colors indicate which clusters the highlighted observations belong to with cluster 1 being blue (A), cluster 2 being orange (B), cluster 3 being green (C), cluster 4 being red (D), cluster 5 being violet (E) and cluster 6 being brown (F). Some datapoints appear to be highlighted always, which occurs due to overlap of many datapoints in one spot. We can see that the projection separates some clusters well, however also that there is considerable overlap of clusters 4, 5 and 6.}
     \label{fig:winter_activ_cluster_highlights}
 \end{figure}
@@ -290,7 +290,7 @@ In Figure \ref{fig:silhouette_comparison}, we observed that clusters 1 and 3 con
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=1\textwidth]{winter_cl7_init.png}
+    \includegraphics[width=1\textwidth]{winter_cl7_init.pdf}
     \caption{Interactive tour GUI loaded with multiple plots showing different aspects of the k-means solution of the Austrian vacation activities dataset. Projection axes with a norm < 0.1 are not shown to reduce cluttering. Top left: 2D tour with the linear discriminant analysis projection pursuit index. Top right: heatmap with the intra-cluster fraction. Bottom left: 1D tour with the linear discriminant analysis projection pursuit index. Bottom right: mosaic plot. Tourists in both clusters 1 and 3 didn't participate in skiing a lot, but tourists in cluster 3 were much more interested in going to the pool, spa and health facilities compared to cluster 1.}
     \label{fig:winter_cl7_init}
 \end{figure}
@@ -306,14 +306,14 @@ This setup produces the display shown in Figure \ref{fig:winter_cl7_init}. It ca
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=1\textwidth]{winter_cl7_pre.png}
+    \includegraphics[width=1\textwidth]{winter_cl7_pre.pdf}
     \caption{Interactive tour GUI loaded with multiple plots showing different aspects of the $k$-means solution of the Austrian vacation activities dataset, with manually adjusted projections. Projection axes with a norm < 0.1 have been blend out to reduce cluttering. Top left: 2D tour with a manually adjusted projection. Top right: heatmap with the intra-cluster fraction. Bottom left: 1D tour with a manually adjusted projection. Bottom right: mosaic plot. Changing the projection axes of ``going to a spa'', ``museums'', ``sightseeing'' and ``using health facilities'' reveals the preferences and overlap of clusters 1 and 3.}
     \label{fig:winter_cl7_pre}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=1\textwidth]{winter_cl7_post.png}
+    \includegraphics[width=1\textwidth]{winter_cl7_post.pdf}
     \caption{Interactive tour GUI loaded with multiple plots showing different aspects of the $k$-means solution of the Austrian vacation activities dataset, after new subsets have been selected. Projection axes with a norm < 0.1 have been blend out to reduce cluttering. Top left: 2D tour with a manually adjusted projection. Top right: heatmap with the intra-cluster fraction. Bottom left: 1D tour with a manually adjusted projection. Bottom right: mosaic plot. We can see that now almost all museum goers are in the new manually selected subset 7 and what their preferences are compared to the other clusters.}
     \label{fig:winter_cl7_post}
 \end{figure}
@@ -332,7 +332,7 @@ At first, hierarchical clustering using Ward's method \citep{murtagh2014ward} an
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=1\textwidth]{aus_feature_clustering.png}
+    \includegraphics[width=1\textwidth]{aus_feature_clustering.pdf}
     \caption{Dendrogram of the features of the Australian Vacation Activities dataset using Ward's method with the Jaccard index. Features which were clustered together are marked by the colored boxes. We can see, which activities had similar patterns in tourist interest.}
     \label{fig:aus_feature_clustering}
 \end{figure}
@@ -356,14 +356,14 @@ Finally, since subset 9 (gold) is notably inactive, one might infer that they pr
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=1\textwidth]{aus_heatmap.png}
+    \includegraphics[width=1\textwidth]{aus_heatmap.pdf}
     \caption{Heatmap of the intra cluster fraction (indicated by color) of the $k$-means solution with \( k = 6 \) and the reduced feature subset. We can observe that tourists in subsets 1, 2 and 6 all prefer to travel without their friends.}
     \label{fig:aus_heatmapg}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=1\textwidth]{aus_preselection.png}
+    \includegraphics[width=1\textwidth]{aus_preselection.pdf}
     \caption{Interactive tour GUI loaded with multiple plots showing different aspects of the $k$-means solution of the Australian vacation activities dataset, with the projection axes of the feature ``Friends'' pointing into one direction and all the other ones into another one. Top left: 2D tour. Top right: 1D tour. Bottom left: Mosaic plot. Bottom right: Heatmap with the intra cluster fraction. We can see how the feature ``Friends'' and the general activity level (represented by the other projection axes pointing into one direction) separates the data.}
     \label{fig:aus_preselection}
 \end{figure}
@@ -371,7 +371,7 @@ Finally, since subset 9 (gold) is notably inactive, one might infer that they pr
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=1\textwidth]{aus_selection.png}
+    \includegraphics[width=1\textwidth]{aus_selection.pdf}
     \caption{Interactive tour GUI as seen in \ref{fig:aus_preselection}, but after sub-selection of subsets 7 (pink), 8 (grey) and 9 (gold). Top left: 2D tour. Top right: 1D tour. Bottom left: Mosaic plot. Bottom right: Heatmap with the intra cluster fraction. We can observe the preferences of three new subsegments, which can be interpreted as very active (pink), moderately active (grey) and inactive (gold) tourists travelling without their friends.}
     \label{fig:aus_selection}
 \end{figure}

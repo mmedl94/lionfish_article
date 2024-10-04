@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.3.16)  4 OCT 2024 09:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.3.16)  4 OCT 2024 09:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -843,11 +843,14 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
  []
 
 [4]
-<images/GUI_overview.png, id=218, 686.38432pt x 542.025pt>
-File: images/GUI_overview.png Graphic file (type png)
-<use images/GUI_overview.png>
-Package pdftex.def Info: images/GUI_overview.png  used on input line 138.
-(pdftex.def)             Requested size: 442.65375pt x 349.55795pt.
+
+pdfTeX warning: /usr/bin/pdflatex (file ./images/GUI_overview.pdf): PDF inclusi
+on: found PDF version <1.7>, but at most version <1.5> allowed
+<images/GUI_overview.pdf, id=218, 686.38568pt x 542.02611pt>
+File: images/GUI_overview.pdf Graphic file (type pdf)
+<use images/GUI_overview.pdf>
+Package pdftex.def Info: images/GUI_overview.pdf  used on input line 138.
+(pdftex.def)             Requested size: 442.65375pt x 349.55867pt.
 
 Overfull \hbox (3.48805pt too wide) in paragraph at lines 146--147
 \T1/lmr/m/n/10.95 anal-y-sis. These states can be re-cov-ered by us-ing press-i
@@ -859,7 +862,7 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 [] \T1/lmr/m/n/10.95 5
  []
 
-[5 <./images/GUI_overview.png>]
+[5 <./images/GUI_overview.pdf>]
 Overfull \hbox (26.61353pt too wide) in paragraph at lines 156--157
 []\T1/lmr/m/n/10.95 The cen-tral com-po-nent of the \T1/lmss/m/n/10.95 Python \
 T1/lmr/m/n/10.95 code is the \T1/lmtt/m/n/10.95 customTKinter \T1/lmr/m/n/10.95
@@ -893,7 +896,7 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/winter_proj1.pdf): PDF inclusi
 on: found PDF version <1.7>, but at most version <1.5> allowed
-<images/winter_proj1.pdf, id=274, 353.32pt x 362.35374pt>
+<images/winter_proj1.pdf, id=277, 353.32pt x 362.35374pt>
 File: images/winter_proj1.pdf Graphic file (type pdf)
 <use images/winter_proj1.pdf>
 Package pdftex.def Info: images/winter_proj1.pdf  used on input line 235.
@@ -902,7 +905,7 @@ Package pdftex.def Info: images/winter_proj1.pdf  used on input line 235.
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/winter_proj2.pdf): PDF inclusi
 on: found PDF version <1.7>, but at most version <1.5> allowed
-<images/winter_proj2.pdf, id=275, 353.32pt x 362.35374pt>
+<images/winter_proj2.pdf, id=278, 353.32pt x 362.35374pt>
 File: images/winter_proj2.pdf Graphic file (type pdf)
 <use images/winter_proj2.pdf>
 Package pdftex.def Info: images/winter_proj2.pdf  used on input line 235.
@@ -911,7 +914,7 @@ Package pdftex.def Info: images/winter_proj2.pdf  used on input line 235.
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/winter_proj3.pdf): PDF inclusi
 on: found PDF version <1.7>, but at most version <1.5> allowed
-<images/winter_proj3.pdf, id=276, 353.32pt x 362.35374pt>
+<images/winter_proj3.pdf, id=279, 353.32pt x 362.35374pt>
 File: images/winter_proj3.pdf Graphic file (type pdf)
 <use images/winter_proj3.pdf>
 Package pdftex.def Info: images/winter_proj3.pdf  used on input line 235.
@@ -930,36 +933,48 @@ on: multiple pdfs with page group included in a single page
 pdfTeX warning: /usr/bin/pdflatex (file ./images/winter_proj3.pdf): PDF inclusi
 on: multiple pdfs with page group included in a single page
 >]
-<images/winteractiv_heatmap.png, id=293, 722.7pt x 361.35pt>
-File: images/winteractiv_heatmap.png Graphic file (type png)
-<use images/winteractiv_heatmap.png>
-Package pdftex.def Info: images/winteractiv_heatmap.png  used on input line 250
+
+pdfTeX warning: /usr/bin/pdflatex (file ./images/winteractiv_heatmap.pdf): PDF 
+inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<images/winteractiv_heatmap.pdf, id=296, 722.70148pt x 361.35074pt>
+File: images/winteractiv_heatmap.pdf Graphic file (type pdf)
+<use images/winteractiv_heatmap.pdf>
+Package pdftex.def Info: images/winteractiv_heatmap.pdf  used on input line 250
 .
-(pdftex.def)             Requested size: 442.65375pt x 221.32744pt.
+(pdftex.def)             Requested size: 442.65375pt x 221.32788pt.
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/lmr/m/n/10.95 10 []
  []
 
-[10 <./images/winteractiv_heatmap.png>]
-<images/silhouette_comparison.png, id=307, 722.7pt x 361.35pt>
-File: images/silhouette_comparison.png Graphic file (type png)
-<use images/silhouette_comparison.png>
-Package pdftex.def Info: images/silhouette_comparison.png  used on input line 2
+[10 <./images/winteractiv_heatmap.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./images/silhouette_comparison.pdf): PD
+F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<images/silhouette_comparison.pdf, id=313, 722.70148pt x 361.35074pt>
+File: images/silhouette_comparison.pdf Graphic file (type pdf)
+<use images/silhouette_comparison.pdf>
+Package pdftex.def Info: images/silhouette_comparison.pdf  used on input line 2
 65.
-(pdftex.def)             Requested size: 442.65375pt x 221.32744pt.
+(pdftex.def)             Requested size: 442.65375pt x 221.32788pt.
 
 Overfull \hbox (19.91083pt too wide) in paragraph at lines 270--271
 []\T1/lmr/m/n/10.95 We can fur-ther ex-plore the sim-i-lar-i-ties be-tween the 
 clus-ters by ini-tial-iz-ing an \T1/lmtt/m/n/10.95 interactive_tour()
  []
 
-<images/winter_activ_cluster_highlights.png, id=309, 867.24pt x 578.16pt>
-File: images/winter_activ_cluster_highlights.png Graphic file (type png)
-<use images/winter_activ_cluster_highlights.png>
-Package pdftex.def Info: images/winter_activ_cluster_highlights.png  used on in
+
+
+pdfTeX warning: /usr/bin/pdflatex (file ./images/winter_activ_cluster_highlight
+s.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allow
+ed
+<images/winter_activ_cluster_highlights.pdf, id=315, 867.24171pt x 578.16116pt>
+
+File: images/winter_activ_cluster_highlights.pdf Graphic file (type pdf)
+<use images/winter_activ_cluster_highlights.pdf>
+Package pdftex.def Info: images/winter_activ_cluster_highlights.pdf  used on in
 put line 274.
-(pdftex.def)             Requested size: 442.65375pt x 295.1047pt.
+(pdftex.def)             Requested size: 442.65375pt x 295.1053pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -968,13 +983,15 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/lmr/m/n/10.95 11
  []
 
-[11 <./images/silhouette_comparison.png>]
-<images/winter_cl7_init.png, id=319, 939.51pt x 939.51pt>
-File: images/winter_cl7_init.png Graphic file (type png)
-<use images/winter_cl7_init.png>
-Package pdftex.def Info: images/winter_cl7_init.png  used on input line 293.
-(pdftex.def)             Requested size: 442.65375pt x 442.64494pt.
+[11 <./images/silhouette_comparison.pdf>]
 
+pdfTeX warning: /usr/bin/pdflatex (file ./images/winter_cl7_init.pdf): PDF incl
+usion: found PDF version <1.7>, but at most version <1.5> allowed
+<images/winter_cl7_init.pdf, id=328, 939.5119pt x 939.5119pt>
+File: images/winter_cl7_init.pdf Graphic file (type pdf)
+<use images/winter_cl7_init.pdf>
+Package pdftex.def Info: images/winter_cl7_init.pdf  used on input line 293.
+(pdftex.def)             Requested size: 442.65375pt x 442.64584pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -983,21 +1000,27 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/lmr/m/n/10.95 12 []
  []
 
-[12 <./images/winter_activ_cluster_highlights.png>]
-<images/winter_cl7_pre.png, id=329, 939.51pt x 939.51pt>
-File: images/winter_cl7_pre.png Graphic file (type png)
-<use images/winter_cl7_pre.png>
-Package pdftex.def Info: images/winter_cl7_pre.png  used on input line 309.
-(pdftex.def)             Requested size: 442.65375pt x 442.64494pt.
+[12 <./images/winter_activ_cluster_highlights.pdf>]
 
+pdfTeX warning: /usr/bin/pdflatex (file ./images/winter_cl7_pre.pdf): PDF inclu
+sion: found PDF version <1.7>, but at most version <1.5> allowed
+<images/winter_cl7_pre.pdf, id=340, 939.5119pt x 939.5119pt>
+File: images/winter_cl7_pre.pdf Graphic file (type pdf)
+<use images/winter_cl7_pre.pdf>
+Package pdftex.def Info: images/winter_cl7_pre.pdf  used on input line 309.
+(pdftex.def)             Requested size: 442.65375pt x 442.64584pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/winter_cl7_post.png, id=330, 939.51pt x 939.51pt>
-File: images/winter_cl7_post.png Graphic file (type png)
-<use images/winter_cl7_post.png>
-Package pdftex.def Info: images/winter_cl7_post.png  used on input line 316.
-(pdftex.def)             Requested size: 442.65375pt x 442.64494pt.
+
+
+pdfTeX warning: /usr/bin/pdflatex (file ./images/winter_cl7_post.pdf): PDF incl
+usion: found PDF version <1.7>, but at most version <1.5> allowed
+<images/winter_cl7_post.pdf, id=341, 939.5119pt x 939.5119pt>
+File: images/winter_cl7_post.pdf Graphic file (type pdf)
+<use images/winter_cl7_post.pdf>
+Package pdftex.def Info: images/winter_cl7_post.pdf  used on input line 316.
+(pdftex.def)             Requested size: 442.65375pt x 442.64584pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1006,51 +1029,64 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/lmr/m/n/10.95 13
  []
 
-[13 <./images/winter_cl7_init.png>]
+[13 <./images/winter_cl7_init.pdf>]
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/lmr/m/n/10.95 14 []
  []
 
-[14 <./images/winter_cl7_pre.png>]
+[14 <./images/winter_cl7_pre.pdf>]
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/lmr/m/n/10.95 15
  []
 
-[15 <./images/winter_cl7_post.png>]
-<images/aus_feature_clustering.png, id=356, 1081.03876pt x 451.6875pt>
-File: images/aus_feature_clustering.png Graphic file (type png)
-<use images/aus_feature_clustering.png>
-Package pdftex.def Info: images/aus_feature_clustering.png  used on input line 
+[15 <./images/winter_cl7_post.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./images/aus_feature_clustering.pdf): P
+DF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<images/aus_feature_clustering.pdf, id=373, 1081.12906pt x 451.72766pt>
+File: images/aus_feature_clustering.pdf Graphic file (type pdf)
+<use images/aus_feature_clustering.pdf>
+Package pdftex.def Info: images/aus_feature_clustering.pdf  used on input line 
 335.
-(pdftex.def)             Requested size: 442.65375pt x 184.95184pt.
+(pdftex.def)             Requested size: 442.65375pt x 184.9476pt.
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/lmr/m/n/10.95 16 []
  []
 
-[16 <./images/aus_feature_clustering.png (PNG copy)>]
-<images/aus_heatmap.png, id=368, 2104.86375pt x 1865.97125pt>
-File: images/aus_heatmap.png Graphic file (type png)
-<use images/aus_heatmap.png>
-Package pdftex.def Info: images/aus_heatmap.png  used on input line 359.
+[16 <./images/aus_feature_clustering.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./images/aus_heatmap.pdf): PDF inclusio
+n: found PDF version <1.6>, but at most version <1.5> allowed
+<images/aus_heatmap.pdf, id=387, 2104.86375pt x 1865.97125pt>
+File: images/aus_heatmap.pdf Graphic file (type pdf)
+<use images/aus_heatmap.pdf>
+Package pdftex.def Info: images/aus_heatmap.pdf  used on input line 359.
 (pdftex.def)             Requested size: 442.65375pt x 392.40651pt.
 
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+
+pdfTeX warning: /usr/bin/pdflatex (file ./images/aus_preselection.pdf): PDF inc
+lusion: found PDF version <1.7>, but at most version <1.5> allowed
+<images/aus_preselection.pdf, id=388, 939.5119pt x 939.5119pt>
+File: images/aus_preselection.pdf Graphic file (type pdf)
+<use images/aus_preselection.pdf>
+Package pdftex.def Info: images/aus_preselection.pdf  used on input line 366.
+(pdftex.def)             Requested size: 442.65375pt x 442.64584pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/aus_preselection.png, id=369, 939.51pt x 939.51pt>
-File: images/aus_preselection.png Graphic file (type png)
-<use images/aus_preselection.png>
-Package pdftex.def Info: images/aus_preselection.png  used on input line 366.
-(pdftex.def)             Requested size: 442.65375pt x 442.64494pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/aus_selection.png, id=370, 939.51pt x 939.51pt>
-File: images/aus_selection.png Graphic file (type png)
-<use images/aus_selection.png>
-Package pdftex.def Info: images/aus_selection.png  used on input line 374.
-(pdftex.def)             Requested size: 442.65375pt x 442.64494pt.
+pdfTeX warning: /usr/bin/pdflatex (file ./images/aus_selection.pdf): PDF inclus
+ion: found PDF version <1.7>, but at most version <1.5> allowed
+<images/aus_selection.pdf, id=389, 939.5119pt x 939.5119pt>
+File: images/aus_selection.pdf Graphic file (type pdf)
+<use images/aus_selection.pdf>
+Package pdftex.def Info: images/aus_selection.pdf  used on input line 374.
+(pdftex.def)             Requested size: 442.65375pt x 442.64584pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1064,7 +1100,7 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/lmr/m/n/10.95 18 []
  []
 
-[18 <./images/aus_heatmap.png>]
+[18 <./images/aus_heatmap.pdf>]
 Underfull \vbox (badness 1735) has occurred while \output is active []
 
 
@@ -1072,7 +1108,7 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/lmr/m/n/10.95 19
  []
 
-[19 <./images/aus_preselection.png>]
+[19 <./images/aus_preselection.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -1080,7 +1116,7 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/lmr/m/n/10.95 20 []
  []
 
-[20 <./images/aus_selection.png>]
+[20 <./images/aus_selection.pdf>]
 Overfull \hbox (60.58748pt too wide) in paragraph at lines 412--413
 []\T1/lmr/m/n/10.95 The sup-ple-men-tary ma-te-ri-als for this pa-per can be fo
 und at [][]https://github.com/mmedl94/lionfish_article/[][]
@@ -1121,11 +1157,15 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 428.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 428.
 Package rerunfilecheck Info: File `manuscript.out' has not changed.
 (rerunfilecheck)             Checksum: AA93C76F49EC7013F5453479246B1762;2613.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 428.
  ) 
 Here is how much of TeX's memory you used:
  18575 strings out of 481239
- 350175 string characters out of 5920377
+ 350439 string characters out of 5920377
  600833 words of memory out of 5000000
  33311 multiletter control sequences out of 15000+600000
  598147 words of font info for 57 fonts, out of 8000000 for 9000
@@ -1145,10 +1185,10 @@ ublic/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmro10.pfb></usr/sh
 are/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.p
 fb>
-Output written on manuscript.pdf (23 pages, 7869286 bytes).
+Output written on manuscript.pdf (23 pages, 8351834 bytes).
 PDF statistics:
- 525 PDF objects out of 1000 (max. 8388607)
- 454 compressed objects within 5 object streams
+ 550 PDF objects out of 1000 (max. 8388607)
+ 473 compressed objects within 5 object streams
  106 named destinations out of 1000 (max. 500000)
  266 words of extra memory for PDF output out of 10000 (max. 10000000)
 
