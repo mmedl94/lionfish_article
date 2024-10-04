@@ -196,22 +196,6 @@ In this example, while the intra-cluster fraction for cluster 1 and feature 1 is
 
 Generally, if the features are ordered categories or numerical scores, decomposing the cluster-feature summary is still possible by using an analysis of variance breakdown into row and column effects.
 
-%\[
-%\text{Overall fraction}\ f_{ij}^{o} = \frac{c_{ij}}{n}
-%\]
-%with normalization to the total number of observations $n$ for a general overview,
-
-%\[
-%\text{Intra cluster fraction}\  f_{ij}^{clust} = \frac{c_{ij}}{n_{i}}
-%\]
-%showing the counts relative to the cluster's size \(n_i\), to see the fraction of observations in cluster $i$ for which feature $j$ was true, and
-
-
-%\[
-%\text{Intra feature fraction}\ f_{ij}^{feat} = \frac{c_{ij}}{c_{j}}
-%\]
-%to see how the true values for feature $j$ are distributed across the different clusters relative, with normalization to the overall count of that feature \(c_j = \sum_i c_{ij}\).
-
 \subsection{Subset selection}
 
 The spin-and-brush approach suggests to cluster data manually when using a tour: we run a tour animation, stop when we see a group of points that are different from the rest of the distribution, brush them, and then continue. Different projections will enable the separation of different groups, and for well-separated clusters we will be able to recover a full cluster solutions in this manner.
