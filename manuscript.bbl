@@ -38,6 +38,7 @@ Cook D, Buja A, Cabrera J, Hurley C (1995).
 \newblock \enquote{Grand {T}our And {P}rojection {Pursuit}.}
 \newblock \emph{Journal of Computational and Graphical Statistics},
   \textbf{4}(3), 155--172.
+\newblock \doi{10.2307/1390844}.
 
 \bibitem[{Cook and Swayne(2007)}]{ggobi}
 Cook D, Swayne D (2007).
@@ -51,6 +52,7 @@ Dolnicar S, Leisch F (2003).
 \newblock \enquote{Winter Tourist Segments In Austria: Identifying Stable
   Vacation Styles Using Bagged Clustering Techniques.}
 \newblock \emph{Journal of Travel Research}, \textbf{41}(3), 281--292.
+\newblock \doi{10.1177/0047287502239037}.
 
 \bibitem[{Hart and Wang(2023)}]{RJ-2023-052}
 Hart C, Wang E (2023).
@@ -83,6 +85,7 @@ Laa U, Aumann A, Cook D, Valencia G (2023).
   Dimensions.}
 \newblock \emph{Journal of Computational and Graphical Statistics},
   \textbf{32}(3), 1229--1236.
+\newblock \doi{10.1080/10618600.2023.2206459}.
 
 \bibitem[{Laa \emph{et~al.}(2020)Laa, Cook, and Valencia}]{Laa2020}
 Laa U, Cook D, Valencia G (2020).
@@ -98,6 +101,7 @@ Lee EK, Cook D, Klinke S, Lumley T (2005).
   Classification.}
 \newblock \emph{Journal of Computational and Graphical Statistics},
   \textbf{14}(4), 831--846.
+\newblock \doi{10.1198/106186005X77702}.
 
 \bibitem[{Lee \emph{et~al.}(2022)Lee, Cook, da~Silva, Laa, Spyrison, Wang, and
   Zhang}]{lee2022}
@@ -134,6 +138,7 @@ Murtagh F, Legendre P (2014).
 \newblock \enquote{Ward’s Hierarchical Agglomerative Clustering Method: Which
   Algorithms Implement Ward’s Criterion?}
 \newblock \emph{Journal of classification}, \textbf{31}, 274--295.
+\newblock \doi{10.1007/s00357-014-9161-z}.
 
 \bibitem[{{R Core Team}(2024)}]{R}
 {R Core Team} (2024).

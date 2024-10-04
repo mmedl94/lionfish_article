@@ -9,37 +9,37 @@ Warning--missing publisher in ggobi
 Warning--missing publisher in leisch2018market
 You've used 22 entries,
             3140 wiz_defined-function locations,
-            790 strings with 9165 characters,
-and the built_in function-call counts, 17818 in all, are:
-= -- 1454
+            795 strings with 9281 characters,
+and the built_in function-call counts, 17903 in all, are:
+= -- 1469
 > -- 499
 < -- 14
 + -- 197
 - -- 165
-* -- 1458
-:= -- 2472
-add.period$ -- 100
+* -- 1468
+:= -- 2487
+add.period$ -- 105
 call.type$ -- 22
 change.case$ -- 145
 chr.to.int$ -- 22
 cite$ -- 25
-duplicate$ -- 1597
-empty$ -- 1623
+duplicate$ -- 1602
+empty$ -- 1628
 format.name$ -- 229
-if$ -- 3599
+if$ -- 3619
 int.to.chr$ -- 1
 int.to.str$ -- 1
 missing$ -- 255
-newline$ -- 139
+newline$ -- 144
 num.names$ -- 88
-pop$ -- 536
+pop$ -- 526
 preamble$ -- 1
 purify$ -- 143
 quote$ -- 0
-skip$ -- 374
+skip$ -- 369
 stack$ -- 0
 substring$ -- 1412
-swap$ -- 587
+swap$ -- 597
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
@@ -47,5 +47,5 @@ type$ -- 186
 warning$ -- 3
 while$ -- 143
 width$ -- 0
-write$ -- 327
+write$ -- 337
 (There were 3 warnings)
