@@ -1,7 +1,7 @@
 # Application: Austrian tourism
 # Load libraries
 library(tourr)
-library(pytourr)
+library(lionfish)
 
 # Check random projections
 data(winterActiv)
