@@ -376,6 +376,37 @@ Finally, since subset 9 (gold) is notably inactive, one might infer that they pr
     \label{fig:aus_selection}
 \end{figure}
 
+\subsection{Tourist risk taking dataset}
+
+The final dataset to be analyzed stems from a survey of 563 Australian residents who undertook a holiday of at least four nights in 2015. The respondents were asked about the types of risks they had taken in the past. Six different types of risk were screened: recreational (e.g., rock-climbing, scuba diving), health (e.g., smoking, poor diet, high alcohol consumption), career (e.g., quitting a job without another to go to), financial (e.g., gambling, risky investments), safety (e.g., speeding), and social risks (e.g., standing for election, publicly challenging a rule or decision). The response options for each risk type were on a Likert scale ranging from 1 to 5: never (1), rarely (2), quite often (3), often (4), and very often (5).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{final_projeciton_risk.pdf}
+    \caption{Final frame of a guided tour of the clustered risk data with the LDA index. The color of the datapoints indicates which cluster they belong to with cluster 1 being blue, cluster 2 being orange, cluster 3 being green, cluster 4 being red and cluster 5 being violet. All axes point in one direction indicating the projection primarily separates the groups based on their general risk taking behavior. Most clusters are separated nicely, but clusters 1 and 4 overlap.}
+    \label{fig:final_projeciton_risk}
+\end{figure}
+
+
+To analyze the data, we first removed duplicate observations and then performed a  k-means clustering with k=5. As the dataset comprises only six features, no feature selection was performed. Subsequently, a 2-dimensional tour with the Linear Discriminant Analysis (LDA) index was conducted, and the results were visualized using the \texttt{lionfish} package. The final projection of the tour can be seen in Figure \ref{fig:final_projeciton_risk}. In this projection, all axes generally point in the same direction, indicating that the projection primarily separates the data based on general risk-taking behavior. Cluster 5 (violet) is identified as the most risk-averse, while cluster 4 (red) is the most risk-taking. Additionally, cluster 2 (orange) is oriented towards the health axis, suggesting that this cluster is more inclined to take health risks. Clusters 1 (blue) and 3 (green) overlap significantly in the shown projection. Both clusters appear to exhibit moderate risk-taking behavior, with cluster 3 being slightly more averse to health risks.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{risk-lda-regroup.pdf}
+    \caption{Interface of the "Guided Tour - LDA - Regroup" function. The option highlighted by the yellow box indicates which element of the dropdown menu to select to spawn the displayed interface. Within the interface, the user can choose how they want the LDA metric to be computed by activating switches. All clusters selected in one column will be considered as a single cluster when computing the LDA metric. This affects only the calculation of the metric and the resulting projection matrices, not the actual selections. If a switch in the "Ignore" column is activated, the datapoints within that cluster will not be considered for the generation of the guided tour.}
+    \label{fig:risk-lda-regroup}
+\end{figure}
+
+
+Given the overlap between clusters 1 and 3, we are interested in exploring their differences further. To achieve this, we generate a new tour with the LDA index from within the GUI, utilizing the inbuilt function to redefine the groupings considered in the LDA. This was done by selecting "Guided tour - LDA - regroup" from the dropdown menu and then clicking the "Run tour" button, which spawns an interface for the regrouping. By activating the switches for clusters 2, 4, and 5 in the "Ignore" column of the interface, the tour ignores the data from these clusters, focusing on separating clusters 1 and 3. The interface is shown in \ref{fig:risk-lda-regroup}. Alternatively, we could activate the switches for clusters 2, 4, and 5 not in the "Ignore" column, but in another column, e.g., the one labeled "New subgroup 2". This would result in the tour considering these clusters as one cluster. This configuration would essentially try to separate clusters 1 and 3 from each other and all other data points. The final projection of this tour can be seen in figure \ref{fig:regrouped_risk}. In this projection, it is evident that the largest differences between the two clusters are in career and recreational risk-taking.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{regrouped_risk.pdf}
+    \caption{Final frame of the guided tour generated based on the settings shown in Figure \ref{fig:risk-lda-regroup}. Clusters 1 (blue) and 4 (red) are now much better separated compared to the projection shown in Figure \ref{fig:final_projeciton_risk}. The most influential features within the data for differentiating between the clusters were career risk and recreational risk, with the former being higher for cluster 1 and the latter for cluster 4.}
+    \label{fig:regrouped_risk}
+\end{figure}
+
 
 \section{Discussion}~\label{discussion}
 
@@ -393,7 +424,6 @@ While some plots supported by the \texttt{lionfish} package are specifically des
 Ultimately, manual data exploration serves as a useful complement to automated methods, providing the flexibility to incorporate context, expert judgment, and specific analytical goals. This approach enables analysts to refine initial results and adapt them to the complexities of real-world scenarios, leading to more nuanced interpretations and actionable insights. The \texttt{lionfish} package offers an organised and responsive interactive tool for conducting such analyses, bridging the gap between automated clustering and exploration.
 
 By integrating interactive visualization capabilities, the \texttt{lionfish} package empowers users to dynamically engage with their data, making it possible to uncover subtle patterns and relationships that might otherwise remain hidden. This is especially valuable in tackling complex datasets with the mindset that an automated solution needs to be validated. The package has broad applicability across various data types and analytical contexts where clustering is used. The flexibility of setting up the GUI elements from the command line allow it to be tailored for different applications.
-
 
 Future developments in \texttt{lionfish} might include expanding the range of visualization methods and offering additional interactive features, such as enabling the generation of new cluster solutions directly from the GUI. Leveraging the integration of both \proglang{R} and \proglang{Python}, future enhancements could include a seamless combination of algorithms from each language, which broadens the expansion potential of the software. For more complex data shapes, such as those with concavities or non-linear boundaries, the implementation of sliced tours~\citep{Laa2020} is recommended to improve exploratory analysis. Streamlining the addition of new plot types could also further enhance the versatility of the package, making it more adaptable for different data visualization needs. This ongoing integration of \proglang{R} and \proglang{Python} exemplifies how the strengths of both languages can be harnessed for the development of new software packages.
 
