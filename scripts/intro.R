@@ -3,6 +3,7 @@ library(tidyverse)
 library(mvtnorm)
 library(patchwork)
 library(colorspace)
+library(ggbeeswarm)
 
 theme_set(theme_bw(base_size = 14) +
             theme(

@@ -8,7 +8,7 @@ data("ausActiv")
 ausActiv <- ausActiv[rowSums(ausActiv) > 0 & rowSums(ausActiv) <= 40, ]
 set.seed(1234)
 
-# Figure 11
+# Figure 12
 dist_matrix_f <- dist(t(ausActiv), method="binary")
 ward_cluster_f <- hclust(dist_matrix_f, "ward.D2")
 plot(ward_cluster_f)
