@@ -64,19 +64,25 @@ b4 <- ggplot(blob1_cl, aes(V1, V2, colour=cl)) +
   scale_color_discrete_divergingx(palette="Zissou 1") +
   annotate("text", x=0.05, y=0.95, label="A", size=8) +
   theme(legend.position = "none", 
-        axis.text = element_blank())
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid = element_blank())
 b5 <- ggplot(blob2_cl, aes(V1, V2, colour=cl)) + 
   geom_point() +
   scale_color_discrete_divergingx(palette="Zissou 1") +
   annotate("text", x=0.05, y=0.95, label="B", size=8) +
   theme(legend.position = "none", 
-        axis.text = element_blank())
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid = element_blank())
 b6 <- ggplot(blob3_cl, aes(V1, V2, colour=cl)) + 
   geom_point() +
   scale_color_discrete_divergingx(palette="Zissou 1") +
   annotate("text", x=0.05, y=0.95, label="C", size=8) +
   theme(legend.position = "none", 
-        axis.text = element_blank())
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid = element_blank())
 b4 + b5 + b6 + plot_layout(ncol=3)
 
 b7 <- ggplot(blob1_cl, aes(V1, fill=cl)) + 
@@ -142,40 +148,57 @@ blob_all <- bind_rows(blob1_cl, blob2_cl, blob3_cl) |>
 
 ggplot(blob_all, aes(value, fill=cl)) + 
   geom_histogram(breaks = seq(0, 1, 0.1), 
-                 colour="black", linewidth=0.2) +
+                 colour="white", linewidth=0.2) +
   scale_fill_discrete_divergingx(palette="Zissou 1") +
   ylim(c(0,37)) +
   facet_grid(var~data) +
   theme(legend.position = "none", 
         axis.text = element_blank(),
-        axis.title = element_blank())
+        axis.title = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid = element_blank())
 
 # Generate a figure to show why linear combinations are needed, and subsetting
-b13 <- ggplot(filter(blob1_cl, cl %in% c(1,2)), 
-              aes(x=V1, y=1, colour=cl)) + 
+blob1_cl <- blob1_cl |>
+  mutate(vars_in = ifelse(cl %in% c(1,2), "yes", "no"))
+#b13 <- ggplot(filter(blob1_cl, cl %in% c(1,2)), 
+#              aes(x=V1, y=1, colour=cl)) + 
+b13 <- ggplot(blob1_cl, 
+                aes(x=V1, y=1, colour=cl, alpha=vars_in)) + 
   geom_quasirandom() +
-  scale_colour_manual(values=c("#3B99B1", "#9FC095")) +
+  #scale_colour_manual(values=c("#3B99B1", "#9FC095")) +
+  scale_colour_discrete_divergingx(palette="Zissou 1") +
+  scale_alpha_manual("", values=c(0.2, 1)) +
   annotate("text", x=0.05, y=1.4, label="A", size=8) +
   #xlab("linear combination") +
   ylim(c(0.5, 1.5)) +
   theme(legend.position = "none", 
         axis.text = element_blank(),
-        axis.title.y = element_blank())
+        axis.title.y = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid = element_blank())
 
 blob2_cl <- blob2_cl |>
   mutate(V1_V2 = 0.7218934*V1 - 0.6920043*V2) |>
-  mutate(V1_V2 = (V1_V2 - min(V1_V2))/(max(V1_V2)-min(V1_V2)))
+  mutate(V1_V2 = (V1_V2 - min(V1_V2))/(max(V1_V2)-min(V1_V2))) |>
+  mutate(vars_in = ifelse(cl %in% c(1,2), "yes", "no"))
 
-b14 <- ggplot(filter(blob2_cl, cl %in% c(1,2)), 
-              aes(x=V1_V2, y=1, colour=cl)) + 
+#b14 <- ggplot(filter(blob2_cl, cl %in% c(1,2)), 
+#              aes(x=V1_V2, y=1, colour=cl)) + 
+b14 <- ggplot(blob2_cl, 
+                aes(x=V1_V2, y=1, colour=cl, alpha=vars_in)) + 
   geom_quasirandom() +
-  scale_colour_manual(values=c("#3B99B1", "#9FC095")) +
+  #scale_colour_manual(values=c("#3B99B1", "#9FC095")) +
+  scale_colour_discrete_divergingx(palette="Zissou 1") +
+  scale_alpha_manual("", values=c(0.2, 1)) +
   annotate("text", x=0.05, y=1.4, label="B", size=8) +
   xlab("linear combination") +
   ylim(c(0.5, 1.5)) +
   theme(legend.position = "none", 
         axis.text = element_blank(),
-        axis.title.y = element_blank())
+        axis.title.y = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid = element_blank())
 
 # Use PC1 for data C
 prcomp(blob3_cl[,1:2])
@@ -190,5 +213,7 @@ b15 <- ggplot(blob3_cl, aes(x=V1_V2, y=1, colour=cl)) +
   ylim(c(0.5, 1.5)) +
   theme(legend.position = "none", 
         axis.text = element_blank(),
-        axis.title.y = element_blank())
+        axis.title.y = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid = element_blank())
 b13 + b14 + b15 + plot_layout(ncol=3)

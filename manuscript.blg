@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2024)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: manuscript.aux
 The style file: ajs.bst
@@ -7,45 +7,45 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty journal in cliff2009formative
 Warning--missing publisher in ggobi
 Warning--missing publisher in leisch2018market
-You've used 22 entries,
+You've used 23 entries,
             3140 wiz_defined-function locations,
-            795 strings with 9281 characters,
-and the built_in function-call counts, 17903 in all, are:
-= -- 1469
-> -- 499
+            800 strings with 9468 characters,
+and the built_in function-call counts, 18753 in all, are:
+= -- 1541
+> -- 526
 < -- 14
-+ -- 197
-- -- 165
-* -- 1468
-:= -- 2487
-add.period$ -- 105
-call.type$ -- 22
-change.case$ -- 145
-chr.to.int$ -- 22
-cite$ -- 25
-duplicate$ -- 1602
-empty$ -- 1628
-format.name$ -- 229
-if$ -- 3619
++ -- 207
+- -- 174
+* -- 1542
+:= -- 2605
+add.period$ -- 108
+call.type$ -- 23
+change.case$ -- 153
+chr.to.int$ -- 23
+cite$ -- 26
+duplicate$ -- 1680
+empty$ -- 1702
+format.name$ -- 241
+if$ -- 3790
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 255
-newline$ -- 144
-num.names$ -- 88
-pop$ -- 526
+missing$ -- 265
+newline$ -- 149
+num.names$ -- 92
+pop$ -- 552
 preamble$ -- 1
-purify$ -- 143
+purify$ -- 150
 quote$ -- 0
-skip$ -- 369
+skip$ -- 386
 stack$ -- 0
-substring$ -- 1412
-swap$ -- 597
+substring$ -- 1485
+swap$ -- 618
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 186
+type$ -- 195
 warning$ -- 3
-while$ -- 143
+while$ -- 149
 width$ -- 0
-write$ -- 337
+write$ -- 350
 (There were 3 warnings)
