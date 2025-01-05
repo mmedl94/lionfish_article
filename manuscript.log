@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.3.16)  4 JAN 2025 16:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.3.16)  5 JAN 2025 18:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -670,23 +670,23 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 (./manuscript.aux)
 \openout1 = `manuscript.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 69
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 70
 .
  (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -722,7 +722,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box61
-Package hyperref Info: Link coloring ON on input line 69.
+Package hyperref Info: Link coloring ON on input line 70.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -735,89 +735,86 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count304
 )
-LaTeX Info: Redefining \ref on input line 69.
-LaTeX Info: Redefining \pageref on input line 69.
-LaTeX Info: Redefining \nameref on input line 69.
+LaTeX Info: Redefining \ref on input line 70.
+LaTeX Info: Redefining \pageref on input line 70.
+LaTeX Info: Redefining \nameref on input line 70.
 
 (./manuscript.out) (./manuscript.out)
 \@outlinefile=\write5
 \openout5 = `manuscript.out'.
 
  ABD: EveryShipout initializing macros
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 69
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 70
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 69--69
+Underfull \hbox (badness 10000) in paragraph at lines 70--70
 
  []
 
 <oesg.png, id=98, 193.72375pt x 55.20625pt>
 File: oesg.png Graphic file (type png)
 <use oesg.png>
-Package pdftex.def Info: oesg.png  used on input line 69.
+Package pdftex.def Info: oesg.png  used on input line 70.
 (pdftex.def)             Requested size: 88.52939pt x 25.22838pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 69--69
+Underfull \hbox (badness 10000) in paragraph at lines 70--70
 
  []
 
 
-Overfull \hbox (231.2646pt too wide) in paragraph at lines 69--69
+Overfull \hbox (231.2646pt too wide) in paragraph at lines 70--70
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 69--69
+Underfull \hbox (badness 10000) in paragraph at lines 70--70
 
  []
 
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 6
-9.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 7
+0.
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 6
-9.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 7
+0.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-69.
+70.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-69.
+70.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 69.
+(Font)              <10.95> on input line 70.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 69.
+(Font)              <8> on input line 70.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 69.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 6
-9.
+(Font)              <6> on input line 70.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 7
+0.
 
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 6
-9.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 7
+0.
 
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1
+) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./oesg.png>]
 
@@ -826,7 +823,7 @@ und PDF version <1.7>, but at most version <1.5> allowed
 <images/intro1.pdf, id=119, 585.08571pt x 195.7164pt>
 File: images/intro1.pdf Graphic file (type pdf)
 <use images/intro1.pdf>
-Package pdftex.def Info: images/intro1.pdf  used on input line 78.
+Package pdftex.def Info: images/intro1.pdf  used on input line 79.
 (pdftex.def)             Requested size: 442.65375pt x 148.07704pt.
 
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
@@ -837,23 +834,20 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/intro2.pdf): PDF inclusion: fo
 und PDF version <1.7>, but at most version <1.5> allowed
-<images/intro2.pdf, id=144, 586.4872pt x 402.53659pt>
+<images/intro2.pdf, id=143, 586.4872pt x 402.53659pt>
 File: images/intro2.pdf Graphic file (type pdf)
 <use images/intro2.pdf>
-Package pdftex.def Info: images/intro2.pdf  used on input line 88.
+Package pdftex.def Info: images/intro2.pdf  used on input line 89.
 (pdftex.def)             Requested size: 442.65375pt x 303.8242pt.
 
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/intro3.pdf): PDF inclusion: fo
 und PDF version <1.7>, but at most version <1.5> allowed
-<images/intro3.pdf, id=145, 576.444pt x 209.16493pt>
+<images/intro3.pdf, id=144, 576.444pt x 209.16493pt>
 File: images/intro3.pdf Graphic file (type pdf)
 <use images/intro3.pdf>
-Package pdftex.def Info: images/intro3.pdf  used on input line 94.
+Package pdftex.def Info: images/intro3.pdf  used on input line 95.
 (pdftex.def)             Requested size: 442.65375pt x 160.61705pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 [] \T1/lmr/m/n/10.95 3
@@ -873,19 +867,16 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/GUI_overview.pdf): PDF inclusi
 on: found PDF version <1.7>, but at most version <1.5> allowed
-<images/GUI_overview.pdf, id=250, 686.38568pt x 542.02611pt>
+<images/GUI_overview.pdf, id=249, 686.38568pt x 542.02611pt>
 File: images/GUI_overview.pdf Graphic file (type pdf)
 <use images/GUI_overview.pdf>
-Package pdftex.def Info: images/GUI_overview.pdf  used on input line 145.
+Package pdftex.def Info: images/GUI_overview.pdf  used on input line 146.
 (pdftex.def)             Requested size: 442.65375pt x 349.55867pt.
 
 Overfull \hbox (3.48805pt too wide) in paragraph at lines 153--154
 \T1/lmr/m/n/10.95 anal-y-sis. These states can be re-cov-ered by us-ing press-i
 ng the \T1/lmtt/m/n/10.95 Load projections and subsets
  []
-
-
-Underfull \vbox (badness 7685) has occurred while \output is active []
 
 
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
@@ -923,7 +914,7 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/winter_proj1.pdf): PDF inclusi
 on: found PDF version <1.7>, but at most version <1.5> allowed
-<images/winter_proj1.pdf, id=311, 353.32pt x 362.35374pt>
+<images/winter_proj1.pdf, id=310, 353.32pt x 362.35374pt>
 File: images/winter_proj1.pdf Graphic file (type pdf)
 <use images/winter_proj1.pdf>
 Package pdftex.def Info: images/winter_proj1.pdf  used on input line 242.
@@ -932,7 +923,7 @@ Package pdftex.def Info: images/winter_proj1.pdf  used on input line 242.
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/winter_proj2.pdf): PDF inclusi
 on: found PDF version <1.7>, but at most version <1.5> allowed
-<images/winter_proj2.pdf, id=312, 353.32pt x 362.35374pt>
+<images/winter_proj2.pdf, id=311, 353.32pt x 362.35374pt>
 File: images/winter_proj2.pdf Graphic file (type pdf)
 <use images/winter_proj2.pdf>
 Package pdftex.def Info: images/winter_proj2.pdf  used on input line 242.
@@ -941,27 +932,41 @@ Package pdftex.def Info: images/winter_proj2.pdf  used on input line 242.
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/winter_proj3.pdf): PDF inclusi
 on: found PDF version <1.7>, but at most version <1.5> allowed
-<images/winter_proj3.pdf, id=313, 353.32pt x 362.35374pt>
+<images/winter_proj3.pdf, id=312, 353.32pt x 362.35374pt>
 File: images/winter_proj3.pdf Graphic file (type pdf)
 <use images/winter_proj3.pdf>
 Package pdftex.def Info: images/winter_proj3.pdf  used on input line 242.
 (pdftex.def)             Requested size: 132.79747pt x 136.19194pt.
 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/winteractiv_heatmap.pdf): PDF 
 inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/winteractiv_heatmap.pdf, id=318, 722.70148pt x 361.35074pt>
+<images/winteractiv_heatmap.pdf, id=317, 722.70148pt x 397.4858pt>
 File: images/winteractiv_heatmap.pdf Graphic file (type pdf)
 <use images/winteractiv_heatmap.pdf>
 Package pdftex.def Info: images/winteractiv_heatmap.pdf  used on input line 257
 .
-(pdftex.def)             Requested size: 442.65375pt x 221.32788pt.
+(pdftex.def)             Requested size: 442.65375pt x 243.46065pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/lmr/m/n/10.95 10 []
  []
 
-[10 <./images/winter_proj1.pdf> <./images/winter_proj2.pdf
+[10]
+Underfull \vbox (badness 1796) has occurred while \output is active []
+
+
+Overfull \hbox (10.94998pt too wide) has occurred while \output is active
+[] \T1/lmr/m/n/10.95 11
+ []
+
+[11 <./images/winter_proj1.pdf> <./images/winter_proj2.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/winter_proj2.pdf): PDF inclusi
 on: multiple pdfs with page group included in a single page
@@ -969,16 +974,11 @@ on: multiple pdfs with page group included in a single page
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/winter_proj3.pdf): PDF inclusi
 on: multiple pdfs with page group included in a single page
->]
-Overfull \hbox (10.94998pt too wide) has occurred while \output is active
-[] \T1/lmr/m/n/10.95 11
- []
-
-[11 <./images/winteractiv_heatmap.pdf>]
+> <./images/winteractiv_heatmap.pdf>]
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/silhouette_comparison.pdf): PD
 F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/silhouette_comparison.pdf, id=347, 722.70148pt x 361.35074pt>
+<images/silhouette_comparison.pdf, id=345, 722.70148pt x 361.35074pt>
 File: images/silhouette_comparison.pdf Graphic file (type pdf)
 <use images/silhouette_comparison.pdf>
 Package pdftex.def Info: images/silhouette_comparison.pdf  used on input line 2
@@ -995,7 +995,7 @@ clus-ters by ini-tial-iz-ing an \T1/lmtt/m/n/10.95 interactive_tour()
 pdfTeX warning: /usr/bin/pdflatex (file ./images/winter_activ_cluster_highlight
 s.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allow
 ed
-<images/winter_activ_cluster_highlights.pdf, id=349, 867.24171pt x 578.16116pt>
+<images/winter_activ_cluster_highlights.pdf, id=347, 867.24171pt x 578.16116pt>
 
 File: images/winter_activ_cluster_highlights.pdf Graphic file (type pdf)
 <use images/winter_activ_cluster_highlights.pdf>
@@ -1006,44 +1006,19 @@ put line 281.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-
-pdfTeX warning: /usr/bin/pdflatex (file ./images/winter_cl7_init.pdf): PDF incl
-usion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/winter_cl7_init.pdf, id=352, 939.5119pt x 939.5119pt>
-File: images/winter_cl7_init.pdf Graphic file (type pdf)
-<use images/winter_cl7_init.pdf>
-Package pdftex.def Info: images/winter_cl7_init.pdf  used on input line 300.
-(pdftex.def)             Requested size: 442.65375pt x 442.64584pt.
-
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/lmr/m/n/10.95 12 []
  []
 
 [12 <./images/silhouette_comparison.pdf>]
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-
-pdfTeX warning: /usr/bin/pdflatex (file ./images/winter_cl7_pre.pdf): PDF inclu
-sion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/winter_cl7_pre.pdf, id=365, 939.5119pt x 939.5119pt>
-File: images/winter_cl7_pre.pdf Graphic file (type pdf)
-<use images/winter_cl7_pre.pdf>
-Package pdftex.def Info: images/winter_cl7_pre.pdf  used on input line 316.
-(pdftex.def)             Requested size: 442.65375pt x 442.64584pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-
-pdfTeX warning: /usr/bin/pdflatex (file ./images/winter_cl7_post.pdf): PDF incl
+pdfTeX warning: /usr/bin/pdflatex (file ./images/winter_cl7_init.pdf): PDF incl
 usion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/winter_cl7_post.pdf, id=366, 939.5119pt x 939.5119pt>
-File: images/winter_cl7_post.pdf Graphic file (type pdf)
-<use images/winter_cl7_post.pdf>
-Package pdftex.def Info: images/winter_cl7_post.pdf  used on input line 323.
-(pdftex.def)             Requested size: 442.65375pt x 442.64584pt.
+<images/winter_cl7_init.pdf, id=359, 939.27101pt x 939.27101pt>
+File: images/winter_cl7_init.pdf Graphic file (type pdf)
+<use images/winter_cl7_init.pdf>
+Package pdftex.def Info: images/winter_cl7_init.pdf  used on input line 300.
+(pdftex.def)             Requested size: 442.65375pt x 442.66133pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1053,27 +1028,41 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [13 <./images/winter_activ_cluster_highlights.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./images/winter_cl7_pre.pdf): PDF inclu
+sion: found PDF version <1.7>, but at most version <1.5> allowed
+<images/winter_cl7_pre.pdf, id=372, 939.27101pt x 939.27101pt>
+File: images/winter_cl7_pre.pdf Graphic file (type pdf)
+<use images/winter_cl7_pre.pdf>
+Package pdftex.def Info: images/winter_cl7_pre.pdf  used on input line 316.
+(pdftex.def)             Requested size: 442.65375pt x 442.66133pt.
+
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/lmr/m/n/10.95 14 []
  []
 
 [14 <./images/winter_cl7_init.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./images/winter_cl7_post.pdf): PDF incl
+usion: found PDF version <1.7>, but at most version <1.5> allowed
+<images/winter_cl7_post.pdf, id=382, 939.27101pt x 939.27101pt>
+File: images/winter_cl7_post.pdf Graphic file (type pdf)
+<use images/winter_cl7_post.pdf>
+Package pdftex.def Info: images/winter_cl7_post.pdf  used on input line 323.
+(pdftex.def)             Requested size: 442.65375pt x 442.66133pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \vbox (badness 1968) has occurred while \output is active []
+
+
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/lmr/m/n/10.95 15
  []
 
 [15 <./images/winter_cl7_pre.pdf>]
-
-pdfTeX warning: /usr/bin/pdflatex (file ./images/aus_feature_clustering.pdf): P
-DF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<images/aus_feature_clustering.pdf, id=399, 1081.12906pt x 451.72766pt>
-File: images/aus_feature_clustering.pdf Graphic file (type pdf)
-<use images/aus_feature_clustering.pdf>
-Package pdftex.def Info: images/aus_feature_clustering.pdf  used on input line 
-342.
-(pdftex.def)             Requested size: 442.65375pt x 184.9476pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
@@ -1081,31 +1070,29 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
  []
 
 [16 <./images/winter_cl7_post.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./images/aus_feature_clustering.pdf): P
+DF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<images/aus_feature_clustering.pdf, id=402, 1081.12906pt x 451.72766pt>
+File: images/aus_feature_clustering.pdf Graphic file (type pdf)
+<use images/aus_feature_clustering.pdf>
+Package pdftex.def Info: images/aus_feature_clustering.pdf  used on input line 
+342.
+(pdftex.def)             Requested size: 442.65375pt x 184.9476pt.
+
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/lmr/m/n/10.95 17
  []
 
 [17 <./images/aus_feature_clustering.pdf>]
 
-pdfTeX warning: /usr/bin/pdflatex (file ./images/aus_heatmap.pdf): PDF inclusio
-n: found PDF version <1.6>, but at most version <1.5> allowed
-<images/aus_heatmap.pdf, id=420, 2104.86375pt x 1865.97125pt>
-File: images/aus_heatmap.pdf Graphic file (type pdf)
-<use images/aus_heatmap.pdf>
-Package pdftex.def Info: images/aus_heatmap.pdf  used on input line 366.
-(pdftex.def)             Requested size: 442.65375pt x 392.40651pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-
 pdfTeX warning: /usr/bin/pdflatex (file ./images/aus_preselection.pdf): PDF inc
 lusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/aus_preselection.pdf, id=421, 939.5119pt x 939.5119pt>
+<images/aus_preselection.pdf, id=417, 939.27101pt x 939.27101pt>
 File: images/aus_preselection.pdf Graphic file (type pdf)
 <use images/aus_preselection.pdf>
-Package pdftex.def Info: images/aus_preselection.pdf  used on input line 373.
-(pdftex.def)             Requested size: 442.65375pt x 442.64584pt.
+Package pdftex.def Info: images/aus_preselection.pdf  used on input line 365.
+(pdftex.def)             Requested size: 442.65375pt x 442.66133pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1113,11 +1100,11 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/aus_selection.pdf): PDF inclus
 ion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/aus_selection.pdf, id=422, 939.5119pt x 939.5119pt>
+<images/aus_selection.pdf, id=418, 939.27101pt x 939.27101pt>
 File: images/aus_selection.pdf Graphic file (type pdf)
 <use images/aus_selection.pdf>
-Package pdftex.def Info: images/aus_selection.pdf  used on input line 381.
-(pdftex.def)             Requested size: 442.65375pt x 442.64584pt.
+Package pdftex.def Info: images/aus_selection.pdf  used on input line 373.
+(pdftex.def)             Requested size: 442.65375pt x 442.66133pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1125,24 +1112,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/final_projeciton_risk.pdf): PD
 F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/final_projeciton_risk.pdf, id=425, 788.5744pt x 597.34673pt>
+<images/final_projeciton_risk.pdf, id=421, 788.5744pt x 597.34673pt>
 File: images/final_projeciton_risk.pdf Graphic file (type pdf)
 <use images/final_projeciton_risk.pdf>
 Package pdftex.def Info: images/final_projeciton_risk.pdf  used on input line 3
-92.
+84.
 (pdftex.def)             Requested size: 442.65375pt x 335.314pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-
-pdfTeX warning: /usr/bin/pdflatex (file ./images/risk-lda-regroup.pdf): PDF inc
-lusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/risk-lda-regroup.pdf, id=427, 785.39424pt x 597.6729pt>
-File: images/risk-lda-regroup.pdf Graphic file (type pdf)
-<use images/risk-lda-regroup.pdf>
-Package pdftex.def Info: images/risk-lda-regroup.pdf  used on input line 402.
-(pdftex.def)             Requested size: 442.65375pt x 336.85591pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1153,25 +1128,37 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 
 [18]
 
-pdfTeX warning: /usr/bin/pdflatex (file ./images/regrouped_risk.pdf): PDF inclu
-sion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/regrouped_risk.pdf, id=437, 786.0162pt x 595.42807pt>
-File: images/regrouped_risk.pdf Graphic file (type pdf)
-<use images/regrouped_risk.pdf>
-Package pdftex.def Info: images/regrouped_risk.pdf  used on input line 412.
-(pdftex.def)             Requested size: 442.65375pt x 335.32722pt.
+pdfTeX warning: /usr/bin/pdflatex (file ./images/risk-lda-regroup.pdf): PDF inc
+lusion: found PDF version <1.7>, but at most version <1.5> allowed
+<images/risk-lda-regroup.pdf, id=429, 785.39424pt x 597.6729pt>
+File: images/risk-lda-regroup.pdf Graphic file (type pdf)
+<use images/risk-lda-regroup.pdf>
+Package pdftex.def Info: images/risk-lda-regroup.pdf  used on input line 394.
+(pdftex.def)             Requested size: 442.65375pt x 336.85591pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \vbox (badness 1688) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/lmr/m/n/10.95 19
  []
 
-[19 <./images/aus_heatmap.pdf>]
+[19 <./images/aus_preselection.pdf>]
+
+pdfTeX warning: /usr/bin/pdflatex (file ./images/regrouped_risk.pdf): PDF inclu
+sion: found PDF version <1.7>, but at most version <1.5> allowed
+<images/regrouped_risk.pdf, id=442, 786.0162pt x 595.42807pt>
+File: images/regrouped_risk.pdf Graphic file (type pdf)
+<use images/regrouped_risk.pdf>
+Package pdftex.def Info: images/regrouped_risk.pdf  used on input line 404.
+(pdftex.def)             Requested size: 442.65375pt x 335.32722pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -1179,26 +1166,26 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/lmr/m/n/10.95 20 []
  []
 
-[20 <./images/aus_preselection.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
+[20 <./images/aus_selection.pdf>]
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/lmr/m/n/10.95 21
  []
 
-[21 <./images/aus_selection.pdf>]
+[21 <./images/final_projeciton_risk.pdf>]
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/lmr/m/n/10.95 22 []
  []
 
-[22 <./images/final_projeciton_risk.pdf>]
+[22 <./images/risk-lda-regroup.pdf>]
+Underfull \vbox (badness 2744) has occurred while \output is active []
+
+
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/lmr/m/n/10.95 23
  []
 
-[23 <./images/risk-lda-regroup.pdf>]
-Overfull \hbox (60.58748pt too wide) in paragraph at lines 449--450
+[23 <./images/regrouped_risk.pdf>]
+Overfull \hbox (60.58748pt too wide) in paragraph at lines 441--442
 []\T1/lmr/m/n/10.95 The sup-ple-men-tary ma-te-ri-als for this pa-per can be fo
 und at [][]https://github.com/mmedl94/lionfish_article/[][]
  []
@@ -1208,10 +1195,16 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/lmr/m/n/10.95 24 []
  []
 
-[24 <./images/regrouped_risk.pdf>]
+[24]
 Underfull \hbox (badness 6063) in paragraph at lines 138--142
 []\T1/lmr/m/n/10.95 Lundh F (1999).  ``An In-tro-duc-tion To Tk-in-ter.''  \T1/
 lmr/m/it/10.95 URL: www. python-ware.
+ []
+
+
+Underfull \hbox (badness 4927) in paragraph at lines 157--160
+[]\T1/lmr/m/n/10.95 Schimansky T (2024).  ``Cus-tomTk-in-ter.''  [][]$\T1/lmtt/
+m/n/10.95 https : / / github . com / TomSchimansky /
  []
 
 
@@ -1219,35 +1212,33 @@ Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 [] \T1/lmr/m/n/10.95 25
  []
 
-[25]
-Underfull \hbox (badness 4927) in paragraph at lines 157--160
-[]\T1/lmr/m/n/10.95 Schimansky T (2024).  ``Cus-tomTk-in-ter.''  [][]$\T1/lmtt/
-m/n/10.95 https : / / github . com / TomSchimansky /
- []
-
-)
+[25])
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
 \T1/lmr/m/n/10.95 26 []
  []
 
 [26]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 465.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 465.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 457.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 457.
  (./manuscript.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 465.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 465.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 457.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 457.
 Package rerunfilecheck Info: File `manuscript.out' has not changed.
 (rerunfilecheck)             Checksum: 1C930D3A78BF511FDE975FF60BED94D0;2717.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 465.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 457.
  ) 
 Here is how much of TeX's memory you used:
- 18618 strings out of 481239
- 351511 string characters out of 5920377
- 605861 words of memory out of 5000000
- 33340 multiletter control sequences out of 15000+600000
+ 18610 strings out of 481239
+ 351323 string characters out of 5920377
+ 605006 words of memory out of 5000000
+ 33334 multiletter control sequences out of 15000+600000
  598147 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 76i,13n,72p,1921b,840s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 76i,13n,72p,1920b,840s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
 ips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/shar
 e/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ma
@@ -1262,10 +1253,10 @@ ublic/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmro10.pfb></usr/sh
 are/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.p
 fb>
-Output written on manuscript.pdf (26 pages, 11257120 bytes).
+Output written on manuscript.pdf (26 pages, 11299750 bytes).
 PDF statistics:
- 621 PDF objects out of 1000 (max. 8388607)
- 527 compressed objects within 6 object streams
- 116 named destinations out of 1000 (max. 500000)
- 294 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 615 PDF objects out of 1000 (max. 8388607)
+ 524 compressed objects within 6 object streams
+ 115 named destinations out of 1000 (max. 500000)
+ 289 words of extra memory for PDF output out of 10000 (max. 10000000)
 

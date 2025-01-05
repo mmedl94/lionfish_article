@@ -10,6 +10,8 @@ winterActiv_features <- read.csv("saves/aut_saves/init/feature_selection.csv",
                                  header = FALSE)
 winterActiv <- winterActiv[, colnames(winterActiv) %in% winterActiv_features$V1]
 
+# define cluster vector
+cluster_names <- paste("Cluster", 1:9)
 
 # load Australian Vacation Activities dataset
 data("ausActiv")
@@ -29,28 +31,42 @@ risk <- risk[!dup,]
 
 # Figure 8 + figure 9
 load_interactive_tour(winterActiv, "/saves/aut_saves/init",
-                      display_size = 5)
+                      preselection_names = cluster_names[1:6],
+                      hover_cutoff=20,
+                      display_size = 6.5)
 
 # Figure 10
 load_interactive_tour(winterActiv, "/saves/aut_saves/before",
-                      display_size = 5)
+                      preselection_names = cluster_names[1:6],
+                      hover_cutoff=20,
+                      display_size = 6.5)
 
 # Figure 11
 load_interactive_tour(winterActiv, "/saves/aut_saves/after",
-                      display_size = 5)
+                      preselection_names = cluster_names[1:7],
+                      hover_cutoff=20,
+                      display_size = 6.5)
 
-# Figure 13 + 14
+# Figure 13
 load_interactive_tour(ausActiv, "/saves/aus_saves/before",
-                      display_size = 5)
+                      preselection_names = cluster_names[1:6],
+                      hover_cutoff=20,
+                      display_size = 6.5)
+
+# Figure 14
+load_interactive_tour(ausActiv, "/saves/aus_saves/after",
+                      preselection_names = cluster_names[1:9],
+                      hover_cutoff=20,
+                      display_size = 6.5)
 
 # Figure 15
-load_interactive_tour(ausActiv, "/saves/aus_saves/after",
-                      display_size = 5)
-
-# Figure 16
 load_interactive_tour(risk, "/saves/risk_saves/final_projeciton_risk",
-                      display_size = 5)
+                      preselection_names = cluster_names[1:5],
+                      hover_cutoff=20,
+                      display_size = 6.5)
 
-# Figure 18
+# Figure 17
 load_interactive_tour(risk, "/saves/risk_saves/regrouped_risk",
-                      display_size = 5)
+                      preselection_names = cluster_names[1:5],
+                      hover_cutoff=20,
+                      display_size = 6.5)

@@ -15,7 +15,8 @@ interactive_tour(data=winterActiv,
                  plot_objects = list(obj1),
                  feature_names= colnames(winterActiv),
                  preselection = clusters_full@cluster,
-                 n_subsets = 6)
+                 n_subsets = 6,
+                 display_size = 7)
 
 # Figure 6 B
 init_env()
@@ -24,7 +25,9 @@ interactive_tour(data=winterActiv,
                  plot_objects = list(obj1),
                  feature_names= colnames(winterActiv),
                  preselection = clusters_full@cluster,
-                 n_subsets = 6)
+                 n_subsets = 6,
+                 color_scale = "coolwarm",
+                 display_size = 7)
 
 
 # Figure 7 A
