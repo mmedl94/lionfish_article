@@ -61,7 +61,7 @@ plot2 <- ggplot() +
         axis.text=element_blank(),
         axis.ticks=element_blank(),
         panel.grid=element_blank()) +
-  labs(x = "Projection axis 1", y = "Projection axis 2")
+  labs(x = "Projection 1", y = "Projection 2")
 
 p3 <- render_proj(winterActiv_std, proj3)
 plot3 <- ggplot() +
@@ -71,7 +71,7 @@ plot3 <- ggplot() +
         axis.text=element_blank(),
         axis.ticks=element_blank(),
         panel.grid=element_blank()) +
-  labs(x = "Projection axis 1", y = "Projection axis 2")
+  labs(x = "Projection 1", y = "Projection 2")
 
 p4 <- render_proj(winterActiv_std, proj4)
 plot4 <- ggplot() +
@@ -81,7 +81,7 @@ plot4 <- ggplot() +
         axis.text=element_blank(),
         axis.ticks=element_blank(),
         panel.grid=element_blank()) +
-  labs(x = "Projection axis 1", y = "Projection axis 2")
+  labs(x = "Projection 1", y = "Projection 2")
 
 combined_plot <- (plot1 | plot2 | plot3 | plot4) +
   plot_layout(ncol = 2, nrow = 2) + 

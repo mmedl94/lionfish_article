@@ -24,15 +24,15 @@
 \begin{itemize}
     \item \textit{I think that the article would benefit from some fine tuning: As it stands it is a bit vague to me in parts; I had difficulties following along some of the descriptions which I think can be fixed by thinking more about how to express the ideas and concepts in words, some restructuring and better placement of the plots (these ailments make me think this was written by a junior researcher and would benefit from an overhaul by a more experienced author).}
 
-    \textbf{Response:} [Your response here]
+    \textbf{Response:} We agree with this comment have changed the tone of the paper throughout. It should now be clearer that the primary focus of this article is the lionfish software, and that the market segmentation analysis is a use case for demonstrating its capabilities.
 
     \item \textit{The figures could be placed better to be where the descriptions happen in the text. I often found myself having to turn a couple of pages to be able to follow the descriptions.}
 
-    \textbf{Response:} [Response]
-
+    \textbf{Response:} The placement of the figures have been adjusted so that they are closer to the text that references them. The number of in text references has also been increased. As the references are also links, this should improve the experience of the reader.
+    
     \item \textit{I think it would be better to have one example with binary data and one with numeric data instead of two with binary data, especially since lionfish offers extra functionality for the latter.}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} We have added an additional analysis where the data is on a Likert scale. Unfortunately, we didn't know of a fitting dataset with fully continuous variables. However, an analysis of a biotechnological dataset with fully continuous variables is available in the official lionfish documentation. We now mention in section 7 that additional use cases can be found the documentation. It wasn't included in this article as that didn't fit the theme, which was chosen as it was part of Fritz Leisch's work.
 \end{itemize}
 
 \subsection*{Specific Comments}
@@ -40,127 +40,267 @@
 \begin{itemize}
     \item \textit{Abstract: "resulting in groups who are similar but without clear separation". I think I understand what is meant, but I'm not sure this is the best way of describing it. Groups that are similar implies to me that there is no clear separation. Perhaps it is better to speak of observations that are similar and can form a cluster, but that the clusters themselves are not separated.}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} We have expanded on this statement. Now it should be clearer what is meant.
+    
+    Original text: Market segmentation typically partitions data that does not have any clear cluster structure, resulting in groups of consumers who are similar, but without clear separation.
+
+	Revised text: Market segmentation partitions multivariate data using some clustering algorithm, resulting in some number of homogeneous groups of consumers for marketing purposes. Often this type of data has no clear cluster structure, that is no separations or gaps between groups of points, which is why this is considered as partitioning rather than clustering.
+
 
     \item \textit{P1: "(the cluster means)" one can use other centroids/prototypes in clustering and there are (many) clustering methods that do not use centroids/prototypes at all. Please describe whether lionfish only works for specific clusterings (e.g. k-means). Also, I'm not sure if describing the set of cluster means as "smaller number of observations" is appropriate as they are summary statistics of that larger number of observations - we still use the full set to define the objective function etc.}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} The description of cluster means as smaller number of observations has been removed. Lionfish works with any kind of subsetting (or even without any subsetting). The subsetting can originate from any kind of clustering, or even from subsettings another origins (data labels etc.). This is now clearly described in Section 2.1 and at the beginning of Section 3.
+
+    Original text: Clustering algorithms are often used to find a smaller number of observations (the cluster means) that adequately summarize a much larger number of observations.
+
+	Revised text: Clustering algorithms are often used to make large and complex datasets more digestible. For market segmentation, clustering algorithms are used to partition observations into a small number of groups, by incorporating associations between the variables.
+
 
     \item \textit{P1: "it is usual that there are no gaps in the data". I find this is a difficult statement without backing it up; one can partition also on data with separated clusters thus, in this definition, partitioning (for gaps and non-gaps) is a superset of clustering (for gaps). Maybe it would help if you define explicitly what cluster definition you're working with - to me it sounds like you define clusters as k-means does it, namely as a Voronoi tessellation (minimum distance to any centroid).}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} We have changed the wording and expanded on the explanation.
+    
+    Original text: With partitioning, it is usual that there are no gaps in the data, but it is still useful to partition the data.
+
+	Revised text: With partitioning, it is usual that there are no gaps in the data, but it is still useful to divide the data into smaller homogeneous subsets, with potential for different marketing approaches as done with market segmentation. The shape of the data will affect how it is partitioned.
+
 
     \item \textit{Figure 1: I'd also put the A, B, C in the text where it is described. E.g. When the correlation is high (C in Figure 1).}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} The text has been revised as suggested.
+    
+    Original text: When the correlation is high, the partitioning will be along the combination of features that produces the highest variance. With lower correlation, it will segment the bottom and top, and divide the middle into two parts in the opposite direction. When there is no association, the partitioning is radial like a windmill.
+
+	Revised text: When the correlation is high (Figure 1C), the partitioning will be along the combination of features that produces the highest variance. With lower correlation (Figure 1B), it will segment the bottom and top, and divide the middle into two parts in the opposite direction. When there is no association, the partitioning is radial like a windmill (Figure 1A).
+
 
     \item \textit{P2: "One can see that the data is perfectly divided into four parts..." I'm not sure what to get at with this sentence and the subsequent explanation. I can use the individual features and do a k-means and get a perfect division into four clusters (k-means will almost always give a perfect partitioning if there is a unique optimum). I think you mean that the segmentation/partitioning you find in the multivariate space will not necessarily be recovered when looking at just one of the features (or any other subspace). Then, using a tour in a smart way can show properties of the multivariate space in lower dimensional subspace. I'd rewrite the paragraphs from "One can see..." to "This paper...".}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} The statement that the data is perfectly divided has been removed and the paragraph has been reworked substantially.
+  
+    Original text: One can see that the data is perfectly divided into four parts. However, if one were to plot the two features individually, this would not be obvious. Figure 2 shows histograms of the two features, V1, V2, with the colour matching the four partitions. From the histograms, we can see some differences in the partitions for the four different association structures, but they are all overlapping. The distinct border between the partitions can only be seen from the scatterplots of both features.
+
+	Revised text: From the plots of the full 2D data, in each data set we can see that the data is divided into four parts. Typically though, the approach is to plot the group on a single variable, as done in Figure 2. The histograms of the two features, V1, V2, show some relationships between the four groups such as in data C the red cluster has low values on both variables and the green cluster has high values for both. Looking more closely, the orange cluster has moderately low on both and the blue cluster has moderately high on both. We could infer from this that the partitioning is being done along an equal combination of V1 and V2, but we cannot see the partition.
+
 
     \item \textit{Figure 2: I think it would be clearer if the plots were labeled as A through C in the second row as well, as there are only the three data situations and there are no D E F. Maybe first row A (V1), ... and second row A (V2).}
 
-    \textbf{Response:} [Response]
-
+    \textbf{Response:} The plot has been adjusted as suggested.
+    
     \item \textit{P3: "one should be able to the separations" - is there a word missing? It also looks to me like the four bullet points would be better placed after the subsequent paragraph "While tour..."}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} There was a word missing, and the bullet points were moved as suggested.
+
+    Original text: In some combinations of the features, one should be able to the separations as can be seen in the 2D example in Figure 1.
+
+	Revised text: In some combination of the features, one should be able to see the separations between the clusters as illustrated in the 2D example in Figure 1.
+
 
     \item \textit{P4: "The data set must be supplied as a numeric matrix." To me this is quite is restricting. First, in R data frames are the primary data structure people use - I think the software should support this as well and not just numeric matrices. Second, marketing data are often categorical. It would make lionfish unusable in this case. Perhaps you can think of a way to incorporate categorical variables as well.}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} The functionality of lionfish has been expanded as suggested and the text was adjusted to reflect this. The data loader can now also handle categorical variables. 
+
+    Original text: The dataset must be supplied as a numeric matrix, while the plotting instructions should be passed as a list containing the named elements type and obj.
+
+	Revised text: The dataset can be supplied as a data matrix, data frame or data table. Categorical variables can be loaded, however will be transformed to numeric values that reflect the categories.
+
 
     \item \textit{P4: "The type element specifies the type of display to generate" Is there a list anywhere with all the options? I'd mention this or even better include that in the article.}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} We have added a link to a blog article in the documentation that lists all plots and shows animated examples. Since not all plots are used in this article and we plan on expanding the available plot types, we haven't added a comprehensive list to the article.
+
+    Original text: The type element specifies the type of display to generate, such as scatter for a scatterplot or 2d tour for a 2-dimensional tour.
+
+	Revised text: The type element specifies the type of display to generate, such as scatter for a scatterplot or 2d tour for a 2-dimensional tour. For a comprehensive list of the currently implemented type elements please visit https://mmedl94.github.io/lionfish/articles/Plot-objects.html.
+
 
     \item \textit{P4: vector of strings -> character vector in R parlance.}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} Changed as suggested.
+
+    Original text: For a scatterplot, the user needs to provide a vector of strings specifying the names of the features to be displayed.
+
+	Revised text: For a scatterplot, the user needs to provide a character vector specifying the names of the features to be displayed.
+
 
     \item \textit{P4: "Below this, each subset". I was wondering what subset means here. Are these the clusters? Or any selected subset of the data? Where does the subset come from?}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} Subsets have to be provided by the user don't have to have a specific origin. This is now explained better in the text. Large parts of section 2.1 have been revised to improve the structure of the text.
+
+    Original text: Below this, each subset has its own checkbox to designate the active subset (Figure 3D).
+
+	Revised text: Below this, a list of the currently loaded subsets of the data is displayed. The subsets can be defined by the user when launching the GUI. In the context of the market segmentation use cases discussed in Section 4, these subsets are clusters. However, depending on the specific application subselection labels from other sources may be used, which is why they are referred to as subselections in this section. Each subset has it’s own checkbox to designate the active subset (Figure 4D).
+
 
     \item \textit{P4: This description would benefit from Figure 3 following close to the 2.1 section heading, otherwise one needs to turn the page every time to follow the description. This applies to many other plots too - it is best to have the plots on the pages where the description happens so the reader doesn't have to search for the correct figure (especially digitally).}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} The placement of figures has been adjusted throughout. 
+
 
     \item \textit{P5: "There are three additional interfaces... The first, ... the second, ...". Why not name them instead of enumerating them according to their arrangement. E.g., "The one labeled "number of bins of histograms"}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} The change has been performed as suggested. 
+
+    Original text: The first can be used to adjust the number of bins in histograms - more bins result in higher resolution but slower display updates. The second allows users to animate tours, automatically shifting to the next projection after a specified amount of time. The third offers the ability to hide projection axes with a norm smaller than a chosen threshold, helping to reduce clutter.
+
+	Revised text: The "Number of bins of histograms" can be used to adjust the number of bins in histograms — more bins result in
+higher resolution but slower display updates. The "Animate" element allows users to animate tours, automatically shifting to the next projection after a specified amount of time. The "Blend out projection threshold" offers the ability to hide projection axes with a norm smaller than a chosen threshold.
+
 
     \item \textit{P5: "Helping to reduce clutter". I'm not sure what this means here.}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} The explanation has been adjusted in this section and also in the figure captions throughout. 
+
+    Original text: The third offers the ability to hide projection axes with a norm smaller than a chosen threshold, helping to reduce clutter.
+
+	Revised text: This can be helpful as projection axes with a small norm have little influence on the shown projection, and displaying all of them can be distracting.
+
 
     \item \textit{P5: "recovered by using pressing" I'm not sure what this means.}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} The wrongfully inserted "using" has been removed and the explanation has been expanded.
+
+    Original text: The Save projections and subsets button can be used to save the current state of the analysis. These states can be recovered by using pressing the Load projections and subsets button.
+
+	Revised text: Users can also save and load projections and subsets using the respective buttons (Figure 4G). The Save projections and subsets button allows users to preserve the current state of their analysis. This not only includes the displayed projections and active tours, but also various minor settings, such as the highlighted subset or the value for the "Number of bins of histograms". These states can be recovered by pressing the Load projections and subsets  button, which spawns a file browser with which one can select a folder containing previous save files.
+
 
     \item \textit{P6: "These transformations are based..." To me this is an empty statement that carries no information but sounds good. If you keep it, which transformations are meant (to be straightforward to replicate one needs to know which ones)? What are "not well-established mathematical principles" and why does any of that ensure stability and efficiency?}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} The wording has been adjusted and additional explanations have been added.
+
+    Original text: These transformations are based on well-established mathematical principles and are straight- forward to replicate, ensuring they remain stable and efficient.
+
+	Revised text: To minimize inefficiencies associated with cross-language communication and to simplify debugging, tourr functions were accessed only when necessary and otherwise implemented directly in Python. For instance the orthonormalization of projection axes via the Gram-Schmidt process, linear transformations of the data with the projection matrices, or scaling of the data with the half range parameter for visualization purposes, were implemented in Python. Implementing these functions directly in lionfish improves it’s stability as future updates of tourr or reticulate could affect proper interaction between the packages.
+
 
     \item \textit{P7: "Before launching the lionfish interface, ..." This is crucial information and should be given earlier - to me this means one already needs to have a centroid based clustering result and now the subset makes sense if it is the cluster.}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} This is now mentioned earlier where the GUI is explained.
+
+    Original text: Below this, each subset has its own checkbox to designate the active subset (Figure 3D).
+
+	Revised text: Below this, a list of the currently loaded subsets of the data is displayed. The subsets can be defined by the user when launching the GUI. In the context of the market segmentation use cases discussed in Section 4, these subsets are clusters. However, depending on the specific application subselection labels from other sources may be used, which is why they are referred to as subselections in this section. Each subset has it’s own checkbox to designate the active subset (Figure 4D).
+
 
     \item \textit{P7: "are a summary" -> summary statistic}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} Adjusted as suggested.
 
     \item \textit{P7: "f**f is normalized relative to each feature". I'm not sure what this means.}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} The explanations of all summary statistics have been expanded. 
+
+    Original text: 
+
+	Revised text: 
+
 
     \item \textit{P8: "Generally, if the features.. " How is this done?}
 
     \textbf{Response:} [Response]
 
+    Original text: 
+    The second, f**c is normalized relative to the size of each cluster ...
+
+	The last, f**f is normalized relative to each feature, ...
+
+	Revised text: 
+	The second, f**c is normalized relative to the size of each cluster (row sum of C) ...
+	
+	The last, f**f is normalized relative to each feature (column sum of C),...
+
+
     \item \textit{P8: "brush them". It might be good to explain what "brushing" is.}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} Brushing is now defined when it is first mentioned at the beginning of section 2.
+
+    Original text: Interactively brushing groups of points to refine the cluster solution, like done with spin-and-brush tools (Cook and Swayne 2007).
+
+	Revised text: Interactively selecting datapoints (brushing) to refine the cluster solution, like done with spin-and-brush tools (Cook and Swayne 2007).
+
 
     \item \textit{Sec 3.3.: Are all these files (.png, .csv,) always generated? I think this should be controllable (I may like to save the .png but not the .csv).}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} The suggested feature has been implemented to lionfish. The user can now decide which elements they want to save. This is reflected in the text.
+
+    Original text: Upon pressing this button, a file browser is triggered, allowing users to specify the destination for saving these snapshots. Each save operation generates multiple files:
+
+	Revised text: Specifically, the Save projections and subsets button enables users to take snapshots of their analysis, including visual representations, selected data, and parameter settings. Upon pressing this button, the user can first select, which of the following files they want to save:
+
 
     \item \textit{P9: "The responses were binarized" First, why? Second, this looks like a way of dealing with categorical and character variable inside the function (e.g., via as.numeric(as.factor()))}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} This was done by the original authors of the dataset.
+
+    Original text: For analysis, the responses were binarized: ...
+
+	Revised text: The responses were binarized by the original authors for their analysis: ...
+
 
     \item \textit{P9: "When mostly two features.. " I don't understand this sentence at all. Please rewrite.}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} The whole section, including the plot, has been revised.
 
-    \item \textit{P10: "Some of these features are more informative for the clustering."}
+    Original text: Figure 4 shows three projections from a grand tour of this data: when mostly two features contribute to a projection the data will look apparently clustered, due to the binary values, but when more features contribute to the projection it looks more continuous.
 
-    \textbf{Response:} [Response]
+	Revised text: When working with projections involving binary data, distinct groupings emerge when two features dominate the projection. Figure 5 illustrates this with a scatterplot of alpine skiing and cross-country skiing (Figure 5A), alongside three projections from a grand tour of the data (Figures 5B-D). In these projections, the influence of alpine skiing and cross-country skiing decreases progressively from B to D. When only two binary features are plotted (Figure 5A), only four distinct points are visible. As additional features begin to influence the projections, the data becomes more diffuse, with the final projection (Figure 5D) starting to appear continuous.
+
+
+    \item \textit{P10: "Some of these features are more informative for the clustering."} (refers to original text: "Some of these features are more informative than others") 
+
+    \textbf{Response:} We meant informative in a generalized sense, not only for clustering. Clustering on an optimized subset of features may result in a good clustering solution by some metric, this however, doesn't necessarily mean that the result is useful for the analyst. This is now mentioned in the article and also a response to the comment for P11 below. 
+     
 
     \item \textit{P10/11: Creating a reduced data set to look at in lionfish kind of defeats the argument you put forth in the beginning that one might overlook the clustering if looked at in reduced space. Maybe you can rewrite this.}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} There essentially is a trade off here. Too many features will make the projections difficult to interpret. Too few features or features with little useful information will result in projections that aren't informative. The lionfish GUI enables rotating the features with little effort and thus expedite exploration.
+
+    Original text: The original dataset contains p=27 features. Some of these features are more informative than others. We only want to keep the most informative ones. Additionally, interacting with the lionfish GUI becomes cumbersome when handling more than ~15 features, making it necessary to reduce the dimensionality of the dataset. An effective and intuitive way to perform feature selection is by using the heatmap display within lionfish.
+
+	Revised text: The original dataset contains p=27 features. Some of these features are more informative than others, so it may be beneficial to drop some of them. Although this may result in a loss of information, the projections can become difficult to interpret if too many variables are plotted. Also, interacting with the projection axes in the lionfish GUI can become cumbersome when handling more than ~15 features at once. To counteract this, one can use the feature selection capabilities of lionfish, which allow for quick on-the-fly removal and addition of features. An effective and intuitive way to perform feature selection is to use the heatmap display within lionfish.
+
 
     \item \textit{P11: "there is no objectively correct or optimal solution" -> I'm not sure what is meant here; k-means optimizes an objective function and typically has a global optimum.}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} It is correct that there is a global optimum by some metric, however it is not given that the result that led to convergence of that metric is also useful for interpretation. This has now been clarified and is now explained in more detail in the text.
+
+    Original text: Consequently, there is no objectively correct or optimal solution. The primary aim of this analysis, therefore, is to gain insights into the data rather than to identify the optimal clustering configuration.
+
+	Revised text: This is common in market segmentation analysis, where distinct clusters are often not clearly separable. As a result, clustering and feature selection algorithms may converge to a local optimum, and even if the global optimum is found, it may not necessarily be useful. For instance, a feature selection algorithm will drop features that result in a better optimum according to an objective function. But this can be problematic if an analyst is interested in the influence of the dropped features. Consequently, a purely data-driven analysis can become challenging. The primary aim of this analysis is to gain insights into the data and understand the underlying patterns, rather than to identify an objectively optimal clustering configuration.
+
 
     \item \textit{P12: "clusters 1 and 3 contained data points" for the reduced data set.}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} Changed as suggested.
+
+    Original text: In Figure 6, we observed that clusters 1 and 3 contained data points that did not fit well into their respective clusters.
+
+	Revised text: In Figure 7B, we observed that clusters 1 and 3 contained data points that did not fit well into their respective clusters.
+
 
     \item \textit{P15: "only one representation feature" -> how was this chosen?}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} The feature was mostly selected based on prior knowledge and explorative efforts of the analyst. This is now indicated in the text.
+
+    Original text: Based on this clustering, k = 15 clusters were identified, and generally, only one representative feature from each cluster was selected for further analysis.
+
+	Revised text: Based on this clustering, k = 15 clusters were identified, and generally, only one representative feature from each cluster, which was considered informative, was selected for further analysis.
+
 
     \item \textit{P16: "we can assume that this group consists of tourists travelling alone as couples" is there a comma missing after alone? Because this changes the whole meaning (what about people who travel alone).}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} There was a comma missing and it has been added.
+
+    Original text: We can assume that this group consists of tourists travelling alone as couples or with their family.
+
+	Revised text: We can assume that this group consists of tourists traveling alone, as couples or with their family.
+
 
     \item \textit{P18: Sentence "While some plots, ... analyzing binary survey data..." I think the paper would benefit from at least one example illustrating the capabilities that extend far beyond the binary data type. So an example with metric data instead of two examples with binary data.}
 
-    \textbf{Response:} [Response]
+    \textbf{Response:} We have added an additional analysis where the data is on a Likert scale. Unfortunately, we didn't know of a fitting dataset with fully continuous variables. However, an analysis of a biotechnological dataset with fully continuous variables is available in the official lionfish documentation. We now mention in section 7 that additional use cases can be found the documentation. It wasn't included in this article as that didn't fit the theme, which was chosen as it was part of Fritz Leisch's work.  
+    
 \end{itemize}
 
 \section*{Reviewer B}

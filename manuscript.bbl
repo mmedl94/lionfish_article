@@ -1,4 +1,4 @@
-\begin{thebibliography}{23}
+\begin{thebibliography}{24}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -56,6 +56,11 @@ Cook D, Swayne D (2007).
 \newblock Springer, New York.
 \newblock ISBN 978-0-387-71761-6.
 \newblock \doi{10.1007/978-0-387-71762-3}.
+
+\bibitem[{Dolnicar(2017)}]{dolnicar2017peer}
+Dolnicar S (2017).
+\newblock \emph{Peer-to-peer accommodation networks: Pushing the boundaries}.
+\newblock Goodfellow Publishers.
 
 \bibitem[{Dolnicar \emph{et~al.}(2018)Dolnicar, Gr{\"u}n, and
   Leisch}]{leisch2018market}
