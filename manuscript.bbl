@@ -1,4 +1,4 @@
-\begin{thebibliography}{24}
+\begin{thebibliography}{25}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -18,6 +18,14 @@ Asimov D (1985).
 \newblock ISSN 0196-5204.
 \newblock \doi{10.1137/0906011}.
 \newblock \urlprefix\url{http://dx.doi.org/10.1137/0906011}.
+
+\bibitem[{Chang \emph{et~al.}(2024)Chang, Cheng, Allaire, Sievert, Schloerke,
+  Xie, Allen, McPherson, Dipert, and Borges}]{shiny}
+Chang W, Cheng J, Allaire J, Sievert C, Schloerke B, Xie Y, Allen J, McPherson
+  J, Dipert A, Borges B (2024).
+\newblock \emph{shiny: Web Application Framework for R}.
+\newblock R package version 1.9.1.9000, https://github.com/rstudio/shiny,
+  \urlprefix\url{https://shiny.posit.co/}.
 
 \bibitem[{Clarke \emph{et~al.}(2023)Clarke, Sherrill-Mix, and
   Dawson}]{ggbeeswarm}

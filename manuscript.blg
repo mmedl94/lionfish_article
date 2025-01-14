@@ -4,44 +4,44 @@ The top-level auxiliary file: manuscript.aux
 The style file: ajs.bst
 Database file #1: lionfish_references.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 24 entries,
+You've used 25 entries,
             3140 wiz_defined-function locations,
-            808 strings with 9656 characters,
-and the built_in function-call counts, 19312 in all, are:
-= -- 1590
-> -- 536
+            813 strings with 9953 characters,
+and the built_in function-call counts, 21029 in all, are:
+= -- 1728
+> -- 619
 < -- 15
-+ -- 211
-- -- 177
-* -- 1571
-:= -- 2692
-add.period$ -- 114
-call.type$ -- 24
-change.case$ -- 158
-chr.to.int$ -- 24
-cite$ -- 24
-duplicate$ -- 1731
-empty$ -- 1761
-format.name$ -- 245
-if$ -- 3912
++ -- 242
+- -- 207
+* -- 1739
+:= -- 2932
+add.period$ -- 117
+call.type$ -- 25
+change.case$ -- 173
+chr.to.int$ -- 25
+cite$ -- 25
+duplicate$ -- 1875
+empty$ -- 1901
+format.name$ -- 278
+if$ -- 4257
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 274
-newline$ -- 158
-num.names$ -- 96
-pop$ -- 568
+missing$ -- 291
+newline$ -- 163
+num.names$ -- 100
+pop$ -- 608
 preamble$ -- 1
-purify$ -- 155
+purify$ -- 169
 quote$ -- 0
-skip$ -- 398
+skip$ -- 415
 stack$ -- 0
-substring$ -- 1516
-swap$ -- 633
+substring$ -- 1693
+swap$ -- 668
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 201
+type$ -- 210
 warning$ -- 0
-while$ -- 153
+while$ -- 166
 width$ -- 0
-write$ -- 371
+write$ -- 384
