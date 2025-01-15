@@ -14,7 +14,7 @@ t1i <- interpolate(t1)
 
 proj1 <- matrix(t1i[,,1], nrow=27, ncol=2)
 proj2 <- matrix(t1i[,,3], nrow=27, ncol=2)
-proj3 <- matrix(t1i[,,10], nrow=27, ncol=2)
+proj3 <- matrix(t1i[,,15], nrow=27, ncol=2)
 proj4 <- matrix(t1i[,,30], nrow=27, ncol=2)
 
 p1 <- render_proj(winterActiv, proj1)
