@@ -4,44 +4,46 @@ The top-level auxiliary file: manuscript.aux
 The style file: ajs.bst
 Database file #1: lionfish_references.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Warning--empty journal in lundh1999introduction
 You've used 25 entries,
             3140 wiz_defined-function locations,
-            813 strings with 9953 characters,
-and the built_in function-call counts, 21029 in all, are:
-= -- 1728
+            810 strings with 9656 characters,
+and the built_in function-call counts, 21019 in all, are:
+= -- 1731
 > -- 619
 < -- 15
-+ -- 242
++ -- 244
 - -- 207
-* -- 1739
-:= -- 2932
-add.period$ -- 117
+* -- 1744
+:= -- 2931
+add.period$ -- 116
 call.type$ -- 25
-change.case$ -- 173
+change.case$ -- 172
 chr.to.int$ -- 25
-cite$ -- 25
-duplicate$ -- 1875
-empty$ -- 1901
+cite$ -- 26
+duplicate$ -- 1868
+empty$ -- 1896
 format.name$ -- 278
-if$ -- 4257
+if$ -- 4245
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 291
-newline$ -- 163
+missing$ -- 290
+newline$ -- 162
 num.names$ -- 100
-pop$ -- 608
+pop$ -- 611
 preamble$ -- 1
 purify$ -- 169
 quote$ -- 0
 skip$ -- 415
 stack$ -- 0
-substring$ -- 1693
-swap$ -- 668
+substring$ -- 1701
+swap$ -- 663
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 210
-warning$ -- 0
-while$ -- 166
+warning$ -- 1
+while$ -- 169
 width$ -- 0
-write$ -- 384
+write$ -- 382
+(There was 1 warning)

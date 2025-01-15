@@ -4,19 +4,13 @@ library(tourr)
 library(lionfish)
 library(gridExtra)
 library(patchwork)
+library(ggplot2)
 
 # Check random projections
-data(t1i)
-winterActiv_std <- apply(winterActiv, 2, scale)
+data(winterActiv)
 set.seed(630)
 t1 <- save_history(winterActiv, max=20)
 t1i <- interpolate(t1)
-animate_xy(winterActiv_std, planned_tour(t1), half_range=10)
-render_gif(winterActiv_std, 
-           planned_tour(t1), 
-           display_xy(axes="off", half_range=10), 
-           gif_file = "images/winterActiv.gif",
-           width = 400, height = 400)
 
 # Save projections to illustrate the binary nature
 proj <- matrix(t1i[,,3], nrow=27, ncol=2)
@@ -32,11 +26,6 @@ ggplot() +
         axis.title=element_blank(),
         axis.ticks=element_blank(),
         panel.grid=element_blank())
-
-# Load necessary packages
-library(ggplot2)
-library(patchwork)
-matrix(t1i[,,1], nrow=27, ncol=2)
 
 proj1 <- matrix(t1i[,,1], nrow=27, ncol=2)
 proj2 <- matrix(t1i[,,3], nrow=27, ncol=2)

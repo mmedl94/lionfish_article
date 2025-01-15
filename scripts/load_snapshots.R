@@ -62,11 +62,13 @@ load_interactive_tour(ausActiv, "/saves/aus_saves/after",
 # Figure 15
 load_interactive_tour(risk, "/saves/risk_saves/final_projeciton_risk",
                       preselection_names = cluster_names[1:5],
+                      feature_names = names(risk),
                       hover_cutoff=20,
                       display_size = 6.5)
 
 # Figure 17
 load_interactive_tour(risk, "/saves/risk_saves/regrouped_risk",
                       preselection_names = cluster_names[1:5],
+                      feature_names = names(risk),
                       hover_cutoff=20,
-                      display_size = 6.5)
+                      display_size = 9)
