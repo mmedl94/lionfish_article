@@ -12,27 +12,28 @@
 
 \begin{document}
 
-\title{Response to Editor's and Reviewers' Comments}
+\title{Interactively Visualizing Multivariate Market Segmentation Using the R Package Lionfish: Response to Review}
 \date{}
 \maketitle
 
-\noindent Dear editor, dear reviewers,
+%\noindent Dear editor, dear reviewers,
 
-We sincerely thank you for your valuable suggestions, which we believe have greatly improved the quality of both the article and the lionfish software.
+We sincerely thank the editor and reviwers  for your valuable suggestions, which have greatly improved the quality of both the article and the lionfish software.
 
-\noindent Yours sincerely,
+%\noindent Yours sincerely,
 
-\noindent Matthias Medl, Dianne Cook, Ursula Laa
+%\noindent Matthias Medl, Dianne Cook, Ursula Laa
 
 \section*{General remark}
 
-In the following sections you will find responses to all comments regarding the article submitted to the Austrian Journal of Statistics with the  title "Interactively Visualizing Multivariate Market Segmentation Using the R Package Lionfish". Reviewer's comments are shown in italic. When a comment resulted in specific changes in the text, we have added the original as well as the revised text to the response to that comment. Not all all changes were sparked by specific comments, thus not all changes in the article can be found in this letter. 
+The following summarises all of our changes and explanations to all comments provided. %, regarding the article submitted to the Austrian Journal of Statistics with the  title "Interactively Visualizing Multivariate Market Segmentation Using the R Package Lionfish". 
+\textit{Reviewer's comments are shown in italic.} When a comment resulted in specific changes in the text, we have added the original as well as the revised text to the response to that comment. Some additional changes were made to the paper, based on our own re-reading of the paper.  
 
 \section*{Response to the editor}
 
-Regarding the editor's suggestion to submit the package to CRAN, we have given this matter considerable thought since the beginning of the project. We have decided not to submit the package to CRAN because most parts of the software are written in Python, and to our knowledge, the tests run for CRAN software are not optimized for software using a Python backend. Additionally, the core functionality of the software revolves around a GUI, which cannot be effectively tested in an automated fashion. Submitting the software to CRAN would likely necessitate a workaround to prevent the tests from launching the GUI, which we believe goes against the testing principles of CRAN and would not improve the software.
+Regarding the editor's suggestion to submit the package to CRAN, we have given this matter considerable thought since the beginning of the project. We have decided not to submit the package to CRAN because most parts of the software are written in Python, and to our knowledge, the tests run for CRAN software are not optimized for software using a Python backend. Additionally, the core functionality of the software revolves around a GUI, which cannot be effectively tested in an automated fashion. We have adjusted the text in the paper so that there is less emphasis on R so that a CRAN package is not expected. %Submitting the software to CRAN would likely necessitate a workaround to prevent the tests from launching the GUI, which we believe goes against the testing principles of CRAN and would not improve the software.
 
-\noindent Please inform us if you have different views or if we have overlooked something.
+%\noindent Please inform us if you have different views or if we have overlooked something.
 
 \section*{Reviewer A}
 
@@ -49,7 +50,8 @@ Regarding the editor's suggestion to submit the package to CRAN, we have given t
     
     \item \textit{I think it would be better to have one example with binary data and one with numeric data instead of two with binary data, especially since lionfish offers extra functionality for the latter.}
 
-    \textbf{Response:} We have added an additional analysis using data on a Likert scale. Unfortunately, we could not find a suitable dataset with fully continuous variables. However, an analysis of a biotechnological dataset with fully continuous variables is available in the official Lionfish documentation. We now mention in Section 7 that additional use cases can be found in the documentation. The analysis of biotechnological data was not included in the article as it did not fit the chosen theme, which was part of Fritz Leisch's work.    
+    \textbf{Response:} We have added an additional analysis using data on a Likert scale. %Unfortunately, we could not find a suitable dataset with fully continuous variables. 
+    An additional analysis of a biotechnological dataset with fully continuous variables is available in the lionfish documentation on the website. We now mention in Section 7 that additional use cases can be found in the documentation. The analysis of biotechnological data was not included in the article as it did not fit the chosen theme of market segmentation which aligns with Fritz Leisch's work.    
 \end{itemize}
 
 \subsection*{Specific Comments}
@@ -57,7 +59,7 @@ Regarding the editor's suggestion to submit the package to CRAN, we have given t
 \begin{itemize}
     \item \textit{Abstract: "resulting in groups who are similar but without clear separation". I think I understand what is meant, but I'm not sure this is the best way of describing it. Groups that are similar implies to me that there is no clear separation. Perhaps it is better to speak of observations that are similar and can form a cluster, but that the clusters themselves are not separated.}
 
-    \textbf{Response:} We have expanded on this statement to clarify its meaning.
+    \textbf{Response:} We have re-written this to make the meaning clearer.
     
     \textbf{Original text}: Market segmentation typically partitions data that does not have any clear cluster structure, resulting in groups of consumers who are similar, but without clear separation.
 
@@ -126,12 +128,12 @@ Regarding the editor's suggestion to submit the package to CRAN, we have given t
 
     \textbf{Response:} We have added a link to a blog article in the documentation that lists all plots and shows animated examples. Since not all implemented plots are used in this article and we plan on expanding the available plot types, we haven't included a comprehensive list in the article itself.
 
-    \textbf{Original text}: The type element specifies the type of display to generate, such as scatter for a scatterplot or 2d tour for a 2-dimensional tour.
+   %\textbf{Original text}: The type element specifies the type of display to generate, such as scatter for a scatterplot or 2d tour for a 2-dimensional tour.
 
-	\textbf{Revised text}: The type element specifies the type of display to generate, such as scatter for a scatterplot or 2d tour for a 2-dimensional tour. For a comprehensive list of the currently implemented type elements please visit https://mmedl94.github.io/lionfish/articles/Plot-objects.html.
+	%\textbf{Revised text}: The type element specifies the type of display to generate, such as scatter for a scatterplot or 2d tour for a 2-dimensional tour. For a comprehensive list of the currently implemented type elements please visit https://mmedl94.github.io/lionfish/articles/Plot-objects.html.
 
 
-    \item \textit{P4: vector of strings -> character vector in R parlance.}
+    \item \textit{P4: vector of strings $->$ character vector in R parlance.}
 
     \textbf{Response:} Changed as suggested.
 
@@ -160,7 +162,7 @@ Regarding the editor's suggestion to submit the package to CRAN, we have given t
 
     \textbf{Original text}: The first can be used to adjust the number of bins in histograms - more bins result in higher resolution but slower display updates. The second allows users to animate tours, automatically shifting to the next projection after a specified amount of time. The third offers the ability to hide projection axes with a norm smaller than a chosen threshold, helping to reduce clutter.
 
-	\textbf{Revised text}: The "Number of bins of histograms" can be used to adjust the number of bins in histograms — more bins result in
+	\textbf{Revised text}: The ``Number of bins of histograms" can be used to adjust the number of bins in histograms — more bins result in
 higher resolution but slower display updates. The "Animate" element allows users to animate tours, automatically shifting to the next projection after a specified amount of time. The "Blend out projection threshold" offers the ability to hide projection axes with a norm smaller than a chosen threshold.
 
 
@@ -175,18 +177,18 @@ higher resolution but slower display updates. The "Animate" element allows users
 
     \item \textit{P5: "recovered by using pressing" I'm not sure what this means.}
 
-    \textbf{Response:} The wrongfully inserted "using" has been removed and the explanation has been expanded.
+    \textbf{Response:} The wrongfully inserted ``using" has been removed and the explanation has been expanded.
 
     \textbf{Original text}: The Save projections and subsets button can be used to save the current state of the analysis. These states can be recovered by using pressing the Load projections and subsets button.
 
-	\textbf{Revised text}: Users can also save and load projections and subsets using the respective buttons (Figure 4G). The Save projections and subsets button allows users to preserve the current state of their analysis. This not only includes the displayed projections and active tours, but also various minor settings, such as the highlighted subset or the value for the "Number of bins of histograms". These states can be recovered by pressing the Load projections and subsets  button, which spawns a file browser with which one can select a folder containing previous save files.
+	\textbf{Revised text}: Users can also save and load projections and subsets using the respective buttons (Figure 4G). The Save projections and subsets button allows users to preserve the current state of their analysis. This not only includes the displayed projections and active tours, but also various minor settings, such as the highlighted subset or the value for the ``Number of bins of histograms". These states can be recovered by pressing the Load projections and subsets  button, which spawns a file browser with which one can select a folder containing previous save files.
 
 
     \item \textit{P6: "These transformations are based..." To me this is an empty statement that carries no information but sounds good. If you keep it, which transformations are meant (to be straightforward to replicate one needs to know which ones)? What are "not well-established mathematical principles" and why does any of that ensure stability and efficiency?}
 
     \textbf{Response:} The wording has been adjusted and additional explanations have been added.
 
-    \textbf{Original text}: These transformations are based on well-established mathematical principles and are straight- forward to replicate, ensuring they remain stable and efficient.
+    \textbf{Original text}: These transformations are based on well-established mathematical principles and are straight-forward to replicate, ensuring they remain stable and efficient.
 
 	\textbf{Revised text}: To minimize inefficiencies associated with cross-language communication and to simplify debugging, tourr functions were accessed only when necessary and otherwise implemented directly in Python. For instance the orthonormalization of projection axes via the Gram-Schmidt process, linear transformations of the data with the projection matrices, or scaling of the data with the half range parameter for visualization purposes, were implemented in Python. Implementing these functions directly in lionfish improves it’s stability as future updates of tourr or reticulate could affect proper interaction between the packages.
 
@@ -267,7 +269,7 @@ higher resolution but slower display updates. The "Animate" element allows users
 
     \item \textit{P10: "Some of these features are more informative for the clustering."} (refers to original text: "Some of these features are more informative than others") 
 
-    \textbf{Response:} We meant "informative" in a generalized sense, not only for clustering. Clustering on an optimized subset of features may result in a good clustering solution by some metric; however, this does not necessarily mean that the result is useful for the analyst. This clarification is now mentioned in the article and also addresses the comment for P11 below.
+    \textbf{Response:} We meant ``informative" in a generalized sense, not only for clustering. Clustering on an optimized subset of features may result in a good clustering solution by some metric; however, this does not necessarily mean that the result is useful for the analyst. This clarification is now mentioned in the article and also addresses the comment for P11 below.
      
 
     \item \textit{P10/11: Creating a reduced data set to look at in lionfish kind of defeats the argument you put forth in the beginning that one might overlook the clustering if looked at in reduced space. Maybe you can rewrite this.}
@@ -279,7 +281,7 @@ higher resolution but slower display updates. The "Animate" element allows users
 	\textbf{Revised text}: The original dataset contains p=27 features. Some of these features are more informative than others, so it may be beneficial to drop some of them. Although this may result in a loss of information, the projections can become difficult to interpret if too many variables are plotted. Also, interacting with the projection axes in the lionfish GUI can become cumbersome when handling more than ~15 features at once. To counteract this, one can use the feature selection capabilities of lionfish, which allow for quick on-the-fly removal and addition of features. An effective and intuitive way to perform feature selection is to use the heatmap display within lionfish.
 
 
-    \item \textit{P11: "there is no objectively correct or optimal solution" -> I'm not sure what is meant here; k-means optimizes an objective function and typically has a global optimum.}
+    \item \textit{P11: "there is no objectively correct or optimal solution" $->$ I'm not sure what is meant here; k-means optimizes an objective function and typically has a global optimum.}
 
     \textbf{Response:} It is correct that there is a global optimum by some metric, however it is not given that the result that led to convergence of that metric is also useful for interpretation. This has now been clarified and is now explained in more detail in the text.
 
@@ -297,7 +299,7 @@ higher resolution but slower display updates. The "Animate" element allows users
 	\textbf{Revised text}: In Figure 7B, we observed that clusters 1 and 3 of the reduced dataset contained data points that did not fit well into their respective clusters.
 
 
-    \item \textit{P15: "only one representation feature" -> how was this chosen?}
+    \item \textit{P15: "only one representation feature" $->$ how was this chosen?}
 
     \textbf{Response:} The features were mostly selected based on the clustering, prior knowledge and explorative efforts of the analyst. This is now hinted at in the text.
 
@@ -317,7 +319,8 @@ higher resolution but slower display updates. The "Animate" element allows users
 
     \item \textit{P18: Sentence "While some plots, ... analyzing binary survey data..." I think the paper would benefit from at least one example illustrating the capabilities that extend far beyond the binary data type. So an example with metric data instead of two examples with binary data.}
 
-    \textbf{Response:} We have added an additional analysis where the data is on a Likert scale. Unfortunately, we didn't know of a fitting dataset with fully continuous variables. However, an analysis of a biotechnological dataset with fully continuous variables is available in the official lionfish documentation. We now mention in section 7 that additional use cases can be found the documentation. It wasn't included in this article as that didn't fit the theme, which was chosen as it was part of Fritz Leisch's work.  
+    \textbf{Response:} We have added an additional analysis using data on a Likert scale. %Unfortunately, we could not find a suitable dataset with fully continuous variables. 
+    An additional analysis of a biotechnological dataset with fully continuous variables is available in the lionfish documentation on the website. We now mention in Section 7 that additional use cases can be found in the documentation. The analysis of biotechnological data was not included in the article as it did not fit the chosen theme of market segmentation which aligns with Fritz Leisch's work.    
     
 \end{itemize}
 
@@ -355,7 +358,7 @@ higher resolution but slower display updates. The "Animate" element allows users
 	
 	\item{(Beginning of section 2) One of the aims of this work is to build an interface that allows for interactive exploration of clustered multivariate data.}
 	
-	\item{(Beginning of section 4) In this section, the Austrian Vacation Activities (Dolnicar and Leisch 2003), Australian Va- cation Activities (Cliff 2009) and Tourist Risk taking (Dolnicar 2017) datasets are analyzed with lionfish to illustrate the software’s capabilities.}
+	\item{(Beginning of section 4) In this section, the Austrian Vacation Activities (Dolnicar and Leisch 2003), Australian Vacation Activities (Cliff 2009) and Tourist Risk taking (Dolnicar 2017) datasets are analyzed with lionfish to illustrate the software’s capabilities.}
 	\end{itemize}
 	
 	
@@ -408,7 +411,7 @@ higher resolution but slower display updates. The "Animate" element allows users
 
     \item \textit{Figure 5 (and elsewhere): The groupings are referred to as cluster (text) or subset (heatmap). Better to be consistent.}
 
-    \textbf{Response:} Both "subsets" and "clusters" are still used in the text, but there is now a clearer structure for when each term is used, along with an explanation. Specifically, when describing lionfish in general, we use "subsets" because lionfish can be used to investigate any subsets irrespective of their origin. When we are writing in context of one of the original aims of the project and market segmentation we use clusters, as it was one of the original aims of the project to write a software to analyze cluster solutions and we only analyze clusters in the applications section.
+    \textbf{Response:} Both ``subsets" and ``clusters" are still used in the text, but there is now a clearer structure for when each term is used, along with an explanation. Specifically, when describing lionfish in general, we use "subsets" because lionfish can be used to investigate any subsets irrespective of their origin. When we are writing in context of one of the original aims of the project and market segmentation we use clusters, as it was one of the original aims of the project to write a software to analyze cluster solutions and we only analyze clusters in the applications section.
     
 	\textbf{Revised text}:
 	
@@ -417,13 +420,13 @@ higher resolution but slower display updates. The "Animate" element allows users
 	(Beginning of section 3) While lionfish can be used with data subsettings of any origin, or even without any subsetting at all, we will focus on analyzing cluster solutions in this section.
 	
 	
-    \item \textit{"Projection axes with a norm < 0.1 are not shown to reduce cluttering." could be explained more clearly.}
+    \item \textit{"Projection axes with a norm $< 0.1$ are not shown to reduce cluttering." could be explained more clearly.}
 
     \textbf{Response:} The figure captions have been changed throughout.
 
-    \textbf{Original text}: Projection axes with a norm < 0.1 have been blend out to reduce cluttering.
+    \textbf{Original text}: Projection axes with a norm $< 0.1$ have been blend out to reduce cluttering.
 
-	\textbf{Revised text}: Projection axes with a norm < 0.1 are not shown as these axes have little influence on the projection, but reduce clarity of the plot.
+	\textbf{Revised text}: Projection axes with a norm $< 0.1$ are not shown as these axes have little influence on the projection, but reduce clarity of the plot.
 
     \item \textit{When the text refers to Figures, be clear about which part of a Figure you are referring to. For example (page 13) "We can see that there is indeed overlap between clusters 1 and 3".}
 
