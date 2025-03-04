@@ -18,7 +18,7 @@
 
 %\noindent Dear editor, dear reviewers,
 
-We sincerely thank the editor and reviwers  for your valuable suggestions, which have greatly improved the quality of both the article and the lionfish software.
+We sincerely thank the editor and reviwers for your valuable suggestions, which have greatly improved the quality of both the article and the lionfish software.
 
 %\noindent Yours sincerely,
 
@@ -26,429 +26,110 @@ We sincerely thank the editor and reviwers  for your valuable suggestions, which
 
 \section*{General remark}
 
-The following summarises all of our changes and explanations to all comments provided. %, regarding the article submitted to the Austrian Journal of Statistics with the  title "Interactively Visualizing Multivariate Market Segmentation Using the R Package Lionfish". 
+The following summarises all of our changes and explanations to the comments provided. %, regarding the article submitted to the Austrian Journal of Statistics with the  title "Interactively Visualizing Multivariate Market Segmentation Using the R Package Lionfish". 
 \textit{Reviewer's comments are shown in italic.} When a comment resulted in specific changes in the text, we have added the original as well as the revised text to the response to that comment. Some additional changes were made to the paper, based on our own re-reading of the paper.  
-
-\section*{Response to the editor}
-
-Regarding the editor's suggestion to submit the package to CRAN, we have given this matter considerable thought since the beginning of the project. We have decided not to submit the package to CRAN because most parts of the software are written in Python, and to our knowledge, the tests run for CRAN software are not optimized for software using a Python backend. Additionally, the core functionality of the software revolves around a GUI, which cannot be effectively tested in an automated fashion. We have adjusted the text in the paper so that there is less emphasis on R so that a CRAN package is not expected. %Submitting the software to CRAN would likely necessitate a workaround to prevent the tests from launching the GUI, which we believe goes against the testing principles of CRAN and would not improve the software.
-
-%\noindent Please inform us if you have different views or if we have overlooked something.
 
 \section*{Reviewer A}
 
-\subsection*{General Comments}
-
 \begin{itemize}
-    \item \textit{I think that the article would benefit from some fine tuning: As it stands it is a bit vague to me in parts; I had difficulties following along some of the descriptions which I think can be fixed by thinking more about how to express the ideas and concepts in words, some restructuring and better placement of the plots (these ailments make me think this was written by a junior researcher and would benefit from an overhaul by a more experienced author).}
-
-    \textbf{Response:} We agree with this comment and have revised the tone of the paper throughout. It should now be clearer that the primary focus of this article is the lionfish software, and the market segmentation analysis is a use case to demonstrate its capabilities.
+    \item \textit{I'm satisfied with the changes - nice work!}
     
-    \item \textit{The figures could be placed better to be where the descriptions happen in the text. I often found myself having to turn a couple of pages to be able to follow the descriptions.}
-
-    \textbf{Response:} The placement of the figures has been adjusted so that they are closer to the corresponding text. We have also increased the number of in-text references, and since they are links this should improve the reader's experience.    
-    
-    \item \textit{I think it would be better to have one example with binary data and one with numeric data instead of two with binary data, especially since lionfish offers extra functionality for the latter.}
-
-    \textbf{Response:} We have added an additional analysis using data on a Likert scale. %Unfortunately, we could not find a suitable dataset with fully continuous variables. 
-    An additional analysis of a biotechnological dataset with fully continuous variables is available in the lionfish documentation on the website. We now mention in Section 7 that additional use cases can be found in the documentation. The analysis of biotechnological data was not included in the article as it did not fit the chosen theme of market segmentation which aligns with Fritz Leisch's work.    
-\end{itemize}
-
-\subsection*{Specific Comments}
-
-\begin{itemize}
-    \item \textit{Abstract: "resulting in groups who are similar but without clear separation". I think I understand what is meant, but I'm not sure this is the best way of describing it. Groups that are similar implies to me that there is no clear separation. Perhaps it is better to speak of observations that are similar and can form a cluster, but that the clusters themselves are not separated.}
-
-    \textbf{Response:} We have re-written this to make the meaning clearer.
-    
-    \textbf{Original text}: Market segmentation typically partitions data that does not have any clear cluster structure, resulting in groups of consumers who are similar, but without clear separation.
-
-	\textbf{Revised text}: Market segmentation partitions multivariate data using some clustering algorithm, resulting in some number of homogeneous groups of consumers for marketing purposes. Often this type of data has no clear cluster structure, that is no separations or gaps between groups of points, which is why this is considered as partitioning rather than clustering.
-
-
-    \item \textit{P1: "(the cluster means)" one can use other centroids/prototypes in clustering and there are (many) clustering methods that do not use centroids/prototypes at all. Please describe whether lionfish only works for specific clusterings (e.g. k-means). Also, I'm not sure if describing the set of cluster means as "smaller number of observations" is appropriate as they are summary statistics of that larger number of observations - we still use the full set to define the objective function etc.}
-
-    \textbf{Response:} The description of cluster means as a smaller number of observations has been removed. Lionfish works with any kind of subsetting (or even without any subsetting). The subsetting can originate from any kind of clustering, or even from other sources (e.g., data labels). This is now clearly described in Section 2.1 and at the beginning of Section 3.
-
-    \textbf{Original text}: Clustering algorithms are often used to find a smaller number of observations (the cluster means) that adequately summarize a much larger number of observations.
-
-	\textbf{Revised text}: Clustering algorithms are often used to make large and complex datasets more digestible. For market segmentation, clustering algorithms are used to partition observations into a small number of groups, by incorporating associations between the variables.
-
-
-    \item \textit{P1: "it is usual that there are no gaps in the data". I find this is a difficult statement without backing it up; one can partition also on data with separated clusters thus, in this definition, partitioning (for gaps and non-gaps) is a superset of clustering (for gaps). Maybe it would help if you define explicitly what cluster definition you're working with - to me it sounds like you define clusters as k-means does it, namely as a Voronoi tessellation (minimum distance to any centroid).}
-
-    \textbf{Response:} We have revised the wording and expanded on the explanation.
-    
-    \textbf{Original text}: With partitioning, it is usual that there are no gaps in the data, but it is still useful to partition the data.
-
-	\textbf{Revised text}: With partitioning, it is usual that there are no gaps in the data, but it is still useful to divide the data into smaller homogeneous subsets, with potential for different marketing approaches as done with market segmentation. The shape of the data will affect how it is partitioned.
-
-
-    \item \textit{Figure 1: I'd also put the A, B, C in the text where it is described. E.g. When the correlation is high (C in Figure 1).}
-
-    \textbf{Response:} The text has been revised as suggested.
-    
-    \textbf{Original text}: When the correlation is high, the partitioning will be along the combination of features that produces the highest variance. With lower correlation, it will segment the bottom and top, and divide the middle into two parts in the opposite direction. When there is no association, the partitioning is radial like a windmill.
-
-	\textbf{Revised text}: When the correlation is high (Figure 1C), the partitioning will be along the combination of features that produces the highest variance. With lower correlation (Figure 1B), it will segment the bottom and top, and divide the middle into two parts in the opposite direction. When there is no association, the partitioning is radial like a windmill (Figure 1A).
-
-
-    \item \textit{P2: "One can see that the data is perfectly divided into four parts..." I'm not sure what to get at with this sentence and the subsequent explanation. I can use the individual features and do a k-means and get a perfect division into four clusters (k-means will almost always give a perfect partitioning if there is a unique optimum). I think you mean that the segmentation/partitioning you find in the multivariate space will not necessarily be recovered when looking at just one of the features (or any other subspace). Then, using a tour in a smart way can show properties of the multivariate space in lower dimensional subspace. I'd rewrite the paragraphs from "One can see..." to "This paper...".}
-
-    \textbf{Response:} The statement that the data is perfectly divided has been removed and the paragraph has been reworked substantially.
-  
-    \textbf{Original text}: One can see that the data is perfectly divided into four parts. However, if one were to plot the two features individually, this would not be obvious. Figure 2 shows histograms of the two features, V1, V2, with the colour matching the four partitions. From the histograms, we can see some differences in the partitions for the four different association structures, but they are all overlapping. The distinct border between the partitions can only be seen from the scatterplots of both features.
-
-	\textbf{Revised text}: From the plots of the full 2D data, in each data set we can see that the data is divided into four parts. Typically though, the approach is to plot the group on a single variable, as done in Figure 2. The histograms of the two features, V1, V2, show some relationships between the four groups such as in data C the red cluster has low values on both variables and the green cluster has high values for both. Looking more closely, the orange cluster has moderately low on both and the blue cluster has moderately high on both. We could infer from this that the partitioning is being done along an equal combination of V1 and V2, but we cannot see the partition.
-
-
-    \item \textit{Figure 2: I think it would be clearer if the plots were labeled as A through C in the second row as well, as there are only the three data situations and there are no D E F. Maybe first row A (V1), ... and second row A (V2).}
-
-    \textbf{Response:} The plot has been adjusted as suggested.
-    
-    \item \textit{P3: "one should be able to the separations" - is there a word missing? It also looks to me like the four bullet points would be better placed after the subsequent paragraph "While tour..."}
-
-    \textbf{Response:} There was a word missing, and the bullet points were moved as suggested.
-
-    \textbf{Original text}: In some combinations of the features, one should be able to the separations as can be seen in the 2D example in Figure 1.
-
-	\textbf{Revised text}: In some combination of the features, one should be able to see the separations between the clusters as illustrated in the 2D example in Figure 1.
-
-
-    \item \textit{P4: "The data set must be supplied as a numeric matrix." To me this is quite is restricting. First, in R data frames are the primary data structure people use - I think the software should support this as well and not just numeric matrices. Second, marketing data are often categorical. It would make lionfish unusable in this case. Perhaps you can think of a way to incorporate categorical variables as well.}
-
-    \textbf{Response:} The functionality of lionfish has been expanded as suggested, and the text has been adjusted to reflect this. The data loader can now also handle categorical variables.
-
-    \textbf{Original text}: The dataset must be supplied as a numeric matrix, while the plotting instructions should be passed as a list containing the named elements type and obj.
-
-	\textbf{Revised text}: The dataset can be supplied as a data matrix, data frame, or data table. Categorical variables can be loaded, however will be transformed to numeric values that reflect the categories.
-
-
-    \item \textit{P4: "The type element specifies the type of display to generate" Is there a list anywhere with all the options? I'd mention this or even better include that in the article.}
-
-    \textbf{Response:} We have added a link to a blog article in the documentation that lists all plots and shows animated examples. Since not all implemented plots are used in this article and we plan on expanding the available plot types, we haven't included a comprehensive list in the article itself.
-
-   %\textbf{Original text}: The type element specifies the type of display to generate, such as scatter for a scatterplot or 2d tour for a 2-dimensional tour.
-
-	%\textbf{Revised text}: The type element specifies the type of display to generate, such as scatter for a scatterplot or 2d tour for a 2-dimensional tour. For a comprehensive list of the currently implemented type elements please visit https://mmedl94.github.io/lionfish/articles/Plot-objects.html.
-
-
-    \item \textit{P4: vector of strings $->$ character vector in R parlance.}
-
-    \textbf{Response:} Changed as suggested.
-
-    \textbf{Original text}: For a scatterplot, the user needs to provide a vector of strings specifying the names of the features to be displayed.
-
-	\textbf{Revised text}: For a scatterplot, the user needs to provide a character vector specifying the names of the features to be displayed.
-
-
-    \item \textit{P4: "Below this, each subset". I was wondering what subset means here. Are these the clusters? Or any selected subset of the data? Where does the subset come from?}
-
-    \textbf{Response:} Subsets have to be provided by the user and do not have to have a specific origin. This is now better explained in the text. Large parts of Section 2.1 have been revised to improve the structure of the text.
-
-    \textbf{Original text}: Below this, each subset has its own checkbox to designate the active subset (Figure 3D).
-
-	\textbf{Revised text}: Below this, a list of the currently loaded subsets of the data is displayed. The subsets can be defined by the user when launching the GUI. In the context of the market segmentation use cases discussed in Section 4, these subsets are clusters. However, depending on the specific application subselection labels from other sources may be used, which is why they are referred to as subselections in this section. Each subset has it’s own checkbox to designate the active subset (Figure 4D).
-
-
-    \item \textit{P4: This description would benefit from Figure 3 following close to the 2.1 section heading, otherwise one needs to turn the page every time to follow the description. This applies to many other plots too - it is best to have the plots on the pages where the description happens so the reader doesn't have to search for the correct figure (especially digitally).}
-
-    \textbf{Response:} The placement of figures has been adjusted throughout. 
-
-
-    \item \textit{P5: "There are three additional interfaces... The first, ... the second, ...". Why not name them instead of enumerating them according to their arrangement. E.g., "The one labeled "number of bins of histograms"}
-
-    \textbf{Response:} The change has been performed as suggested. 
-
-    \textbf{Original text}: The first can be used to adjust the number of bins in histograms - more bins result in higher resolution but slower display updates. The second allows users to animate tours, automatically shifting to the next projection after a specified amount of time. The third offers the ability to hide projection axes with a norm smaller than a chosen threshold, helping to reduce clutter.
-
-	\textbf{Revised text}: The ``Number of bins of histograms" can be used to adjust the number of bins in histograms — more bins result in
-higher resolution but slower display updates. The "Animate" element allows users to animate tours, automatically shifting to the next projection after a specified amount of time. The "Blend out projection threshold" offers the ability to hide projection axes with a norm smaller than a chosen threshold.
-
-
-    \item \textit{P5: "Helping to reduce clutter". I'm not sure what this means here.}
-
-    \textbf{Response:} The explanation has been adjusted in this section and also in the figure captions throughout. 
-
-    \textbf{Original text}: The third offers the ability to hide projection axes with a norm smaller than a chosen threshold, helping to reduce clutter.
-
-	\textbf{Revised text}: This can be helpful as projection axes with a small norm have little influence on the shown projection, and displaying all of them can be distracting.
-
-
-    \item \textit{P5: "recovered by using pressing" I'm not sure what this means.}
-
-    \textbf{Response:} The wrongfully inserted ``using" has been removed and the explanation has been expanded.
-
-    \textbf{Original text}: The Save projections and subsets button can be used to save the current state of the analysis. These states can be recovered by using pressing the Load projections and subsets button.
-
-	\textbf{Revised text}: Users can also save and load projections and subsets using the respective buttons (Figure 4G). The Save projections and subsets button allows users to preserve the current state of their analysis. This not only includes the displayed projections and active tours, but also various minor settings, such as the highlighted subset or the value for the ``Number of bins of histograms". These states can be recovered by pressing the Load projections and subsets  button, which spawns a file browser with which one can select a folder containing previous save files.
-
-
-    \item \textit{P6: "These transformations are based..." To me this is an empty statement that carries no information but sounds good. If you keep it, which transformations are meant (to be straightforward to replicate one needs to know which ones)? What are "not well-established mathematical principles" and why does any of that ensure stability and efficiency?}
-
-    \textbf{Response:} The wording has been adjusted and additional explanations have been added.
-
-    \textbf{Original text}: These transformations are based on well-established mathematical principles and are straight-forward to replicate, ensuring they remain stable and efficient.
-
-	\textbf{Revised text}: To minimize inefficiencies associated with cross-language communication and to simplify debugging, tourr functions were accessed only when necessary and otherwise implemented directly in Python. For instance the orthonormalization of projection axes via the Gram-Schmidt process, linear transformations of the data with the projection matrices, or scaling of the data with the half range parameter for visualization purposes, were implemented in Python. Implementing these functions directly in lionfish improves it’s stability as future updates of tourr or reticulate could affect proper interaction between the packages.
-
-
-    \item \textit{P7: "Before launching the lionfish interface, ..." This is crucial information and should be given earlier - to me this means one already needs to have a centroid based clustering result and now the subset makes sense if it is the cluster.}
-
-    \textbf{Response:} This is now mentioned earlier in Section 2.1.
-
-    \textbf{Original text}: Below this, each subset has its own checkbox to designate the active subset (Figure 3D).
-
-	\textbf{Revised text}: Below this, a list of the currently loaded subsets of the data is displayed. The subsets can be defined by the user when launching the GUI. In the context of the market segmentation use cases discussed in Section 4, these subsets are clusters. However, depending on the specific application subselection labels from other sources may be used, which is why they are referred to as subselections in this section. Each subset has it’s own checkbox to designate the active subset (Figure 4D).
-
-
-    \item \textit{P7: "are a summary" -> summary statistic}
-
-    \textbf{Response:} Adjusted as suggested.
-
-    \item \textit{P7: "f**f is normalized relative to each feature". I'm not sure what this means.}
-
-    \textbf{Response:} The explanations of all the summary statistics have been expanded. 
-
-    \textbf{Original text}: 
-    The second, f**c is normalized relative to the size of each cluster ...
-
-	The last, f**f is normalized relative to each feature, ...
-
-	\textbf{Revised text}: 
-	The second, f**c is normalized relative to the size of each cluster (row sum of C) ...
-	
-	The last, f**f is normalized relative to each feature (column sum of C),...
-
-
-
-    \item \textit{P8: "Generally, if the features.. " How is this done?}
-
-    \textbf{Response:} We have discussed this point again and came up with a solution that we prefer better. So instead of going into detail on what we mentioned here we have suggested a new approach.
-    
-    \textbf{Original text}: Generally, if the features are ordered categories or numerical scores, decomposing the cluster- feature summary is still possible by using an analysis of variance breakdown into row and column effects.
-
-	\textbf{Revised text}: The metrics currently implemented in the heatmap interface, as described in this section, are designed for binary data. To expand the heatmap interface to accommodate ordered categories or numerical scores, one could indicate the cluster and feature means on the edges of the heatmap, with the cluster-specific feature means displayed within each element. This, however, has not been implemented yet.
-
-
-    \item \textit{P8: "brush them". It might be good to explain what "brushing" is.}
-
-    \textbf{Response:} Brushing is now defined when it is first mentioned at the beginning of section 2.
-
-    \textbf{Original text}: Interactively brushing groups of points to refine the cluster solution, like done with spin-and-brush tools (Cook and Swayne 2007).
-
-	\textbf{Revised text}: Interactively selecting datapoints (brushing) to refine the cluster solution, like done with spin-and-brush tools (Cook and Swayne 2007).
-
-
-    \item \textit{Sec 3.3.: Are all these files (.png, .csv,) always generated? I think this should be controllable (I may like to save the .png but not the .csv).}
-
-    \textbf{Response:} The suggested feature has been implemented to lionfish. The user can now decide which files they want to save. This is now reflected in the text.
-
-    \textbf{Original text}: Upon pressing this button, a file browser is triggered, allowing users to specify the destination for saving these snapshots. Each save operation generates multiple files:
-
-	\textbf{Revised text}: Specifically, the Save projections and subsets button enables users to take snapshots of their analysis, including visual representations, selected data, and parameter settings. Upon pressing this button, the user can first select, which of the following files they want to save:
-
-
-    \item \textit{P9: "The responses were binarized" First, why? Second, this looks like a way of dealing with categorical and character variable inside the function (e.g., via as.numeric(as.factor()))}
-
-    \textbf{Response:} This was done by the original authors of the dataset. The features in the publically available dataset are already binarized.
-
-    \textbf{Original text}: For analysis, the responses were binarized: ...
-
-	\textbf{Revised text}: The responses were binarized by the original authors for their analysis: ...
-
-
-    \item \textit{P9: "When mostly two features.. " I don't understand this sentence at all. Please rewrite.}
-
-    \textbf{Response:} The whole section, including the plot, has been revised.
-
-    \textbf{Original text}: Figure 4 shows three projections from a grand tour of this data: when mostly two features contribute to a projection the data will look apparently clustered, due to the binary values, but when more features contribute to the projection it looks more continuous.
-
-	\textbf{Revised text}: When working with projections involving binary data, distinct groupings emerge when two features dominate the projection. Figure 5 illustrates this with a scatterplot of alpine skiing and cross-country skiing (Figure 5A), alongside three projections from a grand tour of the data (Figures 5B-D). In these projections, the influence of alpine skiing and cross-country skiing decreases progressively from B to D. When only two binary features are plotted (Figure 5A), only four distinct points are visible. As additional features begin to influence the projections, the data becomes more diffuse, with the final projection (Figure 5D) starting to appear continuous.
-
-
-    \item \textit{P10: "Some of these features are more informative for the clustering."} (refers to original text: "Some of these features are more informative than others") 
-
-    \textbf{Response:} We meant ``informative" in a generalized sense, not only for clustering. Clustering on an optimized subset of features may result in a good clustering solution by some metric; however, this does not necessarily mean that the result is useful for the analyst. This clarification is now mentioned in the article and also addresses the comment for P11 below.
-     
-
-    \item \textit{P10/11: Creating a reduced data set to look at in lionfish kind of defeats the argument you put forth in the beginning that one might overlook the clustering if looked at in reduced space. Maybe you can rewrite this.}
-
-    \textbf{Response:} There is essentially a trade-off here. Too many features will make the projections difficult to interpret. Conversely, too few features or features with little useful information will result in projections that are not informative. The lionfish GUI enables rotating the features with little effort and thus expedites exploration.
-
-    \textbf{Original text}: The original dataset contains p=27 features. Some of these features are more informative than others. We only want to keep the most informative ones. Additionally, interacting with the lionfish GUI becomes cumbersome when handling more than ~15 features, making it necessary to reduce the dimensionality of the dataset. An effective and intuitive way to perform feature selection is by using the heatmap display within lionfish.
-
-	\textbf{Revised text}: The original dataset contains p=27 features. Some of these features are more informative than others, so it may be beneficial to drop some of them. Although this may result in a loss of information, the projections can become difficult to interpret if too many variables are plotted. Also, interacting with the projection axes in the lionfish GUI can become cumbersome when handling more than ~15 features at once. To counteract this, one can use the feature selection capabilities of lionfish, which allow for quick on-the-fly removal and addition of features. An effective and intuitive way to perform feature selection is to use the heatmap display within lionfish.
-
-
-    \item \textit{P11: "there is no objectively correct or optimal solution" $->$ I'm not sure what is meant here; k-means optimizes an objective function and typically has a global optimum.}
-
-    \textbf{Response:} It is correct that there is a global optimum by some metric, however it is not given that the result that led to convergence of that metric is also useful for interpretation. This has now been clarified and is now explained in more detail in the text.
-
-    \textbf{Original text}: Consequently, there is no objectively correct or optimal solution. The primary aim of this analysis, therefore, is to gain insights into the data rather than to identify the optimal clustering configuration.
-
-	\textbf{Revised text}: This is common in market segmentation analysis, where distinct clusters are often not clearly separable. As a result, clustering and feature selection algorithms may converge to a local optimum, and even if the global optimum is found, it may not necessarily be useful. For instance, a feature selection algorithm will drop features that result in a better optimum according to an objective function. But this can be problematic if an analyst is interested in the influence of the dropped features. Consequently, a purely data-driven analysis can become challenging. The primary aim of this analysis is to gain insights into the data and understand the underlying patterns, rather than to identify an objectively optimal clustering configuration.
-
-
-    \item \textit{P12: "clusters 1 and 3 contained data points" for the reduced data set.}
-
-    \textbf{Response:} Changed as suggested.
-
-    \textbf{Original text}: In Figure 6, we observed that clusters 1 and 3 contained data points that did not fit well into their respective clusters.
-
-	\textbf{Revised text}: In Figure 7B, we observed that clusters 1 and 3 of the reduced dataset contained data points that did not fit well into their respective clusters.
-
-
-    \item \textit{P15: "only one representation feature" $->$ how was this chosen?}
-
-    \textbf{Response:} The features were mostly selected based on the clustering, prior knowledge and explorative efforts of the analyst. This is now hinted at in the text.
-
-    \textbf{Original text}: Based on this clustering, k = 15 clusters were identified, and generally, only one representative feature from each cluster was selected for further analysis.
-
-	\textbf{Revised text}: Based on this clustering, k = 15 clusters were identified, and generally, only one representative feature from each cluster, which was considered informative, was selected for further analysis.
-
-
-    \item \textit{P16: "we can assume that this group consists of tourists travelling alone as couples" is there a comma missing after alone? Because this changes the whole meaning (what about people who travel alone).}
-
-    \textbf{Response:} There was a comma missing and it has been added.
-
-    \textbf{Original text}: We can assume that this group consists of tourists travelling alone as couples or with their family.
-
-	\textbf{Revised text}: We can assume that this group consists of tourists traveling alone, as couples or with their family.
-
-
-    \item \textit{P18: Sentence "While some plots, ... analyzing binary survey data..." I think the paper would benefit from at least one example illustrating the capabilities that extend far beyond the binary data type. So an example with metric data instead of two examples with binary data.}
-
-    \textbf{Response:} We have added an additional analysis using data on a Likert scale. %Unfortunately, we could not find a suitable dataset with fully continuous variables. 
-    An additional analysis of a biotechnological dataset with fully continuous variables is available in the lionfish documentation on the website. We now mention in Section 7 that additional use cases can be found in the documentation. The analysis of biotechnological data was not included in the article as it did not fit the chosen theme of market segmentation which aligns with Fritz Leisch's work.    
-    
-\end{itemize}
-
+    \textbf{Response:} Thank you
+\end{itemize}    
+ 
 \section*{Reviewer B}
 
 \subsection*{General Comments}
 
 \begin{itemize}
-    \item \textit{The paper does a good job of leading the reader through the steps in interactive clustering and interpretation. The lionfish software looks like a valuable contribution. My main criticisms are (i) the goals of the paper are unclear and (ii) I was unable to run the software.}
 
-    \textbf{Response:} The criticism was highly appreciated and the text has been revised accordingly. The response to "the goals of the paper are unclear" is given in the next bullet point. We apologize for some apparent bugs in the software. Some potential sources of the issue have been resolved in recent patches and the software was run on a PC with a fresh installation. However, fixing a problem without additional information is challenging. Should there still be problems, we kindly invite Reviewer B to submit an issue to the github repository (potentially with a throwaway account), so it can be addressed directly. Additionally, a blogpost has been made with a description on how to reproduce the figures shown in the article. Further information can be found in the readme of the repository of the article. 
+    \item \textit{In this version, the goals of the paper are much clearer. And, I was able to run the software, with just some minor issues. Software documentation could do with further improvement. Overall, this revision is significantly improved.
+\\
+I do not see the need to include both the Austrian and Australian tourism examples in the paper, as they illustrate practically the same features of the software. While online journals may not be as strict about page limits, repetitive content could be annoying for readers.
+\\
+Some minor points of clarification are listed below. Further very minor suggestions are on the paper pdf.}
 
-    \item \textit{The paper seems to have two goals, (i) interactive visualisation for market segmentation data and (ii) description of the lionfish package. It would be helpful if this was stated clearly at the outset. The title emphasizes (i), but elsewhere in the paper (e.g., last paragraph of introduction, first sentence of Section 2, conclusion) it suggests the software development and the package lionfish is the main aim. Being clear about this would be helpful for the reader.}
+    \textbf{Response:} 
 
-    \textbf{Response:} We apologize for the confusion and agree that the motivation of the article is not outlined clearly. To address this, the tone of the article has been shifted towards the software being the primary focus and the market segmentation being a means of demonstrating the softwares capabilities. This includes changing the title. 
+    \item \textit{In the beginning of section 2, explain what is meant by grand tour and manual tour.}
+
+    \textbf{Response:}  
+
+    \item \textit{In section 2 it states that python was chosen "for high-performance interactivity".
+Could shiny not have been used for this purpose?}
+
+    \textbf{Response:}  
+
+    \item \textit{The GUI for the tour via menus E, F and H on Figure 4 is not at all clear.}
+
+    \textbf{Response:}  
+
+
+    \item \textit{Justify the choice of kmeans for binary data and likert data.}
+
+    \textbf{Response:}  
+
+
+    \item \textit{Give a rationale for the choice of kmeans k=5/6 in your examples.}
+
+    \textbf{Response:}  
+
+    \item \textit{In Figure 13 a and b, the axes for Friends are in opposite directions, please explain.}
+
+    \textbf{Response:}  
+
+
+    \item \textit{Cluster 1 has disappeared from figure 14, worth a comment.}
+
+    \textbf{Response:}  
+
+   \item \textit{The so-called "gold" colour does not look a bit gold... more chartreuse???}
+
+    \textbf{Response:}  
+
+
+   \item \textit{Figure 15: it is not true that "all axes generally point in the same direction"}
+
+    \textbf{Response:}  
     
-    \textbf{Original text}:
-    \begin{itemize}
-    \item{Interactively Visualizing Multivariate Market Segmentation Using the R Package Lionfish}
-    
-	\item{(End of section 1) This paper is organised as follows. Section 2 describes the software interface. The user work- flow is explained in 3. The methods are illustrated in Section 4 using Austrian and Australian tourism data provided in Leisch et al. (2018). Sections 5 and 6 discuss the limitations and potential future developments.}
-    
-    \item{(Beginning of section 2) The aim of this work is to build an interface that allows for an interactive exploration of partitions generated by clustering of multivariate market data.}
+ \end{itemize}
 
-	\item{(Beginning of section 4) The Austrian Vacation Activities (Dolnicar and Leisch 2003) and the Australian Vacation Activities Cliff (2009) datasets are used to illustrate the methods.}    
-    
-    \end{itemize}
-	\textbf{Revised text}:
-	\begin{itemize}
-	\item{Demonstrating the Capabilities of the Lionfish Software for Interactive Visualization of Market Segmentation Partitions}
-	
-	\item{(Text added to abstract) In this article, we will (i) describe the lionfish software and (ii) demonstrate its utility through three example analyses in the domain of market segmentation.}
-	
-	\item{(End of section 1) This paper is organised as follows. Section 2 describes the software and it’s attributes. The user workflow is explained in Section 3. The market segmentation case studies using various tourism datasets provided in Dolnicar et al. (2018) can be found in Section 4. Sections 5 and 6 discuss the limitations and potential future developments of lionfish.}
-	
-	\item{(Beginning of section 2) One of the aims of this work is to build an interface that allows for interactive exploration of clustered multivariate data.}
-	
-	\item{(Beginning of section 4) In this section, the Austrian Vacation Activities (Dolnicar and Leisch 2003), Australian Vacation Activities (Cliff 2009) and Tourist Risk taking (Dolnicar 2017) datasets are analyzed with lionfish to illustrate the software’s capabilities.}
-	\end{itemize}
-	
-	
-    \item \textit{I do not think the k-means example in the Introduction is helpful in motivating what comes later. The fact that k-means of bivariate data gives different solutions depending on correlation does not seem relevant to the content of the paper. The example does demonstrate that clusters in 2d are hidden in 1d, but I do not think a demonstration of this is necessary. I suggest instead giving an overview of market segmentation data, and the challenges and benefits of clustering such data. At the moment, the title refers to market segmentation, but we are not given an example of data of this type until Section 4.}
-
-    \textbf{Response:} As the focus of the article shifted slightly from market segmentation towards lionfish, we believe that providing a basic introduction about the behavior of analyzing clusters using projections is fitting, as this is precisely what lionfish is used for in this article. Furthermore, the introduction has been reworked and extended to better align with the content of the paper.
-
-	
-    \item \textit{Unfortunately I cannot run the package lionfish code, interactive\_tour() produces a blank screen. Looking at the scripts for the paper, I cannot locate package pytourr.}
-
-    \textbf{Response:} We have responded to the software issue earlier.
-\end{itemize}
-
-\subsection*{Specific comments}
+\subsection*{Software}
 
 \begin{itemize}
-    \item \textit{Page 1, line 1: best not to refer to cluster means as observations.}
+    \item \textit{the documentation example for interactive\_ tour fails (f not defined)}
 
-    \textbf{Response:} We agree and revised the text accordingly.
+    \textbf{Response:} 
 
-    \textbf{Original text}: Clustering algorithms are often used to find a smaller number of observations (the cluster means) that adequately summarize a much larger number of observations.
+    \item \textit{After running init\_ env() (Connection to python backend established), interactive\_ tour opens a window with title "interactive tour" and with blank content}
 
-	\textbf{Revised text}: Clustering algorithms are often used to make large and complex datasets more digestible. For market segmentation, clustering algorithms are used to partition observations into a small number of groups, by incorporating associations between the variables.
+    \textbf{Response:} 
+
+    \item \textit{Using init\_ env( virtual\_ env = "anaconda") I can run some of the examples as described in the paper.}
+
+    \textbf{Response:} 
+
+    \item \textit{The example given here \url{https://mmedl94.github.io/lionfish/} needs more explanation.}
+
+    \textbf{Response:} 
+
+    \item \textit{hitting stop button in Console crashes R}
+
+    \textbf{Response:} 
+
+    \item \textit{In the projection arrows for the histogram, a marker line for "zero" would be helpful.}
+
+    \textbf{Response:} 
+
+    \item \textit{How about colouring the cluster labels in the heatmaps?}
+
+    \textbf{Response:} 
+
+    \item \textit{The code for generating the results in the "saves" folder is not provided.}
+
+    \textbf{Response:} 
 
 
-    \item \textit{Page 2: "One can see that the data is perfectly divided into four parts." What does this mean? Yes, the data is partitioned, but perfectly??? It is overstating things to say there is a "distinct border between partitions" in Fig 1.}
-
-    \textbf{Response:} The statement that the data is perfectly divided has been removed and the paragraph has been reworked.
-  
-    \textbf{Original text}: One can see that the data is perfectly divided into four parts. However, if one were to plot the two features individually, this would not be obvious. Figure 2 shows histograms of the two features, V1, V2, with the colour matching the four partitions. From the histograms, we can see some differences in the partitions for the four different association structures, but they are all overlapping. The distinct border between the partitions can only be seen from the scatterplots of both features.
-
-	\textbf{Revised text}: From the plots of the full 2D data, in each data set we can see that the data is divided into four parts. Typically though, the approach is to plot the group on a single variable, as done in Figure 2. The histograms of the two features, V1, V2, show some relationships between the four groups such as in data C the red cluster has low values on both variables and the green cluster has high values for both. Looking more closely, the orange cluster has moderately low on both and the blue cluster has moderately high on both. We could infer from this that the partitioning is being done along an equal combination of V1 and V2, but we cannot see the partition.
-
-    \item \textit{Figure 2 caption is incomplete. What are colours? How does this relate to Figure 1?}
-
-    \textbf{Response:} The figure itself and the caption have been reworked. 
-
-    \textbf{Original text}: Figure 2: The four k-means partitions plotted as histograms of the individual features. While differences between groups can be seen, the clear separation cannot. This is important for understanding why high-dimensional visualisation methods are useful for summarising partitioning results.
-
-	\textbf{Revised text}: Figure 2: The typical approach to understanding the data partitions is plotting individual features using histograms, where group is mapped to colour. Here the three data sets shown in Figure 1 are shown in the columns, and the rows correspond to the two variables, V1, V2. Differences between groups can be seen, and interpreted on a single variable level, such as the red group has low values on both V1 and V2 in data set C. But how the data is divided cannot be seen.
-
-    \item \textit{Since the two heatmaps in Figure 5 show different measures, I suggest using different colour schemes. Or omit B altogether, since it is not used elsewhere in the paper.}
-
-    \textbf{Response:} The color schemes of the heatmaps are now different.
-
-    \item \textit{Somewhere in Section 2 or 3 you need to give more explanation of the plots (aside from the heatmap, which is covered) in the lionfish GUI.}
-
-    \textbf{Response:} A more detailed description on the 1D and 2D view is now given in the beginning of section 3.1.
-
-
-    \item \textit{Figure 5 (and elsewhere): The groupings are referred to as cluster (text) or subset (heatmap). Better to be consistent.}
-
-    \textbf{Response:} Both ``subsets" and ``clusters" are still used in the text, but there is now a clearer structure for when each term is used, along with an explanation. Specifically, when describing lionfish in general, we use "subsets" because lionfish can be used to investigate any subsets irrespective of their origin. When we are writing in context of one of the original aims of the project and market segmentation we use clusters, as it was one of the original aims of the project to write a software to analyze cluster solutions and we only analyze clusters in the applications section.
-    
-	\textbf{Revised text}:
-	
-	(section 2.1) The subsets can be defined by the user when launching the GUI. In the context of the market segmentation use cases discussed in Section 4, these subsets are clusters. However, depending on the specific application subselection labels from other sources may be used, which is why they are referred to as subselections in this section.
-	
-	(Beginning of section 3) While lionfish can be used with data subsettings of any origin, or even without any subsetting at all, we will focus on analyzing cluster solutions in this section.
-	
-	
-    \item \textit{"Projection axes with a norm $< 0.1$ are not shown to reduce cluttering." could be explained more clearly.}
-
-    \textbf{Response:} The figure captions have been changed throughout.
-
-    \textbf{Original text}: Projection axes with a norm $< 0.1$ have been blend out to reduce cluttering.
-
-	\textbf{Revised text}: Projection axes with a norm $< 0.1$ are not shown as these axes have little influence on the projection, but reduce clarity of the plot.
-
-    \item \textit{When the text refers to Figures, be clear about which part of a Figure you are referring to. For example (page 13) "We can see that there is indeed overlap between clusters 1 and 3".}
-
-    \textbf{Response:} Changes were made throughout and now it is mentioned which parts of the figures are being described.
-
-    \item \textit{The two examples use two different feature selection strategies, the first by inspecting a k-means of the observations and the second by clustering the features. Is there a rationale for switching between these strategies?}
-
-    \textbf{Response:} The hierarchical clustering of the features was performed because the structure of the clustering was helpful for conducting the subsequent, partially subjective feature selection. The k-means clustering was used because it was the method employed by Fritz Leisch in his book on market segmentation analysis.
-
-    \item \textit{Page 15: Feature selection: why select one feature from each cluster? They could be combined instead?}
-
-    \textbf{Response:} While combining the features is possible, we believe that interpreting the combinations would be more difficult and the retained information may not be relevant enough to justify this. Therefore, we did not explore that direction further.
-
-    \item \textit{Reference formatting is not consistent. Check choice of references. Ward's method not due to Murtagh and Legendre.}
-
-    \textbf{Response:} We used Wards method 2 (ward.D2).
-
-    \textbf{Original text}: At first, hierarchical clustering using Ward’s method (Murtagh and Legendre 2014) and the Jaccard index was applied to the features.	
-
-	\textbf{Revised text}: At first, hierarchical clustering using the Ward2 algorithm (Murtagh and Legendre 2014) and the Jaccard index was applied to the features.	
-	
-	
-\end{itemize}
+ \end{itemize}
 
 \end{document}
