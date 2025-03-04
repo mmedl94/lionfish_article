@@ -1,6 +1,8 @@
 library(lionfish)
 library(dplyr)
 
+remotes::install_github("mmedl94/lionfish", force = TRUE)
+
 # set working directory to path/to/lionfish_article/
 setwd("..")
 init_env()
