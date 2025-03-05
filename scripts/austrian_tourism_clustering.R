@@ -1,6 +1,5 @@
 library(tourr)
 library(flexclust)
-
 library(lionfish)
 
 # perform initial k-means clustering

@@ -119,8 +119,6 @@ clusters <- r_km_d$cl
 
 guided_tour_history <- save_history(risk2,
                                     tour_path = guided_tour(lda_pp(clusters)))
-grand_tour_history_1d <- save_history(risk2,
-                                      tour_path = guided_tour(lda_pp(clusters), d=1))
 
 half_range <- max(sqrt(rowSums(risk2^2)))
 feature_names <- colnames(risk2)
@@ -136,7 +134,6 @@ clusters_swapped[clusters == 4] <- 3
 clusters_swapped[clusters_swapped == 99] <- 4
 
 obj1 <- list(type="2d_tour", obj=guided_tour_history)
-obj2 <- list(type="1d_tour", obj=grand_tour_history_1d)
 
 
 interactive_tour(data=data.matrix(risk2),

@@ -34,7 +34,7 @@ The following summarises all of our changes and explanations to the comments pro
 \begin{itemize}
     \item \textit{I'm satisfied with the changes - nice work!}
     
-    \textbf{Response:} Thank you
+    \textbf{Response:} Thank you!
 \end{itemize}    
  
 \section*{Reviewer B}
@@ -45,24 +45,37 @@ The following summarises all of our changes and explanations to the comments pro
 
     \item \textit{In this version, the goals of the paper are much clearer. And, I was able to run the software, with just some minor issues. Software documentation could do with further improvement. Overall, this revision is significantly improved.
 \\
-I do not see the need to include both the Austrian and Australian tourism examples in the paper, as they illustrate practically the same features of the software. While online journals may not be as strict about page limits, repetitive content could be annoying for readers.
-\\
-Some minor points of clarification are listed below. Further very minor suggestions are on the paper pdf.}
+I do not see the need to include both the Austrian and Australian tourism examples in the paper, as they illustrate practically the same features of the software. While online journals may not be as strict about page limits, repetitive content could be annoying for readers.}
 
     \textbf{Response:} 
+    
+    \item \textit{Some minor points of clarification are listed below. Further very minor suggestions are on the paper pdf.}
+
+    \textbf{Response:} The minor suggestions have been implemented.
 
     \item \textit{In the beginning of section 2, explain what is meant by grand tour and manual tour.}
 
-    \textbf{Response: Done}  
+    \textbf{Response:} We have added a more detailed explanation.
+    
+	\textbf{Added text}: The grand tour (Asimov 1985) provides a sequence of projections that is essentially an interpolated random walk over all possible projections. It is useful to get an overview of multivariate data. A manual (Cook and Buja 1997) or radial (Laa et al. 2023) tour is used to control the contribution of a single (or multiple) variables to a projection, typically using it to change the projection from including or excluding the variable. It is useful for assessing the sensitivity of the clustering to particular variables. Lee et al. (2022) provides an overview of the many different tour algorithms.
+
 
     \item \textit{In section 2 it states that python was chosen "for high-performance interactivity". Could shiny not have been used for this purpose?}
 
-    \textbf{Response: Done}  
+    \textbf{Response:} We have added a more detailed explanation.
+    
+	\textbf{Added text}: Through matplotlib, Python provides interactivity on the plots, allowing elements to be directly selected or changed, and low-level bit blit control, enabling efficient updates and rendering of plots. CustomTKinter is a framework that allows users to effortlessly integrate matplotlib into a GUI. An R native approach would be to use shiny (Chang, Cheng, Allaire, Sievert, Schloerke, Xie, Allen, McPherson, Dipert, and Borges 2024) for the GUI, but this would not provide interactivity directly on the plots or low-level bit blit control.
+ 
 
     \item \textit{The GUI for the tour via menus E, F and H on Figure 4 is not at all clear.}
 
-    \textbf{Response:}  
+    \textbf{Response:} We have added a more detailed explanation.
+    
+	\textbf{Added text}: The frame selection interface (Figure 4E) shows the frames of the currently displayed tours. We can see that “Plot $\#$1” (top left) displays the eighth frame/projection of the displayed tour and “Plot $\#$3” (bottom left) the fifth frame/projection. The menu also enables users to jump between frames/projections of displayed tours by manually typing the desired frame into the respective textbox and pressing the \texttt{Update frames} button. One can also move through the projections of tours by pressing the arrow keys.
+	
+Below this, there are three additional interfaces (Figure 4F). The “Number of bins of histograms” can be used to adjust the number of bins of displayed histograms — more bins result in higher resolution but slower display updates. The “Animate” interface allows users to animate tours as slideshows. After checking the Animate checkbox the tour displays will automatically shift to the next frame/projection after the amount of time specified in the textbox next to the \texttt{Animate} checkbox (interval specified as 1 second in Figure 4F). The “Blend out projection threshold” interface offers the functionality to hide projection axes with a norm smaller than a chosen threshold. In Figure 4F the checkbox is not checked, meaning that this option is currently disabled. If it were to be checked, all projection axes would be blend out since the value in the textbox is set to 1 and the norm of the projection axes cannot be larger than 1. A sensible setting for the norm is usually between 0.1 and 0.3. This functionality can be helpful as projection axes with a small norm have little influence on the shown projection, and displaying all of them can be distracting.
 
+New tours can be started directly from within the GUI (Figure 4H). The options for new tour paths are: a local tour around the currently shown projection and guided tours that search for projections based on the holes, or the linear discriminant analysis (LDA) index. The holes index is sensitive to projections with few points in the center of the projections and the LDA index aims to maximize the distance between the centers of the selected subsets (Cook and Swayne 2007). To start new tours, users first have to select the desired type of tour with the dropdown menu and then press the \texttt{Run tour} button. The new tours will then be calculated and displayed. The titles of the tour displays (Figure 4B top left and bottom left) will indicate which tours are currently shown. We can see in the titles of the displays that both displays currently display the originally loaded tours. If a user for instance were to initiate local tours, the display titles would change to “Local tour”. The Reset original tour button can be pressed to return to the originally loaded tours. Additionally, all tour displays allow users to perform a manual tour; by right-clicking and dragging the arrowheads of projection axes, the respective projection is recalculated accordingly. This allows for manual exploration of the data.
 
     \item \textit{Justify the choice of kmeans for binary data and likert data.}
 
@@ -75,21 +88,29 @@ Some minor points of clarification are listed below. Further very minor suggesti
 
     \item \textit{In Figure 13 a and b, the axes for Friends are in opposite directions, please explain.}
 
-    \textbf{Response:}  
+    \textbf{Response:} Only the direction of the projection axes relative to each other within each display are of importance. The description of Figure 13 explains this now. 
+    
+	\textbf{Added text}: Figure 13: Interactive tour GUI loaded with multiple plots showing different aspects of the $k$-means solution of the Australian vacation activities dataset, with the projection axes of the feature ``Friends'' being relatively long and pointing into one direction and all the other ones being relatively short and pointing into another one. The projections (top left and right) primarily separate the data based on the feature ``Friends'' and then based on their general activity level. It is of note that only the relative orientation of the projection axes within the individual displays matters. [...]
 
 
     \item \textit{Cluster 1 has disappeared from figure 14, worth a comment.}
 
-    \textbf{Response:}  
+    \textbf{Response:} The disappearance of cluster 1 is now mentioned in the text.
+    
+	\textbf{Added text}: Since all data points in cluster 1 (previously blue) had a value of 0 for ``Friends'' and were therefore included in the group of datapoints subject to manual reselection, no data points remain in cluster 1 after the reselection. As a result, cluster 1 disappears.
 
    \item \textit{The so-called "gold" colour does not look a bit gold... more chartreuse???}
 
-    \textbf{Response:}  
+    \textbf{Response:} We have changed all instances of gold to olive green. 
 
 
    \item \textit{Figure 15: it is not true that "all axes generally point in the same direction"}
 
-    \textbf{Response:}  
+    \textbf{Response:} We agree and changed the text accordingly.
+    
+	\textbf{Revised text}: Figure 15: [...] All projection axes have negative values on the displayed y-axis, which can be interpreted as the projection primarily separating the groups based on their general risk-taking behavior. Most clusters are separated nicely, but clusters 1 and 4 overlap.
+	
+In this projection, all projection axes have negative values for the displayed y-axes, which can be interpreted as the projection primarily separating the data based on general risk-taking behavior.
     
  \end{itemize}
 
@@ -98,35 +119,35 @@ Some minor points of clarification are listed below. Further very minor suggesti
 \begin{itemize}
     \item \textit{the documentation example for interactive\_ tour fails (f not defined)}
 
-    \textbf{Response:} 
+    \textbf{Response:} The documentation underwent an overhaul and lionfish has been submitted to CRAN.
 
     \item \textit{After running init\_ env() (Connection to python backend established), interactive\_ tour opens a window with title "interactive tour" and with blank content}
 
-    \textbf{Response:} 
+    \textbf{Response:} This happens for some users when they first launch the GUI. Since this error is difficult to recreate and it doesn't throw an error message we don't know what causes this. We now mention this issue under "Known issues" on the landing page of the documentation. 
 
     \item \textit{Using init\_ env( virtual\_ env = "anaconda") I can run some of the examples as described in the paper.}
 
-    \textbf{Response:} 
+    \textbf{Response:} We suspect that this could be linked to the previous comment and are glad it worked with this function.
 
     \item \textit{The example given here \url{https://mmedl94.github.io/lionfish/} needs more explanation.}
 
-    \textbf{Response:} 
+    \textbf{Response:} The explanation was expanded a bit and links to more detailed articles on the functionality were inserted.
 
     \item \textit{hitting stop button in Console crashes R}
 
-    \textbf{Response:} 
+    \textbf{Response:} This is something that we unfortunately cannot change. The Python backend is called by R. The communication to the Python backend stops abruptly when R is stopped, which causes R to crash since the Python jobs are not stopped in an ordered fashion.
 
     \item \textit{In the projection arrows for the histogram, a marker line for "zero" would be helpful.}
 
-    \textbf{Response:} 
+    \textbf{Response:} A marker line indicating "zero" has been added. 
 
     \item \textit{How about colouring the cluster labels in the heatmaps?}
 
-    \textbf{Response:} 
+    \textbf{Response:} The cluster labels are now colored in the colors of the clusters.
 
     \item \textit{The code for generating the results in the "saves" folder is not provided.}
 
-    \textbf{Response:} 
+    \textbf{Response:} The code to launch the GUI for each example is now provided in \texttt{/scripts/interactive\_tours\_from\_scratch.R} and in the documentation at \url{https://mmedl94.github.io/lionfish/articles/Market-segmentation.html}.
 
 
  \end{itemize}
