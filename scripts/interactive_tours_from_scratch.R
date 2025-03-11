@@ -1,10 +1,8 @@
 library(tourr)
 library(lionfish)
-library(reticulate)
 library(flexclust)
 library(stats)
 library(dplyr)
-library(data.table)
 
 # set working directory to path/to/lionfish_article/
 setwd("..")
