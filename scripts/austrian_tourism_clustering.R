@@ -38,3 +38,6 @@ winterActiv_features <- read.csv("saves/aut_saves/init/feature_selection.csv",
 winterActiv_feat_subset <- winterActiv[, colnames(winterActiv) %in% winterActiv_features$V1]
 clusters_feat_subset = stepcclust(winterActiv_feat_subset, k=6, nrep=20,  save.data=TRUE)
 plot(Silhouette(clusters_feat_subset))
+
+tab <- table(clusters_full@cluster, clusters_feat_subset@cluster)
+classAgreement(tab)
