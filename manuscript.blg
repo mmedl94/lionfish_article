@@ -1,49 +1,47 @@
-This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2024)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: manuscript.aux
 The style file: ajs.bst
 Database file #1: lionfish_references.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Warning--empty journal in lundh1999introduction
-You've used 25 entries,
+You've used 27 entries,
             3140 wiz_defined-function locations,
-            810 strings with 9656 characters,
-and the built_in function-call counts, 21019 in all, are:
-= -- 1731
-> -- 619
-< -- 15
-+ -- 244
-- -- 207
-* -- 1744
-:= -- 2931
-add.period$ -- 116
-call.type$ -- 25
-change.case$ -- 172
-chr.to.int$ -- 25
-cite$ -- 26
-duplicate$ -- 1868
-empty$ -- 1896
-format.name$ -- 278
-if$ -- 4245
+            822 strings with 10061 characters,
+and the built_in function-call counts, 22363 in all, are:
+= -- 1847
+> -- 656
+< -- 16
++ -- 258
+- -- 219
+* -- 1847
+:= -- 3132
+add.period$ -- 128
+call.type$ -- 27
+change.case$ -- 184
+chr.to.int$ -- 27
+cite$ -- 27
+duplicate$ -- 1990
+empty$ -- 2013
+format.name$ -- 294
+if$ -- 4515
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 290
-newline$ -- 162
-num.names$ -- 100
-pop$ -- 611
+missing$ -- 307
+newline$ -- 176
+num.names$ -- 108
+pop$ -- 649
 preamble$ -- 1
-purify$ -- 169
+purify$ -- 181
 quote$ -- 0
-skip$ -- 415
+skip$ -- 445
 stack$ -- 0
-substring$ -- 1701
-swap$ -- 663
+substring$ -- 1791
+swap$ -- 701
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 210
-warning$ -- 1
-while$ -- 169
+type$ -- 228
+warning$ -- 0
+while$ -- 179
 width$ -- 0
-write$ -- 382
-(There was 1 warning)
+write$ -- 414

@@ -1,4 +1,4 @@
-\begin{thebibliography}{25}
+\begin{thebibliography}{27}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -83,6 +83,15 @@ Dolnicar S, Leisch F (2003).
 \newblock \emph{Journal of Travel Research}, \textbf{41}(3), 281--292.
 \newblock \doi{10.1177/0047287502239037}.
 
+\bibitem[{Gentleman \emph{et~al.}(2025)Gentleman, Rossini, and
+  Carey}]{gentleman2025}
+Gentleman R, Rossini A, Carey V (2025).
+\newblock \enquote{Contributions of Fritz Leisch to Vignettes and Reproducible
+  Research.}
+\newblock \emph{Austrian Journal of Statistics}.
+\newblock \doi{10.17713/ajs.v54i3.2057}.
+\newblock \urlprefix\url{https://doi.org/10.17713/ajs.v54i3.2057}.
+
 \bibitem[{Hart and Wang(2023)}]{RJ-2023-052}
 Hart C, Wang E (2023).
 \newblock \enquote{Taking the Scenic Route: Interactive and Performant Tour
@@ -161,6 +170,14 @@ Murtagh F, Legendre P (2014).
   Algorithms Implement Ward’s Criterion?}
 \newblock \emph{Journal of Classification}, \textbf{31}, 274--295.
 \newblock \doi{10.1007/s00357-014-9161-z}.
+
+\bibitem[{Peng(2025)}]{peng2025}
+Peng RD (2025).
+\newblock \enquote{Tooling for Reproducible Research: Considerations for the
+  Past and Future of Data Analysis.}
+\newblock \emph{Austrian Journal of Statistics}.
+\newblock \doi{10.17713/ajs.v54i3.2052}.
+\newblock \urlprefix\url{https://doi.org/10.17713/ajs.v54i3.2052}.
 
 \bibitem[{{R Core Team}(2024)}]{R}
 {R Core Team} (2024).
