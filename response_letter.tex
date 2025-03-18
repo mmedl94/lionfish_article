@@ -27,7 +27,7 @@ We sincerely thank the editor and reviewers for your valuable suggestions, which
 \section*{General remark}
 
 The following summaries all of our changes and explanations to the comments provided. %, regarding the article submitted to the Austrian Journal of Statistics with the  title "Interactively Visualizing Multivariate Market Segmentation Using the R Package Lionfish". 
-\textit{Reviewer's comments are shown in italic.} When a comment resulted in specific changes in the text, we have added the original as well as the revised text to the response to that comment. Some additional changes were made to the paper, based on our own re-reading of the paper.  
+\textit{Reviewer's comments are shown in italic.} When a comment resulted in specific changes in the text, we have added the original as well as the revised text to the response to that comment.   
 
 \section*{Editor}
 
@@ -46,7 +46,7 @@ visualizations for market segmentation, in particular those by Fritz,}
 \textit{(3) add an overview on the structure of the manuscript at the end of the
 introduction where you outline the different sections and what they provide.}
 
-    \textbf{Response: A brief overview is now given at the end of the introduction.}
+    \textbf{Response:} A brief overview is now given at the end of the introduction.
 
 \subsection*{Specific Comments}
 
@@ -88,35 +88,38 @@ https://doi.org/10.1198/106186004X12740}
     
 	\item \textit{Regarding (3), it might be good to emphasize the general applicability of the interactive tools provided and that the segmentation analysis is only one possible area of application which is, however, of focus in this contribution with the different illustrative applications. Note that Section 2 seems to be rather generic and not provide much information on use for inspecting clustering solutions, e.g., Section 2.1 does not mention any clustering results as input. So guiding readers on the different sections and what they present could help understanding.}
 
-    \textbf{Response: Section 2.1 already contains "The subsets can be defined by the user when launching the GUI. In the context of the market segmentation use cases discussed in Section 4, these subsets are clusters. However, depending on the specific application subselection labels from other sources may be used, which is why they are referred to as subselections in this section.".}  
-    \textbf{Section 4 now contains "In this section, the Austrian Vacation Activities (Dolnicar and Leisch 2003), Australian Vacation Activities (Cliff 2009) and Tourist Risk Taking (Dolnicar 2017) datasets are analyzed with lionfish to illustrate the software’s capabilities. It has to be underlined that these analyses only serve as illustrative case studies and that the application of lionfish is not limited to market segmentation."}
+    \textbf{Response:} Section 2.1 already contains ``The subsets can be defined by the user when launching the GUI. In the context of the market segmentation use cases discussed in Section 4, these subsets are clusters. However, depending on the specific application subselection labels from other sources may be used, which is why they are referred to as subselections in this section."
+    \textbf{Section 4 now contains ``In this section, the Austrian Vacation Activities (Dolnicar and Leisch 2003), Australian Vacation Activities (Cliff 2009) and Tourist Risk Taking (Dolnicar 2017) datasets are analyzed with lionfish to illustrate the software’s capabilities. It has to be underlined that these analyses only serve as illustrative case studies and that the application of lionfish is not limited to market segmentation."}
    
 \subsection*{Further Comments}
 
 	\item \textit{Refer to the package being on CRAN including the URL (when first mentioning and in the Section "Resources and supplementary materials").}
 
-    \textbf{Response: Done.}
+    \textbf{Response:} Done.
     
  	\item \textit{Please try to consistently refer to clusters / segments and avoid also using the term groups.}
 
-    \textbf{Response: Almost all instances of "groups" were changed to "subsets". The term cluster is used when referring to the results of clustering algorithms. The term segments is used when referring to more diffuse subsets.}
+    \textbf{Response:} All instances of ``groups" has been changed to ``subsets". The term cluster is used only in relation to clustering algorithms. The term ``segments" is replaced with ``partitions" to indicate the cutting of the data into subsets, when there are no (substantial) gaps between points. ``Groupings" is used twice when it seems more appropriate than clustering or partitioning.
     
 	\item \textit{Please explain what "bit blit control" is as a reader might not be familiar with this and decide to write "bit blit" or "bit-blit".}
 
-    \textbf{Response: The section where bit blit is explained is now referenced and "bit blit" is used throughout.}
+    \textbf{Response:} The opening paragraphs of Section 2now includes a pointer to the explanation of ``bit blit" in Section 2.4, and ``bit blit" is used throughout.
     
-    \textbf{Revised text}: Through matplotlib, Python provides interactivity on the plots, allowing elements to be directly selected or changed, and low-level bit blit control (for details see section 2.4), enabling efficient up- dates and rendering of plots.
+    \textbf{Revised text (opening of Section 2)}: Through matplotlib, Python provides interactivity on the plots, allowing elements to be directly selected or changed, and low-level bit blit control (for details see section \ref{bit_blit}), enabling efficient updates and rendering of plots.
+
+    \textbf{Revised text (Section 2.4)}: With bit blit, the static elements of the display, such as the outer frames of the plots, are stored as a background image. When a plot is manipulated, only the affected plot is updated, and within that, only the interactive elements, such as the datapoints and projection axes in a 2D tour, are rendered on top of the background image.
+    
     
 	\item \textit{It is unclear what is meant with "to numeric values that reflect the categories". Please be more specific.}
 
-    \textbf{Response: The explanation was expanded and a demonstrative example is given.}
+    \textbf{Response:} The explanation was expanded and a demonstrative example is given.
     
     \textbf{Revised text}: Categorical variables can be loaded; however, they will be transformed to numeric values that represent the categories, with each unique category being assigned a distinct numeric value (e.g. a hypothetical feature ``color" with the categorical entries ``red'', ``green'' and ``blue'' would be changed to the numeric values 1, 2 and 3 respectively)
     
     
     \item \textit{On page 9, the extension to other feature types is unclear, e.g., how are feature means determined for ordered categories.}
 
-    \textbf{Response: Maybe this is clearer now given the improved description of the transformation of categorical variables? Otherwise we could use the value of the most occurring category instead of the means?}
+    \textbf{Response:} Maybe this is clearer now given the improved description of the transformation of categorical variables? Otherwise we could use the value of the most occurring category instead of the means?
     
     \item \textit{Regarding the importance of reproducibility one might also refer to other contributions in this SI:}
 
@@ -131,46 +134,46 @@ Past and Future of Data Analysis. Austrian Journal of Statistics. doi:10.17713/a
     
     \item \textit{Note that Likert scales usually are referred to as multi-item scales where each item is evaluated on an ordinal scale ranging from disagree to agree and where an aggregate score across items is determined. Your data example hence thus not seem to include Likert data. You have ordinal/ordered categorical variables.}
 
-    \textbf{Response: Likert was changed to ordinal throughout.}
+    \textbf{Response:} Likert was changed to ordinal throughout.
     
     \item \textit{Not sure about "country's capital cities" as Austria clearly only has a single capital city or did you mean not country but federal state?}
 
-    \textbf{Response: In Dolincar, 2003 is written: "Please note that tourists staying in the capital cities of Austria are not included in this sample, as a different questionnaire was used for this group." You probably are correct, but it is unclear.}
+    \textbf{Response:} In Dolincar, 2003 is written: "Please note that tourists staying in the capital cities of Austria are not included in this sample, as a different questionnaire was used for this group." You probably are correct, but it is unclear.
    
     \item \textit{One might align the clusters in Figure 7 using classAgreement from package e1071 authored by Fritz Leisch.}
 
-    \textbf{Response: I am unsure if that is a good choice here since two completely different cluster solutions are shown, and therefore, even if two clusters largely contain the same datapoints, it is unlikely that these clusters are of the same index (cluster 1 of cluster solution 1 might be similar to cluster solution of cluster 5 in cluster solution 2).}
+    \textbf{Response:} I am unsure if that is a good choice here since two completely different cluster solutions are shown, and therefore, even if two clusters largely contain the same datapoints, it is unlikely that these clusters are of the same index (cluster 1 of cluster solution 1 might be similar to cluster solution of cluster 5 in cluster solution 2).
     
     \item \textit{The purpose of the paragraph "It is important to note that the silhouette scores ..." is rather unclear as well as its fit at this point in the manuscript.}
 
-    \textbf{Response: The purpose of this paragraph is to further underline, based on an actual example, that clustering solutions are not always of high quality and useful when dealing with diffuse datasets, and that introducing expert knowledge can improve the analysis.}
+    \textbf{Response:} The purpose of this paragraph is to further underline, based on an actual example, that clustering solutions are not always of high quality and useful when dealing with diffuse datasets, and that introducing expert knowledge can improve the analysis.
     
     \item \textit{The comment about removing duplicates in the risk data set is unclear. Given that the data consists of answers on 6 variables with 5 categories, it is unclear why respondents who give the exact same answers are to be removed. It would seem that these duplicates still represent genuine observations.}
 
-    \textbf{Response: I am unsure here. Removing the duplicates doesn't change the displays, but affects the clustering. Maybe leaving them would have been better?}
+    \textbf{Response:} I am unsure here. Removing the duplicates doesn't change the displays, but affects the clustering. Maybe leaving them would have been better?
    
     
 \subsection*{Stylistic issues}    
     
     \item \textit{Please consistently use either British or American English.}
 
-    \textbf{Response: The manuscript is now in American English exclusively.}
+    \textbf{Response:} The manuscript is now in American English exclusively.
     
     \item \textit{Please use consistent names for the data set (including consistent lower/upper case). Also the dash in "Risk-taking" is unclear.}
 
-    \textbf{Response: Done.}
+    \textbf{Response:} Done.
     
     \item \textit{Omit numbers from Sections 7 and 8.}
 
-    \textbf{Response: Done.}
+    \textbf{Response:} Done.
     
     \item \textit{Use pkg{} mark-up for packages as defined in ajs.cls.}
 
-    \textbf{Response: Done.}
+    \textbf{Response:} Done.
     
     \item \textit{Please use "datapoints" or "data points".}
 
-    \textbf{Response: Only "datapoints" is used now.}
+    \textbf{Response:} Only "datapoints" is used now.
     
     \item \textit{Check when abbreviations (e.g., GUI) are introduced the first time and then consistently use them.}
 
@@ -182,15 +185,15 @@ Past and Future of Data Analysis. Austrian Journal of Statistics. doi:10.17713/a
     
     \item \textit{ Use consistent markup for file extensions.}
 
-    \textbf{Response: texttt is now used for all file extensions.}
+    \textbf{Response:} texttt is now used for all file extensions.
     
     \item \textit{ Figure missing in "as seen in 13".}
 
-    \textbf{Response: Added "Figure".}
+    \textbf{Response:} Added "Figure".
     
     \item \textit{Use a consistent labeling for "Guided tour - LDA - regroup".}
 
-    \textbf{Response: Instances of "Guided tour - LDA - Regroup" were changed to "Guided tour - LDA - regroup"}
+    \textbf{Response:} Instances of "Guided tour - LDA - Regroup" were changed to "Guided tour - LDA - regroup"
     
 \end{itemize}
 
