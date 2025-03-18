@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.31)  19 MAR 2025 09:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.31)  19 MAR 2025 09:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -827,11 +827,19 @@ LaTeX Font Info:    Trying to load font information for T1+lmss on input line 6
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [1
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 64.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 64.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 64.
+ [1
 
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/202
-4/texmf-dist/fonts/enc/dvips/base/8r.enc} <./oesg.png>]
+4/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2024/texmf-dist/fo
+nts/enc/dvips/lm/lm-mathit.enc} <./oesg.png>]
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./images/intro1.pdf): PDF in
 clusion: found PDF version <1.7>, but at most version <1.5> allowed
@@ -849,7 +857,7 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./images/intro2.pdf): PDF in
 clusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/intro2.pdf, id=138, 586.4872pt x 402.53659pt>
+<images/intro2.pdf, id=139, 586.4872pt x 402.53659pt>
 File: images/intro2.pdf Graphic file (type pdf)
 <use images/intro2.pdf>
 Package pdftex.def Info: images/intro2.pdf  used on input line 83.
@@ -858,14 +866,11 @@ Package pdftex.def Info: images/intro2.pdf  used on input line 83.
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./images/intro3.pdf): PDF in
 clusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/intro3.pdf, id=139, 576.444pt x 209.16493pt>
+<images/intro3.pdf, id=140, 576.444pt x 209.16493pt>
 File: images/intro3.pdf Graphic file (type pdf)
 <use images/intro3.pdf>
 Package pdftex.def Info: images/intro3.pdf  used on input line 89.
 (pdftex.def)             Requested size: 442.65375pt x 160.61705pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 [] \T1/lmr/m/n/10.95 3
@@ -880,7 +885,7 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./images/GUI_overview.pdf): 
 PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/GUI_overview.pdf, id=235, 686.38568pt x 542.02611pt>
+<images/GUI_overview.pdf, id=236, 686.38568pt x 542.02611pt>
 File: images/GUI_overview.pdf Graphic file (type pdf)
 <use images/GUI_overview.pdf>
 Package pdftex.def Info: images/GUI_overview.pdf  used on input line 122.
@@ -921,8 +926,7 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 [] \T1/lmr/m/n/10.95 9
  []
 
-[9{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/lo
-cal/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+[9{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
 10.
 
@@ -1206,11 +1210,11 @@ Package rerunfilecheck Info: File `manuscript.out' has not changed.
 (rerunfilecheck)             Checksum: 467D8B5C7500455C9B83B8B8BFF2A61C;5052.
  ) 
 Here is how much of TeX's memory you used:
- 21975 strings out of 474116
- 414266 string characters out of 5743682
- 1944187 words of memory out of 5000000
- 43814 multiletter control sequences out of 15000+600000
- 629563 words of font info for 70 fonts, out of 8000000 for 9000
+ 21993 strings out of 474116
+ 414469 string characters out of 5743682
+ 1945187 words of memory out of 5000000
+ 43826 multiletter control sequences out of 15000+600000
+ 640349 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  114i,13n,115p,1912b,857s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmb10.pfb></usr/loc
@@ -1227,7 +1231,7 @@ texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2024/texmf-dist
 e1/public/lm/lmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/
 lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvr
 8a.pfb>
-Output written on manuscript.pdf (28 pages, 11710483 bytes).
+Output written on manuscript.pdf (28 pages, 11710712 bytes).
 PDF statistics:
  679 PDF objects out of 1000 (max. 8388607)
  569 compressed objects within 6 object streams
