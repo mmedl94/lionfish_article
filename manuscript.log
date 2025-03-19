@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.3.16)  19 MAR 2025 17:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.3.16)  19 MAR 2025 17:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -881,6 +881,9 @@ Overfull \hbox (5.47499pt too wide) has occurred while \output is active
  []
 
 [5]
+Underfull \vbox (badness 5519) has occurred while \output is active []
+
+
 Overfull \hbox (5.47499pt too wide) has occurred while \output is active
 \T1/lmr/m/n/10.95 6 []
  []
@@ -919,9 +922,6 @@ Package pdftex.def Info: images/winter-gt.pdf  used on input line 237.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (10.94998pt too wide) has occurred while \output is active
@@ -1205,7 +1205,7 @@ blic/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/sha
 re/texmf/fonts/type1/public/lm/lmro10.pfb></usr/share/texmf/fonts/type1/public/
 lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on manuscript.pdf (28 pages, 9285625 bytes).
+Output written on manuscript.pdf (28 pages, 9285652 bytes).
 PDF statistics:
  676 PDF objects out of 1000 (max. 8388607)
  581 compressed objects within 6 object streams
