@@ -122,7 +122,7 @@ feature_names <- colnames(data)
 cluster_names <- paste("Cluster", 1:5)
 
 # swap clusters to be more colorblind friendly
-clusters_swapped <- clusters
+clusters <- as.numeric(as.character(clusters))
 clusters_swapped <- case_when(
   clusters == 3 ~ 5,
   clusters == 5 ~ 3,
@@ -130,10 +130,6 @@ clusters_swapped <- case_when(
   clusters == 2 ~ 1,
   TRUE ~ clusters
 )
-#clusters_swapped <- as.numeric(clusters_swapped)
-#clusters_swapped[clusters == 3] <- 99  # Temporarily change 3s to a unique value
-#clusters_swapped[clusters == 4] <- 3
-#clusters_swapped[clusters_swapped == 99] <- 4
 
 obj1 <- list(type="2d_tour", obj=guided_tour_history)
 
