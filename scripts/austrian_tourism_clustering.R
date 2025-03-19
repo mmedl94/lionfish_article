@@ -41,6 +41,7 @@ winterActiv_feat_subset <- winterActiv[, colnames(winterActiv) %in% winterActiv_
 clusters_feat_subset = stepcclust(winterActiv_feat_subset, k=6, nrep=20,  save.data=TRUE)
 plot(Silhouette(clusters_feat_subset))
 
+# Compute class agreement
 shfited_clusters <- case_when(
   clusters_full@cluster == 1 ~ 6,
   clusters_full@cluster == 2 ~ 1,
