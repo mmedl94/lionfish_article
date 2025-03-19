@@ -90,8 +90,12 @@ https://doi.org/10.1198/106186004X12740}
     
 	\item \textit{Regarding (3), it might be good to emphasize the general applicability of the interactive tools provided and that the segmentation analysis is only one possible area of application which is, however, of focus in this contribution with the different illustrative applications. Note that Section 2 seems to be rather generic and not provide much information on use for inspecting clustering solutions, e.g., Section 2.1 does not mention any clustering results as input. So guiding readers on the different sections and what they present could help understanding.}
 
-    \textbf{Response:} Section 2.1 already contains ``The subsets can be defined by the user when launching the GUI. In the context of the market segmentation use cases discussed in Section 4, these subsets are clusters. However, depending on the specific application subselection labels from other sources may be used, which is why they are referred to as subselections in this section."
-   Section 4 now contains ``In this section, the Austrian Vacation Activities (Dolnicar and Leisch 2003), Australian Vacation Activities (Cliff 2009) and Tourist Risk Taking (Dolnicar 2017) datasets are analyzed with lionfish to illustrate the software’s capabilities. It has to be underlined that these analyses only serve as illustrative case studies and that the application of lionfish is not limited to market segmentation."
+    \textbf{Response:} The first paragraph has been revised to be more specific on the startup, and about the general applicability. XXX The section needs re-writing, at least the first paragraph. DC has made a start but it might not be correct.  
+    
+     \textbf{New/changed text}: The lionfish GUI can be launched using the function \texttt{interactive\textunderscore tour()}. This function takes arguments for the data, list of plot objects to display (typically a 1D or 2D tour, a barchart, scatterplot), layout of the plots, variables selected for display and an initial clustering of the data as cluster memberships matching the rows of the data. If an initial clustering is not provided a randomly selected partition will be done as specified by \texttt{n\textunderscore subsets} argument. All variables in the data are expected to be numeric, so categorical variables should be converted prior to using the GUI. If they are not, then the conversion will be automated in the data pre-processing, for example, a variable called "fruit" with categories "banana", "orange",  "peach" will be recoded as 1, 2, 3, respectively. The \texttt{type} element specifies the type of display to generate, such as \texttt{scatter} for a scatterplot or \texttt{2d\textunderscore tour} for a 2D tour. The \texttt{obj} element further defines the properties of the chosen display.  For example, to create a 2D tour, the user must provide a \texttt{tour\textunderscore history} object, which can be generated using the tourr package. For a scatterplot, the user needs to provide a character vector specifying the names of the features to be displayed. Here the focus is on the use of lionfish for exploring $k$-means clustering results but the package website contains examples of usage for other applications, more examples showing the interactivity, and details on function arguments.
+
+ %Section 2.1 already contains ``The subsets can be defined by the user when launching the GUI. In the context of the market segmentation use cases discussed in Section 4, these subsets are clusters. However, depending on the specific application subselection labels from other sources may be used, which is why they are referred to as subselections in this section."
+   \textbf{Added text}: Section 4 now starts with ``In this section, the Austrian Vacation Activities (Dolnicar and Leisch 2003), Australian Vacation Activities (Cliff 2009) and Tourist Risk Taking (Dolnicar 2017) datasets are analyzed with lionfish to illustrate the software’s capabilities. It has to be underlined that these analyses only serve as illustrative case studies and that the application of lionfish is not limited to market segmentation."
    
 \subsection*{Further Comments}
 
@@ -114,11 +118,8 @@ https://doi.org/10.1198/106186004X12740}
     
 	\item \textit{It is unclear what is meant with "to numeric values that reflect the categories". Please be more specific.}
 
-    \textbf{Response:} The explanation was expanded and a demonstrative example is given.
-    
-    \textbf{Revised text}: Categorical variables can be loaded; however, they will be transformed to numeric values that represent the categories, with each unique category being assigned a distinct numeric value (e.g. a hypothetical feature ``color" with the categorical entries ``blue'', ``green'', ``red'' might be recoded to the numeric values 1, 2 and 3, respectively.)
-    
-    
+    \textbf{Response:} The paragraph was changed (see below) which gives more context, and additional explanation was added.
+        
     \item \textit{On page 9, the extension to other feature types is unclear, e.g., how are feature means determined for ordered categories.}
 
     \textbf{Response:} Maybe this is clearer now given the improved description of the transformation of categorical variables? Otherwise we could use the value of the most occurring category instead of the means?
