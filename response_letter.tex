@@ -143,7 +143,7 @@ Past and Future of Data Analysis. Austrian Journal of Statistics. doi:10.17713/a
    
     \item \textit{One might align the clusters in Figure 7 using classAgreement from package e1071 authored by Fritz Leisch.}
 
-    \textbf{Response:} I am unsure if that is a good choice here since two completely different cluster solutions are shown, and therefore, even if two clusters largely contain the same datapoints, it is unlikely that these clusters are of the same index (cluster 1 of cluster solution 1 might be similar to cluster solution of cluster 5 in cluster solution 2). XXX This should be done, because classAgreement matches the names
+    \textbf{Response:} I am unsure if that is a good choice here since two completely different cluster solutions are shown, and therefore, even if two clusters largely contain the same datapoints, it is unlikely that these clusters are of the same index (cluster 1 of cluster solution 1 might be similar to cluster solution of cluster 5 in cluster solution 2). XXX This should be done, because classAgreement matches the names, see \url{https://iml.numbat.space/week11/slides.html#/confusion-tables-comparing-results-23}
     
     \item \textit{The purpose of the paragraph "It is important to note that the silhouette scores ..." is rather unclear as well as its fit at this point in the manuscript.}
 
@@ -182,7 +182,11 @@ Past and Future of Data Analysis. Austrian Journal of Statistics. doi:10.17713/a
     
     \item \textit{Use suitable markup for classes and indicate character strings correctly.}
 
-    \textbf{Response:} The summary term for classes (``manual projection manipulation classes" and ``selector classes") are now within texttt{} I am 	unsure what indicate character strings correctly means. XXX Maybe we need to talk about this
+    \textbf{Response:} The summary term for classes (``manual projection manipulation classes" and ``selector classes") are now within texttt{} I am 	unsure what indicate character strings correctly means. XXX I interpret this to mean that when a class or function is referred to in the text using the name in the software, this should be indicated with the font type, like done with \texttt{InteractiveTourInterface}. Do you have something called "manual projection manipulation" in the software? You mention the class in the sens of the purpose (manual projection manipulation) but you don't give it the name used in the software, I think. If you are specifically referencing the name in the software use the \texttt font. Otherwise, it can be described but the sentence arrangement needs to make it clear that this is describing a class but the actual name is not important. For example, 
+    
+    ``the selector classes (\texttt{name1}, \texttt{name2}) handle the ..." or 
+    
+    ``and, where applicable, the \texttt{selector} and \texttt{manual projection manipulation} classes." is changed to be "and classes, for defining selection and manual control of projection coefficients."
     
     \item \textit{ Use consistent markup for file extensions.}
 
