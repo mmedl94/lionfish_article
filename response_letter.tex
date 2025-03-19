@@ -90,7 +90,7 @@ https://doi.org/10.1198/106186004X12740}
     
 	\item \textit{Regarding (3), it might be good to emphasize the general applicability of the interactive tools provided and that the segmentation analysis is only one possible area of application which is, however, of focus in this contribution with the different illustrative applications. Note that Section 2 seems to be rather generic and not provide much information on use for inspecting clustering solutions, e.g., Section 2.1 does not mention any clustering results as input. So guiding readers on the different sections and what they present could help understanding.}
 
-    \textbf{Response:} The first paragraph has been revised to be more specific on the startup, and about the general applicability. XXX The section needs re-writing, at least the first paragraph. DC has made a start but it might not be correct.  
+    \textbf{Response:} The first paragraph has been revised to be more specific on the startup, and about the general applicability. XXX The section needs re-writing, at least the first paragraph. DC has made a start but it might not be correct. XXX MM will refine on 20.03.
     
      \textbf{New/changed text}: The lionfish GUI can be launched using the function \texttt{interactive\textunderscore tour()}. This function takes arguments for the data, list of plot objects to display (typically a 1D or 2D tour, a barchart, scatterplot), layout of the plots, variables selected for display and an initial clustering of the data as cluster memberships matching the rows of the data. If an initial clustering is not provided a randomly selected partition will be done as specified by \texttt{n\textunderscore subsets} argument. All variables in the data are expected to be numeric, so categorical variables should be converted prior to using the GUI. If they are not, then the conversion will be automated in the data pre-processing, for example, a variable called "fruit" with categories "banana", "orange",  "peach" will be recoded as 1, 2, 3, respectively. The \texttt{type} element specifies the type of display to generate, such as \texttt{scatter} for a scatterplot or \texttt{2d\textunderscore tour} for a 2D tour. The \texttt{obj} element further defines the properties of the chosen display.  For example, to create a 2D tour, the user must provide a \texttt{tour\textunderscore history} object, which can be generated using the tourr package. For a scatterplot, the user needs to provide a character vector specifying the names of the features to be displayed. Here the focus is on the use of lionfish for exploring $k$-means clustering results but the package website contains examples of usage for other applications, more examples showing the interactivity, and details on function arguments.
 
@@ -143,7 +143,7 @@ Past and Future of Data Analysis. Austrian Journal of Statistics. doi:10.17713/a
    
     \item \textit{One might align the clusters in Figure 7 using classAgreement from package e1071 authored by Fritz Leisch.}
 
-    \textbf{Response:} I am unsure if that is a good choice here since two completely different cluster solutions are shown, and therefore, even if two clusters largely contain the same datapoints, it is unlikely that these clusters are of the same index (cluster 1 of cluster solution 1 might be similar to cluster solution of cluster 5 in cluster solution 2). XXX This should be done, because classAgreement matches the names, see \url{https://iml.numbat.space/week11/slides.html#/confusion-tables-comparing-results-23}
+    \textbf{Response:} I am unsure if that is a good choice here since two completely different cluster solutions are shown, and therefore, even if two clusters largely contain the same datapoints, it is unlikely that these clusters are of the same index (cluster 1 of cluster solution 1 might be similar to cluster solution of cluster 5 in cluster solution 2). XXX This should be done, because classAgreement matches the names, see \url{https://iml.numbat.space/week11/slides.html#/confusion-tables-comparing-results-23} XXX The code for this is in /scripts. The results are not mentioned in the text yet.
     
     \item \textit{The purpose of the paragraph "It is important to note that the silhouette scores ..." is rather unclear as well as its fit at this point in the manuscript.}
 
@@ -151,8 +151,7 @@ Past and Future of Data Analysis. Austrian Journal of Statistics. doi:10.17713/a
     
     \item \textit{The comment about removing duplicates in the risk data set is unclear. Given that the data consists of answers on 6 variables with 5 categories, it is unclear why respondents who give the exact same answers are to be removed. It would seem that these duplicates still represent genuine observations.}
 
-    \textbf{Response:} I am unsure here. Removing the duplicates doesn't change the displays, but affects the clustering. Maybe leaving them would have been better? XXX maybe we need to talk about this. Pbly shouldn't remove them.
-   
+    \textbf{Response:} The analysis has been performed again without deletion of the duplicates.
     
 \subsection*{Stylistic issues}    
     
@@ -182,11 +181,9 @@ Past and Future of Data Analysis. Austrian Journal of Statistics. doi:10.17713/a
     
     \item \textit{Use suitable markup for classes and indicate character strings correctly.}
 
-    \textbf{Response:} The summary term for classes (``manual projection manipulation classes" and ``selector classes") are now within texttt{} I am 	unsure what indicate character strings correctly means. XXX I interpret this to mean that when a class or function is referred to in the text using the name in the software, this should be indicated with the font type, like done with \texttt{InteractiveTourInterface}. Do you have something called "manual projection manipulation" in the software? You mention the class in the sens of the purpose (manual projection manipulation) but you don't give it the name used in the software, I think. If you are specifically referencing the name in the software use the \texttt font. Otherwise, it can be described but the sentence arrangement needs to make it clear that this is describing a class but the actual name is not important. For example, 
-    
-    ``the selector classes (\texttt{name1}, \texttt{name2}) handle the ..." or 
-    
-    ``and, where applicable, the \texttt{selector} and \texttt{manual projection manipulation} classes." is changed to be "and classes, for defining selection and manual control of projection coefficients."
+    \textbf{Response:} The manual projection manipulation classes and selector classes are now explicitly mentioned and within texttt{}. 
+
+    \textbf{Revised text}: Plot-specific data is organized in dictionaries (the Python equivalent of named lists in R), including the display type, construction instructions, tour projections (only in case of tour displays), color schemes for the displayed data, and, where applicable, the selector classes (\texttt{BarSelect} and \texttt{LassoSelect}) and manual projection manipulation classes (\texttt{DraggableAnnotation1d} and \texttt{DraggableAnnotation2d}).  
     
     \item \textit{ Use consistent markup for file extensions.}
 
