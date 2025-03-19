@@ -1,6 +1,8 @@
 library(tourr)
 library(flexclust)
 library(lionfish)
+library(e1071)
+library(dplyr)
 
 # perform initial k-means clustering
 set.seed(1234)
@@ -39,5 +41,16 @@ winterActiv_feat_subset <- winterActiv[, colnames(winterActiv) %in% winterActiv_
 clusters_feat_subset = stepcclust(winterActiv_feat_subset, k=6, nrep=20,  save.data=TRUE)
 plot(Silhouette(clusters_feat_subset))
 
-tab <- table(clusters_full@cluster, clusters_feat_subset@cluster)
+shfited_clusters <- case_when(
+  clusters_full@cluster == 1 ~ 6,
+  clusters_full@cluster == 2 ~ 1,
+  clusters_full@cluster == 3 ~ 5,
+  clusters_full@cluster == 4 ~ 3,
+  clusters_full@cluster == 5 ~ 4,
+  clusters_full@cluster == 6 ~ 2,
+  TRUE ~ clusters_full@cluster
+)
+
+tab <- table(shfited_clusters, clusters_feat_subset@cluster)
 classAgreement(tab)
+tab
