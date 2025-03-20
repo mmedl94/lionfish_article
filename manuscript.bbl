@@ -1,4 +1,4 @@
-\begin{thebibliography}{28}
+\begin{thebibliography}{33}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -17,6 +17,12 @@ Asimov D (1985).
 \newblock ISSN 0196-5204.
 \newblock \doi{10.1137/0906011}.
 \newblock \urlprefix\url{http://dx.doi.org/10.1137/0906011}.
+
+\bibitem[{Babakhani \emph{et~al.}(2019)Babakhani, Leisch, and
+  Dolnicar}]{BABAKHANI2019338}
+Babakhani N, Leisch F, Dolnicar S (2019).
+\newblock \enquote{A good graph is worth a thousand numbers.}
+\newblock \emph{Annals of Tourism Research}, \textbf{76}, 338--342.
 
 \bibitem[{Chang \emph{et~al.}(2024)Chang, Cheng, Allaire, Sievert, Schloerke,
   Xie, Allen, McPherson, Dipert, and Borges}]{shiny}
@@ -83,6 +89,14 @@ Dolnicar S, Leisch F (2003).
 \newblock \emph{Journal of Travel Research}, \textbf{41}(3), 281--292.
 \newblock \doi{10.1177/0047287502239037}.
 
+\bibitem[{Dolnicar and Leisch(2010)}]{clusterbootstrap}
+Dolnicar S, Leisch F (2010).
+\newblock \enquote{Evaluation of structure and reproducibility of cluster
+  solutions using the bootstrap.}
+\newblock \emph{Marketing Letters}, \textbf{21}(1), 83--101.
+\newblock ISSN 09230645, 1573059X.
+\newblock \urlprefix\url{http://www.jstor.org/stable/40604700}.
+
 \bibitem[{Gentleman \emph{et~al.}(2025)Gentleman, Rossini, and
   Carey}]{gentleman2025}
 Gentleman R, Rossini A, Carey V (2025).
@@ -99,6 +113,14 @@ Hart C, Wang E (2023).
 \newblock \emph{The R Journal}, \textbf{15}, 307--329.
 \newblock ISSN 2073-4859.
 \newblock \doi{10.32614/RJ-2023-052}.
+
+\bibitem[{Hennig(2004)}]{henning2004}
+Hennig C (2004).
+\newblock \enquote{Asymmetric Linear Dimension Reduction for Classification.}
+\newblock \emph{Journal of Computational and Graphical Statistics},
+  \textbf{13}(4), 930--945.
+\newblock ISSN 10618600.
+\newblock \urlprefix\url{http://www.jstor.org/stable/27594085}.
 
 \bibitem[{Hunter(2007)}]{Hunter:2007}
 Hunter JD (2007).
@@ -157,6 +179,21 @@ Leisch F (2006).
 \newblock \emph{Computational Statistics and Data Analysis}, \textbf{51}(2),
   526--544.
 \newblock \doi{10.1016/j.csda.2005.10.006}.
+
+\bibitem[{Leisch(2008)}]{Leisch2008}
+Leisch F (2008).
+\newblock \emph{Visualizing Cluster Analysis and Finite Mixture Models}, pp.
+  561--587.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg.
+\newblock ISBN 978-3-540-33037-0.
+\newblock \doi{10.1007/978-3-540-33037-0_22}.
+\newblock \urlprefix\url{https://doi.org/10.1007/978-3-540-33037-0_22}.
+
+\bibitem[{Leisch(2010)}]{leisch_neighborhood_2010}
+Leisch F (2010).
+\newblock \enquote{Neighborhood graphs, stripes and shadow plots for cluster
+  visualization.}
+\newblock \emph{Statistics and Computing}, \textbf{20}(4), 457--469.
 
 \bibitem[{Lundh(1999)}]{lundh1999introduction}
 Lundh F (1999).
